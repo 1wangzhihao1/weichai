@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>潍柴动力 JIT 流水线数字孪生中枢 V4.5 (降本增效 AI 熄灯版)</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #08121C; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; user-select: none; }
+        
+        /* ================= 登录与门面 UI ================= */
+        #login-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, #0F1E32 0%, #050A10 100%); z-index: 9999; display: flex; justify-content: center; align-items: center; transition: opacity 0.8s ease-out; }
+        .login-card { background: rgba(10, 20, 35, 0.75); border: 1px solid #00E5FF; padding: 40px 50px; border-radius: 12px; box-shadow: 0 0 40px rgba(0, 229, 255, 0.15); text-align: center; width: 320px; backdrop-filter: blur(15px); }
+        .login-title { color: #FFF; font-size: 22px; font-weight: 900; margin-bottom: 5px; letter-spacing: 2px; text-shadow: 0 0 10px rgba(0,229,255,0.5); }
+        .login-subtitle { color: #A0B2C6; font-size: 12px; margin-bottom: 30px; letter-spacing: 1px; }
+        .input-group { margin-bottom: 20px; text-align: left; }
+        .input-group label { display: block; color: #00E5FF; font-size: 12px; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; }
+        .input-group input { width: 100%; padding: 12px 15px; background: rgba(0, 0, 0, 0.4); border: 1px solid #1E3A5F; color: #FFF; font-size: 14px; border-radius: 6px; outline: none; transition: 0.3s; box-sizing: border-box; }
+        .login-btn { width: 100%; padding: 12px; background: linear-gradient(135deg, #00E5FF, #0077FF); border: none; border-radius: 6px; color: #FFF; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px; text-transform: uppercase; }
+        .login-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4); }
+        .error-msg { color: #FF6666; font-size: 12px; margin-top: 8px; text-align: center; }
+
+        /* 修改密码模态框 */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; justify-content: center; align-items: center; }
+        .modal-card { background: rgba(10, 20, 35, 0.95); border: 1px solid #00E5FF; border-radius: 12px; padding: 25px; width: 360px; backdrop-filter: blur(10px); box-shadow: 0 0 30px rgba(0,229,255,0.2); }
+        .modal-card h3 { color: #00E5FF; margin-top: 0; text-align: center; }
+        .modal-card .input-group { margin-bottom: 15px; }
+        .modal-card input { width: 100%; padding: 8px 10px; background: #0A1525; border: 1px solid #1E3A5F; color: #FFF; border-radius: 4px; }
+        .modal-btn { background: linear-gradient(135deg, #00E5FF, #0077FF); border: none; padding: 8px 16px; border-radius: 6px; color: white; cursor: pointer; margin-right: 10px; }
+        .modal-btn.cancel { background: #555; }
+        .close-modal { float: right; cursor: pointer; color: #A0B2C6; font-size: 20px; }
+        .modal-message { color: #FFB800; font-size: 12px; margin-top: 10px; text-align: center; }
+
+        #top-panel { position: absolute; top: 20px; left: 20px; color: #fff; background: rgba(15, 25, 40, 0.85); padding: 15px 25px; border-radius: 8px; border-left: 5px solid #00E5FF; z-index: 100; backdrop-filter: blur(8px); pointer-events: none; }
+        #top-panel h2 { margin: 0 0 5px 0; font-size: 20px; font-weight: 900; text-shadow: 0 0 10px rgba(0, 229, 255, 0.6); }
+
+        #kpi-panel { position: absolute; top: 120px; left: 20px; width: 280px; background: rgba(15, 25, 40, 0.85); border: 1px solid #1E3A5F; border-radius: 8px; padding: 20px; z-index: 100; backdrop-filter: blur(8px); color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .panel-title { font-size: 14px; color: #00E5FF; font-weight: bold; margin-bottom: 15px; border-bottom: 1px dashed #1E3A5F; padding-bottom: 8px; }
+        .progress-container { width: 100%; background: #0A1525; border-radius: 10px; height: 12px; margin-bottom: 15px; border: 1px solid #1E3A5F; }
+        .progress-bar { height: 100%; background: linear-gradient(90deg, #0077FF, #00E5FF); width: 0%; transition: width 0.3s; box-shadow: 0 0 10px rgba(0,229,255,0.5); }
+        .kpi-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 13px; }
+        .kpi-val { font-weight: 900; font-size: 15px; font-family: monospace; }
+        .val-total { color: #A0B2C6; } .val-active { color: #FFB800; } .val-done { color: #00FF00; } .val-order { color: #00E5FF; font-size: 16px; }
+
+        #station-status-panel { position: absolute; top: 20px; right: 20px; width: 340px; background: rgba(10, 15, 25, 0.9); border: 1px solid #1E3A5F; border-radius: 8px; padding: 15px; z-index: 100; backdrop-filter: blur(8px); color: #FFF; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .station-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+        .st-card { background: rgba(0,0,0,0.4); border: 1px solid #1E3A5F; border-radius: 6px; padding: 6px 10px; font-size: 12px; display: flex; justify-content: space-between; align-items: center; transition: 0.2s; }
+        .st-card.busy { border-color: #FF3333; background: rgba(255, 51, 51, 0.1); box-shadow: inset 0 0 10px rgba(255,51,51,0.2); }
+        .st-card.idle { border-color: #00FF00; background: rgba(0, 255, 0, 0.05); }
+        
+        .st-card.off { border-color: #334155; background: rgba(15, 23, 42, 0.8); opacity: 0.7; }
+        .off .st-status { color: #64748B; font-size: 11px; }
+        .off .st-name { text-decoration: line-through; color: #475569; }
+
+        .st-name { font-weight: bold; color: #A0B2C6; }
+        .st-status { font-family: monospace; font-weight: bold; }
+        .busy .st-status { color: #FF3333; }
+        .idle .st-status { color: #00FF00; }
+
+        #player-controls { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); background: rgba(15, 25, 40, 0.95); padding: 12px 25px; border-radius: 40px; z-index: 100; display: flex; align-items: center; gap: 15px; border: 1px solid #1E3A5F; box-shadow: 0 5px 20px rgba(0,0,0,0.8); }
+        .btn, .file-upload { background: linear-gradient(135deg, #00E5FF, #0077FF); color: #fff; border: none; padding: 8px 18px; border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 13px; transition: 0.3s;}
+        .btn:hover, .file-upload:hover { transform: scale(1.05); }
+        .file-upload { background: linear-gradient(135deg, #FF6B00, #FFB800); }
+        input[type="range"] { flex-grow: 1; cursor: pointer; accent-color: #00E5FF; height: 6px; background: #1A2B4C; border-radius: 3px; min-width: 300px; }
+        #speedSelect { background:#0F1E32; color:#fff; border:1px solid #00E5FF; padding:6px; border-radius:5px; font-weight:bold; font-size: 13px; cursor: pointer;}
+
+        .box-label { position: absolute; color: #fff; background: rgba(0, 0, 0, 0.9); padding: 3px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #00E5FF; transform: translate(-50%, -100%); display: none; z-index: 50; pointer-events: none;}
+        .station-label { position: absolute; color: #00E5FF; background: rgba(10, 25, 45, 0.9); padding: 3px 10px; border-radius: 5px; font-size: 14px; font-weight: 900; border: 1px solid #00E5FF; transform: translate(-50%, -50%); z-index: 40; pointer-events: none; transition: 0.3s;}
+
+        #tooltip { position: absolute; background: rgba(15, 25, 45, 0.95); color: #fff; padding: 15px; border-radius: 8px; font-size: 13px; border: 1px solid #00E5FF; pointer-events: none; opacity: 0; transition: opacity 0.1s; z-index: 200; backdrop-filter: blur(8px); box-shadow: 0 10px 30px rgba(0,229,255,0.2); min-width: 200px; }
+        .tooltip-row { margin-bottom: 6px; display: flex; justify-content: space-between; }
+        .tooltip-label { color: #A0B2C6; font-weight: bold; }
+        .tooltip-value { font-weight: 900; color: #FFFFFF; }
+        .highlight-text { color: #FFB800; }
+
+        #settings-btn { position: absolute; bottom: 25px; right: 25px; background: rgba(15, 25, 40, 0.9); border: 1px solid #00E5FF; border-radius: 30px; padding: 8px 16px; color: #00E5FF; font-size: 14px; cursor: pointer; z-index: 100; backdrop-filter: blur(5px); font-weight: bold; transition: 0.2s; }
+        #settings-btn:hover { background: #00E5FF; color: #000; box-shadow: 0 0 15px #00E5FF; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+    <div id="login-overlay">
+        <div class="login-card">
+            <div class="login-title">潍柴 WMS 孪生中枢</div>
+            <div class="login-subtitle">Weichai Digital Twin System V4.5</div>
+            <div class="input-group"><label>工号 / Employee ID</label><input type="text" id="login-username" value="" placeholder="请输入用户名" autocomplete="off"></div>
+            <div class="input-group"><label>安全密钥 / Security Key</label><input type="password" id="login-password" placeholder="请输入密码"></div>
+            <button class="login-btn" onclick="loginSystem()">系统接入 LOGIN</button>
+            <div id="login-error-msg" class="error-msg"></div>
+            <div style="margin-top: 15px; font-size: 11px; color: #A0B2C6;">默认账号: admin / 123456</div>
+        </div>
+    </div>
+
+    <div id="changePwdModal" class="modal">
+        <div class="modal-card">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3>🔐 修改账户</h3>
+            <div class="input-group"><label>当前用户名</label><input type="text" id="old-username" placeholder="请输入当前用户名"></div>
+            <div class="input-group"><label>当前密码</label><input type="password" id="old-password" placeholder="请输入当前密码"></div>
+            <div class="input-group"><label>新用户名</label><input type="text" id="new-username" placeholder="新用户名"></div>
+            <div class="input-group"><label>新密码</label><input type="password" id="new-password" placeholder="新密码"></div>
+            <button class="modal-btn" onclick="changeCredentials()">确认修改</button>
+            <button class="modal-btn cancel" onclick="closeModal()">取消</button>
+            <div id="modal-message" class="modal-message"></div>
+        </div>
+    </div>
+
+    <div id="tooltip"></div>
+    <div id="top-panel" style="display:none;"><h2>🏭 潍柴数字孪生分拣枢纽</h2><div style="color:#A0B2C6; font-size: 12px;">实时物理引擎接管正常 | AI 降本增效已启用</div></div>
+    
+    <div id="kpi-panel" style="display:none;">
+        <div class="panel-title">📊 订单履约总进度</div>
+        <div class="progress-container"><div class="progress-bar" id="kpi-progress"></div></div>
+        <div class="kpi-row" style="border-bottom: 1px solid rgba(0,229,255,0.3); padding-bottom:8px; margin-bottom:12px;"><span>主订单完工进度:</span> <span class="kpi-val val-order" id="kpi-orders-done">0 / 0</span></div>
+        <div class="kpi-row"><span>总计投放箱数:</span> <span class="kpi-val val-total" id="kpi-total">0</span></div>
+        <div class="kpi-row"><span>传送/排队中:</span> <span class="kpi-val val-active" id="kpi-active">0</span></div>
+        <div class="kpi-row"><span>已下线箱数:</span> <span class="kpi-val val-done" id="kpi-done">0</span></div>
+        
+        <div style="margin-top: 15px; border-top: 1px dashed #3A5A7A; padding-top: 10px;">
+            <div class="kpi-row"><span style="color:#A0B2C6; font-size:11px;">Simpy 核心加工耗时:</span> <span class="kpi-val" id="kpi-simpy-time" style="color:#FFF; font-size:12px;">0.0s</span></div>
+            <div class="kpi-row"><span style="color:#A0B2C6; font-size:11px;">包含上层回库总耗时:</span> <span class="kpi-val" id="kpi-3d-time" style="color:#FFF; font-size:12px;">0.0s</span></div>
+        </div>
+
+        <div style="margin-top: 15px; font-size: 11px; color: #4CAF50; text-align: right;" id="kpi-status">系统待命，请载入剧本...</div>
+    </div>
+
+    <div id="station-status-panel" style="display:none;"><div class="panel-title">📡 产线 16 站台实时状态矩阵</div><div class="station-grid" id="st-grid"></div></div>
+    
+    <div id="player-controls" style="display:none;">
+        <label class="file-upload">📁 载入 Json 剧本<input type="file" id="jsonLoader" accept=".json" style="display: none;"></label>
+        <button id="playBtn" class="btn">⏸ 暂停</button>
+        <span id="timeDisplay" style="min-width: 55px; font-family: monospace; font-size: 15px; color:#00E5FF; font-weight: bold; text-align:center;">0.0s</span>
+        <input type="range" id="timeSlider" min="0" max="100" value="0" step="0.1">
+        <select id="speedSelect">
+            <option value="1">1x 实时</option>
+            <option value="5" selected>5x 倍速</option>
+            <option value="10">10x 极速</option>
+            <option value="20">20x 超神</option>
+        </select>
+        <button id="vipBtn" class="btn" style="background: linear-gradient(135deg, #FF0000, #8B0000); box-shadow: 0 0 10px red; margin-left: 15px;">🚨 突发加急插单</button>
+    </div>
+    
+    <div id="settings-btn" style="display:none;">⚙️ 账户设置</div>
+    <div id="labels-container"></div>
+    <div id="stations-container"></div>
+
+    <script>
+        // ================= 用户凭证管理 =================
+        let validUsername = "admin"; let validPassword = "123456";
+        function loginSystem() {
+            const username = document.getElementById('login-username').value.trim();
+            const password = document.getElementById('login-password').value;
+            const errorDiv = document.getElementById('login-error-msg');
+            if (!username || !password) { errorDiv.innerText = "请输入用户名和密码"; return; }
+            if (username !== validUsername) { errorDiv.innerText = "用户名错误"; return; }
+            if (password !== validPassword) { errorDiv.innerText = "密码错误"; return; }
+            errorDiv.innerText = ""; const overlay = document.getElementById('login-overlay'); overlay.style.opacity = '0';
+            setTimeout(() => { overlay.style.display = 'none'; document.getElementById('top-panel').style.display = 'block'; document.getElementById('kpi-panel').style.display = 'block'; document.getElementById('station-status-panel').style.display = 'block'; document.getElementById('player-controls').style.display = 'flex'; document.getElementById('settings-btn').style.display = 'block'; }, 800);
+        }
+
+        function changeCredentials() {
+            const oldUser = document.getElementById('old-username').value.trim(); const oldPass = document.getElementById('old-password').value; const newUser = document.getElementById('new-username').value.trim(); const newPass = document.getElementById('new-password').value; const msgDiv = document.getElementById('modal-message');
+            if (!oldUser || !oldPass) { msgDiv.innerText = "请输入当前用户名和密码"; return; }
+            if (oldUser !== validUsername) { msgDiv.innerText = "当前用户名错误"; return; }
+            if (oldPass !== validPassword) { msgDiv.innerText = "当前密码错误"; return; }
+            if (!newUser || !newPass) { msgDiv.innerText = "新用户名和新密码不能为空"; return; }
+            validUsername = newUser; validPassword = newPass; msgDiv.innerText = "✅ 修改成功！下次登录请使用新账号。"; msgDiv.style.color = "#00FF00"; setTimeout(() => { closeModal(); }, 2000);
+        }
+
+        function closeModal() { document.getElementById('changePwdModal').style.display = 'none'; document.getElementById('old-username').value = ''; document.getElementById('old-password').value = ''; document.getElementById('new-username').value = ''; document.getElementById('new-password').value = ''; document.getElementById('modal-message').innerText = ''; document.getElementById('modal-message').style.color = "#FFB800"; }
+        document.addEventListener('DOMContentLoaded', () => { const settingsBtn = document.getElementById('settings-btn'); if (settingsBtn) { settingsBtn.onclick = () => { document.getElementById('changePwdModal').style.display = 'flex'; }; } });
+
+        // ================= 3D 可视化核心 =================
+        const stGrid = document.getElementById('st-grid');
+        for(let i=0; i<16; i++) {
+            const stDiv = document.createElement('div'); stDiv.className = 'st-card idle'; stDiv.id = `st-card-${i}`;
+            stDiv.innerHTML = `<span class="st-name">S${(i+1).toString().padStart(2,'0')}</span><span class="st-status" id="st-status-${i}">🟢 待命中</span>`;
+            stGrid.appendChild(stDiv);
+        }
+
+        function createWarningTexture() {
+            const canvas = document.createElement('canvas'); canvas.width = 256; canvas.height = 256; const ctx = canvas.getContext('2d'); ctx.fillStyle = '#FFB800'; ctx.fillRect(0,0,256,256); ctx.fillStyle = '#111111';
+            for(let i = -256; i < 512; i += 40) { ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i+20, 0); ctx.lineTo(i+256+20, 256); ctx.lineTo(i+256, 256); ctx.fill(); }
+            const tex = new THREE.CanvasTexture(canvas); tex.wrapS = THREE.RepeatWrapping; tex.wrapT = THREE.RepeatWrapping; tex.repeat.set(1, 2); return tex;
+        }
+        function stringToColor(str) { let hash = 0; for (let i = 0; i < str.length; i++) hash = str.charCodeAt(i) + ((hash << 5) - hash); return new THREE.Color(`hsl(${Math.abs(hash) % 360}, 85%, 60%)`); }
+
+        // ================= 全局状态变量 =================
+        let simData = [], currentTime = 0, maxTime = 100, isPlaying = true, playbackSpeed = 5, lastTime = 0; 
+        const activeBoxes = new Map(); const labelsContainer = document.getElementById('labels-container'); 
+        let orderStats = { total: 0, completed: 0, map: {} };
+        const stations = []; 
+        const stationsContainer = document.getElementById('stations-container');
+
+        // ================= 🌟 核心重构：将剧本解析器独立成函数 =================
+        // 🌟 新增 isHotReload 参数，默认为 false
+        function loadPlaybookData(rawJson, isHotReload = false) {
+            // 1. 先把所有机器全部恢复默认通电状态
+            stations.forEach(st => {
+                st.isPoweredOff = false;
+                st.worker.visible = true; 
+                st.desk.material.color.setHex(0xF8FAFC); 
+                st.screen.material.color.setHex(0x00E5FF);
+                st.labelDom.style.color = '#00E5FF';
+                st.labelDom.style.borderColor = '#00E5FF';
+                st.labelDom.style.background = 'rgba(10, 25, 45, 0.9)';
+                st.labelDom.innerText = `S${(st.id+1).toString().padStart(2, '0')}`;
+                
+                const card = document.getElementById(`st-card-${st.id}`);
+                card.className = 'st-card idle';
+                const text = document.getElementById(`st-status-${st.id}`);
+                text.innerHTML = `🟢 待命中`;
+            });
+
+            // 2. 开始宣读断电名单
+            const powerStatuses = rawJson.station_power_status;
+            if (powerStatuses && powerStatuses.length > 0) {
+                powerStatuses.forEach(statusData => {
+                    if (statusData.status === "POWER_OFF") {
+                        const st = stations[statusData.station_id];
+                        st.isPoweredOff = true; 
+                        
+                        st.worker.visible = false; 
+                        st.desk.material.color.setHex(0x334155); 
+                        st.desk.material.emissive.setHex(0x000000);
+                        st.screen.material.color.setHex(0x1e293b); 
+                        st.screen.material.emissiveIntensity = 0;
+                        st.light.material.color.setHex(0x1e293b);  
+                        st.light.material.emissive.setHex(0x000000);
+                        
+                        st.labelDom.style.color = '#475569';
+                        st.labelDom.style.borderColor = '#475569';
+                        st.labelDom.style.background = 'rgba(10, 15, 25, 0.9)';
+                        st.labelDom.innerText += " (闲置)";
+                        
+                        const card = document.getElementById(`st-card-${st.id}`);
+                        const text = document.getElementById(`st-status-${st.id}`);
+                        card.className = 'st-card off'; 
+                        text.innerHTML = `⚫ 关停 (AI降本)`;
+                    }
+                });
+            }
+
+            const groupedEvents = {};
+            rawJson.timeline.forEach(event => {
+                if (!groupedEvents[event.entity_id]) groupedEvents[event.entity_id] = { box_id: event.entity_id, stIdx: event.station_id, timeline: {} };
+                if (event.event_type === 'spawn') groupedEvents[event.entity_id].timeline.spawn = event.time;
+                if (event.event_type === 'reach_branch') groupedEvents[event.entity_id].timeline.branch = event.time;
+                if (event.event_type === 'enter_buffer') groupedEvents[event.entity_id].timeline.end = event.time;
+                if (event.event_type === 'start_process') groupedEvents[event.entity_id].timeline.start = event.time;
+                if (event.event_type === 'end_process') { groupedEvents[event.entity_id].timeline.return_main = event.time; }
+            });
+            
+            simData = Object.values(groupedEvents);
+            orderStats.map = {};
+            simData.forEach(d => {
+                const orderId = d.box_id.split('-P')[0]; 
+                if(!orderStats.map[orderId]) { orderStats.map[orderId] = { totalBoxes: 0, boxesFinished: 0 }; }
+                orderStats.map[orderId].totalBoxes++;
+            });
+            orderStats.total = Object.keys(orderStats.map).length;
+            document.getElementById('kpi-orders-done').innerText = `0 / ${orderStats.total}`;
+            
+            const START_X = -90; const BELT_SPEED = 2.0;
+            simData.forEach(d => {
+                const eX = stations[d.stIdx].x; const distIn = Math.abs(eX - START_X), distOut = Math.abs(eX - (START_X - 10)); 
+                const tl = d.timeline;
+                
+                tl.start = tl.start !== undefined ? tl.start : Math.max(0, tl.end - 15.0);
+                tl.branch = tl.branch !== undefined ? tl.branch : Math.max(0, tl.start - 2.0);
+                tl.spawn = tl.branch - (distIn / BELT_SPEED);
+                tl.return_main = tl.return_main !== undefined ? tl.return_main : tl.start + 5.0; 
+                
+                const timeUpBranch = 10.5 / BELT_SPEED;
+                tl.return_branch_end = tl.return_main + timeUpBranch;
+                
+                const timeReturnMain = distOut / BELT_SPEED;
+                tl.exit = tl.return_branch_end + timeReturnMain;
+            });
+
+            const pureSimpyTime = Math.max(...simData.map(d => d.timeline.return_main));
+            document.getElementById('kpi-simpy-time').innerText = pureSimpyTime.toFixed(1) + "s";
+            
+            maxTime = Math.max(...simData.map(d => d.timeline.exit)) + 0.5;
+            document.getElementById('timeSlider').max = maxTime; 
+            document.getElementById('kpi-3d-time').innerText = maxTime.toFixed(1) + "s";
+            
+            document.getElementById('kpi-total').innerText = simData.length;
+            document.getElementById('kpi-status').innerHTML = "🟢 数据链加载完毕，物理沙盘已就绪";
+            
+            // 🚨 核心修复：如果是热更新，绝不清零当前时间！
+            if (!isHotReload) {
+                currentTime = 0; 
+                lastTime = 0; 
+            } else {
+                console.log(`⏱️ 触发无缝热更新，时空锚定在：${currentTime.toFixed(1)} 秒`);
+            }
+            
+            labelsContainer.innerHTML = ''; 
+            activeBoxes.forEach(b => {
+                if (b.mesh.parent) b.mesh.parent.remove(b.mesh);
+            });
+            activeBoxes.clear();
+        }
+
+        try {
+            const scene = new THREE.Scene(); scene.background = new THREE.Color(0x08121C);
+            const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000); camera.position.set(-20, 90, 140); camera.lookAt(20, 0, 0);
+            const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" }); renderer.setSize(window.innerWidth, window.innerHeight); renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap; document.body.appendChild(renderer.domElement);
+            const controls = new THREE.OrbitControls(camera, renderer.domElement); controls.enableDamping = true; controls.maxPolarAngle = Math.PI / 2.05;
+            scene.add(new THREE.AmbientLight(0xffffff, 0.8)); scene.add(new THREE.HemisphereLight(0xffffff, 0x445577, 0.6));
+            const dirLight = new THREE.DirectionalLight(0xffffff, 1.2); dirLight.position.set(30, 80, 40); dirLight.castShadow = true; dirLight.shadow.mapSize.width = 2048; dirLight.shadow.mapSize.height = 2048; scene.add(dirLight);
+            const floor = new THREE.Mesh(new THREE.PlaneGeometry(350, 200), new THREE.MeshStandardMaterial({ color: 0x0A1525, roughness: 0.15, metalness: 0.8 })); floor.rotation.x = -Math.PI / 2; floor.position.y = -0.1; floor.receiveShadow = true; scene.add(floor); scene.add(new THREE.GridHelper(300, 100, 0x1E3A5F, 0x112233));
+
+            const BOX_S = 0.5; const SURFACE_LOWER = 0.3; const SURFACE_UPPER = 3.5; const Y_LOWER = SURFACE_LOWER + BOX_S / 2; const Y_UPPER = SURFACE_UPPER + BOX_S / 2; const START_X = -90; const BELT_LEN = 180; const SPACING = 10.0; const BELT_SPEED = 2.0;
+            const whGroup = new THREE.Group(); const whX = START_X - 8; const whFrameMat = new THREE.MeshStandardMaterial({color: 0xE8F0FE, roughness: 0.2, metalness: 0.2});
+            const frameBottom = new THREE.Mesh(new THREE.BoxGeometry(16, 2, 14), whFrameMat); frameBottom.position.set(whX, 1, 0); whGroup.add(frameBottom); const frameTop = new THREE.Mesh(new THREE.BoxGeometry(16, 2, 14), whFrameMat); frameTop.position.set(whX, 13, 0); whGroup.add(frameTop); const frameBack = new THREE.Mesh(new THREE.BoxGeometry(2, 10, 14), whFrameMat); frameBack.position.set(whX - 7, 7, 0); whGroup.add(frameBack); const frameSide = new THREE.Mesh(new THREE.BoxGeometry(16, 10, 2), whFrameMat); frameSide.position.set(whX, 7, -6); whGroup.add(frameSide);
+            const glassMat = new THREE.MeshPhysicalMaterial({ color: 0x88CCFF, transparent: true, opacity: 0.25, metalness: 0.9, roughness: 0.05, transmission: 0.8, side: THREE.DoubleSide }); const glass = new THREE.Mesh(new THREE.BoxGeometry(14.2, 10, 12.2), glassMat); glass.position.set(whX + 1, 7, 1); whGroup.add(glass);
+            const rackMat = new THREE.MeshStandardMaterial({color: 0xFF5500, metalness: 0.8, roughness:0.2}); for(let r = -3; r <= 5; r += 4) { for(let c = whX - 4; c <= whX + 4; c += 4) { const rack = new THREE.Mesh(new THREE.BoxGeometry(2.5, 9, 1.2), rackMat); rack.position.set(c, 6.5, r); whGroup.add(rack); } }
+            const tunnelMat = new THREE.MeshStandardMaterial({map: createWarningTexture()}); const holeMat = new THREE.MeshBasicMaterial({color: 0x000000});
+            const lowTun = new THREE.Mesh(new THREE.BoxGeometry(3, 2.2, 2.5), tunnelMat); lowTun.position.set(START_X - 1.5, SURFACE_LOWER + 1.1, 0); whGroup.add(lowTun); const lowHole = new THREE.Mesh(new THREE.BoxGeometry(3.1, 2.0, 2.0), holeMat); lowHole.position.set(START_X - 1.5, SURFACE_LOWER + 1.1, 0); whGroup.add(lowHole); const upTun = new THREE.Mesh(new THREE.BoxGeometry(3, 2.2, 2.5), tunnelMat); upTun.position.set(START_X - 1.5, SURFACE_UPPER + 1.1, 0); whGroup.add(upTun); const upHole = new THREE.Mesh(new THREE.BoxGeometry(3.1, 2.0, 2.0), holeMat); upHole.position.set(START_X - 1.5, SURFACE_UPPER + 1.1, 0); whGroup.add(upHole);
+            scene.add(whGroup);
+
+            function createBeltCore(len, color, y, z, hideFrontRail=false) { const group = new THREE.Group(); const track = new THREE.Mesh(new THREE.BoxGeometry(len, 0.1, 1.2), new THREE.MeshStandardMaterial({ color: color })); track.position.set(0, y - 0.05, z); track.receiveShadow = true; group.add(track); const rMat = new THREE.MeshStandardMaterial({ color: 0xA0B2C6, metalness: 0.7 }); if (!hideFrontRail) { const rF = new THREE.Mesh(new THREE.BoxGeometry(len, 0.2, 0.05), rMat); rF.position.set(0, y + 0.05, z + 0.6); group.add(rF); } const rB = new THREE.Mesh(new THREE.BoxGeometry(len, 0.2, 0.05), rMat); rB.position.set(0, y + 0.05, z - 0.6); group.add(rB); return group; }
+            scene.add(createBeltCore(BELT_LEN, 0x111827, SURFACE_LOWER, 0, true)); scene.add(createBeltCore(BELT_LEN, 0x111827, SURFACE_UPPER, 0, true));
+            const pMat = new THREE.MeshStandardMaterial({ color: 0x475569, metalness: 0.6 }); for(let i = START_X + 5; i < START_X + BELT_LEN - 10; i += 12) { const p1 = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, SURFACE_UPPER), pMat); p1.position.set(i, SURFACE_UPPER/2, 0.65); p1.castShadow=true; scene.add(p1); const p2 = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, SURFACE_UPPER), pMat); p2.position.set(i, SURFACE_UPPER/2, -0.65); p2.castShadow=true; scene.add(p2); }
+
+            for (let i = 0; i < 16; i++) {
+                const x = START_X + 10 + i * SPACING; const branchLen = 9.3; const branchBelt = createBeltCore(branchLen, 0x1E293B, SURFACE_LOWER, 0, false); branchBelt.rotation.y = Math.PI / 2; branchBelt.position.set(x, 0, 0.6 + branchLen / 2); scene.add(branchBelt);
+                const dY = SURFACE_UPPER - SURFACE_LOWER; const dZ = 10.5 - 0.6; const rLen = Math.sqrt(dY*dY + dZ*dZ); const rAngle = Math.atan2(dY, dZ); const rampGroup = new THREE.Group(); rampGroup.position.set(x, SURFACE_LOWER + dY/2, 0.6 + dZ/2); rampGroup.rotation.x = rAngle; const rampMesh = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.1, rLen), new THREE.MeshStandardMaterial({color: 0x1E293B})); rampMesh.position.set(0, -0.05, 0); rampMesh.castShadow = true; rampMesh.receiveShadow = true; rampGroup.add(rampMesh); const rrMat = new THREE.MeshStandardMaterial({color: 0xFF6B00, metalness:0.4}); const rrF = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.2, rLen), rrMat); rrF.position.set(0.6, 0.05, 0); rampGroup.add(rrF); const rrB = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.2, rLen), rrMat); rrB.position.set(-0.6, 0.05, 0); rampGroup.add(rrB); scene.add(rampGroup);
+                
+                const deskMat = new THREE.MeshStandardMaterial({color: 0xF8FAFC, metalness:0.3});
+                const desk = new THREE.Mesh(new THREE.BoxGeometry(2.0, 0.2, 1.2), deskMat); desk.position.set(x, SURFACE_LOWER - 0.1, 10.5); desk.castShadow = true; desk.receiveShadow = true; scene.add(desk); 
+                
+                const screen = new THREE.Mesh(new THREE.PlaneGeometry(1.5, 0.8), new THREE.MeshStandardMaterial({color: 0x00E5FF, emissive: 0x00E5FF, emissiveIntensity: 0.1, transparent: true, opacity: 0.8, side: THREE.DoubleSide})); screen.position.set(x, 0.8, 11.2); screen.rotation.x = -Math.PI / 8; scene.add(screen); 
+                const light = new THREE.Mesh(new THREE.SphereGeometry(0.15), new THREE.MeshStandardMaterial({color: 0x00ffcc, emissive: 0x00aa88})); light.position.set(x - 1.0, 1.4, 11.2); scene.add(light); 
+                const laser = new THREE.Mesh(new THREE.PlaneGeometry(1.2, 0.05), new THREE.MeshBasicMaterial({color: 0x00FF00, transparent: true, opacity: 0.8, side: THREE.DoubleSide})); laser.position.set(x, Y_LOWER + 0.25, 10.5); laser.visible = false; scene.add(laser);
+                
+                const worker = new THREE.Group(); const mSkin = new THREE.MeshStandardMaterial({color: 0xFFB800}); const mCloth = new THREE.MeshStandardMaterial({color: 0x1E3A8A}); const mVest = new THREE.MeshStandardMaterial({color: 0x10B981}); const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 0.4), mCloth); leg.position.set(x-0.15, 0.2, 11.6); worker.add(leg); const leg2 = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 0.4), mCloth); leg2.position.set(x+0.15, 0.2, 11.6); worker.add(leg2); const torso = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.6, 0.3), mVest); torso.position.set(x, 0.7, 11.6); worker.add(torso); const head = new THREE.Mesh(new THREE.SphereGeometry(0.15), mSkin); head.position.set(x, 1.15, 11.6); worker.add(head); const hat = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 0.1), new THREE.MeshStandardMaterial({color: 0xFF0000})); hat.position.set(x, 1.25, 11.6); worker.add(hat); const armG = new THREE.CylinderGeometry(0.06, 0.06, 0.5); const armL = new THREE.Mesh(armG, mVest); armL.position.set(x-0.3, 0.8, 11.3); armL.rotation.x = -Math.PI/3; armL.rotation.z = -Math.PI/8; worker.add(armL); const armR = new THREE.Mesh(armG, mVest); armR.position.set(x+0.3, 0.8, 11.3); armR.rotation.x = -Math.PI/3; armR.rotation.z = Math.PI/8; worker.add(armR); worker.castShadow = true; scene.add(worker);
+                
+                const stLabel = document.createElement('div'); stLabel.className = 'station-label'; stLabel.innerText = `S${(i+1).toString().padStart(2, '0')}`; stationsContainer.appendChild(stLabel); 
+                
+                stations.push({ 
+                    id: i, x: x, screen: screen, labelDom: stLabel, laser: laser, light: light, 
+                    desk: desk, worker: worker, isPoweredOff: false 
+                });
+            }
+
+            // 本地读取依然有效，调用抽离后的解析函数
+            document.getElementById('jsonLoader').addEventListener('change', e => {
+                const reader = new FileReader();
+                reader.onload = ev => {
+                    const rawJson = JSON.parse(ev.target.result);
+                    // 本地加载文件默认是从头播放，所以不传 isHotReload (使用默认的 false)
+                    loadPlaybookData(rawJson);
+                }; 
+                reader.readAsText(e.target.files[0]);
+            });
+
+            document.getElementById('playBtn').onclick = () => { isPlaying = !isPlaying; document.getElementById('playBtn').innerText = isPlaying ? "⏸ 暂停" : "▶ 播放"; };
+            document.getElementById('timeSlider').oninput = e => { currentTime = parseFloat(e.target.value); };
+            document.getElementById('speedSelect').onchange = e => { playbackSpeed = parseFloat(e.target.value); };
+            
+            // ==========================================
+            // 📡 监听 VIP 加急按钮点击事件 (直接呼叫后端)
+            // ==========================================
+            document.getElementById('vipBtn').addEventListener('click', async function() {
+                const btn = this;
+                const originalText = btn.innerHTML;
+                
+                // 1. 按钮变灰，防止车间主任疯狂连按
+                btn.innerHTML = "⏳ AI 紧急推演中...";
+                btn.style.opacity = "0.5";
+                btn.disabled = true;
+
+                try {
+                    console.log(`🚀 向中枢服务器发送插单请求... 当前时空坐标: ${currentTime.toFixed(1)}s`);
+                    
+                    // ==========================================
+                    // 🚨 核心改动：把 currentTime 动态拼接到 URL 传给 Python ！！
+                    // ==========================================
+                    const response = await fetch(`http://127.0.0.1:9000/api/trigger_vip?current_time=${currentTime}`, {
+                        method: "GET",
+                        headers: {
+                            "Accept": "application/json"
+                        }
+                    });
+
+                    // 3. 检查服务器是否活着
+                    if (!response.ok) {
+                        throw new Error(`HTTP 报错! 状态码: ${response.status}`);
+                    }
+
+                    // 4. 获取最新的含有 VIP 订单的 JSON 剧本
+                    const data = await response.json();
+                    
+                    if (data.status === "success") {
+                        console.log("✅ 成功接收新剧本！准备重新渲染！");
+                        
+                        // 🚨 核心交接点：传入 true，触发时空锚定！
+                        loadPlaybookData(data.playbook, true); 
+                        
+                        alert("🚨 AI 指令已下达：加急订单已强制切入队列！");
+                    }
+                } catch (error) {
+                    console.error("❌ 呼叫服务器失败:", error);
+                    alert("❌ 无法连接到 AI 中枢服务器，请确认终端里已经运行了 `python server.py`！");
+                } finally {
+                    // 5. 无论成功失败，恢复按钮状态
+                    btn.innerHTML = originalText;
+                    btn.style.opacity = "1";
+                    btn.disabled = false;
+                }
+            });
+
+
+            function lerp(s, e, p) { return s + (e - s) * Math.max(0, Math.min(1, p)); }
+
+            const raycaster = new THREE.Raycaster(); const mouse = new THREE.Vector2();
+            const tooltip = document.getElementById('tooltip');
+            window.addEventListener('mousemove', (event) => {
+                mouse.x = (event.clientX / window.innerWidth) * 2 - 1; mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+                raycaster.setFromCamera(mouse, camera); const boxMeshes = Array.from(activeBoxes.values()).map(b => b.mesh);
+                const intersects = raycaster.intersectObjects(boxMeshes);
+                if (intersects.length > 0) {
+                    const boxObj = intersects[0].object; const data = boxObj.userData; 
+                    
+                    // 🚨 增强版：完美解析带 VIP 和带 P 后缀的零件名字，保证悬浮窗显示正确
+                    let orderId = "未知订单";
+                    let partType = "未知";
+                    if (data.id.includes('-P')) {
+                        const parts = data.id.split('-P');
+                        orderId = parts[0];
+                        partType = parts[1];
+                    } else {
+                        orderId = data.id;
+                    }
+                    
+                    const stName = `S${(data.station + 1).toString().padStart(2,'0')}`;
+                    tooltip.innerHTML = `<div style="border-bottom:1px solid #00E5FF; margin-bottom:10px; padding-bottom:6px; font-size:14px; text-shadow: 0 0 5px #00E5FF;"><strong>📦 物理物料箱</strong></div><div class="tooltip-row"><span class="tooltip-label">归属订单</span> <span class="tooltip-value highlight-text">${orderId}</span></div><div class="tooltip-row"><span class="tooltip-label">零件型号</span> <span class="tooltip-value">Type-P${partType}</span></div><div class="tooltip-row" style="margin-top:8px; border-top:1px dashed #3A5A7A; padding-top:8px;"><span class="tooltip-label">目标站台</span> <span class="tooltip-value" style="color:#00FF00;">🎯 ${stName} 号工位</span></div>`;
+                    tooltip.style.left = (event.clientX + 15) + 'px'; tooltip.style.top = (event.clientY + 15) + 'px'; tooltip.style.opacity = 1; document.body.style.cursor = 'pointer';
+                    boxObj.material.emissive.setHex(data.id.includes('VIP') ? 0x660000 : 0x333333);
+                } else { tooltip.style.opacity = 0; document.body.style.cursor = 'default'; activeBoxes.forEach(b => {
+                    b.mesh.material.emissive.setHex(b.userData.id.includes('VIP') ? 0x660000 : 0x000000);
+                }); }
+            });
+
+            const clock = new THREE.Clock();
+            function animate() {
+                requestAnimationFrame(animate); controls.update();
+                stations.forEach(s => { const pos = new THREE.Vector3(s.x, 3.5, 10.5); pos.project(camera); s.labelDom.style.left = `${(pos.x * .5 + .5) * window.innerWidth}px`; s.labelDom.style.top = `${(pos.y * -.5 + .5) * window.innerHeight}px`; });
+
+                if (isPlaying && simData.length > 0) {
+                    let dt = clock.getDelta() * playbackSpeed; currentTime += dt; if (currentTime > maxTime) currentTime = maxTime;
+                    const isScrubbing = Math.abs(currentTime - lastTime - dt) > 0.5;
+                    document.getElementById('timeSlider').value = currentTime; document.getElementById('timeDisplay').innerText = currentTime.toFixed(1) + "s";
+                    
+                    stations.forEach(s => { 
+                        if (!s.isPoweredOff) {
+                            s.screen.material.emissiveIntensity = 0.1; 
+                            s.laser.visible = false; 
+                            s.light.material.color.setHex(0x00ffcc); 
+                            s.light.material.emissive.setHex(0x00aa88); 
+                        }
+                    });
+
+                    let finishedCount = 0; let activeCount = 0;
+                    let currentOrderProgress = JSON.parse(JSON.stringify(orderStats.map)); 
+                    let stStatusCount = Array(16).fill(0).map(() => ({ active: false, buffer: 0 }));
+
+                    simData.forEach(boxData => {
+                        const t = currentTime, tl = boxData.timeline, stIdx = boxData.stIdx, eX = stations[stIdx].x;
+                        const orderId = boxData.box_id.split('-P')[0];
+
+                        if (t >= tl.exit) { finishedCount++; currentOrderProgress[orderId].boxesFinished++; } else if (t >= tl.spawn) { activeCount++; }
+                        
+                        if (t >= tl.branch && t < tl.start) { 
+                            stStatusCount[stIdx].buffer++; 
+                        }
+                        if (t >= tl.start && t < tl.return_main) {
+                            stStatusCount[stIdx].active = true;
+                            if (!stations[stIdx].isPoweredOff) {
+                                stations[stIdx].screen.material.emissiveIntensity = 1.0; 
+                                stations[stIdx].laser.visible = true; stations[stIdx].laser.position.z = 10.5 + Math.sin(t * 10) * 0.35; 
+                                stations[stIdx].light.material.color.setHex(0xff3333); stations[stIdx].light.material.emissive.setHex(0xff0000);
+                            }
+                        }
+
+                        if (t >= tl.spawn && t <= tl.exit) {
+                            let boxObj = activeBoxes.get(boxData.box_id);
+                            
+                            if (!boxObj) {
+                                // 1. 甄别是否为 VIP 订单
+                                const isVIP = boxData.box_id.includes('VIP');
+                                const shortName = boxData.box_id.includes('-P') ? boxData.box_id.split('-P').pop() : boxData.box_id.slice(-3);
+                                
+                                // 2. 赋予视觉特权：VIP 专属警示红 + 自发光，普通箱子随机色
+                                const boxColor = isVIP ? 0xFF0000 : stringToColor(boxData.box_id);
+                                const emissiveColor = isVIP ? 0x660000 : 0x000000; // VIP 箱子自带暗红辉光
+
+                                const mesh = new THREE.Mesh(
+                                    new THREE.BoxGeometry(BOX_S, BOX_S, BOX_S), 
+                                    new THREE.MeshStandardMaterial({ color: boxColor, emissive: emissiveColor, roughness:0.2, metalness:0.4 })
+                                );
+                                mesh.castShadow = true; mesh.receiveShadow = true; mesh.userData = { id: boxData.box_id, station: stIdx };
+                                scene.add(mesh); 
+                                
+                                // 3. 爆改 UI 标签：VIP 尊贵标识
+                                const label = document.createElement('div'); 
+                                label.className = 'box-label'; 
+                                if (isVIP) {
+                                    label.innerText = "🚨 VIP";
+                                    label.style.background = "rgba(200, 0, 0, 0.95)";
+                                    label.style.border = "1px solid #FFD700"; // 土豪金描边
+                                    label.style.color = "#FFD700";
+                                    label.style.fontSize = "13px";
+                                    label.style.zIndex = "60"; // 保证 VIP 标签永远在最上层
+                                } else {
+                                    label.innerText = "P" + shortName;
+                                }
+                                labelsContainer.appendChild(label);
+                                
+                                boxObj = { mesh: mesh, label: label, currentZ: 0 }; activeBoxes.set(boxData.box_id, boxObj);
+                            }
+
+                            const box = boxObj.mesh; let targetX, targetY, targetZ;
+
+                            if (t < tl.branch) { 
+                                targetX = lerp(START_X, eX, (t-tl.spawn)/(tl.branch-tl.spawn)); targetY = Y_LOWER; targetZ = 0; boxObj.currentZ = targetZ; 
+                            } else if (t < tl.return_main) {
+                                targetX = eX; targetY = Y_LOWER; 
+                                let limitZ;
+                                if (t < tl.start) {
+                                    let boxesAhead = 0;
+                                    for(let i=0; i<simData.length; i++) { 
+                                        if (simData[i].stIdx === stIdx && simData[i].box_id !== boxData.box_id && simData[i].timeline.branch < tl.branch && t < simData[i].timeline.return_main) boxesAhead++; 
+                                    }
+                                    limitZ = boxesAhead === 0 ? 10.5 : 9.5 - (boxesAhead - 1) * 0.7; 
+                                } else { 
+                                    limitZ = 10.5; 
+                                } 
+
+                                const realBranchSpeed = 10.5 / 9.5; 
+                                if (isScrubbing) {
+                                    boxObj.currentZ = Math.min((t - tl.branch) * realBranchSpeed, limitZ);
+                                } else { 
+                                    if (boxObj.currentZ < limitZ) { 
+                                        boxObj.currentZ += dt * realBranchSpeed; 
+                                        if (boxObj.currentZ > limitZ) boxObj.currentZ = limitZ; 
+                                    } else if (boxObj.currentZ > limitZ + 0.1) { 
+                                        boxObj.currentZ = limitZ; 
+                                    } 
+                                }
+                                targetZ = boxObj.currentZ;
+                            } else if (t < tl.return_branch_end) { 
+                                let progress = (t - tl.return_main) / (tl.return_branch_end - tl.return_main);
+                                targetX = eX; 
+                                targetY = lerp(Y_LOWER, Y_UPPER, progress); 
+                                targetZ = lerp(10.5, 0, progress); 
+                                boxObj.currentZ = targetZ; 
+                            } else {
+                                targetX = lerp(eX, START_X - 10, (t - tl.return_branch_end) / (tl.exit - tl.return_branch_end));
+                                targetY = Y_UPPER;
+                                targetZ = 0;
+                                boxObj.currentZ = targetZ;
+                            }
+                            
+                            box.position.set(targetX, targetY, targetZ); boxObj.label.style.display = 'block'; const screenPos = box.position.clone(); screenPos.y += 0.5; screenPos.project(camera);
+                            boxObj.label.style.left = `${(screenPos.x * .5 + .5) * window.innerWidth}px`; boxObj.label.style.top = `${(screenPos.y * -.5 + .5) * window.innerHeight}px`;
+                        } else { 
+                            let b = activeBoxes.get(boxData.box_id); if (b) { scene.remove(b.mesh); if(b.label.parentNode) b.label.parentNode.removeChild(b.label); activeBoxes.delete(boxData.box_id); } 
+                        }
+                    });
+
+                    for(let i=0; i<16; i++) {
+                        if (stations[i].isPoweredOff) continue; 
+                        
+                        const card = document.getElementById(`st-card-${i}`); const text = document.getElementById(`st-status-${i}`);
+                        if(stStatusCount[i].active) { card.className = 'st-card busy'; text.innerHTML = `🔴 组装中 | 缓存:${stStatusCount[i].buffer}`; } 
+                        else { card.className = 'st-card idle'; text.innerHTML = `🟢 待命中 | 缓存:${stStatusCount[i].buffer}`; }
+                    }
+
+                    let completedOrdersCount = 0;
+                    Object.values(currentOrderProgress).forEach(order => { if (order.boxesFinished === order.totalBoxes) completedOrdersCount++; });
+                    document.getElementById('kpi-orders-done').innerText = `${completedOrdersCount} / ${orderStats.total}`;
+                    document.getElementById('kpi-done').innerText = finishedCount; 
+                    document.getElementById('kpi-active').innerText = activeBoxes.size; 
+                    const pct = (finishedCount / simData.length * 100) || 0; document.getElementById('kpi-progress').style.width = pct + '%';
+                    if (pct >= 100) { document.getElementById('kpi-status').innerHTML = "✅ 所有产线任务执行完毕"; }
+                    lastTime = currentTime;
+                }
+                renderer.render(scene, camera);
+            }
+            animate();
+            window.addEventListener('resize', () => { camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
+        } catch (e) { document.body.innerHTML = "<h2 style='color:red; margin:50px;'>🚨 WebGL 渲染报错: " + e.message + "</h2>"; }
+    </script>
+</body>
+</html>

@@ -1,0 +1,8790 @@
+{
+  "scene_config": {
+    "num_stations": 16,
+    "buffer_capacity": 8,
+    "belt_speed": 1.0,
+    "station_distance": 5.0,
+    "main_line_offset": 6.0
+  },
+  "station_power_status": [
+    {
+      "station_id": 0,
+      "status": "POWER_ON"
+    },
+    {
+      "station_id": 1,
+      "status": "POWER_ON"
+    },
+    {
+      "station_id": 2,
+      "status": "POWER_ON"
+    },
+    {
+      "station_id": 3,
+      "status": "POWER_ON"
+    },
+    {
+      "station_id": 4,
+      "status": "POWER_ON"
+    },
+    {
+      "station_id": 5,
+      "status": "POWER_ON"
+    },
+    {
+      "station_id": 6,
+      "status": "POWER_ON"
+    },
+    {
+      "station_id": 7,
+      "status": "POWER_ON"
+    },
+    {
+      "station_id": 8,
+      "status": "POWER_ON"
+    },
+    {
+      "station_id": 9,
+      "status": "POWER_ON"
+    },
+    {
+      "station_id": 10,
+      "status": "POWER_OFF"
+    },
+    {
+      "station_id": 11,
+      "status": "POWER_OFF"
+    },
+    {
+      "station_id": 12,
+      "status": "POWER_OFF"
+    },
+    {
+      "station_id": 13,
+      "status": "POWER_OFF"
+    },
+    {
+      "station_id": 14,
+      "status": "POWER_OFF"
+    },
+    {
+      "station_id": 15,
+      "status": "POWER_OFF"
+    }
+  ],
+  "total_events": 1320,
+  "timeline": [
+    {
+      "time": 1.5,
+      "entity_id": "ORD-2026-001-P21",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 21
+      }
+    },
+    {
+      "time": 3.0,
+      "entity_id": "ORD-2026-001-P47",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 47
+      }
+    },
+    {
+      "time": 4.5,
+      "entity_id": "ORD-2026-002-P16",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 16
+      }
+    },
+    {
+      "time": 6.0,
+      "entity_id": "ORD-2026-002-P36",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 36
+      }
+    },
+    {
+      "time": 7.5,
+      "entity_id": "ORD-2026-002-P31",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 31
+      }
+    },
+    {
+      "time": 9.0,
+      "entity_id": "ORD-2026-002-P19",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 19
+      }
+    },
+    {
+      "time": 10.5,
+      "entity_id": "ORD-2026-003-P35",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 35
+      }
+    },
+    {
+      "time": 12.0,
+      "entity_id": "ORD-2026-003-P16",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 16
+      }
+    },
+    {
+      "time": 13.5,
+      "entity_id": "ORD-2026-003-P34",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 34
+      }
+    },
+    {
+      "time": 15.0,
+      "entity_id": "ORD-2026-004-P3",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 3
+      }
+    },
+    {
+      "time": 16.5,
+      "entity_id": "ORD-2026-004-P32",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 32
+      }
+    },
+    {
+      "time": 18.0,
+      "entity_id": "ORD-2026-004-P43",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 43
+      }
+    },
+    {
+      "time": 19.5,
+      "entity_id": "ORD-2026-004-P5",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 5
+      }
+    },
+    {
+      "time": 21.0,
+      "entity_id": "ORD-2026-005-P23",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 23
+      }
+    },
+    {
+      "time": 22.5,
+      "entity_id": "ORD-2026-005-P6",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 6
+      }
+    },
+    {
+      "time": 24.0,
+      "entity_id": "ORD-2026-006-P3",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 3
+      }
+    },
+    {
+      "time": 25.5,
+      "entity_id": "ORD-2026-007-P7",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 7
+      }
+    },
+    {
+      "time": 27.0,
+      "entity_id": "ORD-2026-008-P3",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 3
+      }
+    },
+    {
+      "time": 28.5,
+      "entity_id": "ORD-2026-008-P20",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 20
+      }
+    },
+    {
+      "time": 30.0,
+      "entity_id": "ORD-2026-009-P21",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 21
+      }
+    },
+    {
+      "time": 31.5,
+      "entity_id": "ORD-2026-009-P31",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 31
+      }
+    },
+    {
+      "time": 32.5,
+      "entity_id": "ORD-2026-001-P21",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 33.0,
+      "entity_id": "ORD-2026-010-P15",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 15
+      }
+    },
+    {
+      "time": 34.0,
+      "entity_id": "ORD-2026-001-P47",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 34.5,
+      "entity_id": "ORD-2026-011-P6",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 6
+      }
+    },
+    {
+      "time": 36.0,
+      "entity_id": "ORD-2026-012-P10",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 10
+      }
+    },
+    {
+      "time": 36.0,
+      "entity_id": "ORD-2026-004-P3",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 37.5,
+      "entity_id": "ORD-2026-012-P29",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 29
+      }
+    },
+    {
+      "time": 37.5,
+      "entity_id": "ORD-2026-004-P32",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 39.0,
+      "entity_id": "ORD-2026-012-P45",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 45
+      }
+    },
+    {
+      "time": 39.0,
+      "entity_id": "ORD-2026-004-P43",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 39.0,
+      "entity_id": "ORD-2026-010-P15",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 40.5,
+      "entity_id": "ORD-2026-012-P24",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 24
+      }
+    },
+    {
+      "time": 40.5,
+      "entity_id": "ORD-2026-004-P5",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 42.0,
+      "entity_id": "ORD-2026-013-P39",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 39
+      }
+    },
+    {
+      "time": 42.9,
+      "entity_id": "ORD-2026-001-P21",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 42.9,
+      "entity_id": "ORD-2026-001-P21",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 43.5,
+      "entity_id": "ORD-2026-013-P13",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 13
+      }
+    },
+    {
+      "time": 44.4,
+      "entity_id": "ORD-2026-001-P47",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 45.0,
+      "entity_id": "ORD-2026-014-P1",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 1
+      }
+    },
+    {
+      "time": 46.4,
+      "entity_id": "ORD-2026-004-P3",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 46.4,
+      "entity_id": "ORD-2026-004-P3",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 46.5,
+      "entity_id": "ORD-2026-014-P27",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 27
+      }
+    },
+    {
+      "time": 47.9,
+      "entity_id": "ORD-2026-004-P32",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 48.0,
+      "entity_id": "ORD-2026-014-P9",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 9
+      }
+    },
+    {
+      "time": 48.3,
+      "entity_id": "ORD-2026-010-P15",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 48.3,
+      "entity_id": "ORD-2026-010-P15",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 49.4,
+      "entity_id": "ORD-2026-004-P43",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 49.5,
+      "entity_id": "ORD-2026-015-P39",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 39
+      }
+    },
+    {
+      "time": 50.9,
+      "entity_id": "ORD-2026-004-P5",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 51.0,
+      "entity_id": "ORD-2026-015-P9",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 9
+      }
+    },
+    {
+      "time": 51.5,
+      "entity_id": "ORD-2026-003-P35",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 52.0,
+      "entity_id": "ORD-2026-012-P10",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 52.5,
+      "entity_id": "ORD-2026-016-P45",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 45
+      }
+    },
+    {
+      "time": 53.0,
+      "entity_id": "ORD-2026-003-P16",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 53.0,
+      "entity_id": "ORD-2026-013-P39",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 53.5,
+      "entity_id": "ORD-2026-012-P29",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 54.0,
+      "entity_id": "ORD-2026-016-P8",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 8
+      }
+    },
+    {
+      "time": 54.5,
+      "entity_id": "ORD-2026-003-P34",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 54.5,
+      "entity_id": "ORD-2026-013-P13",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 55.0,
+      "entity_id": "ORD-2026-012-P45",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 55.5,
+      "entity_id": "ORD-2026-016-P16",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 16
+      }
+    },
+    {
+      "time": 55.5,
+      "entity_id": "ORD-2026-002-P16",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 56.0,
+      "entity_id": "ORD-2026-009-P21",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 56.5,
+      "entity_id": "ORD-2026-012-P24",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 57.0,
+      "entity_id": "ORD-2026-002-P36",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 57.5,
+      "entity_id": "ORD-2026-009-P31",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 58.5,
+      "entity_id": "ORD-2026-002-P31",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 60.0,
+      "entity_id": "ORD-2026-002-P19",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 61.3,
+      "entity_id": "ORD-2026-012-P10",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 61.3,
+      "entity_id": "ORD-2026-012-P10",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 61.5,
+      "entity_id": "ORD-2026-007-P7",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 61.9,
+      "entity_id": "ORD-2026-003-P35",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 61.9,
+      "entity_id": "ORD-2026-003-P35",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 62.8,
+      "entity_id": "ORD-2026-012-P29",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 63.0,
+      "entity_id": "ORD-2026-008-P3",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 63.4,
+      "entity_id": "ORD-2026-003-P16",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 63.4,
+      "entity_id": "ORD-2026-013-P39",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 63.4,
+      "entity_id": "ORD-2026-013-P39",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 64.3,
+      "entity_id": "ORD-2026-012-P45",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 64.5,
+      "entity_id": "ORD-2026-008-P20",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 64.9,
+      "entity_id": "ORD-2026-003-P34",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 64.9,
+      "entity_id": "ORD-2026-013-P13",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 65.3,
+      "entity_id": "ORD-2026-009-P21",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 65.3,
+      "entity_id": "ORD-2026-009-P21",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 65.8,
+      "entity_id": "ORD-2026-012-P24",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 65.9,
+      "entity_id": "ORD-2026-002-P16",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 65.9,
+      "entity_id": "ORD-2026-002-P16",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 66.8,
+      "entity_id": "ORD-2026-009-P31",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 67.0,
+      "entity_id": "ORD-2026-005-P23",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 67.4,
+      "entity_id": "ORD-2026-002-P36",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 68.5,
+      "entity_id": "ORD-2026-005-P6",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 68.9,
+      "entity_id": "ORD-2026-002-P31",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 70.0,
+      "entity_id": "ORD-2026-006-P3",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 70.4,
+      "entity_id": "ORD-2026-002-P19",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 70.8,
+      "entity_id": "ORD-2026-007-P7",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 70.8,
+      "entity_id": "ORD-2026-007-P7",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 71.0,
+      "entity_id": "ORD-2026-014-P1",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 72.3,
+      "entity_id": "ORD-2026-008-P3",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 72.5,
+      "entity_id": "ORD-2026-014-P27",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 73.8,
+      "entity_id": "ORD-2026-008-P20",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 74.0,
+      "entity_id": "ORD-2026-014-P9",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 75.5,
+      "entity_id": "ORD-2026-011-P6",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 76.3,
+      "entity_id": "ORD-2026-005-P23",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 76.3,
+      "entity_id": "ORD-2026-005-P23",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 77.8,
+      "entity_id": "ORD-2026-005-P6",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 78.5,
+      "entity_id": "ORD-2026-016-P45",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 79.3,
+      "entity_id": "ORD-2026-006-P3",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 80.0,
+      "entity_id": "ORD-2026-016-P8",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 80.3,
+      "entity_id": "ORD-2026-014-P1",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 81.5,
+      "entity_id": "ORD-2026-016-P16",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 81.8,
+      "entity_id": "ORD-2026-014-P27",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 83.3,
+      "entity_id": "ORD-2026-014-P9",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 85.9,
+      "entity_id": "ORD-2026-011-P6",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 87.8,
+      "entity_id": "ORD-2026-016-P45",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 89.3,
+      "entity_id": "ORD-2026-016-P8",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 90.5,
+      "entity_id": "ORD-2026-015-P39",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 90.8,
+      "entity_id": "ORD-2026-016-P16",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 92.0,
+      "entity_id": "ORD-2026-015-P9",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 100.9,
+      "entity_id": "ORD-2026-015-P39",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 102.4,
+      "entity_id": "ORD-2026-015-P9",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 283.5,
+      "entity_id": "ORD-2026-016-P2",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 2
+      }
+    },
+    {
+      "time": 285.0,
+      "entity_id": "ORD-2026-017-P44",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 44
+      }
+    },
+    {
+      "time": 286.5,
+      "entity_id": "VIP-901-URGENT-P1",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 1
+      }
+    },
+    {
+      "time": 288.0,
+      "entity_id": "VIP-901-URGENT-P2",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 2
+      }
+    },
+    {
+      "time": 289.5,
+      "entity_id": "VIP-902-URGENT-P3",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 3
+      }
+    },
+    {
+      "time": 291.0,
+      "entity_id": "VIP-902-URGENT-P0",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 0
+      }
+    },
+    {
+      "time": 292.5,
+      "entity_id": "VIP-902-URGENT-P4",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 4
+      }
+    },
+    {
+      "time": 296.0,
+      "entity_id": "ORD-2026-017-P44",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 300.5,
+      "entity_id": "VIP-902-URGENT-P3",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 302.0,
+      "entity_id": "VIP-902-URGENT-P0",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 303.5,
+      "entity_id": "VIP-902-URGENT-P4",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 306.4,
+      "entity_id": "ORD-2026-017-P44",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 309.5,
+      "entity_id": "ORD-2026-016-P2",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 310.9,
+      "entity_id": "VIP-902-URGENT-P3",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 312.4,
+      "entity_id": "VIP-902-URGENT-P0",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 313.9,
+      "entity_id": "VIP-902-URGENT-P4",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 318.8,
+      "entity_id": "ORD-2026-009-P21",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 318.8,
+      "entity_id": "ORD-2026-016-P2",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 318.8,
+      "entity_id": "ORD-2026-009-P31",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 327.5,
+      "entity_id": "VIP-901-URGENT-P1",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 329.0,
+      "entity_id": "VIP-901-URGENT-P2",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 337.9,
+      "entity_id": "VIP-901-URGENT-P1",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 339.4,
+      "entity_id": "VIP-901-URGENT-P2",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 524.8,
+      "entity_id": "ORD-2026-007-P7",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 524.8,
+      "entity_id": "ORD-2026-008-P3",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 615.2,
+      "entity_id": "ORD-2026-004-P3",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 615.2,
+      "entity_id": "ORD-2026-004-P32",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 972.3,
+      "entity_id": "ORD-2026-005-P23",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 972.3,
+      "entity_id": "ORD-2026-005-P6",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 1056.9,
+      "entity_id": "ORD-2026-001-P21",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 1056.9,
+      "entity_id": "ORD-2026-001-P47",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 1319.5,
+      "entity_id": "VIP-903-URGENT-P5",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 5
+      }
+    },
+    {
+      "time": 1321.0,
+      "entity_id": "ORD-2026-018-P3",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 3
+      }
+    },
+    {
+      "time": 1322.5,
+      "entity_id": "ORD-2026-018-P10",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 10
+      }
+    },
+    {
+      "time": 1324.0,
+      "entity_id": "ORD-2026-019-P42",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 42
+      }
+    },
+    {
+      "time": 1325.5,
+      "entity_id": "ORD-2026-019-P39",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 39
+      }
+    },
+    {
+      "time": 1327.0,
+      "entity_id": "ORD-2026-020-P23",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 23
+      }
+    },
+    {
+      "time": 1328.5,
+      "entity_id": "ORD-2026-020-P16",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 16
+      }
+    },
+    {
+      "time": 1330.0,
+      "entity_id": "ORD-2026-020-P28",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 28
+      }
+    },
+    {
+      "time": 1332.0,
+      "entity_id": "ORD-2026-018-P3",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 1333.5,
+      "entity_id": "ORD-2026-018-P10",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 1342.4,
+      "entity_id": "ORD-2026-018-P3",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 1343.9,
+      "entity_id": "ORD-2026-018-P10",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 1358.0,
+      "entity_id": "ORD-2026-020-P23",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 1359.5,
+      "entity_id": "ORD-2026-020-P16",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 1360.0,
+      "entity_id": "ORD-2026-019-P42",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 1360.5,
+      "entity_id": "VIP-903-URGENT-P5",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 1361.0,
+      "entity_id": "ORD-2026-020-P28",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 1361.5,
+      "entity_id": "ORD-2026-019-P39",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 1368.4,
+      "entity_id": "ORD-2026-020-P23",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 1369.3,
+      "entity_id": "ORD-2026-019-P42",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 1369.9,
+      "entity_id": "ORD-2026-020-P16",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 1370.8,
+      "entity_id": "ORD-2026-019-P39",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 1370.9,
+      "entity_id": "ORD-2026-003-P35",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 1370.9,
+      "entity_id": "VIP-903-URGENT-P5",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 1370.9,
+      "entity_id": "ORD-2026-003-P16",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 1371.4,
+      "entity_id": "ORD-2026-020-P28",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 1563.2,
+      "entity_id": "ORD-2026-005-P6",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 1563.2,
+      "entity_id": "ORD-2026-006-P3",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 1601.2,
+      "entity_id": "ORD-2026-013-P39",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 1601.2,
+      "entity_id": "ORD-2026-013-P13",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 1952.6,
+      "entity_id": "ORD-2026-002-P16",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 1952.6,
+      "entity_id": "ORD-2026-002-P36",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 2292.4,
+      "entity_id": "ORD-2026-001-P47",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 2292.4,
+      "entity_id": "ORD-2026-020-P23",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 2420.8,
+      "entity_id": "ORD-2026-008-P3",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 2420.8,
+      "entity_id": "ORD-2026-008-P20",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 2488.4,
+      "entity_id": "ORD-2026-009-P31",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 2488.4,
+      "entity_id": "ORD-2026-014-P1",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 2804.0,
+      "entity_id": "ORD-2026-004-P32",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 2804.0,
+      "entity_id": "ORD-2026-004-P43",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 3260.4,
+      "entity_id": "ORD-2026-014-P1",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 3260.4,
+      "entity_id": "ORD-2026-014-P27",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 3700.4,
+      "entity_id": "ORD-2026-020-P23",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 3700.4,
+      "entity_id": "ORD-2026-020-P16",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 3802.0,
+      "entity_id": "ORD-2026-021-P13",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 13
+      }
+    },
+    {
+      "time": 3843.0,
+      "entity_id": "ORD-2026-021-P13",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 3853.4,
+      "entity_id": "ORD-2026-003-P16",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 3853.4,
+      "entity_id": "ORD-2026-021-P13",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 3853.4,
+      "entity_id": "ORD-2026-003-P34",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 3915.4,
+      "entity_id": "ORD-2026-012-P10",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 3915.4,
+      "entity_id": "ORD-2026-012-P29",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 3945.5,
+      "entity_id": "ORD-2026-004-P43",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 3945.5,
+      "entity_id": "ORD-2026-004-P5",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 3981.2,
+      "entity_id": "ORD-2026-013-P13",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 3981.2,
+      "entity_id": "ORD-2026-017-P44",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 3994.8,
+      "entity_id": "ORD-2026-014-P27",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 3994.8,
+      "entity_id": "ORD-2026-014-P9",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 4467.2,
+      "entity_id": "ORD-2026-017-P44",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 4467.2,
+      "entity_id": "VIP-902-URGENT-P3",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 4469.8,
+      "entity_id": "ORD-2026-021-P38",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 38
+      }
+    },
+    {
+      "time": 4510.8,
+      "entity_id": "ORD-2026-021-P38",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 4521.2,
+      "entity_id": "ORD-2026-021-P38",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 4521.2,
+      "entity_id": "ORD-2026-003-P34",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 4521.2,
+      "entity_id": "ORD-2026-011-P6",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 4638.4,
+      "entity_id": "ORD-2026-008-P20",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 4638.4,
+      "entity_id": "ORD-2026-019-P42",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 4767.2,
+      "entity_id": "VIP-902-URGENT-P3",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 4767.2,
+      "entity_id": "VIP-902-URGENT-P0",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 4792.1,
+      "entity_id": "ORD-2026-014-P9",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 4792.1,
+      "entity_id": "ORD-2026-016-P45",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 4807.5,
+      "entity_id": "ORD-2026-010-P15",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 4917.2,
+      "entity_id": "VIP-902-URGENT-P0",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 4917.2,
+      "entity_id": "VIP-902-URGENT-P4",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 4957.1,
+      "entity_id": "ORD-2026-016-P45",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 4957.1,
+      "entity_id": "ORD-2026-016-P8",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 4957.4,
+      "entity_id": "ORD-2026-002-P36",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 4957.4,
+      "entity_id": "ORD-2026-002-P31",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 5117.2,
+      "entity_id": "VIP-902-URGENT-P4",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 5117.2,
+      "entity_id": "ORD-2026-018-P3",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 5122.9,
+      "entity_id": "ORD-2026-021-P48",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 48
+      }
+    },
+    {
+      "time": 5124.4,
+      "entity_id": "ORD-2026-022-P37",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 37
+      }
+    },
+    {
+      "time": 5125.9,
+      "entity_id": "ORD-2026-023-P32",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 32
+      }
+    },
+    {
+      "time": 5127.4,
+      "entity_id": "ORD-2026-024-P30",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 30
+      }
+    },
+    {
+      "time": 5128.9,
+      "entity_id": "ORD-2026-024-P42",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 42
+      }
+    },
+    {
+      "time": 5130.4,
+      "entity_id": "ORD-2026-025-P7",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 7
+      }
+    },
+    {
+      "time": 5130.4,
+      "entity_id": "ORD-2026-022-P37",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 5131.9,
+      "entity_id": "ORD-2026-025-P43",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 43
+      }
+    },
+    {
+      "time": 5133.4,
+      "entity_id": "ORD-2026-025-P44",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 44
+      }
+    },
+    {
+      "time": 5134.9,
+      "entity_id": "ORD-2026-026-P19",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 19
+      }
+    },
+    {
+      "time": 5136.4,
+      "entity_id": "ORD-2026-026-P16",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 16
+      }
+    },
+    {
+      "time": 5137.9,
+      "entity_id": "ORD-2026-026-P49",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 49
+      }
+    },
+    {
+      "time": 5139.4,
+      "entity_id": "ORD-2026-026-P30",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 30
+      }
+    },
+    {
+      "time": 5139.7,
+      "entity_id": "ORD-2026-022-P37",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 5139.7,
+      "entity_id": "ORD-2026-022-P37",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 5140.9,
+      "entity_id": "ORD-2026-027-P39",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 39
+      }
+    },
+    {
+      "time": 5142.4,
+      "entity_id": "ORD-2026-027-P40",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 40
+      }
+    },
+    {
+      "time": 5143.9,
+      "entity_id": "ORD-2026-027-P20",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 20
+      }
+    },
+    {
+      "time": 5145.4,
+      "entity_id": "ORD-2026-027-P6",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 6
+      }
+    },
+    {
+      "time": 5146.9,
+      "entity_id": "ORD-2026-028-P13",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 13
+      }
+    },
+    {
+      "time": 5146.9,
+      "entity_id": "ORD-2026-023-P32",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 5148.4,
+      "entity_id": "ORD-2026-028-P2",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 2
+      }
+    },
+    {
+      "time": 5149.9,
+      "entity_id": "ORD-2026-028-P16",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 16
+      }
+    },
+    {
+      "time": 5150.9,
+      "entity_id": "ORD-2026-026-P19",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 5151.4,
+      "entity_id": "ORD-2026-028-P28",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 28
+      }
+    },
+    {
+      "time": 5151.4,
+      "entity_id": "ORD-2026-025-P7",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 5152.4,
+      "entity_id": "ORD-2026-026-P16",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 5152.9,
+      "entity_id": "ORD-2026-029-P13",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 13
+      }
+    },
+    {
+      "time": 5152.9,
+      "entity_id": "ORD-2026-025-P43",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 5153.9,
+      "entity_id": "ORD-2026-026-P49",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 5154.4,
+      "entity_id": "ORD-2026-029-P38",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 38
+      }
+    },
+    {
+      "time": 5154.4,
+      "entity_id": "ORD-2026-025-P44",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 5155.4,
+      "entity_id": "ORD-2026-026-P30",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 5155.9,
+      "entity_id": "ORD-2026-029-P45",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 45
+      }
+    },
+    {
+      "time": 5157.3,
+      "entity_id": "ORD-2026-023-P32",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 5157.4,
+      "entity_id": "ORD-2026-029-P49",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 49
+      }
+    },
+    {
+      "time": 5158.9,
+      "entity_id": "ORD-2026-030-P30",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 30
+      }
+    },
+    {
+      "time": 5160.2,
+      "entity_id": "ORD-2026-026-P19",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 5160.4,
+      "entity_id": "ORD-2026-030-P50",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 50
+      }
+    },
+    {
+      "time": 5161.7,
+      "entity_id": "ORD-2026-026-P16",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 5161.8,
+      "entity_id": "ORD-2026-025-P7",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 5161.9,
+      "entity_id": "ORD-2026-030-P19",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 19
+      }
+    },
+    {
+      "time": 5163.2,
+      "entity_id": "ORD-2026-026-P49",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 5163.3,
+      "entity_id": "ORD-2026-025-P43",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 5163.4,
+      "entity_id": "ORD-2026-031-P14",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 14
+      }
+    },
+    {
+      "time": 5163.4,
+      "entity_id": "ORD-2026-024-P30",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 5163.9,
+      "entity_id": "ORD-2026-021-P48",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 5163.9,
+      "entity_id": "ORD-2026-029-P13",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 5164.7,
+      "entity_id": "ORD-2026-026-P30",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 5164.8,
+      "entity_id": "ORD-2026-025-P44",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 5164.9,
+      "entity_id": "ORD-2026-031-P13",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 13
+      }
+    },
+    {
+      "time": 5164.9,
+      "entity_id": "ORD-2026-024-P42",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 5165.4,
+      "entity_id": "ORD-2026-029-P38",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 5166.4,
+      "entity_id": "ORD-2026-032-P46",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 46
+      }
+    },
+    {
+      "time": 5166.9,
+      "entity_id": "ORD-2026-029-P45",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 5167.9,
+      "entity_id": "ORD-2026-033-P23",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 23
+      }
+    },
+    {
+      "time": 5168.4,
+      "entity_id": "ORD-2026-029-P49",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 5169.4,
+      "entity_id": "ORD-2026-033-P36",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 36
+      }
+    },
+    {
+      "time": 5172.7,
+      "entity_id": "ORD-2026-024-P30",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 5174.2,
+      "entity_id": "ORD-2026-024-P42",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 5174.3,
+      "entity_id": "ORD-2026-011-P6",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 5174.3,
+      "entity_id": "ORD-2026-021-P48",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 5174.3,
+      "entity_id": "ORD-2026-029-P13",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 5174.3,
+      "entity_id": "ORD-2026-015-P39",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 5174.4,
+      "entity_id": "ORD-2026-031-P14",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 5175.8,
+      "entity_id": "ORD-2026-029-P38",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 5175.9,
+      "entity_id": "ORD-2026-031-P13",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 5177.3,
+      "entity_id": "ORD-2026-029-P45",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 5178.8,
+      "entity_id": "ORD-2026-029-P49",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 5184.8,
+      "entity_id": "ORD-2026-031-P14",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 5184.9,
+      "entity_id": "ORD-2026-030-P30",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 5186.3,
+      "entity_id": "ORD-2026-031-P13",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 5186.4,
+      "entity_id": "ORD-2026-030-P50",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 5186.9,
+      "entity_id": "ORD-2026-027-P39",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 5187.9,
+      "entity_id": "ORD-2026-030-P19",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 5188.4,
+      "entity_id": "ORD-2026-027-P40",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 5189.9,
+      "entity_id": "ORD-2026-027-P20",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 5191.4,
+      "entity_id": "ORD-2026-027-P6",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 5193.9,
+      "entity_id": "ORD-2026-033-P23",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 5194.2,
+      "entity_id": "ORD-2026-030-P30",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 5195.4,
+      "entity_id": "ORD-2026-033-P36",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 5195.7,
+      "entity_id": "ORD-2026-030-P50",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 5196.2,
+      "entity_id": "ORD-2026-027-P39",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 5197.2,
+      "entity_id": "ORD-2026-030-P19",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 5197.4,
+      "entity_id": "ORD-2026-032-P46",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 5197.7,
+      "entity_id": "ORD-2026-027-P40",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 5197.9,
+      "entity_id": "ORD-2026-028-P13",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 5199.2,
+      "entity_id": "ORD-2026-027-P20",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 5199.4,
+      "entity_id": "ORD-2026-028-P2",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 5200.7,
+      "entity_id": "ORD-2026-027-P6",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 5200.9,
+      "entity_id": "ORD-2026-028-P16",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 5202.4,
+      "entity_id": "ORD-2026-028-P28",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 5203.2,
+      "entity_id": "ORD-2026-033-P23",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 5204.7,
+      "entity_id": "ORD-2026-033-P36",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 5207.8,
+      "entity_id": "ORD-2026-032-P46",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 5208.3,
+      "entity_id": "ORD-2026-028-P13",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 5209.8,
+      "entity_id": "ORD-2026-028-P2",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 5211.3,
+      "entity_id": "ORD-2026-028-P16",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 5212.8,
+      "entity_id": "ORD-2026-028-P28",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 5355.2,
+      "entity_id": "ORD-2026-006-P3",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 5355.2,
+      "entity_id": "ORD-2026-027-P39",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 5839.8,
+      "entity_id": "ORD-2026-012-P29",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 5839.8,
+      "entity_id": "ORD-2026-012-P45",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 5885.8,
+      "entity_id": "ORD-2026-019-P42",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 5885.8,
+      "entity_id": "ORD-2026-019-P39",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 6106.3,
+      "entity_id": "ORD-2026-015-P39",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 6106.3,
+      "entity_id": "ORD-2026-015-P9",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 6261.7,
+      "entity_id": "ORD-2026-004-P5",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 6261.7,
+      "entity_id": "ORD-2026-023-P32",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 6362.3,
+      "entity_id": "ORD-2026-012-P45",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 6362.3,
+      "entity_id": "ORD-2026-012-P24",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 6520.2,
+      "entity_id": "ORD-2026-027-P39",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 6520.2,
+      "entity_id": "ORD-2026-027-P40",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 6673.3,
+      "entity_id": "ORD-2026-033-P22",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 22
+      }
+    },
+    {
+      "time": 6699.3,
+      "entity_id": "ORD-2026-033-P22",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 6708.6,
+      "entity_id": "ORD-2026-016-P8",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 6708.6,
+      "entity_id": "ORD-2026-033-P22",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 6708.6,
+      "entity_id": "ORD-2026-016-P16",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 6778.7,
+      "entity_id": "ORD-2026-020-P16",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 6778.7,
+      "entity_id": "ORD-2026-020-P28",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 7516.8,
+      "entity_id": "ORD-2026-019-P39",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 7516.8,
+      "entity_id": "ORD-2026-024-P30",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 7928.7,
+      "entity_id": "ORD-2026-015-P9",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 7928.7,
+      "entity_id": "VIP-901-URGENT-P1",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 8108.7,
+      "entity_id": "VIP-901-URGENT-P1",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 8108.7,
+      "entity_id": "VIP-901-URGENT-P2",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 8335.3,
+      "entity_id": "ORD-2026-023-P32",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 8335.3,
+      "entity_id": "ORD-2026-025-P7",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 8358.7,
+      "entity_id": "VIP-901-URGENT-P2",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 8358.7,
+      "entity_id": "VIP-903-URGENT-P5",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 8410.9,
+      "entity_id": "ORD-2026-022-P37",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 8530.0,
+      "entity_id": "ORD-2026-018-P3",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 8530.0,
+      "entity_id": "ORD-2026-018-P10",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 8618.6,
+      "entity_id": "ORD-2026-002-P31",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 8618.6,
+      "entity_id": "ORD-2026-002-P19",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 8758.7,
+      "entity_id": "VIP-903-URGENT-P5",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 8758.7,
+      "entity_id": "ORD-2026-021-P13",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 9084.5,
+      "entity_id": "ORD-2026-012-P24",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 9084.5,
+      "entity_id": "ORD-2026-026-P19",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 9341.9,
+      "entity_id": "ORD-2026-020-P28",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 9341.9,
+      "entity_id": "ORD-2026-032-P46",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 9449.1,
+      "entity_id": "ORD-2026-027-P40",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 9449.1,
+      "entity_id": "ORD-2026-027-P20",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 9582.6,
+      "entity_id": "ORD-2026-002-P19",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 9582.6,
+      "entity_id": "ORD-2026-028-P13",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 9751.6,
+      "entity_id": "ORD-2026-033-P48",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 48
+      }
+    },
+    {
+      "time": 9753.1,
+      "entity_id": "ORD-2026-034-P22",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 22
+      }
+    },
+    {
+      "time": 9754.6,
+      "entity_id": "ORD-2026-034-P31",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 31
+      }
+    },
+    {
+      "time": 9756.1,
+      "entity_id": "ORD-2026-034-P28",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 28
+      }
+    },
+    {
+      "time": 9757.6,
+      "entity_id": "ORD-2026-034-P17",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 17
+      }
+    },
+    {
+      "time": 9759.1,
+      "entity_id": "ORD-2026-035-P24",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 24
+      }
+    },
+    {
+      "time": 9759.1,
+      "entity_id": "ORD-2026-034-P22",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 9760.6,
+      "entity_id": "ORD-2026-035-P22",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 22
+      }
+    },
+    {
+      "time": 9760.6,
+      "entity_id": "ORD-2026-034-P31",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 9762.1,
+      "entity_id": "ORD-2026-036-P37",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 37
+      }
+    },
+    {
+      "time": 9762.1,
+      "entity_id": "ORD-2026-034-P28",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 9763.6,
+      "entity_id": "ORD-2026-036-P1",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 1
+      }
+    },
+    {
+      "time": 9763.6,
+      "entity_id": "ORD-2026-034-P17",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 9765.1,
+      "entity_id": "ORD-2026-036-P26",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 26
+      }
+    },
+    {
+      "time": 9766.6,
+      "entity_id": "ORD-2026-037-P9",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 9
+      }
+    },
+    {
+      "time": 9768.1,
+      "entity_id": "ORD-2026-037-P1",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 1
+      }
+    },
+    {
+      "time": 9768.4,
+      "entity_id": "ORD-2026-034-P22",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 9768.4,
+      "entity_id": "ORD-2026-034-P22",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 9769.6,
+      "entity_id": "ORD-2026-038-P22",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 22
+      }
+    },
+    {
+      "time": 9769.9,
+      "entity_id": "ORD-2026-034-P31",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 9771.1,
+      "entity_id": "ORD-2026-039-P46",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 46
+      }
+    },
+    {
+      "time": 9771.4,
+      "entity_id": "ORD-2026-034-P28",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 9772.6,
+      "entity_id": "ORD-2026-039-P16",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 16
+      }
+    },
+    {
+      "time": 9772.9,
+      "entity_id": "ORD-2026-034-P17",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 9774.1,
+      "entity_id": "ORD-2026-040-P37",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 37
+      }
+    },
+    {
+      "time": 9775.6,
+      "entity_id": "ORD-2026-040-P11",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 11
+      }
+    },
+    {
+      "time": 9777.1,
+      "entity_id": "ORD-2026-041-P14",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 14
+      }
+    },
+    {
+      "time": 9777.6,
+      "entity_id": "ORD-2026-033-P48",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 9778.6,
+      "entity_id": "ORD-2026-041-P34",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 34
+      }
+    },
+    {
+      "time": 9780.1,
+      "entity_id": "ORD-2026-041-P25",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 25
+      }
+    },
+    {
+      "time": 9781.6,
+      "entity_id": "ORD-2026-041-P49",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 49
+      }
+    },
+    {
+      "time": 9783.1,
+      "entity_id": "ORD-2026-042-P30",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 30
+      }
+    },
+    {
+      "time": 9786.9,
+      "entity_id": "ORD-2026-016-P16",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 9786.9,
+      "entity_id": "ORD-2026-033-P48",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 9786.9,
+      "entity_id": "ORD-2026-016-P2",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 9787.6,
+      "entity_id": "ORD-2026-037-P9",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 9789.1,
+      "entity_id": "ORD-2026-037-P1",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 9793.1,
+      "entity_id": "ORD-2026-036-P37",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 9793.1,
+      "entity_id": "ORD-2026-041-P14",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 9794.1,
+      "entity_id": "ORD-2026-042-P30",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 9794.6,
+      "entity_id": "ORD-2026-036-P1",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 9794.6,
+      "entity_id": "ORD-2026-041-P34",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 9796.1,
+      "entity_id": "ORD-2026-036-P26",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 9796.1,
+      "entity_id": "ORD-2026-041-P25",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 9797.6,
+      "entity_id": "ORD-2026-041-P49",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 9798.0,
+      "entity_id": "ORD-2026-037-P9",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 9799.5,
+      "entity_id": "ORD-2026-037-P1",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 9800.1,
+      "entity_id": "ORD-2026-035-P24",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 9801.6,
+      "entity_id": "ORD-2026-035-P22",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 9802.4,
+      "entity_id": "ORD-2026-041-P14",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 9803.5,
+      "entity_id": "ORD-2026-036-P37",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 9803.9,
+      "entity_id": "ORD-2026-041-P34",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 9804.5,
+      "entity_id": "ORD-2026-042-P30",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 9805.0,
+      "entity_id": "ORD-2026-036-P1",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 9805.4,
+      "entity_id": "ORD-2026-041-P25",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 9806.5,
+      "entity_id": "ORD-2026-036-P26",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 9806.9,
+      "entity_id": "ORD-2026-041-P49",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 9807.1,
+      "entity_id": "ORD-2026-039-P46",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 9808.6,
+      "entity_id": "ORD-2026-039-P16",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 9810.5,
+      "entity_id": "ORD-2026-035-P24",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 9812.0,
+      "entity_id": "ORD-2026-035-P22",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 9815.6,
+      "entity_id": "ORD-2026-038-P22",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 9816.4,
+      "entity_id": "ORD-2026-039-P46",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 9817.9,
+      "entity_id": "ORD-2026-039-P16",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 9820.1,
+      "entity_id": "ORD-2026-040-P37",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 9821.6,
+      "entity_id": "ORD-2026-040-P11",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 9824.9,
+      "entity_id": "ORD-2026-038-P22",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 9829.4,
+      "entity_id": "ORD-2026-040-P37",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 9830.9,
+      "entity_id": "ORD-2026-040-P11",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 9928.0,
+      "entity_id": "ORD-2026-026-P19",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 9928.0,
+      "entity_id": "ORD-2026-026-P16",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 9969.7,
+      "entity_id": "ORD-2026-025-P7",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 9969.7,
+      "entity_id": "ORD-2026-025-P43",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 10058.6,
+      "entity_id": "ORD-2026-028-P13",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 10058.6,
+      "entity_id": "ORD-2026-028-P2",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 10103.4,
+      "entity_id": "ORD-2026-042-P45",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 45
+      }
+    },
+    {
+      "time": 10114.4,
+      "entity_id": "ORD-2026-042-P45",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 10124.8,
+      "entity_id": "ORD-2026-018-P10",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 10124.8,
+      "entity_id": "ORD-2026-042-P45",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 10124.8,
+      "entity_id": "ORD-2026-029-P13",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 10769.8,
+      "entity_id": "ORD-2026-042-P32",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 32
+      }
+    },
+    {
+      "time": 10770.0,
+      "entity_id": "ORD-2026-034-P22",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 10770.0,
+      "entity_id": "ORD-2026-034-P31",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 10771.3,
+      "entity_id": "ORD-2026-043-P31",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 31
+      }
+    },
+    {
+      "time": 10772.8,
+      "entity_id": "ORD-2026-043-P43",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 43
+      }
+    },
+    {
+      "time": 10774.3,
+      "entity_id": "ORD-2026-043-P26",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 26
+      }
+    },
+    {
+      "time": 10780.8,
+      "entity_id": "ORD-2026-042-P32",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 10791.2,
+      "entity_id": "ORD-2026-029-P13",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 10791.2,
+      "entity_id": "ORD-2026-042-P32",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 10791.2,
+      "entity_id": "ORD-2026-029-P38",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 10822.3,
+      "entity_id": "ORD-2026-043-P31",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 10823.8,
+      "entity_id": "ORD-2026-043-P43",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 10825.3,
+      "entity_id": "ORD-2026-043-P26",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 10832.7,
+      "entity_id": "ORD-2026-043-P31",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 10834.2,
+      "entity_id": "ORD-2026-043-P43",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 10835.7,
+      "entity_id": "ORD-2026-043-P26",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 11455.1,
+      "entity_id": "ORD-2026-028-P2",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 11455.1,
+      "entity_id": "ORD-2026-028-P16",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 11481.9,
+      "entity_id": "ORD-2026-027-P20",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 11481.9,
+      "entity_id": "ORD-2026-027-P6",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 11868.3,
+      "entity_id": "ORD-2026-044-P6",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 6
+      }
+    },
+    {
+      "time": 11879.3,
+      "entity_id": "ORD-2026-044-P6",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 11889.7,
+      "entity_id": "ORD-2026-029-P38",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 11889.7,
+      "entity_id": "ORD-2026-044-P6",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 11889.7,
+      "entity_id": "ORD-2026-029-P45",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 12126.0,
+      "entity_id": "ORD-2026-034-P31",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 12126.0,
+      "entity_id": "ORD-2026-034-P28",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 12185.9,
+      "entity_id": "ORD-2026-021-P13",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 12185.9,
+      "entity_id": "ORD-2026-021-P38",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 12252.7,
+      "entity_id": "ORD-2026-025-P43",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 12252.7,
+      "entity_id": "ORD-2026-025-P44",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 12410.5,
+      "entity_id": "ORD-2026-026-P16",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 12410.5,
+      "entity_id": "ORD-2026-026-P49",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 12473.3,
+      "entity_id": "ORD-2026-044-P31",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 31
+      }
+    },
+    {
+      "time": 12484.3,
+      "entity_id": "ORD-2026-044-P31",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 12486.8,
+      "entity_id": "ORD-2026-016-P2",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 12486.8,
+      "entity_id": "ORD-2026-030-P30",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 12494.7,
+      "entity_id": "ORD-2026-029-P45",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 12494.7,
+      "entity_id": "ORD-2026-044-P31",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 12494.7,
+      "entity_id": "ORD-2026-029-P49",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 12539.3,
+      "entity_id": "ORD-2026-027-P6",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 12539.3,
+      "entity_id": "ORD-2026-038-P22",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 12737.9,
+      "entity_id": "ORD-2026-044-P33",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 33
+      }
+    },
+    {
+      "time": 12748.9,
+      "entity_id": "ORD-2026-044-P33",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 12759.3,
+      "entity_id": "ORD-2026-029-P49",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 12759.3,
+      "entity_id": "ORD-2026-044-P33",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 12759.3,
+      "entity_id": "ORD-2026-031-P14",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 12819.7,
+      "entity_id": "ORD-2026-025-P44",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 12819.7,
+      "entity_id": "ORD-2026-037-P9",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 12826.3,
+      "entity_id": "ORD-2026-024-P30",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 12826.3,
+      "entity_id": "ORD-2026-024-P42",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 13505.2,
+      "entity_id": "ORD-2026-032-P46",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 13505.2,
+      "entity_id": "ORD-2026-036-P37",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 13557.1,
+      "entity_id": "ORD-2026-026-P49",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 13557.1,
+      "entity_id": "ORD-2026-026-P30",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 13666.1,
+      "entity_id": "ORD-2026-038-P22",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 13666.1,
+      "entity_id": "ORD-2026-040-P37",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 14208.6,
+      "entity_id": "ORD-2026-034-P28",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 14208.6,
+      "entity_id": "ORD-2026-034-P17",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 14382.9,
+      "entity_id": "ORD-2026-021-P38",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 14382.9,
+      "entity_id": "ORD-2026-021-P48",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 14651.9,
+      "entity_id": "ORD-2026-044-P5",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 5
+      }
+    },
+    {
+      "time": 14653.4,
+      "entity_id": "ORD-2026-045-P50",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 50
+      }
+    },
+    {
+      "time": 14654.9,
+      "entity_id": "ORD-2026-046-P44",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 44
+      }
+    },
+    {
+      "time": 14656.4,
+      "entity_id": "ORD-2026-046-P29",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 29
+      }
+    },
+    {
+      "time": 14657.9,
+      "entity_id": "ORD-2026-046-P47",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 47
+      }
+    },
+    {
+      "time": 14659.4,
+      "entity_id": "ORD-2026-047-P35",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 35
+      }
+    },
+    {
+      "time": 14660.9,
+      "entity_id": "ORD-2026-047-P9",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 9
+      }
+    },
+    {
+      "time": 14662.4,
+      "entity_id": "ORD-2026-047-P47",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 47
+      }
+    },
+    {
+      "time": 14662.9,
+      "entity_id": "ORD-2026-044-P5",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 14663.9,
+      "entity_id": "ORD-2026-048-P21",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 21
+      }
+    },
+    {
+      "time": 14665.4,
+      "entity_id": "ORD-2026-048-P22",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 22
+      }
+    },
+    {
+      "time": 14666.9,
+      "entity_id": "ORD-2026-048-P45",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 45
+      }
+    },
+    {
+      "time": 14668.4,
+      "entity_id": "ORD-2026-049-P20",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 20
+      }
+    },
+    {
+      "time": 14669.9,
+      "entity_id": "ORD-2026-049-P12",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 12
+      }
+    },
+    {
+      "time": 14669.9,
+      "entity_id": "ORD-2026-048-P21",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 14671.4,
+      "entity_id": "ORD-2026-049-P17",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 17
+      }
+    },
+    {
+      "time": 14671.4,
+      "entity_id": "ORD-2026-048-P22",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 14672.9,
+      "entity_id": "ORD-2026-049-P22",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 22
+      }
+    },
+    {
+      "time": 14672.9,
+      "entity_id": "ORD-2026-048-P45",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 14673.3,
+      "entity_id": "ORD-2026-031-P14",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 14673.3,
+      "entity_id": "ORD-2026-044-P5",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 14673.3,
+      "entity_id": "ORD-2026-031-P13",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 14674.4,
+      "entity_id": "ORD-2026-050-P38",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 38
+      }
+    },
+    {
+      "time": 14674.4,
+      "entity_id": "ORD-2026-045-P50",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 14675.9,
+      "entity_id": "ORD-2026-050-P37",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 37
+      }
+    },
+    {
+      "time": 14675.9,
+      "entity_id": "ORD-2026-046-P44",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 14677.4,
+      "entity_id": "ORD-2026-051-P4",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 4
+      }
+    },
+    {
+      "time": 14677.4,
+      "entity_id": "ORD-2026-046-P29",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 14678.9,
+      "entity_id": "ORD-2026-051-P21",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 21
+      }
+    },
+    {
+      "time": 14678.9,
+      "entity_id": "ORD-2026-046-P47",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 14679.2,
+      "entity_id": "ORD-2026-048-P21",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 14680.4,
+      "entity_id": "ORD-2026-051-P35",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 35
+      }
+    },
+    {
+      "time": 14680.7,
+      "entity_id": "ORD-2026-048-P22",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 14681.9,
+      "entity_id": "ORD-2026-051-P40",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 40
+      }
+    },
+    {
+      "time": 14682.2,
+      "entity_id": "ORD-2026-048-P45",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 14683.4,
+      "entity_id": "ORD-2026-052-P45",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 45
+      }
+    },
+    {
+      "time": 14684.8,
+      "entity_id": "ORD-2026-045-P50",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 14684.9,
+      "entity_id": "ORD-2026-052-P8",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 8
+      }
+    },
+    {
+      "time": 14686.3,
+      "entity_id": "ORD-2026-046-P44",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 14687.8,
+      "entity_id": "ORD-2026-046-P29",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 14689.3,
+      "entity_id": "ORD-2026-046-P47",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 14695.4,
+      "entity_id": "ORD-2026-047-P35",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 14696.9,
+      "entity_id": "ORD-2026-047-P9",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 14698.4,
+      "entity_id": "ORD-2026-047-P47",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 14699.4,
+      "entity_id": "ORD-2026-049-P20",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 14700.9,
+      "entity_id": "ORD-2026-049-P12",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 14702.4,
+      "entity_id": "ORD-2026-049-P17",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 14703.9,
+      "entity_id": "ORD-2026-049-P22",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 14704.4,
+      "entity_id": "ORD-2026-052-P45",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 14704.7,
+      "entity_id": "ORD-2026-047-P35",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 14705.9,
+      "entity_id": "ORD-2026-052-P8",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 14706.2,
+      "entity_id": "ORD-2026-047-P9",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 14707.7,
+      "entity_id": "ORD-2026-047-P47",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 14709.8,
+      "entity_id": "ORD-2026-049-P20",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 14711.3,
+      "entity_id": "ORD-2026-049-P12",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 14712.8,
+      "entity_id": "ORD-2026-049-P17",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 14714.3,
+      "entity_id": "ORD-2026-049-P22",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 14714.8,
+      "entity_id": "ORD-2026-052-P45",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 14715.4,
+      "entity_id": "ORD-2026-050-P38",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 14716.3,
+      "entity_id": "ORD-2026-052-P8",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 14716.9,
+      "entity_id": "ORD-2026-050-P37",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 14723.4,
+      "entity_id": "ORD-2026-051-P4",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 14724.9,
+      "entity_id": "ORD-2026-051-P21",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 14725.8,
+      "entity_id": "ORD-2026-050-P38",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 14726.4,
+      "entity_id": "ORD-2026-051-P35",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 14727.3,
+      "entity_id": "ORD-2026-050-P37",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 14727.9,
+      "entity_id": "ORD-2026-051-P40",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 14732.7,
+      "entity_id": "ORD-2026-051-P4",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 14734.2,
+      "entity_id": "ORD-2026-051-P21",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 14735.7,
+      "entity_id": "ORD-2026-051-P35",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 14737.2,
+      "entity_id": "ORD-2026-051-P40",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 14930.6,
+      "entity_id": "ORD-2026-028-P16",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 14930.6,
+      "entity_id": "ORD-2026-028-P28",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 15245.3,
+      "entity_id": "ORD-2026-040-P37",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 15245.3,
+      "entity_id": "ORD-2026-040-P11",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 15294.1,
+      "entity_id": "ORD-2026-052-P3",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 3
+      }
+    },
+    {
+      "time": 15295.6,
+      "entity_id": "ORD-2026-053-P35",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 35
+      }
+    },
+    {
+      "time": 15297.1,
+      "entity_id": "ORD-2026-053-P15",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 15
+      }
+    },
+    {
+      "time": 15315.1,
+      "entity_id": "ORD-2026-052-P3",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 15325.5,
+      "entity_id": "ORD-2026-037-P9",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 15325.5,
+      "entity_id": "ORD-2026-037-P1",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 15325.5,
+      "entity_id": "ORD-2026-052-P3",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 15331.6,
+      "entity_id": "ORD-2026-053-P35",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 15333.1,
+      "entity_id": "ORD-2026-053-P15",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 15340.9,
+      "entity_id": "ORD-2026-053-P35",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 15342.4,
+      "entity_id": "ORD-2026-053-P15",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 15930.8,
+      "entity_id": "ORD-2026-030-P30",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 15930.8,
+      "entity_id": "ORD-2026-030-P50",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 16069.6,
+      "entity_id": "ORD-2026-053-P29",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 29
+      }
+    },
+    {
+      "time": 16101.3,
+      "entity_id": "ORD-2026-031-P13",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 16101.3,
+      "entity_id": "ORD-2026-042-P30",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 16105.6,
+      "entity_id": "ORD-2026-053-P29",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 16109.8,
+      "entity_id": "ORD-2026-034-P17",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 16109.8,
+      "entity_id": "ORD-2026-048-P21",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 16114.9,
+      "entity_id": "ORD-2026-024-P42",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 16114.9,
+      "entity_id": "ORD-2026-053-P29",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 16114.9,
+      "entity_id": "ORD-2026-039-P46",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 16257.2,
+      "entity_id": "ORD-2026-030-P50",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 16257.2,
+      "entity_id": "ORD-2026-030-P19",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 16452.5,
+      "entity_id": "ORD-2026-028-P28",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 16452.5,
+      "entity_id": "ORD-2026-043-P31",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 16637.9,
+      "entity_id": "ORD-2026-037-P1",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 16637.9,
+      "entity_id": "ORD-2026-045-P50",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 17100.7,
+      "entity_id": "ORD-2026-030-P19",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 17100.7,
+      "entity_id": "ORD-2026-033-P23",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 17377.3,
+      "entity_id": "ORD-2026-048-P21",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 17377.3,
+      "entity_id": "ORD-2026-048-P22",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 17392.8,
+      "entity_id": "ORD-2026-042-P30",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 17392.8,
+      "entity_id": "ORD-2026-042-P45",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 17453.9,
+      "entity_id": "ORD-2026-045-P50",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 17453.9,
+      "entity_id": "ORD-2026-046-P44",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 17575.1,
+      "entity_id": "ORD-2026-026-P30",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 17575.1,
+      "entity_id": "ORD-2026-041-P14",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 17667.8,
+      "entity_id": "ORD-2026-042-P45",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 17667.8,
+      "entity_id": "ORD-2026-042-P32",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 17747.8,
+      "entity_id": "ORD-2026-040-P11",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 17747.8,
+      "entity_id": "ORD-2026-051-P4",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 17791.6,
+      "entity_id": "ORD-2026-036-P37",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 17791.6,
+      "entity_id": "ORD-2026-036-P1",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 18139.0,
+      "entity_id": "ORD-2026-036-P1",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 18139.0,
+      "entity_id": "ORD-2026-036-P26",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 18762.2,
+      "entity_id": "ORD-2026-042-P32",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 18762.2,
+      "entity_id": "ORD-2026-044-P6",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 18879.7,
+      "entity_id": "ORD-2026-048-P22",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 18879.7,
+      "entity_id": "ORD-2026-048-P45",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 18889.9,
+      "entity_id": "ORD-2026-053-P6",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 6
+      }
+    },
+    {
+      "time": 18891.4,
+      "entity_id": "ORD-2026-054-P41",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 41
+      }
+    },
+    {
+      "time": 18892.7,
+      "entity_id": "ORD-2026-033-P23",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 18892.7,
+      "entity_id": "ORD-2026-033-P36",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 18892.9,
+      "entity_id": "ORD-2026-054-P26",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 26
+      }
+    },
+    {
+      "time": 18894.4,
+      "entity_id": "ORD-2026-054-P1",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 1
+      }
+    },
+    {
+      "time": 18895.1,
+      "entity_id": "ORD-2026-041-P14",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 18895.1,
+      "entity_id": "ORD-2026-041-P34",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 18895.9,
+      "entity_id": "ORD-2026-054-P35",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 35
+      }
+    },
+    {
+      "time": 18897.4,
+      "entity_id": "ORD-2026-055-P12",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 12
+      }
+    },
+    {
+      "time": 18898.9,
+      "entity_id": "ORD-2026-055-P31",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 31
+      }
+    },
+    {
+      "time": 18900.4,
+      "entity_id": "ORD-2026-056-P32",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 32
+      }
+    },
+    {
+      "time": 18901.9,
+      "entity_id": "ORD-2026-056-P21",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 21
+      }
+    },
+    {
+      "time": 18903.4,
+      "entity_id": "ORD-2026-056-P28",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 28
+      }
+    },
+    {
+      "time": 18904.9,
+      "entity_id": "ORD-2026-057-P18",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 18
+      }
+    },
+    {
+      "time": 18906.4,
+      "entity_id": "ORD-2026-057-P38",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 38
+      }
+    },
+    {
+      "time": 18907.9,
+      "entity_id": "ORD-2026-057-P14",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 14
+      }
+    },
+    {
+      "time": 18909.4,
+      "entity_id": "ORD-2026-057-P37",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 37
+      }
+    },
+    {
+      "time": 18910.9,
+      "entity_id": "ORD-2026-058-P5",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 5
+      }
+    },
+    {
+      "time": 18910.9,
+      "entity_id": "ORD-2026-057-P18",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 18912.4,
+      "entity_id": "ORD-2026-058-P20",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 20
+      }
+    },
+    {
+      "time": 18912.4,
+      "entity_id": "ORD-2026-057-P38",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 18913.9,
+      "entity_id": "ORD-2026-057-P14",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 18915.4,
+      "entity_id": "ORD-2026-057-P37",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 18917.4,
+      "entity_id": "ORD-2026-054-P41",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 18918.9,
+      "entity_id": "ORD-2026-054-P26",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 18920.2,
+      "entity_id": "ORD-2026-057-P18",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 18920.4,
+      "entity_id": "ORD-2026-054-P1",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 18921.0,
+      "entity_id": "ORD-2026-058-P6",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 6
+      }
+    },
+    {
+      "time": 18921.7,
+      "entity_id": "ORD-2026-057-P38",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 18921.9,
+      "entity_id": "ORD-2026-054-P35",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 18922.5,
+      "entity_id": "ORD-2026-059-P39",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 39
+      }
+    },
+    {
+      "time": 18923.2,
+      "entity_id": "ORD-2026-057-P14",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 18924.7,
+      "entity_id": "ORD-2026-057-P37",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 18925.9,
+      "entity_id": "ORD-2026-053-P6",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 18926.7,
+      "entity_id": "ORD-2026-054-P41",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 18928.2,
+      "entity_id": "ORD-2026-054-P26",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 18929.7,
+      "entity_id": "ORD-2026-054-P1",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 18931.2,
+      "entity_id": "ORD-2026-054-P35",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 18931.9,
+      "entity_id": "ORD-2026-058-P5",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 18933.4,
+      "entity_id": "ORD-2026-058-P20",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 18935.2,
+      "entity_id": "ORD-2026-039-P46",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 18935.2,
+      "entity_id": "ORD-2026-039-P16",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 18935.2,
+      "entity_id": "ORD-2026-053-P6",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 18942.0,
+      "entity_id": "ORD-2026-058-P6",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 18942.3,
+      "entity_id": "ORD-2026-058-P5",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 18943.8,
+      "entity_id": "ORD-2026-058-P20",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 18946.4,
+      "entity_id": "ORD-2026-056-P32",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 18947.9,
+      "entity_id": "ORD-2026-056-P21",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 18948.4,
+      "entity_id": "ORD-2026-055-P12",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 18948.5,
+      "entity_id": "ORD-2026-059-P39",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 18949.4,
+      "entity_id": "ORD-2026-056-P28",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 18949.9,
+      "entity_id": "ORD-2026-055-P31",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 18952.4,
+      "entity_id": "ORD-2026-046-P44",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 18952.4,
+      "entity_id": "ORD-2026-058-P6",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 18952.4,
+      "entity_id": "ORD-2026-046-P29",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 18955.7,
+      "entity_id": "ORD-2026-056-P32",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 18957.2,
+      "entity_id": "ORD-2026-056-P21",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 18957.8,
+      "entity_id": "ORD-2026-059-P39",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 18958.7,
+      "entity_id": "ORD-2026-056-P28",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 18958.8,
+      "entity_id": "ORD-2026-055-P12",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 18960.3,
+      "entity_id": "ORD-2026-055-P31",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 19431.7,
+      "entity_id": "ORD-2026-039-P16",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 19431.7,
+      "entity_id": "ORD-2026-047-P35",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 19467.3,
+      "entity_id": "ORD-2026-021-P48",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 19467.3,
+      "entity_id": "ORD-2026-035-P24",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 19655.0,
+      "entity_id": "ORD-2026-036-P26",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 19655.0,
+      "entity_id": "ORD-2026-049-P20",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 19801.4,
+      "entity_id": "ORD-2026-046-P29",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 19801.4,
+      "entity_id": "ORD-2026-046-P47",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 19881.8,
+      "entity_id": "ORD-2026-044-P6",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 19881.8,
+      "entity_id": "ORD-2026-044-P31",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 19890.3,
+      "entity_id": "ORD-2026-059-P12",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 12
+      }
+    },
+    {
+      "time": 19897.2,
+      "entity_id": "ORD-2026-048-P45",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 19897.2,
+      "entity_id": "ORD-2026-057-P18",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 19916.3,
+      "entity_id": "ORD-2026-059-P12",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 19925.6,
+      "entity_id": "ORD-2026-033-P36",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 19925.6,
+      "entity_id": "ORD-2026-033-P22",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 19925.6,
+      "entity_id": "ORD-2026-059-P12",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 19996.2,
+      "entity_id": "ORD-2026-051-P4",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 19996.2,
+      "entity_id": "ORD-2026-051-P21",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 20113.7,
+      "entity_id": "ORD-2026-043-P31",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 20113.7,
+      "entity_id": "ORD-2026-043-P43",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 20209.4,
+      "entity_id": "ORD-2026-049-P20",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 20209.4,
+      "entity_id": "ORD-2026-049-P12",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 20249.7,
+      "entity_id": "ORD-2026-051-P21",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 20249.7,
+      "entity_id": "ORD-2026-051-P35",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 20507.4,
+      "entity_id": "ORD-2026-046-P47",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 20507.4,
+      "entity_id": "ORD-2026-052-P45",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 20703.3,
+      "entity_id": "ORD-2026-047-P35",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 20703.3,
+      "entity_id": "ORD-2026-047-P9",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 20707.7,
+      "entity_id": "ORD-2026-041-P34",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 20707.7,
+      "entity_id": "ORD-2026-041-P25",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 20727.4,
+      "entity_id": "ORD-2026-052-P45",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 20727.4,
+      "entity_id": "ORD-2026-052-P8",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 21184.7,
+      "entity_id": "ORD-2026-051-P35",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 21184.7,
+      "entity_id": "ORD-2026-051-P40",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 21237.8,
+      "entity_id": "ORD-2026-044-P31",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 21237.8,
+      "entity_id": "ORD-2026-044-P33",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 21255.2,
+      "entity_id": "ORD-2026-043-P43",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 21255.2,
+      "entity_id": "ORD-2026-043-P26",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 21518.4,
+      "entity_id": "ORD-2026-052-P8",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 21518.4,
+      "entity_id": "ORD-2026-052-P3",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 22070.1,
+      "entity_id": "ORD-2026-047-P9",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 22070.1,
+      "entity_id": "ORD-2026-047-P47",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 22189.5,
+      "entity_id": "ORD-2026-035-P24",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 22189.5,
+      "entity_id": "ORD-2026-035-P22",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 22543.8,
+      "entity_id": "ORD-2026-043-P26",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 22543.8,
+      "entity_id": "ORD-2026-055-P12",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 22769.9,
+      "entity_id": "ORD-2026-059-P27",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 27
+      }
+    },
+    {
+      "time": 22795.9,
+      "entity_id": "ORD-2026-059-P27",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 22805.2,
+      "entity_id": "ORD-2026-033-P22",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 22805.2,
+      "entity_id": "ORD-2026-033-P48",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 22805.2,
+      "entity_id": "ORD-2026-059-P27",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 22987.1,
+      "entity_id": "ORD-2026-051-P40",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 22987.1,
+      "entity_id": "ORD-2026-056-P32",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 23093.8,
+      "entity_id": "ORD-2026-047-P47",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 23093.8,
+      "entity_id": "ORD-2026-053-P35",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 23467.8,
+      "entity_id": "ORD-2026-053-P35",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 23467.8,
+      "entity_id": "ORD-2026-053-P15",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 23983.2,
+      "entity_id": "ORD-2026-052-P3",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 23983.2,
+      "entity_id": "ORD-2026-058-P5",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 24119.0,
+      "entity_id": "ORD-2026-044-P33",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 24119.0,
+      "entity_id": "ORD-2026-044-P5",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 24254.3,
+      "entity_id": "ORD-2026-056-P32",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 24254.3,
+      "entity_id": "ORD-2026-056-P21",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 24479.0,
+      "entity_id": "ORD-2026-049-P12",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 24479.0,
+      "entity_id": "ORD-2026-049-P17",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 24509.3,
+      "entity_id": "ORD-2026-059-P37",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 37
+      }
+    },
+    {
+      "time": 24510.8,
+      "entity_id": "ORD-2026-060-P41",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 41
+      }
+    },
+    {
+      "time": 24512.3,
+      "entity_id": "ORD-2026-060-P24",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 24
+      }
+    },
+    {
+      "time": 24513.8,
+      "entity_id": "ORD-2026-060-P17",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 17
+      }
+    },
+    {
+      "time": 24515.3,
+      "entity_id": "ORD-2026-061-P40",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 40
+      }
+    },
+    {
+      "time": 24516.8,
+      "entity_id": "ORD-2026-061-P30",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 30
+      }
+    },
+    {
+      "time": 24518.3,
+      "entity_id": "ORD-2026-061-P38",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 38
+      }
+    },
+    {
+      "time": 24519.8,
+      "entity_id": "ORD-2026-062-P47",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 47
+      }
+    },
+    {
+      "time": 24521.3,
+      "entity_id": "ORD-2026-063-P47",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 47
+      }
+    },
+    {
+      "time": 24521.8,
+      "entity_id": "ORD-2026-060-P41",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 24522.8,
+      "entity_id": "ORD-2026-063-P35",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 35
+      }
+    },
+    {
+      "time": 24523.3,
+      "entity_id": "ORD-2026-060-P24",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 24524.3,
+      "entity_id": "ORD-2026-064-P32",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 32
+      }
+    },
+    {
+      "time": 24524.8,
+      "entity_id": "ORD-2026-060-P17",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 24525.8,
+      "entity_id": "ORD-2026-065-P22",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 22
+      }
+    },
+    {
+      "time": 24527.3,
+      "entity_id": "ORD-2026-066-P11",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 11
+      }
+    },
+    {
+      "time": 24528.8,
+      "entity_id": "ORD-2026-066-P32",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 32
+      }
+    },
+    {
+      "time": 24530.3,
+      "entity_id": "ORD-2026-066-P15",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 15
+      }
+    },
+    {
+      "time": 24531.8,
+      "entity_id": "ORD-2026-067-P10",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 10
+      }
+    },
+    {
+      "time": 24532.2,
+      "entity_id": "ORD-2026-060-P41",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 24533.3,
+      "entity_id": "ORD-2026-068-P21",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 21
+      }
+    },
+    {
+      "time": 24533.7,
+      "entity_id": "ORD-2026-060-P24",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 24534.8,
+      "entity_id": "ORD-2026-068-P29",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 29
+      }
+    },
+    {
+      "time": 24535.2,
+      "entity_id": "ORD-2026-060-P17",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 24535.3,
+      "entity_id": "ORD-2026-059-P37",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 24536.3,
+      "entity_id": "ORD-2026-068-P19",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 19
+      }
+    },
+    {
+      "time": 24537.3,
+      "entity_id": "ORD-2026-063-P47",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 24537.8,
+      "entity_id": "ORD-2026-069-P46",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 46
+      }
+    },
+    {
+      "time": 24538.3,
+      "entity_id": "ORD-2026-066-P11",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 24538.8,
+      "entity_id": "ORD-2026-063-P35",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 24539.3,
+      "entity_id": "ORD-2026-070-P44",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 44
+      }
+    },
+    {
+      "time": 24539.8,
+      "entity_id": "ORD-2026-066-P32",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 24540.3,
+      "entity_id": "ORD-2026-064-P32",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 24540.8,
+      "entity_id": "ORD-2026-070-P49",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 49
+      }
+    },
+    {
+      "time": 24541.3,
+      "entity_id": "ORD-2026-066-P15",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 24542.3,
+      "entity_id": "ORD-2026-070-P40",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 40
+      }
+    },
+    {
+      "time": 24544.6,
+      "entity_id": "ORD-2026-033-P48",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 24544.6,
+      "entity_id": "ORD-2026-054-P41",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 24544.6,
+      "entity_id": "ORD-2026-059-P37",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 24546.6,
+      "entity_id": "ORD-2026-063-P47",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 24548.1,
+      "entity_id": "ORD-2026-063-P35",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 24548.7,
+      "entity_id": "ORD-2026-066-P11",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 24549.6,
+      "entity_id": "ORD-2026-064-P32",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 24550.2,
+      "entity_id": "ORD-2026-066-P32",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 24551.7,
+      "entity_id": "ORD-2026-066-P15",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 24552.8,
+      "entity_id": "ORD-2026-067-P10",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 24555.3,
+      "entity_id": "ORD-2026-070-P44",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 24556.3,
+      "entity_id": "ORD-2026-061-P40",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 24556.8,
+      "entity_id": "ORD-2026-070-P49",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 24557.8,
+      "entity_id": "ORD-2026-061-P30",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 24558.3,
+      "entity_id": "ORD-2026-070-P40",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 24559.3,
+      "entity_id": "ORD-2026-061-P38",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 24559.8,
+      "entity_id": "ORD-2026-057-P18",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 24559.8,
+      "entity_id": "ORD-2026-057-P38",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 24563.2,
+      "entity_id": "ORD-2026-067-P10",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 24564.6,
+      "entity_id": "ORD-2026-070-P44",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 24565.8,
+      "entity_id": "ORD-2026-062-P47",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 24566.1,
+      "entity_id": "ORD-2026-070-P49",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 24566.7,
+      "entity_id": "ORD-2026-061-P40",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 24567.6,
+      "entity_id": "ORD-2026-070-P40",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 24568.2,
+      "entity_id": "ORD-2026-061-P30",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 24568.8,
+      "entity_id": "ORD-2026-069-P46",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 24569.3,
+      "entity_id": "ORD-2026-068-P21",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 24569.7,
+      "entity_id": "ORD-2026-061-P38",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 24570.8,
+      "entity_id": "ORD-2026-068-P29",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 24571.8,
+      "entity_id": "ORD-2026-065-P22",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 24572.3,
+      "entity_id": "ORD-2026-068-P19",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 24575.1,
+      "entity_id": "ORD-2026-062-P47",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 24578.6,
+      "entity_id": "ORD-2026-068-P21",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 24579.2,
+      "entity_id": "ORD-2026-069-P46",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 24580.1,
+      "entity_id": "ORD-2026-068-P29",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 24581.1,
+      "entity_id": "ORD-2026-065-P22",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 24581.6,
+      "entity_id": "ORD-2026-068-P19",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 24734.4,
+      "entity_id": "ORD-2026-058-P5",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 24734.4,
+      "entity_id": "ORD-2026-058-P20",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 24943.9,
+      "entity_id": "ORD-2026-035-P22",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 24943.9,
+      "entity_id": "ORD-2026-050-P38",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 24982.3,
+      "entity_id": "ORD-2026-057-P38",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 24982.3,
+      "entity_id": "ORD-2026-057-P14",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 25153.0,
+      "entity_id": "ORD-2026-055-P12",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 25153.0,
+      "entity_id": "ORD-2026-055-P31",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 25225.8,
+      "entity_id": "ORD-2026-054-P41",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 25225.8,
+      "entity_id": "ORD-2026-054-P26",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 25415.3,
+      "entity_id": "ORD-2026-054-P26",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 25415.3,
+      "entity_id": "ORD-2026-054-P1",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 25701.2,
+      "entity_id": "ORD-2026-049-P17",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 25701.2,
+      "entity_id": "ORD-2026-049-P22",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 25775.3,
+      "entity_id": "ORD-2026-056-P21",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 25775.3,
+      "entity_id": "ORD-2026-056-P28",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 26038.3,
+      "entity_id": "ORD-2026-057-P14",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 26038.3,
+      "entity_id": "ORD-2026-057-P37",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 26225.9,
+      "entity_id": "ORD-2026-054-P1",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 26225.9,
+      "entity_id": "ORD-2026-054-P35",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 26254.4,
+      "entity_id": "ORD-2026-070-P12",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 12
+      }
+    },
+    {
+      "time": 26255.9,
+      "entity_id": "ORD-2026-071-P38",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 38
+      }
+    },
+    {
+      "time": 26257.4,
+      "entity_id": "ORD-2026-071-P13",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 13
+      }
+    },
+    {
+      "time": 26258.9,
+      "entity_id": "ORD-2026-071-P36",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 36
+      }
+    },
+    {
+      "time": 26260.4,
+      "entity_id": "ORD-2026-071-P9",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 9
+      }
+    },
+    {
+      "time": 26261.9,
+      "entity_id": "ORD-2026-072-P1",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 1
+      }
+    },
+    {
+      "time": 26263.4,
+      "entity_id": "ORD-2026-073-P38",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 38
+      }
+    },
+    {
+      "time": 26264.9,
+      "entity_id": "ORD-2026-073-P49",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 49
+      }
+    },
+    {
+      "time": 26266.4,
+      "entity_id": "ORD-2026-074-P24",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 24
+      }
+    },
+    {
+      "time": 26267.9,
+      "entity_id": "ORD-2026-074-P16",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 16
+      }
+    },
+    {
+      "time": 26270.4,
+      "entity_id": "ORD-2026-070-P12",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 26279.7,
+      "entity_id": "ORD-2026-041-P25",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 26279.7,
+      "entity_id": "ORD-2026-070-P12",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 26279.7,
+      "entity_id": "ORD-2026-041-P49",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 26287.9,
+      "entity_id": "ORD-2026-072-P1",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 26289.4,
+      "entity_id": "ORD-2026-073-P38",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 26290.9,
+      "entity_id": "ORD-2026-073-P49",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 26297.2,
+      "entity_id": "ORD-2026-072-P1",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 26298.7,
+      "entity_id": "ORD-2026-073-P38",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 26300.2,
+      "entity_id": "ORD-2026-073-P49",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 26306.9,
+      "entity_id": "ORD-2026-071-P38",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 26308.4,
+      "entity_id": "ORD-2026-071-P13",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 26309.9,
+      "entity_id": "ORD-2026-071-P36",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 26311.4,
+      "entity_id": "ORD-2026-071-P9",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 26312.4,
+      "entity_id": "ORD-2026-074-P24",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 26313.9,
+      "entity_id": "ORD-2026-074-P16",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 26317.3,
+      "entity_id": "ORD-2026-071-P38",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 26318.8,
+      "entity_id": "ORD-2026-071-P13",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 26320.3,
+      "entity_id": "ORD-2026-071-P36",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 26321.7,
+      "entity_id": "ORD-2026-074-P24",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 26321.8,
+      "entity_id": "ORD-2026-071-P9",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 26323.2,
+      "entity_id": "ORD-2026-074-P16",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 26336.0,
+      "entity_id": "ORD-2026-056-P28",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 26336.0,
+      "entity_id": "ORD-2026-062-P47",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 26497.8,
+      "entity_id": "ORD-2026-044-P5",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 26497.8,
+      "entity_id": "ORD-2026-060-P41",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 27312.6,
+      "entity_id": "ORD-2026-075-P12",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 12
+      }
+    },
+    {
+      "time": 27338.6,
+      "entity_id": "ORD-2026-075-P12",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 27347.9,
+      "entity_id": "ORD-2026-054-P35",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 27347.9,
+      "entity_id": "ORD-2026-075-P12",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 27347.9,
+      "entity_id": "ORD-2026-059-P39",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 27642.1,
+      "entity_id": "ORD-2026-062-P47",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 27642.1,
+      "entity_id": "ORD-2026-065-P22",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 27823.2,
+      "entity_id": "ORD-2026-041-P49",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 27823.2,
+      "entity_id": "ORD-2026-063-P47",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 27829.6,
+      "entity_id": "ORD-2026-049-P22",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 27829.6,
+      "entity_id": "ORD-2026-069-P46",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 28122.2,
+      "entity_id": "ORD-2026-060-P41",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 28122.2,
+      "entity_id": "ORD-2026-060-P24",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 28245.6,
+      "entity_id": "ORD-2026-058-P20",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 28245.6,
+      "entity_id": "ORD-2026-058-P6",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 28317.4,
+      "entity_id": "ORD-2026-063-P47",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 28317.4,
+      "entity_id": "ORD-2026-063-P35",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 28323.9,
+      "entity_id": "ORD-2026-050-P38",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 28323.9,
+      "entity_id": "ORD-2026-050-P37",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 28617.4,
+      "entity_id": "ORD-2026-075-P48",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 48
+      }
+    },
+    {
+      "time": 28618.8,
+      "entity_id": "ORD-2026-058-P6",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 28618.8,
+      "entity_id": "ORD-2026-067-P10",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 28618.9,
+      "entity_id": "ORD-2026-076-P16",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 16
+      }
+    },
+    {
+      "time": 28620.4,
+      "entity_id": "ORD-2026-076-P32",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 32
+      }
+    },
+    {
+      "time": 28621.9,
+      "entity_id": "ORD-2026-076-P21",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 21
+      }
+    },
+    {
+      "time": 28623.4,
+      "entity_id": "ORD-2026-077-P31",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 31
+      }
+    },
+    {
+      "time": 28624.9,
+      "entity_id": "ORD-2026-078-P25",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 25
+      }
+    },
+    {
+      "time": 28626.4,
+      "entity_id": "ORD-2026-078-P9",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 9
+      }
+    },
+    {
+      "time": 28639.9,
+      "entity_id": "ORD-2026-076-P16",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 28640.9,
+      "entity_id": "ORD-2026-078-P25",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 28641.4,
+      "entity_id": "ORD-2026-076-P32",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 28642.4,
+      "entity_id": "ORD-2026-078-P9",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 28642.9,
+      "entity_id": "ORD-2026-076-P21",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 28643.4,
+      "entity_id": "ORD-2026-075-P48",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 28650.2,
+      "entity_id": "ORD-2026-078-P25",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 28650.3,
+      "entity_id": "ORD-2026-076-P16",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 28651.7,
+      "entity_id": "ORD-2026-078-P9",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 28651.8,
+      "entity_id": "ORD-2026-076-P32",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 28652.7,
+      "entity_id": "ORD-2026-059-P39",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 28652.7,
+      "entity_id": "ORD-2026-059-P12",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 28652.7,
+      "entity_id": "ORD-2026-075-P48",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 28653.3,
+      "entity_id": "ORD-2026-076-P21",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 28664.4,
+      "entity_id": "ORD-2026-077-P31",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 28674.8,
+      "entity_id": "ORD-2026-077-P31",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 28703.5,
+      "entity_id": "ORD-2026-078-P47",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 47
+      }
+    },
+    {
+      "time": 28719.5,
+      "entity_id": "ORD-2026-078-P47",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 28728.8,
+      "entity_id": "ORD-2026-078-P47",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 28728.8,
+      "entity_id": "ORD-2026-063-P35",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 28728.8,
+      "entity_id": "ORD-2026-064-P32",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 28755.8,
+      "entity_id": "ORD-2026-053-P15",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 28755.8,
+      "entity_id": "ORD-2026-053-P29",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 29221.0,
+      "entity_id": "ORD-2026-055-P31",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 29221.0,
+      "entity_id": "ORD-2026-071-P38",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 29265.2,
+      "entity_id": "ORD-2026-053-P29",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 29265.2,
+      "entity_id": "ORD-2026-053-P6",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 29378.6,
+      "entity_id": "ORD-2026-060-P24",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 29378.6,
+      "entity_id": "ORD-2026-060-P17",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 29422.3,
+      "entity_id": "ORD-2026-057-P37",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 29718.1,
+      "entity_id": "ORD-2026-060-P17",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 29718.1,
+      "entity_id": "ORD-2026-066-P11",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 30167.1,
+      "entity_id": "ORD-2026-053-P6",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 30167.1,
+      "entity_id": "ORD-2026-068-P21",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 30271.3,
+      "entity_id": "ORD-2026-065-P22",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 30271.3,
+      "entity_id": "ORD-2026-074-P24",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 30572.7,
+      "entity_id": "ORD-2026-068-P21",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 30572.7,
+      "entity_id": "ORD-2026-068-P29",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 30719.5,
+      "entity_id": "ORD-2026-078-P19",
+      "event_type": "spawn",
+      "station_id": 2,
+      "details": {
+        "type": 19
+      }
+    },
+    {
+      "time": 30721.0,
+      "entity_id": "ORD-2026-079-P18",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 18
+      }
+    },
+    {
+      "time": 30722.5,
+      "entity_id": "ORD-2026-079-P27",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 27
+      }
+    },
+    {
+      "time": 30724.0,
+      "entity_id": "ORD-2026-079-P28",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 28
+      }
+    },
+    {
+      "time": 30725.5,
+      "entity_id": "ORD-2026-079-P23",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 23
+      }
+    },
+    {
+      "time": 30727.0,
+      "entity_id": "ORD-2026-080-P39",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 39
+      }
+    },
+    {
+      "time": 30728.5,
+      "entity_id": "ORD-2026-080-P12",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 12
+      }
+    },
+    {
+      "time": 30730.0,
+      "entity_id": "ORD-2026-080-P21",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 21
+      }
+    },
+    {
+      "time": 30731.5,
+      "entity_id": "ORD-2026-080-P43",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 43
+      }
+    },
+    {
+      "time": 30733.0,
+      "entity_id": "ORD-2026-081-P50",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 50
+      }
+    },
+    {
+      "time": 30734.5,
+      "entity_id": "ORD-2026-081-P47",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 47
+      }
+    },
+    {
+      "time": 30735.5,
+      "entity_id": "ORD-2026-078-P19",
+      "event_type": "reach_branch",
+      "station_id": 2
+    },
+    {
+      "time": 30736.0,
+      "entity_id": "ORD-2026-081-P4",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 4
+      }
+    },
+    {
+      "time": 30737.5,
+      "entity_id": "ORD-2026-082-P42",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 42
+      }
+    },
+    {
+      "time": 30739.0,
+      "entity_id": "ORD-2026-082-P39",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 39
+      }
+    },
+    {
+      "time": 30740.5,
+      "entity_id": "ORD-2026-082-P41",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 41
+      }
+    },
+    {
+      "time": 30742.0,
+      "entity_id": "ORD-2026-082-P35",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 35
+      }
+    },
+    {
+      "time": 30743.5,
+      "entity_id": "ORD-2026-083-P20",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 20
+      }
+    },
+    {
+      "time": 30743.5,
+      "entity_id": "ORD-2026-082-P42",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 30744.8,
+      "entity_id": "ORD-2026-078-P19",
+      "event_type": "enter_buffer",
+      "station_id": 2
+    },
+    {
+      "time": 30744.8,
+      "entity_id": "ORD-2026-064-P32",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 30744.8,
+      "entity_id": "ORD-2026-070-P44",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 30745.0,
+      "entity_id": "ORD-2026-083-P25",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 25
+      }
+    },
+    {
+      "time": 30745.0,
+      "entity_id": "ORD-2026-082-P39",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 30746.5,
+      "entity_id": "ORD-2026-083-P21",
+      "event_type": "spawn",
+      "station_id": 8,
+      "details": {
+        "type": 21
+      }
+    },
+    {
+      "time": 30746.5,
+      "entity_id": "ORD-2026-082-P41",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 30748.0,
+      "entity_id": "ORD-2026-082-P35",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 30752.8,
+      "entity_id": "ORD-2026-082-P42",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 30752.8,
+      "entity_id": "ORD-2026-082-P42",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 30754.3,
+      "entity_id": "ORD-2026-082-P39",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 30755.8,
+      "entity_id": "ORD-2026-082-P41",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 30757.0,
+      "entity_id": "ORD-2026-079-P18",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 30757.3,
+      "entity_id": "ORD-2026-082-P35",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 30758.0,
+      "entity_id": "ORD-2026-080-P39",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 30758.5,
+      "entity_id": "ORD-2026-079-P27",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 30759.5,
+      "entity_id": "ORD-2026-080-P12",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 30760.0,
+      "entity_id": "ORD-2026-079-P28",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 30761.0,
+      "entity_id": "ORD-2026-080-P21",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 30761.5,
+      "entity_id": "ORD-2026-079-P23",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 30762.5,
+      "entity_id": "ORD-2026-080-P43",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 30766.3,
+      "entity_id": "ORD-2026-079-P18",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 30767.8,
+      "entity_id": "ORD-2026-079-P27",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 30768.4,
+      "entity_id": "ORD-2026-080-P39",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 30769.3,
+      "entity_id": "ORD-2026-079-P28",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 30769.9,
+      "entity_id": "ORD-2026-080-P12",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 30770.8,
+      "entity_id": "ORD-2026-079-P23",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 30771.4,
+      "entity_id": "ORD-2026-080-P21",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 30772.9,
+      "entity_id": "ORD-2026-080-P43",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 30774.0,
+      "entity_id": "ORD-2026-081-P50",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 30775.5,
+      "entity_id": "ORD-2026-081-P47",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 30777.0,
+      "entity_id": "ORD-2026-081-P4",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 30784.4,
+      "entity_id": "ORD-2026-081-P50",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 30785.9,
+      "entity_id": "ORD-2026-081-P47",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 30787.4,
+      "entity_id": "ORD-2026-081-P4",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 30789.5,
+      "entity_id": "ORD-2026-083-P20",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 30791.0,
+      "entity_id": "ORD-2026-083-P25",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 30792.5,
+      "entity_id": "ORD-2026-083-P21",
+      "event_type": "reach_branch",
+      "station_id": 8
+    },
+    {
+      "time": 30798.8,
+      "entity_id": "ORD-2026-083-P20",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 30800.3,
+      "entity_id": "ORD-2026-083-P25",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 30801.8,
+      "entity_id": "ORD-2026-083-P21",
+      "event_type": "enter_buffer",
+      "station_id": 8
+    },
+    {
+      "time": 30866.9,
+      "entity_id": "ORD-2026-084-P15",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 15
+      }
+    },
+    {
+      "time": 30907.9,
+      "entity_id": "ORD-2026-084-P15",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 30918.3,
+      "entity_id": "ORD-2026-084-P15",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 30918.3,
+      "entity_id": "ORD-2026-050-P37",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 30918.3,
+      "entity_id": "ORD-2026-061-P40",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 31187.1,
+      "entity_id": "ORD-2026-069-P46",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 31187.1,
+      "entity_id": "ORD-2026-080-P39",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 31190.3,
+      "entity_id": "ORD-2026-070-P44",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 31190.3,
+      "entity_id": "ORD-2026-070-P49",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 31333.5,
+      "entity_id": "ORD-2026-071-P38",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 31333.5,
+      "entity_id": "ORD-2026-071-P13",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 31693.0,
+      "entity_id": "ORD-2026-084-P40",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 40
+      }
+    },
+    {
+      "time": 31719.5,
+      "entity_id": "ORD-2026-070-P49",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 31719.5,
+      "entity_id": "ORD-2026-070-P40",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 31734.0,
+      "entity_id": "ORD-2026-084-P40",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 31736.3,
+      "entity_id": "ORD-2026-059-P12",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 31736.3,
+      "entity_id": "ORD-2026-059-P27",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 31744.4,
+      "entity_id": "ORD-2026-084-P40",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 31744.4,
+      "entity_id": "ORD-2026-061-P40",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 31744.4,
+      "entity_id": "ORD-2026-061-P30",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 32074.2,
+      "entity_id": "ORD-2026-067-P10",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 32074.2,
+      "entity_id": "ORD-2026-076-P16",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 32144.3,
+      "entity_id": "ORD-2026-059-P27",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 32144.3,
+      "entity_id": "ORD-2026-059-P37",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 32320.3,
+      "entity_id": "ORD-2026-070-P40",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 32320.3,
+      "entity_id": "ORD-2026-070-P12",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 32383.9,
+      "entity_id": "ORD-2026-068-P29",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 32383.9,
+      "entity_id": "ORD-2026-068-P19",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 32491.9,
+      "entity_id": "ORD-2026-080-P39",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 32491.9,
+      "entity_id": "ORD-2026-080-P12",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 33020.8,
+      "entity_id": "ORD-2026-082-P42",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 33020.8,
+      "entity_id": "ORD-2026-082-P39",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 33031.9,
+      "entity_id": "ORD-2026-070-P12",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 33031.9,
+      "entity_id": "ORD-2026-078-P25",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 33253.8,
+      "entity_id": "ORD-2026-082-P39",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 33253.8,
+      "entity_id": "ORD-2026-082-P41",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 33272.3,
+      "entity_id": "ORD-2026-059-P37",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 33272.3,
+      "entity_id": "ORD-2026-072-P1",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 33421.8,
+      "entity_id": "ORD-2026-066-P11",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 33421.8,
+      "entity_id": "ORD-2026-066-P32",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 33465.3,
+      "entity_id": "ORD-2026-072-P1",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 33465.3,
+      "entity_id": "ORD-2026-073-P38",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 33987.4,
+      "entity_id": "ORD-2026-082-P41",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 33987.4,
+      "entity_id": "ORD-2026-082-P35",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 34354.6,
+      "entity_id": "ORD-2026-074-P24",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 34354.6,
+      "entity_id": "ORD-2026-074-P16",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 34432.4,
+      "entity_id": "ORD-2026-068-P19",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 34432.4,
+      "entity_id": "ORD-2026-079-P18",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 34570.3,
+      "entity_id": "ORD-2026-071-P13",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 34570.3,
+      "entity_id": "ORD-2026-071-P36",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 34631.4,
+      "entity_id": "ORD-2026-066-P32",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 34631.4,
+      "entity_id": "ORD-2026-066-P15",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 35137.0,
+      "entity_id": "ORD-2026-084-P42",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 42
+      }
+    },
+    {
+      "time": 35138.5,
+      "entity_id": "ORD-2026-085-P27",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 27
+      }
+    },
+    {
+      "time": 35140.0,
+      "entity_id": "ORD-2026-086-P25",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 25
+      }
+    },
+    {
+      "time": 35141.5,
+      "entity_id": "ORD-2026-087-P1",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 1
+      }
+    },
+    {
+      "time": 35143.0,
+      "entity_id": "ORD-2026-088-P29",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 29
+      }
+    },
+    {
+      "time": 35144.5,
+      "entity_id": "ORD-2026-088-P18",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 18
+      }
+    },
+    {
+      "time": 35146.0,
+      "entity_id": "ORD-2026-088-P4",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 4
+      }
+    },
+    {
+      "time": 35147.5,
+      "entity_id": "ORD-2026-088-P3",
+      "event_type": "spawn",
+      "station_id": 1,
+      "details": {
+        "type": 3
+      }
+    },
+    {
+      "time": 35149.0,
+      "entity_id": "ORD-2026-089-P18",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 18
+      }
+    },
+    {
+      "time": 35149.5,
+      "entity_id": "ORD-2026-085-P27",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 35150.5,
+      "entity_id": "ORD-2026-089-P43",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 43
+      }
+    },
+    {
+      "time": 35152.0,
+      "entity_id": "ORD-2026-089-P32",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 32
+      }
+    },
+    {
+      "time": 35152.5,
+      "entity_id": "ORD-2026-087-P1",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 35153.5,
+      "entity_id": "ORD-2026-089-P39",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 39
+      }
+    },
+    {
+      "time": 35154.0,
+      "entity_id": "ORD-2026-088-P29",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 35155.0,
+      "entity_id": "ORD-2026-090-P1",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 1
+      }
+    },
+    {
+      "time": 35155.0,
+      "entity_id": "ORD-2026-089-P18",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 35155.5,
+      "entity_id": "ORD-2026-088-P18",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 35156.5,
+      "entity_id": "ORD-2026-090-P47",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 47
+      }
+    },
+    {
+      "time": 35156.5,
+      "entity_id": "ORD-2026-089-P43",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 35157.0,
+      "entity_id": "ORD-2026-088-P4",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 35158.0,
+      "entity_id": "ORD-2026-090-P35",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 35
+      }
+    },
+    {
+      "time": 35158.0,
+      "entity_id": "ORD-2026-089-P32",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 35158.5,
+      "entity_id": "ORD-2026-088-P3",
+      "event_type": "reach_branch",
+      "station_id": 1
+    },
+    {
+      "time": 35159.5,
+      "entity_id": "ORD-2026-091-P31",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 31
+      }
+    },
+    {
+      "time": 35159.5,
+      "entity_id": "ORD-2026-089-P39",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 35159.9,
+      "entity_id": "ORD-2026-085-P27",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 35161.0,
+      "entity_id": "ORD-2026-091-P37",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 37
+      }
+    },
+    {
+      "time": 35161.0,
+      "entity_id": "ORD-2026-086-P25",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 35162.5,
+      "entity_id": "ORD-2026-091-P5",
+      "event_type": "spawn",
+      "station_id": 9,
+      "details": {
+        "type": 5
+      }
+    },
+    {
+      "time": 35162.9,
+      "entity_id": "ORD-2026-087-P1",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 35164.0,
+      "entity_id": "ORD-2026-092-P23",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 23
+      }
+    },
+    {
+      "time": 35164.3,
+      "entity_id": "ORD-2026-089-P18",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 35164.4,
+      "entity_id": "ORD-2026-088-P29",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 35165.5,
+      "entity_id": "ORD-2026-092-P47",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 47
+      }
+    },
+    {
+      "time": 35165.8,
+      "entity_id": "ORD-2026-089-P43",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 35165.9,
+      "entity_id": "ORD-2026-088-P18",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 35167.0,
+      "entity_id": "ORD-2026-092-P26",
+      "event_type": "spawn",
+      "station_id": 4,
+      "details": {
+        "type": 26
+      }
+    },
+    {
+      "time": 35167.3,
+      "entity_id": "ORD-2026-089-P32",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 35167.4,
+      "entity_id": "ORD-2026-088-P4",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 35168.5,
+      "entity_id": "ORD-2026-093-P37",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 37
+      }
+    },
+    {
+      "time": 35168.8,
+      "entity_id": "ORD-2026-089-P39",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 35168.9,
+      "entity_id": "ORD-2026-088-P3",
+      "event_type": "enter_buffer",
+      "station_id": 1
+    },
+    {
+      "time": 35171.4,
+      "entity_id": "ORD-2026-086-P25",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 35178.0,
+      "entity_id": "ORD-2026-084-P42",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 35188.4,
+      "entity_id": "ORD-2026-061-P30",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 35188.4,
+      "entity_id": "ORD-2026-084-P42",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 35188.4,
+      "entity_id": "ORD-2026-061-P38",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 35190.0,
+      "entity_id": "ORD-2026-092-P23",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 35191.0,
+      "entity_id": "ORD-2026-090-P1",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 35191.5,
+      "entity_id": "ORD-2026-092-P47",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 35192.5,
+      "entity_id": "ORD-2026-090-P47",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 35193.0,
+      "entity_id": "ORD-2026-092-P26",
+      "event_type": "reach_branch",
+      "station_id": 4
+    },
+    {
+      "time": 35194.0,
+      "entity_id": "ORD-2026-090-P35",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 35199.3,
+      "entity_id": "ORD-2026-092-P23",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 35199.5,
+      "entity_id": "ORD-2026-093-P37",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 35200.3,
+      "entity_id": "ORD-2026-090-P1",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 35200.8,
+      "entity_id": "ORD-2026-092-P47",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 35201.8,
+      "entity_id": "ORD-2026-090-P47",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 35202.3,
+      "entity_id": "ORD-2026-092-P26",
+      "event_type": "enter_buffer",
+      "station_id": 4
+    },
+    {
+      "time": 35203.3,
+      "entity_id": "ORD-2026-090-P35",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 35209.9,
+      "entity_id": "ORD-2026-093-P37",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 35210.5,
+      "entity_id": "ORD-2026-091-P31",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 35212.0,
+      "entity_id": "ORD-2026-091-P37",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 35213.5,
+      "entity_id": "ORD-2026-091-P5",
+      "event_type": "reach_branch",
+      "station_id": 9
+    },
+    {
+      "time": 35220.9,
+      "entity_id": "ORD-2026-091-P31",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 35222.4,
+      "entity_id": "ORD-2026-091-P37",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 35223.9,
+      "entity_id": "ORD-2026-091-P5",
+      "event_type": "enter_buffer",
+      "station_id": 9
+    },
+    {
+      "time": 35408.6,
+      "entity_id": "ORD-2026-082-P35",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 35408.6,
+      "entity_id": "ORD-2026-089-P18",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 35748.3,
+      "entity_id": "ORD-2026-076-P16",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 35748.3,
+      "entity_id": "ORD-2026-076-P32",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 36169.3,
+      "entity_id": "ORD-2026-073-P38",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 36169.3,
+      "entity_id": "ORD-2026-073-P49",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 36209.1,
+      "entity_id": "ORD-2026-076-P32",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 36209.1,
+      "entity_id": "ORD-2026-076-P21",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 36518.3,
+      "entity_id": "ORD-2026-079-P18",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 36518.3,
+      "entity_id": "ORD-2026-079-P27",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 36658.0,
+      "entity_id": "ORD-2026-094-P14",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 14
+      }
+    },
+    {
+      "time": 36659.5,
+      "entity_id": "ORD-2026-095-P24",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 24
+      }
+    },
+    {
+      "time": 36661.0,
+      "entity_id": "ORD-2026-095-P1",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 1
+      }
+    },
+    {
+      "time": 36662.5,
+      "entity_id": "ORD-2026-095-P48",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 48
+      }
+    },
+    {
+      "time": 36664.0,
+      "entity_id": "ORD-2026-095-P16",
+      "event_type": "spawn",
+      "station_id": 3,
+      "details": {
+        "type": 16
+      }
+    },
+    {
+      "time": 36665.5,
+      "entity_id": "ORD-2026-096-P37",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 37
+      }
+    },
+    {
+      "time": 36667.0,
+      "entity_id": "ORD-2026-096-P8",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 8
+      }
+    },
+    {
+      "time": 36680.5,
+      "entity_id": "ORD-2026-095-P24",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 36682.0,
+      "entity_id": "ORD-2026-095-P1",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 36683.5,
+      "entity_id": "ORD-2026-095-P48",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 36685.0,
+      "entity_id": "ORD-2026-095-P16",
+      "event_type": "reach_branch",
+      "station_id": 3
+    },
+    {
+      "time": 36690.6,
+      "entity_id": "ORD-2026-096-P48",
+      "event_type": "spawn",
+      "station_id": 6,
+      "details": {
+        "type": 48
+      }
+    },
+    {
+      "time": 36690.9,
+      "entity_id": "ORD-2026-095-P24",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 36692.4,
+      "entity_id": "ORD-2026-095-P1",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 36693.9,
+      "entity_id": "ORD-2026-095-P48",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 36695.4,
+      "entity_id": "ORD-2026-095-P16",
+      "event_type": "enter_buffer",
+      "station_id": 3
+    },
+    {
+      "time": 36699.0,
+      "entity_id": "ORD-2026-094-P14",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 36701.5,
+      "entity_id": "ORD-2026-096-P37",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 36703.0,
+      "entity_id": "ORD-2026-096-P8",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 36709.4,
+      "entity_id": "ORD-2026-061-P38",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 36709.4,
+      "entity_id": "ORD-2026-094-P14",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 36709.4,
+      "entity_id": "ORD-2026-077-P31",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 36710.8,
+      "entity_id": "ORD-2026-096-P37",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 36712.3,
+      "entity_id": "ORD-2026-096-P8",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 36726.6,
+      "entity_id": "ORD-2026-096-P48",
+      "event_type": "reach_branch",
+      "station_id": 6
+    },
+    {
+      "time": 36735.9,
+      "entity_id": "ORD-2026-079-P27",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 36735.9,
+      "entity_id": "ORD-2026-096-P48",
+      "event_type": "enter_buffer",
+      "station_id": 6
+    },
+    {
+      "time": 36735.9,
+      "entity_id": "ORD-2026-079-P28",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 36761.5,
+      "entity_id": "ORD-2026-080-P12",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 36761.5,
+      "entity_id": "ORD-2026-080-P21",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 36766.8,
+      "entity_id": "ORD-2026-076-P21",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 36766.8,
+      "entity_id": "ORD-2026-086-P25",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 36786.7,
+      "entity_id": "ORD-2026-073-P49",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 36786.7,
+      "entity_id": "ORD-2026-075-P12",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 37481.2,
+      "entity_id": "ORD-2026-071-P36",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 37481.2,
+      "entity_id": "ORD-2026-071-P9",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 37489.5,
+      "entity_id": "ORD-2026-078-P25",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 37489.5,
+      "entity_id": "ORD-2026-078-P9",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 37532.2,
+      "entity_id": "ORD-2026-074-P16",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 37532.2,
+      "entity_id": "ORD-2026-083-P20",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 37672.0,
+      "entity_id": "ORD-2026-066-P15",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 37672.0,
+      "entity_id": "ORD-2026-085-P27",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 37739.9,
+      "entity_id": "ORD-2026-089-P18",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 37739.9,
+      "entity_id": "ORD-2026-089-P43",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 38029.0,
+      "entity_id": "ORD-2026-080-P21",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 38029.0,
+      "entity_id": "ORD-2026-080-P43",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 38107.2,
+      "entity_id": "ORD-2026-085-P27",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 38107.2,
+      "entity_id": "ORD-2026-087-P1",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 38738.4,
+      "entity_id": "ORD-2026-079-P28",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 38738.4,
+      "entity_id": "ORD-2026-079-P23",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 38805.3,
+      "entity_id": "ORD-2026-089-P43",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 38805.3,
+      "entity_id": "ORD-2026-089-P32",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 38866.1,
+      "entity_id": "ORD-2026-080-P43",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 38866.1,
+      "entity_id": "ORD-2026-093-P37",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 38961.9,
+      "entity_id": "ORD-2026-071-P9",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 38961.9,
+      "entity_id": "ORD-2026-091-P31",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 39535.4,
+      "entity_id": "ORD-2026-087-P1",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 39535.4,
+      "entity_id": "ORD-2026-088-P29",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 39554.1,
+      "entity_id": "ORD-2026-089-P32",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 39554.1,
+      "entity_id": "ORD-2026-089-P39",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 39641.2,
+      "entity_id": "ORD-2026-097-P29",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 29
+      }
+    },
+    {
+      "time": 39682.2,
+      "entity_id": "ORD-2026-097-P29",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 39692.6,
+      "entity_id": "ORD-2026-097-P29",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 39692.6,
+      "entity_id": "ORD-2026-077-P31",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 39692.6,
+      "entity_id": "ORD-2026-081-P50",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 40110.0,
+      "entity_id": "ORD-2026-086-P25",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 40110.0,
+      "entity_id": "ORD-2026-095-P24",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 40158.0,
+      "entity_id": "ORD-2026-088-P29",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 40158.0,
+      "entity_id": "ORD-2026-088-P18",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 40159.9,
+      "entity_id": "ORD-2026-089-P39",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 40211.8,
+      "entity_id": "ORD-2026-083-P20",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 40211.8,
+      "entity_id": "ORD-2026-083-P25",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 40219.7,
+      "entity_id": "ORD-2026-093-P37",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 40344.7,
+      "entity_id": "ORD-2026-075-P12",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 40344.7,
+      "entity_id": "ORD-2026-075-P48",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 40824.4,
+      "entity_id": "ORD-2026-097-P21",
+      "event_type": "spawn",
+      "station_id": 7,
+      "details": {
+        "type": 21
+      }
+    },
+    {
+      "time": 40825.9,
+      "entity_id": "ORD-2026-098-P5",
+      "event_type": "spawn",
+      "station_id": 0,
+      "details": {
+        "type": 5
+      }
+    },
+    {
+      "time": 40827.4,
+      "entity_id": "ORD-2026-099-P25",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 25
+      }
+    },
+    {
+      "time": 40828.9,
+      "entity_id": "ORD-2026-099-P47",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 47
+      }
+    },
+    {
+      "time": 40830.4,
+      "entity_id": "ORD-2026-100-P37",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 37
+      }
+    },
+    {
+      "time": 40831.9,
+      "entity_id": "ORD-2026-100-P31",
+      "event_type": "spawn",
+      "station_id": 5,
+      "details": {
+        "type": 31
+      }
+    },
+    {
+      "time": 40831.9,
+      "entity_id": "ORD-2026-098-P5",
+      "event_type": "reach_branch",
+      "station_id": 0
+    },
+    {
+      "time": 40841.2,
+      "entity_id": "ORD-2026-098-P5",
+      "event_type": "enter_buffer",
+      "station_id": 0
+    },
+    {
+      "time": 40841.2,
+      "entity_id": "ORD-2026-098-P5",
+      "event_type": "start_process",
+      "station_id": 0
+    },
+    {
+      "time": 40858.4,
+      "entity_id": "ORD-2026-099-P25",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 40859.9,
+      "entity_id": "ORD-2026-099-P47",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 40861.4,
+      "entity_id": "ORD-2026-100-P37",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 40862.9,
+      "entity_id": "ORD-2026-100-P31",
+      "event_type": "reach_branch",
+      "station_id": 5
+    },
+    {
+      "time": 40865.4,
+      "entity_id": "ORD-2026-097-P21",
+      "event_type": "reach_branch",
+      "station_id": 7
+    },
+    {
+      "time": 40868.8,
+      "entity_id": "ORD-2026-099-P25",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 40868.8,
+      "entity_id": "ORD-2026-099-P25",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 40870.3,
+      "entity_id": "ORD-2026-099-P47",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 40871.8,
+      "entity_id": "ORD-2026-100-P37",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 40873.3,
+      "entity_id": "ORD-2026-100-P31",
+      "event_type": "enter_buffer",
+      "station_id": 5
+    },
+    {
+      "time": 40875.8,
+      "entity_id": "ORD-2026-097-P21",
+      "event_type": "enter_buffer",
+      "station_id": 7
+    },
+    {
+      "time": 40875.8,
+      "entity_id": "ORD-2026-081-P50",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 40875.8,
+      "entity_id": "ORD-2026-081-P47",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 40906.5,
+      "entity_id": "ORD-2026-078-P9",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 40906.5,
+      "entity_id": "ORD-2026-078-P47",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 41052.3,
+      "entity_id": "ORD-2026-081-P47",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 41052.3,
+      "entity_id": "ORD-2026-081-P4",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 41083.0,
+      "entity_id": "ORD-2026-078-P47",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 41083.0,
+      "entity_id": "ORD-2026-078-P19",
+      "event_type": "start_process",
+      "station_id": 2
+    },
+    {
+      "time": 41565.3,
+      "entity_id": "ORD-2026-099-P25",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 41565.3,
+      "entity_id": "ORD-2026-099-P47",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 41847.7,
+      "entity_id": "ORD-2026-099-P47",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 41847.7,
+      "entity_id": "ORD-2026-100-P37",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 41905.4,
+      "entity_id": "ORD-2026-098-P5",
+      "event_type": "end_process",
+      "station_id": 0
+    },
+    {
+      "time": 41945.1,
+      "entity_id": "ORD-2026-091-P31",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 41945.1,
+      "entity_id": "ORD-2026-091-P37",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 42022.7,
+      "entity_id": "ORD-2026-083-P25",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 42022.7,
+      "entity_id": "ORD-2026-083-P21",
+      "event_type": "start_process",
+      "station_id": 8
+    },
+    {
+      "time": 42066.4,
+      "entity_id": "ORD-2026-079-P23",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 42066.4,
+      "entity_id": "ORD-2026-090-P1",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 42256.8,
+      "entity_id": "ORD-2026-081-P4",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 42256.8,
+      "entity_id": "ORD-2026-084-P15",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 42259.4,
+      "entity_id": "ORD-2026-090-P1",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 42259.4,
+      "entity_id": "ORD-2026-090-P47",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 42683.0,
+      "entity_id": "ORD-2026-090-P47",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 42683.0,
+      "entity_id": "ORD-2026-090-P35",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 42870.0,
+      "entity_id": "ORD-2026-090-P35",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 42870.0,
+      "entity_id": "ORD-2026-096-P37",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 43225.5,
+      "entity_id": "ORD-2026-088-P18",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 43225.5,
+      "entity_id": "ORD-2026-088-P4",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 43314.4,
+      "entity_id": "ORD-2026-084-P15",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 43314.4,
+      "entity_id": "ORD-2026-084-P40",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 43411.5,
+      "entity_id": "ORD-2026-091-P37",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 43411.5,
+      "entity_id": "ORD-2026-091-P5",
+      "event_type": "start_process",
+      "station_id": 9
+    },
+    {
+      "time": 43442.3,
+      "entity_id": "ORD-2026-083-P21",
+      "event_type": "end_process",
+      "station_id": 8
+    },
+    {
+      "time": 43689.9,
+      "entity_id": "ORD-2026-084-P40",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 43689.9,
+      "entity_id": "ORD-2026-084-P42",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 43867.9,
+      "entity_id": "ORD-2026-088-P4",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 43867.9,
+      "entity_id": "ORD-2026-088-P3",
+      "event_type": "start_process",
+      "station_id": 1
+    },
+    {
+      "time": 44298.0,
+      "entity_id": "ORD-2026-095-P24",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 44298.0,
+      "entity_id": "ORD-2026-095-P1",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 44350.5,
+      "entity_id": "ORD-2026-091-P5",
+      "event_type": "end_process",
+      "station_id": 9
+    },
+    {
+      "time": 44698.0,
+      "entity_id": "ORD-2026-078-P19",
+      "event_type": "end_process",
+      "station_id": 2
+    },
+    {
+      "time": 44760.1,
+      "entity_id": "ORD-2026-075-P48",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 44760.1,
+      "entity_id": "ORD-2026-092-P23",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 44937.3,
+      "entity_id": "ORD-2026-084-P42",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 44937.3,
+      "entity_id": "ORD-2026-094-P14",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 45006.09,
+      "entity_id": "ORD-2026-100-P37",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 45006.09,
+      "entity_id": "ORD-2026-100-P31",
+      "event_type": "start_process",
+      "station_id": 5
+    },
+    {
+      "time": 45400.1,
+      "entity_id": "ORD-2026-092-P23",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 45400.1,
+      "entity_id": "ORD-2026-092-P47",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 45753.1,
+      "entity_id": "ORD-2026-092-P47",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 45753.1,
+      "entity_id": "ORD-2026-092-P26",
+      "event_type": "start_process",
+      "station_id": 4
+    },
+    {
+      "time": 45764.8,
+      "entity_id": "ORD-2026-095-P1",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 45764.8,
+      "entity_id": "ORD-2026-095-P48",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 46170.0,
+      "entity_id": "ORD-2026-092-P26",
+      "event_type": "end_process",
+      "station_id": 4
+    },
+    {
+      "time": 46592.4,
+      "entity_id": "ORD-2026-096-P37",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 46592.4,
+      "entity_id": "ORD-2026-096-P8",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 46617.1,
+      "entity_id": "ORD-2026-088-P3",
+      "event_type": "end_process",
+      "station_id": 1
+    },
+    {
+      "time": 46874.9,
+      "entity_id": "ORD-2026-096-P8",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 46874.9,
+      "entity_id": "ORD-2026-096-P48",
+      "event_type": "start_process",
+      "station_id": 6
+    },
+    {
+      "time": 47577.3,
+      "entity_id": "ORD-2026-094-P14",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 47577.3,
+      "entity_id": "ORD-2026-097-P29",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 48482.9,
+      "entity_id": "ORD-2026-097-P29",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 48482.9,
+      "entity_id": "ORD-2026-097-P21",
+      "event_type": "start_process",
+      "station_id": 7
+    },
+    {
+      "time": 49750.4,
+      "entity_id": "ORD-2026-097-P21",
+      "event_type": "end_process",
+      "station_id": 7
+    },
+    {
+      "time": 49887.7,
+      "entity_id": "ORD-2026-100-P31",
+      "event_type": "end_process",
+      "station_id": 5
+    },
+    {
+      "time": 50180.2,
+      "entity_id": "ORD-2026-095-P48",
+      "event_type": "end_process",
+      "station_id": 3
+    },
+    {
+      "time": 50180.2,
+      "entity_id": "ORD-2026-095-P16",
+      "event_type": "start_process",
+      "station_id": 3
+    },
+    {
+      "time": 51424.1,
+      "entity_id": "ORD-2026-096-P48",
+      "event_type": "end_process",
+      "station_id": 6
+    },
+    {
+      "time": 52563.4,
+      "entity_id": "ORD-2026-095-P16",
+      "event_type": "end_process",
+      "station_id": 3
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "vip_order_id": "VIP-901-URGENT",
+    "parts": [
+      {"type": 1, "p_time": 180},
+      {"type": 2, "p_time": 250}
+    ]
+  },
+  {
+    "vip_order_id": "VIP-902-URGENT",
+    "parts": [
+      {"type": 3, "p_time": 300},
+      {"type": 0, "p_time": 150},
+      {"type": 4, "p_time": 200}
+    ]
+  },
+  {
+    "vip_order_id": "VIP-903-URGENT",
+    "parts": [
+      {"type": 5, "p_time": 400}
+    ]
+  }
+]

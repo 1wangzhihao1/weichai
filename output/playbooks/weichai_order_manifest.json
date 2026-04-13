@@ -1,0 +1,2410 @@
+[
+  {
+    "order_id": "ORD-2026-001",
+    "target_station": 5,
+    "total_process_time": 2249.5,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-001-P21",
+        "part_type": 21,
+        "quantity": 20,
+        "process_time": 1014.0
+      },
+      {
+        "entity_id": "ORD-2026-001-P47",
+        "part_type": 47,
+        "quantity": 35,
+        "process_time": 1235.5
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-002",
+    "target_station": 9,
+    "total_process_time": 9516.7,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-002-P16",
+        "part_type": 16,
+        "quantity": 19,
+        "process_time": 1886.7
+      },
+      {
+        "entity_id": "ORD-2026-002-P36",
+        "part_type": 36,
+        "quantity": 32,
+        "process_time": 3004.8
+      },
+      {
+        "entity_id": "ORD-2026-002-P31",
+        "part_type": 31,
+        "quantity": 27,
+        "process_time": 3661.2
+      },
+      {
+        "entity_id": "ORD-2026-002-P19",
+        "part_type": 19,
+        "quantity": 8,
+        "process_time": 964.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-003",
+    "target_station": 7,
+    "total_process_time": 4459.3,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-003-P35",
+        "part_type": 35,
+        "quantity": 35,
+        "process_time": 1309.0
+      },
+      {
+        "entity_id": "ORD-2026-003-P16",
+        "part_type": 16,
+        "quantity": 25,
+        "process_time": 2482.5
+      },
+      {
+        "entity_id": "ORD-2026-003-P34",
+        "part_type": 34,
+        "quantity": 7,
+        "process_time": 667.8
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-004",
+    "target_station": 3,
+    "total_process_time": 6215.3,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-004-P3",
+        "part_type": 3,
+        "quantity": 6,
+        "process_time": 568.8
+      },
+      {
+        "entity_id": "ORD-2026-004-P32",
+        "part_type": 32,
+        "quantity": 38,
+        "process_time": 2188.8
+      },
+      {
+        "entity_id": "ORD-2026-004-P43",
+        "part_type": 43,
+        "quantity": 15,
+        "process_time": 1141.5
+      },
+      {
+        "entity_id": "ORD-2026-004-P5",
+        "part_type": 5,
+        "quantity": 37,
+        "process_time": 2316.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-005",
+    "target_station": 8,
+    "total_process_time": 1486.9,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-005-P23",
+        "part_type": 23,
+        "quantity": 7,
+        "process_time": 896.0
+      },
+      {
+        "entity_id": "ORD-2026-005-P6",
+        "part_type": 6,
+        "quantity": 19,
+        "process_time": 590.9
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-006",
+    "target_station": 8,
+    "total_process_time": 3792.0,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-006-P3",
+        "part_type": 3,
+        "quantity": 40,
+        "process_time": 3792.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-007",
+    "target_station": 6,
+    "total_process_time": 454.0,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-007-P7",
+        "part_type": 7,
+        "quantity": 10,
+        "process_time": 454.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-008",
+    "target_station": 6,
+    "total_process_time": 4113.6,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-008-P3",
+        "part_type": 3,
+        "quantity": 20,
+        "process_time": 1896.0
+      },
+      {
+        "entity_id": "ORD-2026-008-P20",
+        "part_type": 20,
+        "quantity": 24,
+        "process_time": 2217.6
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-009",
+    "target_station": 4,
+    "total_process_time": 2423.1,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-009-P21",
+        "part_type": 21,
+        "quantity": 5,
+        "process_time": 253.5
+      },
+      {
+        "entity_id": "ORD-2026-009-P31",
+        "part_type": 31,
+        "quantity": 16,
+        "process_time": 2169.6
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-010",
+    "target_station": 0,
+    "total_process_time": 4759.2,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-010-P15",
+        "part_type": 15,
+        "quantity": 36,
+        "process_time": 4759.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-011",
+    "target_station": 7,
+    "total_process_time": 653.1,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-011-P6",
+        "part_type": 6,
+        "quantity": 21,
+        "process_time": 653.1
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-012",
+    "target_station": 2,
+    "total_process_time": 9023.2,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-012-P10",
+        "part_type": 10,
+        "quantity": 29,
+        "process_time": 3854.1
+      },
+      {
+        "entity_id": "ORD-2026-012-P29",
+        "part_type": 29,
+        "quantity": 34,
+        "process_time": 1924.4
+      },
+      {
+        "entity_id": "ORD-2026-012-P45",
+        "part_type": 45,
+        "quantity": 19,
+        "process_time": 522.5
+      },
+      {
+        "entity_id": "ORD-2026-012-P24",
+        "part_type": 24,
+        "quantity": 26,
+        "process_time": 2722.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-013",
+    "target_station": 1,
+    "total_process_time": 3917.8,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-013-P39",
+        "part_type": 39,
+        "quantity": 33,
+        "process_time": 1537.8
+      },
+      {
+        "entity_id": "ORD-2026-013-P13",
+        "part_type": 13,
+        "quantity": 25,
+        "process_time": 2380.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-014",
+    "target_station": 4,
+    "total_process_time": 2303.7,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-014-P1",
+        "part_type": 1,
+        "quantity": 20,
+        "process_time": 772.0
+      },
+      {
+        "entity_id": "ORD-2026-014-P27",
+        "part_type": 27,
+        "quantity": 27,
+        "process_time": 734.4
+      },
+      {
+        "entity_id": "ORD-2026-014-P9",
+        "part_type": 9,
+        "quantity": 7,
+        "process_time": 797.3
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-015",
+    "target_station": 7,
+    "total_process_time": 2754.4,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-015-P39",
+        "part_type": 39,
+        "quantity": 20,
+        "process_time": 932.0
+      },
+      {
+        "entity_id": "ORD-2026-015-P9",
+        "part_type": 9,
+        "quantity": 16,
+        "process_time": 1822.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-016",
+    "target_station": 4,
+    "total_process_time": 7694.700000000001,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-016-P45",
+        "part_type": 45,
+        "quantity": 6,
+        "process_time": 165.0
+      },
+      {
+        "entity_id": "ORD-2026-016-P8",
+        "part_type": 8,
+        "quantity": 31,
+        "process_time": 1751.5
+      },
+      {
+        "entity_id": "ORD-2026-016-P16",
+        "part_type": 16,
+        "quantity": 31,
+        "process_time": 3078.3
+      },
+      {
+        "entity_id": "ORD-2026-016-P2",
+        "part_type": 2,
+        "quantity": 29,
+        "process_time": 2699.9
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-017",
+    "target_station": 1,
+    "total_process_time": 486.0,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-017-P44",
+        "part_type": 44,
+        "quantity": 12,
+        "process_time": 486.0
+      }
+    ]
+  },
+  {
+    "order_id": "VIP-901-URGENT",
+    "target_station": 7,
+    "total_process_time": 430.0,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "VIP-901-URGENT-P1",
+        "part_type": 1,
+        "quantity": 1,
+        "process_time": 180.0
+      },
+      {
+        "entity_id": "VIP-901-URGENT-P2",
+        "part_type": 2,
+        "quantity": 1,
+        "process_time": 250.0
+      }
+    ]
+  },
+  {
+    "order_id": "VIP-902-URGENT",
+    "target_station": 1,
+    "total_process_time": 650.0,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "VIP-902-URGENT-P3",
+        "part_type": 3,
+        "quantity": 1,
+        "process_time": 300.0
+      },
+      {
+        "entity_id": "VIP-902-URGENT-P0",
+        "part_type": 0,
+        "quantity": 1,
+        "process_time": 150.0
+      },
+      {
+        "entity_id": "VIP-902-URGENT-P4",
+        "part_type": 4,
+        "quantity": 1,
+        "process_time": 200.0
+      }
+    ]
+  },
+  {
+    "order_id": "VIP-903-URGENT",
+    "target_station": 7,
+    "total_process_time": 400.0,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "VIP-903-URGENT-P5",
+        "part_type": 5,
+        "quantity": 1,
+        "process_time": 400.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-018",
+    "target_station": 1,
+    "total_process_time": 5007.6,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-018-P3",
+        "part_type": 3,
+        "quantity": 36,
+        "process_time": 3412.8
+      },
+      {
+        "entity_id": "ORD-2026-018-P10",
+        "part_type": 10,
+        "quantity": 12,
+        "process_time": 1594.8
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-019",
+    "target_station": 6,
+    "total_process_time": 2878.4,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-019-P42",
+        "part_type": 42,
+        "quantity": 11,
+        "process_time": 1247.4
+      },
+      {
+        "entity_id": "ORD-2026-019-P39",
+        "part_type": 39,
+        "quantity": 35,
+        "process_time": 1631.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-020",
+    "target_station": 5,
+    "total_process_time": 7049.5,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-020-P23",
+        "part_type": 23,
+        "quantity": 11,
+        "process_time": 1408.0
+      },
+      {
+        "entity_id": "ORD-2026-020-P16",
+        "part_type": 16,
+        "quantity": 31,
+        "process_time": 3078.3
+      },
+      {
+        "entity_id": "ORD-2026-020-P28",
+        "part_type": 28,
+        "quantity": 32,
+        "process_time": 2563.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-021",
+    "target_station": 7,
+    "total_process_time": 10708.599999999999,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-021-P13",
+        "part_type": 13,
+        "quantity": 36,
+        "process_time": 3427.2
+      },
+      {
+        "entity_id": "ORD-2026-021-P38",
+        "part_type": 38,
+        "quantity": 26,
+        "process_time": 2197.0
+      },
+      {
+        "entity_id": "ORD-2026-021-P48",
+        "part_type": 48,
+        "quantity": 38,
+        "process_time": 5084.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-022",
+    "target_station": 0,
+    "total_process_time": 3271.2,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-022-P37",
+        "part_type": 37,
+        "quantity": 29,
+        "process_time": 3271.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-023",
+    "target_station": 3,
+    "total_process_time": 2073.6,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-023-P32",
+        "part_type": 32,
+        "quantity": 36,
+        "process_time": 2073.6
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-024",
+    "target_station": 6,
+    "total_process_time": 8598.1,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-024-P30",
+        "part_type": 30,
+        "quantity": 37,
+        "process_time": 5309.5
+      },
+      {
+        "entity_id": "ORD-2026-024-P42",
+        "part_type": 42,
+        "quantity": 29,
+        "process_time": 3288.6
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-025",
+    "target_station": 3,
+    "total_process_time": 4484.4,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-025-P7",
+        "part_type": 7,
+        "quantity": 36,
+        "process_time": 1634.4
+      },
+      {
+        "entity_id": "ORD-2026-025-P43",
+        "part_type": 43,
+        "quantity": 30,
+        "process_time": 2283.0
+      },
+      {
+        "entity_id": "ORD-2026-025-P44",
+        "part_type": 44,
+        "quantity": 14,
+        "process_time": 567.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-026",
+    "target_station": 2,
+    "total_process_time": 8490.6,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-026-P19",
+        "part_type": 19,
+        "quantity": 7,
+        "process_time": 843.5
+      },
+      {
+        "entity_id": "ORD-2026-026-P16",
+        "part_type": 16,
+        "quantity": 25,
+        "process_time": 2482.5
+      },
+      {
+        "entity_id": "ORD-2026-026-P49",
+        "part_type": 49,
+        "quantity": 26,
+        "process_time": 1146.6
+      },
+      {
+        "entity_id": "ORD-2026-026-P30",
+        "part_type": 30,
+        "quantity": 28,
+        "process_time": 4018.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-027",
+    "target_station": 8,
+    "total_process_time": 7184.1,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-027-P39",
+        "part_type": 39,
+        "quantity": 25,
+        "process_time": 1165.0
+      },
+      {
+        "entity_id": "ORD-2026-027-P40",
+        "part_type": 40,
+        "quantity": 39,
+        "process_time": 2928.9
+      },
+      {
+        "entity_id": "ORD-2026-027-P20",
+        "part_type": 20,
+        "quantity": 22,
+        "process_time": 2032.8
+      },
+      {
+        "entity_id": "ORD-2026-027-P6",
+        "part_type": 6,
+        "quantity": 34,
+        "process_time": 1057.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-028",
+    "target_station": 9,
+    "total_process_time": 6869.9,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-028-P13",
+        "part_type": 13,
+        "quantity": 5,
+        "process_time": 476.0
+      },
+      {
+        "entity_id": "ORD-2026-028-P2",
+        "part_type": 2,
+        "quantity": 15,
+        "process_time": 1396.5
+      },
+      {
+        "entity_id": "ORD-2026-028-P16",
+        "part_type": 16,
+        "quantity": 35,
+        "process_time": 3475.5
+      },
+      {
+        "entity_id": "ORD-2026-028-P28",
+        "part_type": 28,
+        "quantity": 19,
+        "process_time": 1521.9
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-029",
+    "target_station": 1,
+    "total_process_time": 2634.5,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-029-P13",
+        "part_type": 13,
+        "quantity": 7,
+        "process_time": 666.4
+      },
+      {
+        "entity_id": "ORD-2026-029-P38",
+        "part_type": 38,
+        "quantity": 13,
+        "process_time": 1098.5
+      },
+      {
+        "entity_id": "ORD-2026-029-P45",
+        "part_type": 45,
+        "quantity": 22,
+        "process_time": 605.0
+      },
+      {
+        "entity_id": "ORD-2026-029-P49",
+        "part_type": 49,
+        "quantity": 6,
+        "process_time": 264.6
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-030",
+    "target_station": 4,
+    "total_process_time": 4613.9,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-030-P30",
+        "part_type": 30,
+        "quantity": 24,
+        "process_time": 3444.0
+      },
+      {
+        "entity_id": "ORD-2026-030-P50",
+        "part_type": 50,
+        "quantity": 8,
+        "process_time": 326.4
+      },
+      {
+        "entity_id": "ORD-2026-030-P19",
+        "part_type": 19,
+        "quantity": 7,
+        "process_time": 843.5
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-031",
+    "target_station": 1,
+    "total_process_time": 3342.0,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-031-P14",
+        "part_type": 14,
+        "quantity": 29,
+        "process_time": 1914.0
+      },
+      {
+        "entity_id": "ORD-2026-031-P13",
+        "part_type": 13,
+        "quantity": 15,
+        "process_time": 1428.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-032",
+    "target_station": 5,
+    "total_process_time": 4163.3,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-032-P46",
+        "part_type": 46,
+        "quantity": 31,
+        "process_time": 4163.3
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-033",
+    "target_station": 4,
+    "total_process_time": 7443.9,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-033-P23",
+        "part_type": 23,
+        "quantity": 14,
+        "process_time": 1792.0
+      },
+      {
+        "entity_id": "ORD-2026-033-P36",
+        "part_type": 36,
+        "quantity": 11,
+        "process_time": 1032.9
+      },
+      {
+        "entity_id": "ORD-2026-033-P22",
+        "part_type": 22,
+        "quantity": 23,
+        "process_time": 2879.6
+      },
+      {
+        "entity_id": "ORD-2026-033-P48",
+        "part_type": 48,
+        "quantity": 13,
+        "process_time": 1739.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-034",
+    "target_station": 0,
+    "total_process_time": 6341.4,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-034-P22",
+        "part_type": 22,
+        "quantity": 8,
+        "process_time": 1001.6
+      },
+      {
+        "entity_id": "ORD-2026-034-P31",
+        "part_type": 31,
+        "quantity": 10,
+        "process_time": 1356.0
+      },
+      {
+        "entity_id": "ORD-2026-034-P28",
+        "part_type": 28,
+        "quantity": 26,
+        "process_time": 2082.6
+      },
+      {
+        "entity_id": "ORD-2026-034-P17",
+        "part_type": 17,
+        "quantity": 28,
+        "process_time": 1901.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-035",
+    "target_station": 7,
+    "total_process_time": 5476.6,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-035-P24",
+        "part_type": 24,
+        "quantity": 26,
+        "process_time": 2722.2
+      },
+      {
+        "entity_id": "ORD-2026-035-P22",
+        "part_type": 22,
+        "quantity": 22,
+        "process_time": 2754.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-036",
+    "target_station": 5,
+    "total_process_time": 6149.799999999999,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-036-P37",
+        "part_type": 37,
+        "quantity": 38,
+        "process_time": 4286.4
+      },
+      {
+        "entity_id": "ORD-2026-036-P1",
+        "part_type": 1,
+        "quantity": 9,
+        "process_time": 347.4
+      },
+      {
+        "entity_id": "ORD-2026-036-P26",
+        "part_type": 26,
+        "quantity": 40,
+        "process_time": 1516.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-037",
+    "target_station": 3,
+    "total_process_time": 3818.2000000000003,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-037-P9",
+        "part_type": 9,
+        "quantity": 22,
+        "process_time": 2505.8
+      },
+      {
+        "entity_id": "ORD-2026-037-P1",
+        "part_type": 1,
+        "quantity": 34,
+        "process_time": 1312.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-038",
+    "target_station": 8,
+    "total_process_time": 1126.8,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-038-P22",
+        "part_type": 22,
+        "quantity": 9,
+        "process_time": 1126.8
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-039",
+    "target_station": 6,
+    "total_process_time": 3316.8,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-039-P46",
+        "part_type": 46,
+        "quantity": 21,
+        "process_time": 2820.3
+      },
+      {
+        "entity_id": "ORD-2026-039-P16",
+        "part_type": 16,
+        "quantity": 5,
+        "process_time": 496.5
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-040",
+    "target_station": 8,
+    "total_process_time": 4081.7,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-040-P37",
+        "part_type": 37,
+        "quantity": 14,
+        "process_time": 1579.2
+      },
+      {
+        "entity_id": "ORD-2026-040-P11",
+        "part_type": 11,
+        "quantity": 25,
+        "process_time": 2502.5
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-041",
+    "target_station": 2,
+    "total_process_time": 10248.1,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-041-P14",
+        "part_type": 14,
+        "quantity": 20,
+        "process_time": 1320.0
+      },
+      {
+        "entity_id": "ORD-2026-041-P34",
+        "part_type": 34,
+        "quantity": 19,
+        "process_time": 1812.6
+      },
+      {
+        "entity_id": "ORD-2026-041-P25",
+        "part_type": 25,
+        "quantity": 40,
+        "process_time": 5572.0
+      },
+      {
+        "entity_id": "ORD-2026-041-P49",
+        "part_type": 49,
+        "quantity": 35,
+        "process_time": 1543.5
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-042",
+    "target_station": 1,
+    "total_process_time": 2660.9,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-042-P30",
+        "part_type": 30,
+        "quantity": 9,
+        "process_time": 1291.5
+      },
+      {
+        "entity_id": "ORD-2026-042-P45",
+        "part_type": 45,
+        "quantity": 10,
+        "process_time": 275.0
+      },
+      {
+        "entity_id": "ORD-2026-042-P32",
+        "part_type": 32,
+        "quantity": 19,
+        "process_time": 1094.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-043",
+    "target_station": 9,
+    "total_process_time": 6091.299999999999,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-043-P31",
+        "part_type": 31,
+        "quantity": 27,
+        "process_time": 3661.2
+      },
+      {
+        "entity_id": "ORD-2026-043-P43",
+        "part_type": 43,
+        "quantity": 15,
+        "process_time": 1141.5
+      },
+      {
+        "entity_id": "ORD-2026-043-P26",
+        "part_type": 26,
+        "quantity": 34,
+        "process_time": 1288.6
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-044",
+    "target_station": 1,
+    "total_process_time": 7735.599999999999,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-044-P6",
+        "part_type": 6,
+        "quantity": 36,
+        "process_time": 1119.6
+      },
+      {
+        "entity_id": "ORD-2026-044-P31",
+        "part_type": 31,
+        "quantity": 10,
+        "process_time": 1356.0
+      },
+      {
+        "entity_id": "ORD-2026-044-P33",
+        "part_type": 33,
+        "quantity": 21,
+        "process_time": 2881.2
+      },
+      {
+        "entity_id": "ORD-2026-044-P5",
+        "part_type": 5,
+        "quantity": 38,
+        "process_time": 2378.8
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-045",
+    "target_station": 3,
+    "total_process_time": 816.0,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-045-P50",
+        "part_type": 50,
+        "quantity": 20,
+        "process_time": 816.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-046",
+    "target_station": 3,
+    "total_process_time": 3053.5,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-046-P44",
+        "part_type": 44,
+        "quantity": 37,
+        "process_time": 1498.5
+      },
+      {
+        "entity_id": "ORD-2026-046-P29",
+        "part_type": 29,
+        "quantity": 15,
+        "process_time": 849.0
+      },
+      {
+        "entity_id": "ORD-2026-046-P47",
+        "part_type": 47,
+        "quantity": 20,
+        "process_time": 706.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-047",
+    "target_station": 6,
+    "total_process_time": 3662.0999999999995,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-047-P35",
+        "part_type": 35,
+        "quantity": 34,
+        "process_time": 1271.6
+      },
+      {
+        "entity_id": "ORD-2026-047-P9",
+        "part_type": 9,
+        "quantity": 12,
+        "process_time": 1366.8
+      },
+      {
+        "entity_id": "ORD-2026-047-P47",
+        "part_type": 47,
+        "quantity": 29,
+        "process_time": 1023.7
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-048",
+    "target_station": 0,
+    "total_process_time": 3787.4,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-048-P21",
+        "part_type": 21,
+        "quantity": 25,
+        "process_time": 1267.5
+      },
+      {
+        "entity_id": "ORD-2026-048-P22",
+        "part_type": 22,
+        "quantity": 12,
+        "process_time": 1502.4
+      },
+      {
+        "entity_id": "ORD-2026-048-P45",
+        "part_type": 45,
+        "quantity": 37,
+        "process_time": 1017.5
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-049",
+    "target_station": 5,
+    "total_process_time": 8174.6,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-049-P20",
+        "part_type": 20,
+        "quantity": 6,
+        "process_time": 554.4
+      },
+      {
+        "entity_id": "ORD-2026-049-P12",
+        "part_type": 12,
+        "quantity": 36,
+        "process_time": 4269.6
+      },
+      {
+        "entity_id": "ORD-2026-049-P17",
+        "part_type": 17,
+        "quantity": 18,
+        "process_time": 1222.2
+      },
+      {
+        "entity_id": "ORD-2026-049-P22",
+        "part_type": 22,
+        "quantity": 17,
+        "process_time": 2128.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-050",
+    "target_station": 7,
+    "total_process_time": 5974.4,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-050-P38",
+        "part_type": 38,
+        "quantity": 40,
+        "process_time": 3380.0
+      },
+      {
+        "entity_id": "ORD-2026-050-P37",
+        "part_type": 37,
+        "quantity": 23,
+        "process_time": 2594.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-051",
+    "target_station": 8,
+    "total_process_time": 5239.3,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-051-P4",
+        "part_type": 4,
+        "quantity": 28,
+        "process_time": 2248.4
+      },
+      {
+        "entity_id": "ORD-2026-051-P21",
+        "part_type": 21,
+        "quantity": 5,
+        "process_time": 253.5
+      },
+      {
+        "entity_id": "ORD-2026-051-P35",
+        "part_type": 35,
+        "quantity": 25,
+        "process_time": 935.0
+      },
+      {
+        "entity_id": "ORD-2026-051-P40",
+        "part_type": 40,
+        "quantity": 24,
+        "process_time": 1802.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-052",
+    "target_station": 3,
+    "total_process_time": 3475.8,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-052-P45",
+        "part_type": 45,
+        "quantity": 8,
+        "process_time": 220.0
+      },
+      {
+        "entity_id": "ORD-2026-052-P8",
+        "part_type": 8,
+        "quantity": 14,
+        "process_time": 791.0
+      },
+      {
+        "entity_id": "ORD-2026-052-P3",
+        "part_type": 3,
+        "quantity": 26,
+        "process_time": 2464.8
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-053",
+    "target_station": 6,
+    "total_process_time": 7073.299999999999,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-053-P35",
+        "part_type": 35,
+        "quantity": 10,
+        "process_time": 374.0
+      },
+      {
+        "entity_id": "ORD-2026-053-P15",
+        "part_type": 15,
+        "quantity": 40,
+        "process_time": 5288.0
+      },
+      {
+        "entity_id": "ORD-2026-053-P29",
+        "part_type": 29,
+        "quantity": 9,
+        "process_time": 509.4
+      },
+      {
+        "entity_id": "ORD-2026-053-P6",
+        "part_type": 6,
+        "quantity": 29,
+        "process_time": 901.9
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-054",
+    "target_station": 4,
+    "total_process_time": 2803.3,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-054-P41",
+        "part_type": 41,
+        "quantity": 13,
+        "process_time": 681.2
+      },
+      {
+        "entity_id": "ORD-2026-054-P26",
+        "part_type": 26,
+        "quantity": 5,
+        "process_time": 189.5
+      },
+      {
+        "entity_id": "ORD-2026-054-P1",
+        "part_type": 1,
+        "quantity": 21,
+        "process_time": 810.6
+      },
+      {
+        "entity_id": "ORD-2026-054-P35",
+        "part_type": 35,
+        "quantity": 30,
+        "process_time": 1122.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-055",
+    "target_station": 9,
+    "total_process_time": 6677.2,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-055-P12",
+        "part_type": 12,
+        "quantity": 22,
+        "process_time": 2609.2
+      },
+      {
+        "entity_id": "ORD-2026-055-P31",
+        "part_type": 31,
+        "quantity": 30,
+        "process_time": 4068.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-056",
+    "target_station": 8,
+    "total_process_time": 3348.8999999999996,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-056-P32",
+        "part_type": 32,
+        "quantity": 22,
+        "process_time": 1267.2
+      },
+      {
+        "entity_id": "ORD-2026-056-P21",
+        "part_type": 21,
+        "quantity": 30,
+        "process_time": 1521.0
+      },
+      {
+        "entity_id": "ORD-2026-056-P28",
+        "part_type": 28,
+        "quantity": 7,
+        "process_time": 560.7
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-057",
+    "target_station": 0,
+    "total_process_time": 9525.1,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-057-P18",
+        "part_type": 18,
+        "quantity": 38,
+        "process_time": 4662.6
+      },
+      {
+        "entity_id": "ORD-2026-057-P38",
+        "part_type": 38,
+        "quantity": 5,
+        "process_time": 422.5
+      },
+      {
+        "entity_id": "ORD-2026-057-P14",
+        "part_type": 14,
+        "quantity": 16,
+        "process_time": 1056.0
+      },
+      {
+        "entity_id": "ORD-2026-057-P37",
+        "part_type": 37,
+        "quantity": 30,
+        "process_time": 3384.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-058",
+    "target_station": 3,
+    "total_process_time": 4635.599999999999,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-058-P5",
+        "part_type": 5,
+        "quantity": 12,
+        "process_time": 751.2
+      },
+      {
+        "entity_id": "ORD-2026-058-P20",
+        "part_type": 20,
+        "quantity": 38,
+        "process_time": 3511.2
+      },
+      {
+        "entity_id": "ORD-2026-058-P6",
+        "part_type": 6,
+        "quantity": 12,
+        "process_time": 373.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-059",
+    "target_station": 4,
+    "total_process_time": 5924.4,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-059-P39",
+        "part_type": 39,
+        "quantity": 28,
+        "process_time": 1304.8
+      },
+      {
+        "entity_id": "ORD-2026-059-P12",
+        "part_type": 12,
+        "quantity": 26,
+        "process_time": 3083.6
+      },
+      {
+        "entity_id": "ORD-2026-059-P27",
+        "part_type": 27,
+        "quantity": 15,
+        "process_time": 408.0
+      },
+      {
+        "entity_id": "ORD-2026-059-P37",
+        "part_type": 37,
+        "quantity": 10,
+        "process_time": 1128.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-060",
+    "target_station": 1,
+    "total_process_time": 3220.3,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-060-P41",
+        "part_type": 41,
+        "quantity": 31,
+        "process_time": 1624.4
+      },
+      {
+        "entity_id": "ORD-2026-060-P24",
+        "part_type": 24,
+        "quantity": 12,
+        "process_time": 1256.4
+      },
+      {
+        "entity_id": "ORD-2026-060-P17",
+        "part_type": 17,
+        "quantity": 5,
+        "process_time": 339.5
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-061",
+    "target_station": 7,
+    "total_process_time": 5791.1,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-061-P40",
+        "part_type": 40,
+        "quantity": 11,
+        "process_time": 826.1
+      },
+      {
+        "entity_id": "ORD-2026-061-P30",
+        "part_type": 30,
+        "quantity": 24,
+        "process_time": 3444.0
+      },
+      {
+        "entity_id": "ORD-2026-061-P38",
+        "part_type": 38,
+        "quantity": 18,
+        "process_time": 1521.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-062",
+    "target_station": 8,
+    "total_process_time": 1306.1,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-062-P47",
+        "part_type": 47,
+        "quantity": 37,
+        "process_time": 1306.1
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-063",
+    "target_station": 2,
+    "total_process_time": 905.5999999999999,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-063-P47",
+        "part_type": 47,
+        "quantity": 14,
+        "process_time": 494.2
+      },
+      {
+        "entity_id": "ORD-2026-063-P35",
+        "part_type": 35,
+        "quantity": 11,
+        "process_time": 411.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-064",
+    "target_station": 2,
+    "total_process_time": 2016.0,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-064-P32",
+        "part_type": 32,
+        "quantity": 35,
+        "process_time": 2016.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-065",
+    "target_station": 8,
+    "total_process_time": 2629.2,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-065-P22",
+        "part_type": 22,
+        "quantity": 21,
+        "process_time": 2629.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-066",
+    "target_station": 1,
+    "total_process_time": 7953.9,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-066-P11",
+        "part_type": 11,
+        "quantity": 37,
+        "process_time": 3703.7
+      },
+      {
+        "entity_id": "ORD-2026-066-P32",
+        "part_type": 32,
+        "quantity": 21,
+        "process_time": 1209.6
+      },
+      {
+        "entity_id": "ORD-2026-066-P15",
+        "part_type": 15,
+        "quantity": 23,
+        "process_time": 3040.6
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-067",
+    "target_station": 3,
+    "total_process_time": 3455.4,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-067-P10",
+        "part_type": 10,
+        "quantity": 26,
+        "process_time": 3455.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-068",
+    "target_station": 6,
+    "total_process_time": 4265.3,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-068-P21",
+        "part_type": 21,
+        "quantity": 8,
+        "process_time": 405.6
+      },
+      {
+        "entity_id": "ORD-2026-068-P29",
+        "part_type": 29,
+        "quantity": 32,
+        "process_time": 1811.2
+      },
+      {
+        "entity_id": "ORD-2026-068-P19",
+        "part_type": 19,
+        "quantity": 17,
+        "process_time": 2048.5
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-069",
+    "target_station": 5,
+    "total_process_time": 3357.5,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-069-P46",
+        "part_type": 46,
+        "quantity": 25,
+        "process_time": 3357.5
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-070",
+    "target_station": 2,
+    "total_process_time": 2287.1,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-070-P44",
+        "part_type": 44,
+        "quantity": 11,
+        "process_time": 445.5
+      },
+      {
+        "entity_id": "ORD-2026-070-P49",
+        "part_type": 49,
+        "quantity": 12,
+        "process_time": 529.2
+      },
+      {
+        "entity_id": "ORD-2026-070-P40",
+        "part_type": 40,
+        "quantity": 8,
+        "process_time": 600.8
+      },
+      {
+        "entity_id": "ORD-2026-070-P12",
+        "part_type": 12,
+        "quantity": 6,
+        "process_time": 711.6
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-071",
+    "target_station": 9,
+    "total_process_time": 9740.900000000001,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-071-P38",
+        "part_type": 38,
+        "quantity": 25,
+        "process_time": 2112.5
+      },
+      {
+        "entity_id": "ORD-2026-071-P13",
+        "part_type": 13,
+        "quantity": 34,
+        "process_time": 3236.8
+      },
+      {
+        "entity_id": "ORD-2026-071-P36",
+        "part_type": 36,
+        "quantity": 31,
+        "process_time": 2910.9
+      },
+      {
+        "entity_id": "ORD-2026-071-P9",
+        "part_type": 9,
+        "quantity": 13,
+        "process_time": 1480.7
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-072",
+    "target_station": 4,
+    "total_process_time": 193.0,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-072-P1",
+        "part_type": 1,
+        "quantity": 5,
+        "process_time": 193.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-073",
+    "target_station": 4,
+    "total_process_time": 3321.4,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-073-P38",
+        "part_type": 38,
+        "quantity": 32,
+        "process_time": 2704.0
+      },
+      {
+        "entity_id": "ORD-2026-073-P49",
+        "part_type": 49,
+        "quantity": 14,
+        "process_time": 617.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-074",
+    "target_station": 8,
+    "total_process_time": 7260.9,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-074-P24",
+        "part_type": 24,
+        "quantity": 39,
+        "process_time": 4083.3
+      },
+      {
+        "entity_id": "ORD-2026-074-P16",
+        "part_type": 16,
+        "quantity": 32,
+        "process_time": 3177.6
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-075",
+    "target_station": 4,
+    "total_process_time": 7973.4,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-075-P12",
+        "part_type": 12,
+        "quantity": 30,
+        "process_time": 3558.0
+      },
+      {
+        "entity_id": "ORD-2026-075-P48",
+        "part_type": 48,
+        "quantity": 33,
+        "process_time": 4415.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-076",
+    "target_station": 3,
+    "total_process_time": 4692.599999999999,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-076-P16",
+        "part_type": 16,
+        "quantity": 37,
+        "process_time": 3674.1
+      },
+      {
+        "entity_id": "ORD-2026-076-P32",
+        "part_type": 32,
+        "quantity": 8,
+        "process_time": 460.8
+      },
+      {
+        "entity_id": "ORD-2026-076-P21",
+        "part_type": 21,
+        "quantity": 11,
+        "process_time": 557.7
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-077",
+    "target_station": 7,
+    "total_process_time": 2983.2,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-077-P31",
+        "part_type": 31,
+        "quantity": 22,
+        "process_time": 2983.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-078",
+    "target_station": 2,
+    "total_process_time": 11666.1,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-078-P25",
+        "part_type": 25,
+        "quantity": 32,
+        "process_time": 4457.6
+      },
+      {
+        "entity_id": "ORD-2026-078-P9",
+        "part_type": 9,
+        "quantity": 30,
+        "process_time": 3417.0
+      },
+      {
+        "entity_id": "ORD-2026-078-P47",
+        "part_type": 47,
+        "quantity": 5,
+        "process_time": 176.5
+      },
+      {
+        "entity_id": "ORD-2026-078-P19",
+        "part_type": 19,
+        "quantity": 30,
+        "process_time": 3615.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-079",
+    "target_station": 6,
+    "total_process_time": 7634.0,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-079-P18",
+        "part_type": 18,
+        "quantity": 17,
+        "process_time": 2085.9
+      },
+      {
+        "entity_id": "ORD-2026-079-P27",
+        "part_type": 27,
+        "quantity": 8,
+        "process_time": 217.6
+      },
+      {
+        "entity_id": "ORD-2026-079-P28",
+        "part_type": 28,
+        "quantity": 25,
+        "process_time": 2002.5
+      },
+      {
+        "entity_id": "ORD-2026-079-P23",
+        "part_type": 23,
+        "quantity": 26,
+        "process_time": 3328.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-080",
+    "target_station": 5,
+    "total_process_time": 7679.000000000001,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-080-P39",
+        "part_type": 39,
+        "quantity": 28,
+        "process_time": 1304.8
+      },
+      {
+        "entity_id": "ORD-2026-080-P12",
+        "part_type": 12,
+        "quantity": 36,
+        "process_time": 4269.6
+      },
+      {
+        "entity_id": "ORD-2026-080-P21",
+        "part_type": 21,
+        "quantity": 25,
+        "process_time": 1267.5
+      },
+      {
+        "entity_id": "ORD-2026-080-P43",
+        "part_type": 43,
+        "quantity": 11,
+        "process_time": 837.1
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-081",
+    "target_station": 7,
+    "total_process_time": 2564.2,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-081-P50",
+        "part_type": 50,
+        "quantity": 29,
+        "process_time": 1183.2
+      },
+      {
+        "entity_id": "ORD-2026-081-P47",
+        "part_type": 47,
+        "quantity": 5,
+        "process_time": 176.5
+      },
+      {
+        "entity_id": "ORD-2026-081-P4",
+        "part_type": 4,
+        "quantity": 15,
+        "process_time": 1204.5
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-082",
+    "target_station": 0,
+    "total_process_time": 4655.8,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-082-P42",
+        "part_type": 42,
+        "quantity": 20,
+        "process_time": 2268.0
+      },
+      {
+        "entity_id": "ORD-2026-082-P39",
+        "part_type": 39,
+        "quantity": 5,
+        "process_time": 233.0
+      },
+      {
+        "entity_id": "ORD-2026-082-P41",
+        "part_type": 41,
+        "quantity": 14,
+        "process_time": 733.6
+      },
+      {
+        "entity_id": "ORD-2026-082-P35",
+        "part_type": 35,
+        "quantity": 38,
+        "process_time": 1421.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-083",
+    "target_station": 8,
+    "total_process_time": 5910.1,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-083-P20",
+        "part_type": 20,
+        "quantity": 29,
+        "process_time": 2679.6
+      },
+      {
+        "entity_id": "ORD-2026-083-P25",
+        "part_type": 25,
+        "quantity": 13,
+        "process_time": 1810.9
+      },
+      {
+        "entity_id": "ORD-2026-083-P21",
+        "part_type": 21,
+        "quantity": 28,
+        "process_time": 1419.6
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-084",
+    "target_station": 7,
+    "total_process_time": 2680.5,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-084-P15",
+        "part_type": 15,
+        "quantity": 8,
+        "process_time": 1057.6
+      },
+      {
+        "entity_id": "ORD-2026-084-P40",
+        "part_type": 40,
+        "quantity": 5,
+        "process_time": 375.5
+      },
+      {
+        "entity_id": "ORD-2026-084-P42",
+        "part_type": 42,
+        "quantity": 11,
+        "process_time": 1247.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-085",
+    "target_station": 1,
+    "total_process_time": 435.2,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-085-P27",
+        "part_type": 27,
+        "quantity": 16,
+        "process_time": 435.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-086",
+    "target_station": 3,
+    "total_process_time": 3343.2,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-086-P25",
+        "part_type": 25,
+        "quantity": 24,
+        "process_time": 3343.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-087",
+    "target_station": 1,
+    "total_process_time": 1428.2,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-087-P1",
+        "part_type": 1,
+        "quantity": 37,
+        "process_time": 1428.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-088",
+    "target_station": 1,
+    "total_process_time": 7081.7,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-088-P29",
+        "part_type": 29,
+        "quantity": 11,
+        "process_time": 622.6
+      },
+      {
+        "entity_id": "ORD-2026-088-P18",
+        "part_type": 18,
+        "quantity": 25,
+        "process_time": 3067.5
+      },
+      {
+        "entity_id": "ORD-2026-088-P4",
+        "part_type": 4,
+        "quantity": 8,
+        "process_time": 642.4
+      },
+      {
+        "entity_id": "ORD-2026-088-P3",
+        "part_type": 3,
+        "quantity": 29,
+        "process_time": 2749.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-089",
+    "target_station": 0,
+    "total_process_time": 4751.3,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-089-P18",
+        "part_type": 18,
+        "quantity": 19,
+        "process_time": 2331.3
+      },
+      {
+        "entity_id": "ORD-2026-089-P43",
+        "part_type": 43,
+        "quantity": 14,
+        "process_time": 1065.4
+      },
+      {
+        "entity_id": "ORD-2026-089-P32",
+        "part_type": 32,
+        "quantity": 13,
+        "process_time": 748.8
+      },
+      {
+        "entity_id": "ORD-2026-089-P39",
+        "part_type": 39,
+        "quantity": 13,
+        "process_time": 605.8
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-090",
+    "target_station": 6,
+    "total_process_time": 803.6,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-090-P1",
+        "part_type": 1,
+        "quantity": 5,
+        "process_time": 193.0
+      },
+      {
+        "entity_id": "ORD-2026-090-P47",
+        "part_type": 47,
+        "quantity": 12,
+        "process_time": 423.6
+      },
+      {
+        "entity_id": "ORD-2026-090-P35",
+        "part_type": 35,
+        "quantity": 5,
+        "process_time": 187.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-091",
+    "target_station": 9,
+    "total_process_time": 5388.6,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-091-P31",
+        "part_type": 31,
+        "quantity": 22,
+        "process_time": 2983.2
+      },
+      {
+        "entity_id": "ORD-2026-091-P37",
+        "part_type": 37,
+        "quantity": 13,
+        "process_time": 1466.4
+      },
+      {
+        "entity_id": "ORD-2026-091-P5",
+        "part_type": 5,
+        "quantity": 15,
+        "process_time": 939.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-092",
+    "target_station": 4,
+    "total_process_time": 1409.9,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-092-P23",
+        "part_type": 23,
+        "quantity": 5,
+        "process_time": 640.0
+      },
+      {
+        "entity_id": "ORD-2026-092-P47",
+        "part_type": 47,
+        "quantity": 10,
+        "process_time": 353.0
+      },
+      {
+        "entity_id": "ORD-2026-092-P26",
+        "part_type": 26,
+        "quantity": 11,
+        "process_time": 416.9
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-093",
+    "target_station": 5,
+    "total_process_time": 1353.6,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-093-P37",
+        "part_type": 37,
+        "quantity": 12,
+        "process_time": 1353.6
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-094",
+    "target_station": 7,
+    "total_process_time": 2640.0,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-094-P14",
+        "part_type": 14,
+        "quantity": 40,
+        "process_time": 2640.0
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-095",
+    "target_station": 3,
+    "total_process_time": 12453.400000000001,
+    "total_boxes": 4,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-095-P24",
+        "part_type": 24,
+        "quantity": 40,
+        "process_time": 4188.0
+      },
+      {
+        "entity_id": "ORD-2026-095-P1",
+        "part_type": 1,
+        "quantity": 38,
+        "process_time": 1466.8
+      },
+      {
+        "entity_id": "ORD-2026-095-P48",
+        "part_type": 48,
+        "quantity": 33,
+        "process_time": 4415.4
+      },
+      {
+        "entity_id": "ORD-2026-095-P16",
+        "part_type": 16,
+        "quantity": 24,
+        "process_time": 2383.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-096",
+    "target_station": 6,
+    "total_process_time": 8554.1,
+    "total_boxes": 3,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-096-P37",
+        "part_type": 37,
+        "quantity": 33,
+        "process_time": 3722.4
+      },
+      {
+        "entity_id": "ORD-2026-096-P8",
+        "part_type": 8,
+        "quantity": 5,
+        "process_time": 282.5
+      },
+      {
+        "entity_id": "ORD-2026-096-P48",
+        "part_type": 48,
+        "quantity": 34,
+        "process_time": 4549.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-097",
+    "target_station": 7,
+    "total_process_time": 2173.1,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-097-P29",
+        "part_type": 29,
+        "quantity": 16,
+        "process_time": 905.6
+      },
+      {
+        "entity_id": "ORD-2026-097-P21",
+        "part_type": 21,
+        "quantity": 25,
+        "process_time": 1267.5
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-098",
+    "target_station": 0,
+    "total_process_time": 1064.2,
+    "total_boxes": 1,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-098-P5",
+        "part_type": 5,
+        "quantity": 17,
+        "process_time": 1064.2
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-099",
+    "target_station": 5,
+    "total_process_time": 978.9,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-099-P25",
+        "part_type": 25,
+        "quantity": 5,
+        "process_time": 696.5
+      },
+      {
+        "entity_id": "ORD-2026-099-P47",
+        "part_type": 47,
+        "quantity": 8,
+        "process_time": 282.4
+      }
+    ]
+  },
+  {
+    "order_id": "ORD-2026-100",
+    "target_station": 5,
+    "total_process_time": 8040.0,
+    "total_boxes": 2,
+    "parts": [
+      {
+        "entity_id": "ORD-2026-100-P37",
+        "part_type": 37,
+        "quantity": 28,
+        "process_time": 3158.4
+      },
+      {
+        "entity_id": "ORD-2026-100-P31",
+        "part_type": 31,
+        "quantity": 36,
+        "process_time": 4881.6
+      }
+    ]
+  }
+]

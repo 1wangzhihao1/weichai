@@ -1,0 +1,1827 @@
+[
+  {
+    "order_id": "Order-001",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 3,
+        "p_time": 302
+      },
+      {
+        "type": 1,
+        "quantity": 1,
+        "p_time": 208
+      },
+      {
+        "type": 0,
+        "quantity": 3,
+        "p_time": 146
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-002",
+    "parts": [
+      {
+        "type": 4,
+        "quantity": 2,
+        "p_time": 176
+      },
+      {
+        "type": 0,
+        "quantity": 3,
+        "p_time": 323
+      },
+      {
+        "type": 6,
+        "quantity": 2,
+        "p_time": 197
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-003",
+    "parts": [
+      {
+        "type": 3,
+        "quantity": 1,
+        "p_time": 317
+      },
+      {
+        "type": 1,
+        "quantity": 1,
+        "p_time": 205
+      },
+      {
+        "type": 7,
+        "quantity": 3,
+        "p_time": 250
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-004",
+    "parts": [
+      {
+        "type": 6,
+        "quantity": 1,
+        "p_time": 238
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-005",
+    "parts": [
+      {
+        "type": 6,
+        "quantity": 1,
+        "p_time": 273
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-006",
+    "parts": [
+      {
+        "type": 5,
+        "quantity": 1,
+        "p_time": 324
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-007",
+    "parts": [
+      {
+        "type": 4,
+        "quantity": 1,
+        "p_time": 151
+      },
+      {
+        "type": 2,
+        "quantity": 2,
+        "p_time": 180
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-008",
+    "parts": [
+      {
+        "type": 5,
+        "quantity": 2,
+        "p_time": 332
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-009",
+    "parts": [
+      {
+        "type": 2,
+        "quantity": 2,
+        "p_time": 214
+      },
+      {
+        "type": 1,
+        "quantity": 1,
+        "p_time": 127
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-010",
+    "parts": [
+      {
+        "type": 0,
+        "quantity": 1,
+        "p_time": 151
+      },
+      {
+        "type": 3,
+        "quantity": 3,
+        "p_time": 248
+      },
+      {
+        "type": 2,
+        "quantity": 1,
+        "p_time": 343
+      },
+      {
+        "type": 7,
+        "quantity": 3,
+        "p_time": 222
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-011",
+    "parts": [
+      {
+        "type": 2,
+        "quantity": 2,
+        "p_time": 263
+      },
+      {
+        "type": 5,
+        "quantity": 1,
+        "p_time": 197
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-012",
+    "parts": [
+      {
+        "type": 3,
+        "quantity": 3,
+        "p_time": 345
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-013",
+    "parts": [
+      {
+        "type": 1,
+        "quantity": 3,
+        "p_time": 262
+      },
+      {
+        "type": 5,
+        "quantity": 2,
+        "p_time": 284
+      },
+      {
+        "type": 2,
+        "quantity": 1,
+        "p_time": 155
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-014",
+    "parts": [
+      {
+        "type": 0,
+        "quantity": 3,
+        "p_time": 334
+      },
+      {
+        "type": 4,
+        "quantity": 1,
+        "p_time": 210
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-015",
+    "parts": [
+      {
+        "type": 2,
+        "quantity": 2,
+        "p_time": 277
+      },
+      {
+        "type": 5,
+        "quantity": 1,
+        "p_time": 327
+      },
+      {
+        "type": 4,
+        "quantity": 3,
+        "p_time": 258
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-016",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 2,
+        "p_time": 291
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-017",
+    "parts": [
+      {
+        "type": 6,
+        "quantity": 1,
+        "p_time": 129
+      },
+      {
+        "type": 5,
+        "quantity": 3,
+        "p_time": 144
+      },
+      {
+        "type": 1,
+        "quantity": 3,
+        "p_time": 334
+      },
+      {
+        "type": 7,
+        "quantity": 2,
+        "p_time": 276
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-018",
+    "parts": [
+      {
+        "type": 3,
+        "quantity": 3,
+        "p_time": 326
+      },
+      {
+        "type": 5,
+        "quantity": 1,
+        "p_time": 348
+      },
+      {
+        "type": 6,
+        "quantity": 2,
+        "p_time": 227
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-019",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 3,
+        "p_time": 268
+      },
+      {
+        "type": 3,
+        "quantity": 1,
+        "p_time": 135
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-020",
+    "parts": [
+      {
+        "type": 1,
+        "quantity": 3,
+        "p_time": 158
+      },
+      {
+        "type": 0,
+        "quantity": 1,
+        "p_time": 242
+      },
+      {
+        "type": 5,
+        "quantity": 3,
+        "p_time": 267
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-021",
+    "parts": [
+      {
+        "type": 4,
+        "quantity": 1,
+        "p_time": 296
+      },
+      {
+        "type": 7,
+        "quantity": 1,
+        "p_time": 323
+      },
+      {
+        "type": 6,
+        "quantity": 3,
+        "p_time": 175
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-022",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 2,
+        "p_time": 177
+      },
+      {
+        "type": 2,
+        "quantity": 1,
+        "p_time": 187
+      },
+      {
+        "type": 0,
+        "quantity": 1,
+        "p_time": 348
+      },
+      {
+        "type": 1,
+        "quantity": 2,
+        "p_time": 184
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-023",
+    "parts": [
+      {
+        "type": 2,
+        "quantity": 2,
+        "p_time": 124
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-024",
+    "parts": [
+      {
+        "type": 3,
+        "quantity": 1,
+        "p_time": 180
+      },
+      {
+        "type": 2,
+        "quantity": 3,
+        "p_time": 245
+      },
+      {
+        "type": 5,
+        "quantity": 1,
+        "p_time": 178
+      },
+      {
+        "type": 1,
+        "quantity": 2,
+        "p_time": 304
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-025",
+    "parts": [
+      {
+        "type": 1,
+        "quantity": 2,
+        "p_time": 305
+      },
+      {
+        "type": 5,
+        "quantity": 3,
+        "p_time": 280
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-026",
+    "parts": [
+      {
+        "type": 2,
+        "quantity": 1,
+        "p_time": 218
+      },
+      {
+        "type": 0,
+        "quantity": 3,
+        "p_time": 342
+      },
+      {
+        "type": 7,
+        "quantity": 2,
+        "p_time": 341
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-027",
+    "parts": [
+      {
+        "type": 4,
+        "quantity": 2,
+        "p_time": 122
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-028",
+    "parts": [
+      {
+        "type": 3,
+        "quantity": 3,
+        "p_time": 325
+      },
+      {
+        "type": 7,
+        "quantity": 3,
+        "p_time": 287
+      },
+      {
+        "type": 1,
+        "quantity": 3,
+        "p_time": 342
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-029",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 1,
+        "p_time": 214
+      },
+      {
+        "type": 1,
+        "quantity": 3,
+        "p_time": 267
+      },
+      {
+        "type": 0,
+        "quantity": 3,
+        "p_time": 257
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-030",
+    "parts": [
+      {
+        "type": 3,
+        "quantity": 3,
+        "p_time": 259
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-031",
+    "parts": [
+      {
+        "type": 5,
+        "quantity": 3,
+        "p_time": 293
+      },
+      {
+        "type": 0,
+        "quantity": 3,
+        "p_time": 287
+      },
+      {
+        "type": 6,
+        "quantity": 2,
+        "p_time": 319
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-032",
+    "parts": [
+      {
+        "type": 2,
+        "quantity": 1,
+        "p_time": 217
+      },
+      {
+        "type": 0,
+        "quantity": 1,
+        "p_time": 144
+      },
+      {
+        "type": 5,
+        "quantity": 3,
+        "p_time": 247
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-033",
+    "parts": [
+      {
+        "type": 1,
+        "quantity": 2,
+        "p_time": 308
+      },
+      {
+        "type": 0,
+        "quantity": 1,
+        "p_time": 161
+      },
+      {
+        "type": 7,
+        "quantity": 3,
+        "p_time": 303
+      },
+      {
+        "type": 3,
+        "quantity": 2,
+        "p_time": 276
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-034",
+    "parts": [
+      {
+        "type": 3,
+        "quantity": 2,
+        "p_time": 126
+      },
+      {
+        "type": 6,
+        "quantity": 3,
+        "p_time": 342
+      },
+      {
+        "type": 0,
+        "quantity": 2,
+        "p_time": 155
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-035",
+    "parts": [
+      {
+        "type": 2,
+        "quantity": 3,
+        "p_time": 320
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-036",
+    "parts": [
+      {
+        "type": 4,
+        "quantity": 2,
+        "p_time": 135
+      },
+      {
+        "type": 5,
+        "quantity": 2,
+        "p_time": 128
+      },
+      {
+        "type": 0,
+        "quantity": 1,
+        "p_time": 189
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-037",
+    "parts": [
+      {
+        "type": 6,
+        "quantity": 3,
+        "p_time": 181
+      },
+      {
+        "type": 1,
+        "quantity": 1,
+        "p_time": 284
+      },
+      {
+        "type": 3,
+        "quantity": 3,
+        "p_time": 190
+      },
+      {
+        "type": 7,
+        "quantity": 3,
+        "p_time": 309
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-038",
+    "parts": [
+      {
+        "type": 0,
+        "quantity": 2,
+        "p_time": 306
+      },
+      {
+        "type": 6,
+        "quantity": 1,
+        "p_time": 321
+      },
+      {
+        "type": 4,
+        "quantity": 3,
+        "p_time": 303
+      },
+      {
+        "type": 2,
+        "quantity": 2,
+        "p_time": 329
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-039",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 3,
+        "p_time": 138
+      },
+      {
+        "type": 5,
+        "quantity": 1,
+        "p_time": 241
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-040",
+    "parts": [
+      {
+        "type": 4,
+        "quantity": 1,
+        "p_time": 216
+      },
+      {
+        "type": 7,
+        "quantity": 1,
+        "p_time": 171
+      },
+      {
+        "type": 3,
+        "quantity": 1,
+        "p_time": 223
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-041",
+    "parts": [
+      {
+        "type": 5,
+        "quantity": 1,
+        "p_time": 285
+      },
+      {
+        "type": 3,
+        "quantity": 3,
+        "p_time": 200
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-042",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 3,
+        "p_time": 331
+      },
+      {
+        "type": 2,
+        "quantity": 2,
+        "p_time": 217
+      },
+      {
+        "type": 5,
+        "quantity": 3,
+        "p_time": 331
+      },
+      {
+        "type": 1,
+        "quantity": 2,
+        "p_time": 295
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-043",
+    "parts": [
+      {
+        "type": 1,
+        "quantity": 2,
+        "p_time": 281
+      },
+      {
+        "type": 5,
+        "quantity": 3,
+        "p_time": 283
+      },
+      {
+        "type": 6,
+        "quantity": 1,
+        "p_time": 254
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-044",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 1,
+        "p_time": 177
+      },
+      {
+        "type": 0,
+        "quantity": 2,
+        "p_time": 180
+      },
+      {
+        "type": 4,
+        "quantity": 2,
+        "p_time": 229
+      },
+      {
+        "type": 6,
+        "quantity": 3,
+        "p_time": 326
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-045",
+    "parts": [
+      {
+        "type": 2,
+        "quantity": 1,
+        "p_time": 198
+      },
+      {
+        "type": 4,
+        "quantity": 3,
+        "p_time": 225
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-046",
+    "parts": [
+      {
+        "type": 2,
+        "quantity": 1,
+        "p_time": 302
+      },
+      {
+        "type": 1,
+        "quantity": 2,
+        "p_time": 171
+      },
+      {
+        "type": 3,
+        "quantity": 2,
+        "p_time": 252
+      },
+      {
+        "type": 5,
+        "quantity": 2,
+        "p_time": 347
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-047",
+    "parts": [
+      {
+        "type": 1,
+        "quantity": 3,
+        "p_time": 192
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-048",
+    "parts": [
+      {
+        "type": 5,
+        "quantity": 3,
+        "p_time": 220
+      },
+      {
+        "type": 2,
+        "quantity": 3,
+        "p_time": 227
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-049",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 3,
+        "p_time": 213
+      },
+      {
+        "type": 3,
+        "quantity": 3,
+        "p_time": 180
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-050",
+    "parts": [
+      {
+        "type": 6,
+        "quantity": 1,
+        "p_time": 244
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-051",
+    "parts": [
+      {
+        "type": 1,
+        "quantity": 2,
+        "p_time": 325
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-052",
+    "parts": [
+      {
+        "type": 4,
+        "quantity": 2,
+        "p_time": 158
+      },
+      {
+        "type": 5,
+        "quantity": 2,
+        "p_time": 325
+      },
+      {
+        "type": 1,
+        "quantity": 1,
+        "p_time": 323
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-053",
+    "parts": [
+      {
+        "type": 1,
+        "quantity": 3,
+        "p_time": 218
+      },
+      {
+        "type": 7,
+        "quantity": 1,
+        "p_time": 343
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-054",
+    "parts": [
+      {
+        "type": 1,
+        "quantity": 1,
+        "p_time": 350
+      },
+      {
+        "type": 4,
+        "quantity": 1,
+        "p_time": 303
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-055",
+    "parts": [
+      {
+        "type": 0,
+        "quantity": 2,
+        "p_time": 230
+      },
+      {
+        "type": 2,
+        "quantity": 2,
+        "p_time": 344
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-056",
+    "parts": [
+      {
+        "type": 1,
+        "quantity": 2,
+        "p_time": 163
+      },
+      {
+        "type": 2,
+        "quantity": 1,
+        "p_time": 243
+      },
+      {
+        "type": 5,
+        "quantity": 1,
+        "p_time": 172
+      },
+      {
+        "type": 0,
+        "quantity": 1,
+        "p_time": 299
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-057",
+    "parts": [
+      {
+        "type": 6,
+        "quantity": 2,
+        "p_time": 334
+      },
+      {
+        "type": 3,
+        "quantity": 3,
+        "p_time": 342
+      },
+      {
+        "type": 2,
+        "quantity": 3,
+        "p_time": 269
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-058",
+    "parts": [
+      {
+        "type": 2,
+        "quantity": 3,
+        "p_time": 208
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-059",
+    "parts": [
+      {
+        "type": 6,
+        "quantity": 3,
+        "p_time": 249
+      },
+      {
+        "type": 0,
+        "quantity": 1,
+        "p_time": 256
+      },
+      {
+        "type": 5,
+        "quantity": 1,
+        "p_time": 260
+      },
+      {
+        "type": 7,
+        "quantity": 3,
+        "p_time": 141
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-060",
+    "parts": [
+      {
+        "type": 5,
+        "quantity": 3,
+        "p_time": 281
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-061",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 1,
+        "p_time": 171
+      },
+      {
+        "type": 1,
+        "quantity": 2,
+        "p_time": 267
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-062",
+    "parts": [
+      {
+        "type": 6,
+        "quantity": 2,
+        "p_time": 259
+      },
+      {
+        "type": 7,
+        "quantity": 1,
+        "p_time": 136
+      },
+      {
+        "type": 0,
+        "quantity": 3,
+        "p_time": 179
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-063",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 3,
+        "p_time": 144
+      },
+      {
+        "type": 1,
+        "quantity": 2,
+        "p_time": 290
+      },
+      {
+        "type": 5,
+        "quantity": 3,
+        "p_time": 139
+      },
+      {
+        "type": 0,
+        "quantity": 2,
+        "p_time": 204
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-064",
+    "parts": [
+      {
+        "type": 4,
+        "quantity": 3,
+        "p_time": 297
+      },
+      {
+        "type": 1,
+        "quantity": 3,
+        "p_time": 306
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-065",
+    "parts": [
+      {
+        "type": 1,
+        "quantity": 3,
+        "p_time": 241
+      },
+      {
+        "type": 6,
+        "quantity": 1,
+        "p_time": 260
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-066",
+    "parts": [
+      {
+        "type": 3,
+        "quantity": 2,
+        "p_time": 295
+      },
+      {
+        "type": 5,
+        "quantity": 1,
+        "p_time": 189
+      },
+      {
+        "type": 6,
+        "quantity": 2,
+        "p_time": 184
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-067",
+    "parts": [
+      {
+        "type": 6,
+        "quantity": 2,
+        "p_time": 135
+      },
+      {
+        "type": 1,
+        "quantity": 1,
+        "p_time": 219
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-068",
+    "parts": [
+      {
+        "type": 0,
+        "quantity": 1,
+        "p_time": 141
+      },
+      {
+        "type": 4,
+        "quantity": 2,
+        "p_time": 263
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-069",
+    "parts": [
+      {
+        "type": 4,
+        "quantity": 2,
+        "p_time": 251
+      },
+      {
+        "type": 2,
+        "quantity": 2,
+        "p_time": 316
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-070",
+    "parts": [
+      {
+        "type": 1,
+        "quantity": 1,
+        "p_time": 121
+      },
+      {
+        "type": 3,
+        "quantity": 1,
+        "p_time": 350
+      },
+      {
+        "type": 5,
+        "quantity": 1,
+        "p_time": 300
+      },
+      {
+        "type": 2,
+        "quantity": 2,
+        "p_time": 336
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-071",
+    "parts": [
+      {
+        "type": 3,
+        "quantity": 2,
+        "p_time": 129
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-072",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 3,
+        "p_time": 277
+      },
+      {
+        "type": 1,
+        "quantity": 3,
+        "p_time": 283
+      },
+      {
+        "type": 0,
+        "quantity": 2,
+        "p_time": 137
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-073",
+    "parts": [
+      {
+        "type": 5,
+        "quantity": 2,
+        "p_time": 190
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-074",
+    "parts": [
+      {
+        "type": 2,
+        "quantity": 1,
+        "p_time": 213
+      },
+      {
+        "type": 6,
+        "quantity": 3,
+        "p_time": 170
+      },
+      {
+        "type": 3,
+        "quantity": 1,
+        "p_time": 340
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-075",
+    "parts": [
+      {
+        "type": 3,
+        "quantity": 1,
+        "p_time": 209
+      },
+      {
+        "type": 2,
+        "quantity": 2,
+        "p_time": 205
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-076",
+    "parts": [
+      {
+        "type": 4,
+        "quantity": 1,
+        "p_time": 349
+      },
+      {
+        "type": 3,
+        "quantity": 3,
+        "p_time": 146
+      },
+      {
+        "type": 5,
+        "quantity": 3,
+        "p_time": 253
+      },
+      {
+        "type": 2,
+        "quantity": 1,
+        "p_time": 216
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-077",
+    "parts": [
+      {
+        "type": 4,
+        "quantity": 1,
+        "p_time": 270
+      },
+      {
+        "type": 2,
+        "quantity": 2,
+        "p_time": 331
+      },
+      {
+        "type": 6,
+        "quantity": 2,
+        "p_time": 190
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-078",
+    "parts": [
+      {
+        "type": 2,
+        "quantity": 3,
+        "p_time": 313
+      },
+      {
+        "type": 3,
+        "quantity": 2,
+        "p_time": 334
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-079",
+    "parts": [
+      {
+        "type": 0,
+        "quantity": 2,
+        "p_time": 149
+      },
+      {
+        "type": 1,
+        "quantity": 1,
+        "p_time": 238
+      },
+      {
+        "type": 5,
+        "quantity": 3,
+        "p_time": 279
+      },
+      {
+        "type": 2,
+        "quantity": 2,
+        "p_time": 125
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-080",
+    "parts": [
+      {
+        "type": 6,
+        "quantity": 2,
+        "p_time": 337
+      },
+      {
+        "type": 2,
+        "quantity": 2,
+        "p_time": 277
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-081",
+    "parts": [
+      {
+        "type": 4,
+        "quantity": 1,
+        "p_time": 171
+      },
+      {
+        "type": 6,
+        "quantity": 1,
+        "p_time": 306
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-082",
+    "parts": [
+      {
+        "type": 3,
+        "quantity": 1,
+        "p_time": 281
+      },
+      {
+        "type": 1,
+        "quantity": 3,
+        "p_time": 281
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-083",
+    "parts": [
+      {
+        "type": 0,
+        "quantity": 1,
+        "p_time": 318
+      },
+      {
+        "type": 2,
+        "quantity": 1,
+        "p_time": 147
+      },
+      {
+        "type": 5,
+        "quantity": 3,
+        "p_time": 148
+      },
+      {
+        "type": 4,
+        "quantity": 1,
+        "p_time": 158
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-084",
+    "parts": [
+      {
+        "type": 3,
+        "quantity": 3,
+        "p_time": 225
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-085",
+    "parts": [
+      {
+        "type": 2,
+        "quantity": 1,
+        "p_time": 296
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-086",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 3,
+        "p_time": 166
+      },
+      {
+        "type": 4,
+        "quantity": 1,
+        "p_time": 222
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-087",
+    "parts": [
+      {
+        "type": 0,
+        "quantity": 3,
+        "p_time": 269
+      },
+      {
+        "type": 4,
+        "quantity": 3,
+        "p_time": 306
+      },
+      {
+        "type": 6,
+        "quantity": 1,
+        "p_time": 343
+      },
+      {
+        "type": 3,
+        "quantity": 3,
+        "p_time": 121
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-088",
+    "parts": [
+      {
+        "type": 0,
+        "quantity": 1,
+        "p_time": 308
+      },
+      {
+        "type": 3,
+        "quantity": 1,
+        "p_time": 148
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-089",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 1,
+        "p_time": 149
+      },
+      {
+        "type": 6,
+        "quantity": 3,
+        "p_time": 188
+      },
+      {
+        "type": 4,
+        "quantity": 2,
+        "p_time": 333
+      },
+      {
+        "type": 5,
+        "quantity": 2,
+        "p_time": 315
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-090",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 3,
+        "p_time": 222
+      },
+      {
+        "type": 5,
+        "quantity": 2,
+        "p_time": 195
+      },
+      {
+        "type": 0,
+        "quantity": 3,
+        "p_time": 167
+      },
+      {
+        "type": 6,
+        "quantity": 2,
+        "p_time": 249
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-091",
+    "parts": [
+      {
+        "type": 7,
+        "quantity": 2,
+        "p_time": 160
+      },
+      {
+        "type": 3,
+        "quantity": 1,
+        "p_time": 152
+      }
+    ],
+    "total_part_types": 2
+  },
+  {
+    "order_id": "Order-092",
+    "parts": [
+      {
+        "type": 0,
+        "quantity": 3,
+        "p_time": 138
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-093",
+    "parts": [
+      {
+        "type": 5,
+        "quantity": 1,
+        "p_time": 180
+      },
+      {
+        "type": 1,
+        "quantity": 1,
+        "p_time": 248
+      },
+      {
+        "type": 4,
+        "quantity": 2,
+        "p_time": 331
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-094",
+    "parts": [
+      {
+        "type": 6,
+        "quantity": 3,
+        "p_time": 210
+      },
+      {
+        "type": 1,
+        "quantity": 2,
+        "p_time": 231
+      },
+      {
+        "type": 3,
+        "quantity": 2,
+        "p_time": 148
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-095",
+    "parts": [
+      {
+        "type": 4,
+        "quantity": 2,
+        "p_time": 194
+      },
+      {
+        "type": 0,
+        "quantity": 3,
+        "p_time": 205
+      },
+      {
+        "type": 3,
+        "quantity": 3,
+        "p_time": 282
+      },
+      {
+        "type": 2,
+        "quantity": 1,
+        "p_time": 162
+      }
+    ],
+    "total_part_types": 4
+  },
+  {
+    "order_id": "Order-096",
+    "parts": [
+      {
+        "type": 4,
+        "quantity": 2,
+        "p_time": 245
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-097",
+    "parts": [
+      {
+        "type": 6,
+        "quantity": 3,
+        "p_time": 175
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-098",
+    "parts": [
+      {
+        "type": 5,
+        "quantity": 2,
+        "p_time": 235
+      },
+      {
+        "type": 6,
+        "quantity": 2,
+        "p_time": 220
+      },
+      {
+        "type": 2,
+        "quantity": 2,
+        "p_time": 205
+      }
+    ],
+    "total_part_types": 3
+  },
+  {
+    "order_id": "Order-099",
+    "parts": [
+      {
+        "type": 3,
+        "quantity": 3,
+        "p_time": 328
+      }
+    ],
+    "total_part_types": 1
+  },
+  {
+    "order_id": "Order-100",
+    "parts": [
+      {
+        "type": 6,
+        "quantity": 1,
+        "p_time": 260
+      }
+    ],
+    "total_part_types": 1
+  }
+]

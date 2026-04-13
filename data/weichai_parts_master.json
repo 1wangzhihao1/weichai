@@ -1,0 +1,202 @@
+{
+  "1": {
+    "name": "P01_传动齿轮",
+    "process_time_sec": 38.6
+  },
+  "2": {
+    "name": "P02_承载法兰",
+    "process_time_sec": 93.1
+  },
+  "3": {
+    "name": "P03_高压油管",
+    "process_time_sec": 94.8
+  },
+  "4": {
+    "name": "P04_气缸盖",
+    "process_time_sec": 80.3
+  },
+  "5": {
+    "name": "P05_喷油嘴",
+    "process_time_sec": 62.6
+  },
+  "6": {
+    "name": "P06_活塞环",
+    "process_time_sec": 31.1
+  },
+  "7": {
+    "name": "P07_曲轴瓦",
+    "process_time_sec": 45.4
+  },
+  "8": {
+    "name": "P08_连杆总成",
+    "process_time_sec": 56.5
+  },
+  "9": {
+    "name": "P09_进气凸轮",
+    "process_time_sec": 113.9
+  },
+  "10": {
+    "name": "P10_排气歧管",
+    "process_time_sec": 132.9
+  },
+  "11": {
+    "name": "P11_机油泵",
+    "process_time_sec": 100.1
+  },
+  "12": {
+    "name": "P12_水泵叶轮",
+    "process_time_sec": 118.6
+  },
+  "13": {
+    "name": "P13_飞轮壳",
+    "process_time_sec": 95.2
+  },
+  "14": {
+    "name": "P14_皮带轮",
+    "process_time_sec": 66.0
+  },
+  "15": {
+    "name": "P15_张紧轮",
+    "process_time_sec": 132.2
+  },
+  "16": {
+    "name": "P16_气门弹簧",
+    "process_time_sec": 99.3
+  },
+  "17": {
+    "name": "P17_摇臂轴",
+    "process_time_sec": 67.9
+  },
+  "18": {
+    "name": "P18_节温器",
+    "process_time_sec": 122.7
+  },
+  "19": {
+    "name": "P19_涡轮增压器",
+    "process_time_sec": 120.5
+  },
+  "20": {
+    "name": "P20_中冷器",
+    "process_time_sec": 92.4
+  },
+  "21": {
+    "name": "P21_燃油滤清器",
+    "process_time_sec": 50.7
+  },
+  "22": {
+    "name": "P22_机油滤清器",
+    "process_time_sec": 125.2
+  },
+  "23": {
+    "name": "P23_空气滤清器",
+    "process_time_sec": 128.0
+  },
+  "24": {
+    "name": "P24_启动马达",
+    "process_time_sec": 104.7
+  },
+  "25": {
+    "name": "P25_交流发电机",
+    "process_time_sec": 139.3
+  },
+  "26": {
+    "name": "P26_转向助力泵",
+    "process_time_sec": 37.9
+  },
+  "27": {
+    "name": "P27_空调压缩机",
+    "process_time_sec": 27.2
+  },
+  "28": {
+    "name": "P28_离合器摩擦片",
+    "process_time_sec": 80.1
+  },
+  "29": {
+    "name": "P29_压盘总成",
+    "process_time_sec": 56.6
+  },
+  "30": {
+    "name": "P30_分离轴承",
+    "process_time_sec": 143.5
+  },
+  "31": {
+    "name": "P31_变速箱前壳",
+    "process_time_sec": 135.6
+  },
+  "32": {
+    "name": "P32_换挡同步器",
+    "process_time_sec": 57.6
+  },
+  "33": {
+    "name": "P33_主传动轴",
+    "process_time_sec": 137.2
+  },
+  "34": {
+    "name": "P34_十字万向节",
+    "process_time_sec": 95.4
+  },
+  "35": {
+    "name": "P35_差速器壳体",
+    "process_time_sec": 37.4
+  },
+  "36": {
+    "name": "P36_驱动半轴",
+    "process_time_sec": 93.9
+  },
+  "37": {
+    "name": "P37_阻尼减震器",
+    "process_time_sec": 112.8
+  },
+  "38": {
+    "name": "P38_通风刹车盘",
+    "process_time_sec": 84.5
+  },
+  "39": {
+    "name": "P39_制动卡钳",
+    "process_time_sec": 46.6
+  },
+  "40": {
+    "name": "P40_转向横拉杆",
+    "process_time_sec": 75.1
+  },
+  "41": {
+    "name": "P41_独立悬挂下摆臂",
+    "process_time_sec": 52.4
+  },
+  "42": {
+    "name": "P42_轮毂轴承",
+    "process_time_sec": 113.4
+  },
+  "43": {
+    "name": "P43_排气消音筒",
+    "process_time_sec": 76.1
+  },
+  "44": {
+    "name": "P44_三元催化器",
+    "process_time_sec": 40.5
+  },
+  "45": {
+    "name": "P45_前置氧传感器",
+    "process_time_sec": 27.5
+  },
+  "46": {
+    "name": "P46_压电爆震传感器",
+    "process_time_sec": 134.3
+  },
+  "47": {
+    "name": "P47_曲轴位置传感器",
+    "process_time_sec": 35.3
+  },
+  "48": {
+    "name": "P48_进气压力传感器",
+    "process_time_sec": 133.8
+  },
+  "49": {
+    "name": "P49_冷却水温传感器",
+    "process_time_sec": 44.1
+  },
+  "50": {
+    "name": "P50_机油压力传感器",
+    "process_time_sec": 40.8
+  }
+}
