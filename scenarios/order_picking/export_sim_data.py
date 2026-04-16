@@ -5,6 +5,7 @@ import os
 import json
 import simpy
 import numpy as np
+import copy # 👈 新增引入，用于深拷贝历史事件日志
 from sb3_contrib import MaskablePPO
 
 # 🌟 寻路雷达
@@ -99,11 +100,11 @@ def auto_search_optimal_stations(model):
     return best_limit
 
 # ==============================================================================
-# 🌟 终极修复：拆分 vip_time 和 breakdown_time，彻底消灭“平行宇宙”和“蝴蝶效应”
+# 🌟 终极修复：接收 breakdown_events 数组，重现所有历史灾难，打通时间线叠加！
 # ==============================================================================
-def export_animation_data(trigger_vip=False, vip_time=0.0, broken_stations=None, breakdown_time=0.0):
+def export_animation_data(trigger_vip=False, vip_time=0.0, breakdown_events=None):
     print("="*80)
-    print("🎥 启动 [3D 动画剧本导出工具] (数字孪生抗扰动双线融合版)...")
+    print("🎥 启动 [3D 动画剧本导出工具] (全息多维灾难重演版)...")
     print("="*80)
 
     ai_env = PickingEnv()
@@ -131,10 +132,10 @@ def export_animation_data(trigger_vip=False, vip_time=0.0, broken_stations=None,
     order_manifest = []
     
     vip_injected = False 
-    breakdown_triggered = False
-    
-    # 兜底物理掩码，兼容所有老版本环境
     dynamic_broken_mask = np.ones(Config.NUM_STATIONS, dtype=bool)
+
+    # 🌟 核心：将网关传来的灾难日记深拷贝一份，用作“备忘录”，在推演中逐个勾销
+    pending_breakdowns = copy.deepcopy(breakdown_events) if breakdown_events else []
 
     print("🧠 正在使用 AI 策略进行物理推演与多维事件融合刻录...")
 
@@ -157,7 +158,7 @@ def export_animation_data(trigger_vip=False, vip_time=0.0, broken_stations=None,
                 def __init__(self, data):
                     raw_id = str(data.get("vip_order_id", "VIP-999"))
                     self.order_id = raw_id if "VIP" in raw_id.upper() else f"VIP-{raw_id}"
-                    # 🛡️ 修复：给同型号的 VIP 零件加上序号 i，防止字典 Key 覆盖导致变成幽灵！
+                    # 防止 ID 覆盖的唯一序号
                     self.entities = [
                         DummyEntity(f"{self.order_id}-P{p['type']}-{i}", p["type"], p["p_time"]) 
                         for i, p in enumerate(data["parts"])
@@ -168,7 +169,6 @@ def export_animation_data(trigger_vip=False, vip_time=0.0, broken_stations=None,
             
             for idx, vip_data in enumerate(vip_data_list):
                 vip_order = DummyOrder(vip_data)
-                # 兼容旧版本环境直接插入逻辑，防止环境未提供 hook
                 insert_idx = ai_env.current_step + 1 + idx
                 
                 ai_env.logical_orders.insert(insert_idx, vip_order)
@@ -190,27 +190,33 @@ def export_animation_data(trigger_vip=False, vip_time=0.0, broken_stations=None,
             ai_env.total_orders += len(vip_data_list)
             vip_injected = True 
 
-        # --- ⏳ 时空裂缝 2：精准处理最新的物理设备故障 ---
-        if broken_stations and not breakdown_triggered and dispatch_time_cursor >= breakdown_time:
-            print(f"\n💥 [调度中枢] 截获设备异常报警！受损机床: {broken_stations} | 触发时点: {breakdown_time:.1f}s")
-            
-            # 更新局部动作掩码黑名单
-            for sid in broken_stations:
-                dynamic_broken_mask[sid] = False
+        # ==============================================================================
+        # --- ⏳ 时空裂缝 2：遍历历史灾难日记，到点了就引爆，引爆完就打钩！ ---
+        # ==============================================================================
+        for b_event in pending_breakdowns:
+            # 如果该事件还没触发，并且当前 AI 推演时间已经推进到了该事件发生的时间
+            if not b_event.get("triggered", False) and dispatch_time_cursor >= b_event["time"]:
+                b_stations = b_event["stations"]
+                print(f"\n💥 [调度中枢] 时空重现：受损机床: {b_stations} | 触发时点: {b_event['time']:.1f}s")
                 
-            # 兼容：如果使用的是新版环境模型，则调用新版 hook
-            if hasattr(ai_env, 'trigger_breakdown'):
-                ai_env.trigger_breakdown(broken_stations)
-                
-            # 🌟 埋设物理定时炸弹，保证时间坐标绝对对齐
-            for sid in broken_stations:
-                if 0 <= sid < Config.NUM_STATIONS:
-                    sim_env.process(delayed_breakdown(sim_env, physical_stations[sid], breakdown_time, 600))
+                # 1. 更新局部动作掩码黑名单 (永久生效，直到修好，目前假设彻底拉黑)
+                for sid in b_stations: 
+                    dynamic_broken_mask[sid] = False
                     
-            breakdown_triggered = True
+                # 2. 通知 AI 大脑切断相关路由
+                if hasattr(ai_env, 'trigger_breakdown'): 
+                    ai_env.trigger_breakdown(b_stations)
+                    
+                # 3. 在物理沙盘的对应上帝时间点，埋下定时炸弹
+                for sid in b_stations:
+                    if 0 <= sid < Config.NUM_STATIONS: 
+                        sim_env.process(delayed_breakdown(sim_env, physical_stations[sid], b_event["time"], 600))
+                        
+                # 🌟 4. 将这个事件打钩，防止在后续的 while 循环中被重复引爆
+                b_event["triggered"] = True
 
         # ==========================================================
-        # 🌟 三重掩码大一统：AI降本掩码 + 环境内置掩码 + 外部物理宕机掩码
+        # 🌟 三重掩码大一统：AI降本掩码 + 内部动态掩码 + 多重物理宕机掩码
         # ==========================================================
         try:
             env_internal_mask = ai_env.action_masks()
@@ -220,7 +226,7 @@ def export_animation_data(trigger_vip=False, vip_time=0.0, broken_stations=None,
         combined_masks = np.logical_and(energy_saving_mask, dynamic_broken_mask)
         combined_masks = np.logical_and(combined_masks, env_internal_mask)
         
-        # 安全兜底：如果宕机把正常开着的机器全干废了，只能退而求其次允许它用其他机器
+        # 安全兜底：如果宕机把正常开着的机器全干废了，只能退而求其次允许它调用一切没宕机的资源
         if not np.any(combined_masks):
             combined_masks = env_internal_mask
 

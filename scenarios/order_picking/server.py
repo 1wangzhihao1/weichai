@@ -22,12 +22,13 @@ app.add_middleware(
 )
 
 # ==========================================
-# 🛡️ 终极修复 2：系统全局记忆体 (防失忆补丁)
-# 保证在触发宕机时，绝对不会遗忘之前下发的 VIP 订单！
+# 🛡️ 终极修复：系统全局记忆体 V2 (支持多重时间线叠加)
+# 不仅记住 VIP，还能记住无数次在不同时间点发生的宕机事件！
 # ==========================================
 GLOBAL_STATE = {
     "has_vip": False,
-    "vip_time": 0.0
+    "vip_time": 0.0,
+    "breakdowns": []  # 👈 新增：用来记录所有历史宕机事件的数组
 }
 
 @app.get("/api/trigger_vip")
@@ -40,8 +41,12 @@ def api_trigger_vip(current_time: float = 0.0):
     GLOBAL_STATE["has_vip"] = True
     GLOBAL_STATE["vip_time"] = current_time
     
-    # 将参数透传给底层引擎 (注意这里传的是 vip_time)
-    export_animation_data(trigger_vip=True, vip_time=current_time)
+    # 将参数透传给底层引擎 (注意这里传的是 vip_time 和 完整的宕机历史)
+    export_animation_data(
+        trigger_vip=GLOBAL_STATE["has_vip"], 
+        vip_time=GLOBAL_STATE["vip_time"],
+        breakdown_events=GLOBAL_STATE["breakdowns"] # 把之前的宕机历史也传过去
+    )
     
     # 读取 AI 亲自推演出来的剧本
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
@@ -60,17 +65,23 @@ def api_trigger_malfunction(current_time: float = 0.0, stations: str = ""):
     print(f"💥 [网关] 收到设备故障报警！时空坐标: {current_time:.1f} 秒 | 站台: {stations}")
     print("💥"*20)
     
-    # 将前端传来的逗号分隔字符串解析成整数列表
+    # 1. 解析前端传来的受损站台
     broken_stations_list = []
     if stations:
         broken_stations_list = [int(s.strip()) for s in stations.split(",")]
         
-    # 🌟 核心动作：把全局记忆中的 VIP 状态一同传给物理沙盘！防止剧本发生蝴蝶效应！
+    # 2. 🌟 核心动作：把这次的灾难记录追加到历史档案库中
+    if broken_stations_list:
+        GLOBAL_STATE["breakdowns"].append({
+            "time": current_time,
+            "stations": broken_stations_list
+        })
+        
+    # 3. 🌟 核心动作：将所有灾难历史（VIP + 所有宕机）统统交给主引擎重演
     export_animation_data(
         trigger_vip=GLOBAL_STATE["has_vip"], 
         vip_time=GLOBAL_STATE["vip_time"],
-        broken_stations=broken_stations_list,
-        breakdown_time=current_time
+        breakdown_events=GLOBAL_STATE["breakdowns"] # 👈 传入完整的灾难时间线
     )
     
     # 读取最新的避险剧本
@@ -86,7 +97,7 @@ def api_trigger_malfunction(current_time: float = 0.0, stations: str = ""):
 
 if __name__ == "__main__":
     print("="*80)
-    print("🚀 潍柴 AI 孪生调度中枢启动！(已加载全局防失忆记忆体)")
+    print("🚀 潍柴 AI 孪生调度中枢启动！(已升级全息多维记忆体)")
     print("👂 正在监听前端大屏指令... (端口: 9000)")
     print("="*80)
     uvicorn.run(app, host="127.0.0.1", port=9000)
