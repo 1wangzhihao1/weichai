@@ -83,12 +83,31 @@ class SimpyStation:
         yield self.buffer.put(box_data)
 
     def _run_process(self):
-        """后台核心协程：持续从缓存区取货并加工 (支持物理宕机打断与冻结)"""
+        """后台核心协程：持续从缓存区取货并加工 (已修复空闲宕机崩溃Bug)"""
         while True:
-            # 1. 从缓存区获取零件箱 (如果没有货，机床会在此休眠待机)
-            box = yield self.buffer.get()
+            # ==========================================
+            # 🛡️ 终极修复 1：给机器的“空闲等货”状态套上防雷罩
+            # ==========================================
+            try:
+                # 机器闲置时如果被触发故障，会在这个等待环节被强行打断
+                box = yield self.buffer.get()
+            except simpy.Interrupt as interrupt:
+                self.is_broken = True
+                repair_time = interrupt.cause if interrupt.cause else 600
+                if self.logger:
+                    self.logger.log_event(self.env.now, "STATION", "breakdown", self.station_id, {"msg": "待机时突发故障"})
+                
+                # 模拟抢修时间流逝
+                yield self.env.timeout(repair_time)
+                
+                self.is_broken = False
+                if self.logger:
+                    self.logger.log_event(self.env.now, "STATION", "fixed", self.station_id, {"msg": "抢修完成，继续待命"})
+                
+                # 核心机制：修好后，直接进入下一个 while 循环，重新去等货
+                continue 
             
-            # 2. 申请机器资源加工
+            # 2. 拿到货了，开始申请工人/机床加工
             with self.machine.request() as worker_req:
                 yield worker_req
                 
@@ -106,17 +125,17 @@ class SimpyStation:
                         remaining_time = 0 # 顺利完成
                         
                     except simpy.Interrupt as interrupt:
-                        # 💥 遭遇物理宕机被打断
+                        # 🛡️ 修复 2：保留原有的“加工中途”被打断的冻结逻辑
                         self.is_broken = True
-                        repair_time = interrupt.cause if interrupt.cause else 600 # 默认修600秒
+                        repair_time = interrupt.cause if interrupt.cause else 600 
                         
                         worked_time = self.env.now - start_time
                         remaining_time -= worked_time # 冻结并精准记录剩余没加工完的时间
                         
                         if self.logger:
-                            self.logger.log_event(self.env.now, "STATION", "breakdown", self.station_id, {"msg": "故障抢修中"})
+                            self.logger.log_event(self.env.now, "STATION", "breakdown", self.station_id, {"msg": "加工中突发故障"})
                         
-                        # 模拟抢修过程 (时间流逝)
+                        # 模拟抢修过程
                         yield self.env.timeout(repair_time)
                         
                         # 抢修完成，恢复状态

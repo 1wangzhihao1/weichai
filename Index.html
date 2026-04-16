@@ -222,6 +222,9 @@
         let orderStats = { total: 0, completed: 0, map: {} };
         const stations = []; 
         const stationsContainer = document.getElementById('stations-container');
+        
+        // 🌟 提前声明全局时钟，方便在任意地方被调用和“吞噬时间”
+        const clock = new THREE.Clock();
 
         // ================= 剧本解析引擎 =================
         function loadPlaybookData(rawJson, isHotReload = false) {
@@ -297,6 +300,22 @@
             });
             
             simData = Object.values(groupedEvents);
+            // ==========================================================
+            // 🚨 终极修复：幽灵箱子清理器 (Ghost Sweeper)
+            // 当热更新加载新剧本时，如果发现 activeBoxes 里有旧箱子（如之前插入的VIP）
+            // 在新的 simData 里找不到了，立刻将它的模型和 HTML 标签强行销毁！
+            // ==========================================================
+            const newBoxIds = new Set(simData.map(d => d.box_id));
+            activeBoxes.forEach((b, id) => {
+                if (!newBoxIds.has(id)) {
+                    scene.remove(b.mesh);
+                    if (b.label && b.label.parentNode) {
+                        b.label.parentNode.removeChild(b.label);
+                    }
+                    activeBoxes.delete(id);
+                }
+            });
+            // ==========================================================
             orderStats.map = {};
             simData.forEach(d => {
                 const orderId = d.box_id.split('-P')[0]; 
@@ -426,6 +445,8 @@
                     alert("❌ 无法连接到 AI 中枢服务器，请确认终端里运行了 server.py！");
                 } finally {
                     btn.innerHTML = originalText; btn.style.opacity = "1"; btn.disabled = false;
+                    // 🛡️ 修复 4：吞掉发呆通信时间，防止关闭弹窗后箱子瞬间蒸发飞榜！
+                    clock.getDelta(); 
                 }
             });
 
@@ -458,6 +479,8 @@
             // 3. 关闭模态框并恢复播放
             window.closeMalfunctionModal = () => {
                 document.getElementById('malfunctionModal').style.display = 'none';
+                // 🛡️ 修复 4：吞掉看弹窗发呆的时间！
+                clock.getDelta();
                 isPlaying = true;
                 document.getElementById('playBtn').innerText = "⏸ 暂停";
             };
@@ -503,6 +526,8 @@
                     alert("❌ 无法连接到 AI 中枢服务器！");
                 } finally {
                     btn.innerHTML = originalText; btn.style.opacity = "1"; btn.disabled = false;
+                    // 🛡️ 修复 4：吞掉发呆通信时间，防止关闭弹窗后箱子瞬间蒸发！
+                    clock.getDelta();
                     isPlaying = true; document.getElementById('playBtn').innerText = "⏸ 暂停";
                 }
             };
@@ -533,7 +558,7 @@
                 }); }
             });
 
-            const clock = new THREE.Clock();
+            // 时钟已经在上方声明，这里只需继续渲染逻辑
             function animate() {
                 requestAnimationFrame(animate); controls.update();
                 stations.forEach(s => { const pos = new THREE.Vector3(s.x, 3.5, 10.5); pos.project(camera); s.labelDom.style.left = `${(pos.x * .5 + .5) * window.innerWidth}px`; s.labelDom.style.top = `${(pos.y * -.5 + .5) * window.innerHeight}px`; });
