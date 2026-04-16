@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>潍柴动力 JIT 流水线数字孪生中枢 V4.5 (降本增效 AI 熄灯版)</title>
+    <title>潍柴动力 JIT 流水线数字孪生中枢 V4.5 (数字孪生抗扰动重排版)</title>
     <style>
         body { margin: 0; overflow: hidden; background-color: #08121C; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; user-select: none; }
         
@@ -25,7 +25,7 @@
         .modal-card h3 { color: #00E5FF; margin-top: 0; text-align: center; }
         .modal-card .input-group { margin-bottom: 15px; }
         .modal-card input { width: 100%; padding: 8px 10px; background: #0A1525; border: 1px solid #1E3A5F; color: #FFF; border-radius: 4px; }
-        .modal-btn { background: linear-gradient(135deg, #00E5FF, #0077FF); border: none; padding: 8px 16px; border-radius: 6px; color: white; cursor: pointer; margin-right: 10px; }
+        .modal-btn { background: linear-gradient(135deg, #00E5FF, #0077FF); border: none; padding: 8px 16px; border-radius: 6px; color: white; cursor: pointer; margin-right: 10px; font-weight: bold; }
         .modal-btn.cancel { background: #555; }
         .close-modal { float: right; cursor: pointer; color: #A0B2C6; font-size: 20px; }
         .modal-message { color: #FFB800; font-size: 12px; margin-top: 10px; text-align: center; }
@@ -63,6 +63,13 @@
         input[type="range"] { flex-grow: 1; cursor: pointer; accent-color: #00E5FF; height: 6px; background: #1A2B4C; border-radius: 3px; min-width: 300px; }
         #speedSelect { background:#0F1E32; color:#fff; border:1px solid #00E5FF; padding:6px; border-radius:5px; font-weight:bold; font-size: 13px; cursor: pointer;}
 
+        /* ================= 突发状况菜单样式 ================= */
+        .disruption-container { position: relative; display: inline-block; margin-left: 10px; }
+        .disrupt-menu { display: none; position: absolute; bottom: 130%; left: 50%; transform: translateX(-50%); background: rgba(20, 30, 50, 0.95); border: 1px solid #FF3333; border-radius: 8px; padding: 12px; width: 180px; box-shadow: 0 0 25px rgba(255,0,0,0.4); z-index: 200; }
+        .disrupt-menu::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -8px; border-width: 8px; border-style: solid; border-color: #FF3333 transparent transparent transparent; }
+        .menu-btn { width: 100%; margin-bottom: 10px; display: block; text-align: center; box-sizing: border-box; padding: 10px; font-size: 14px; }
+        .menu-btn:last-child { margin-bottom: 0; }
+
         .box-label { position: absolute; color: #fff; background: rgba(0, 0, 0, 0.9); padding: 3px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; border: 1px solid #00E5FF; transform: translate(-50%, -100%); display: none; z-index: 50; pointer-events: none;}
         .station-label { position: absolute; color: #00E5FF; background: rgba(10, 25, 45, 0.9); padding: 3px 10px; border-radius: 5px; font-size: 14px; font-weight: 900; border: 1px solid #00E5FF; transform: translate(-50%, -50%); z-index: 40; pointer-events: none; transition: 0.3s;}
 
@@ -74,6 +81,9 @@
 
         #settings-btn { position: absolute; bottom: 25px; right: 25px; background: rgba(15, 25, 40, 0.9); border: 1px solid #00E5FF; border-radius: 30px; padding: 8px 16px; color: #00E5FF; font-size: 14px; cursor: pointer; z-index: 100; backdrop-filter: blur(5px); font-weight: bold; transition: 0.2s; }
         #settings-btn:hover { background: #00E5FF; color: #000; box-shadow: 0 0 15px #00E5FF; }
+
+        /* 复选框美化 */
+        input[type=checkbox] { accent-color: #FF0000; width: 16px; height: 16px; cursor: pointer; }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
@@ -102,6 +112,20 @@
             <button class="modal-btn" onclick="changeCredentials()">确认修改</button>
             <button class="modal-btn cancel" onclick="closeModal()">取消</button>
             <div id="modal-message" class="modal-message"></div>
+        </div>
+    </div>
+
+    <div id="malfunctionModal" class="modal">
+        <div class="modal-card" style="width: 450px;">
+            <span class="close-modal" onclick="closeMalfunctionModal()">&times;</span>
+            <h3 style="color: #FF3333; margin-bottom: 5px;">💥 触发站台突发物理宕机</h3>
+            <p style="color: #A0B2C6; font-size: 12px; margin-bottom: 20px; text-align: center;">请选择发生故障的站台（支持多选，灰显代表 AI 已将其休眠截流）：</p>
+            <div id="station-checkboxes" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 25px; padding: 0 10px;">
+                </div>
+            <div style="text-align: center;">
+                <button class="modal-btn" style="background: #FF0000; box-shadow: 0 0 10px rgba(255,0,0,0.5);" onclick="submitMalfunction()">🚨 立即拉断电闸</button>
+                <button class="modal-btn cancel" onclick="closeMalfunctionModal()">取消</button>
+            </div>
         </div>
     </div>
 
@@ -137,7 +161,14 @@
             <option value="10">10x 极速</option>
             <option value="20">20x 超神</option>
         </select>
-        <button id="vipBtn" class="btn" style="background: linear-gradient(135deg, #FF0000, #8B0000); box-shadow: 0 0 10px red; margin-left: 15px;">🚨 突发加急插单</button>
+        
+        <div class="disruption-container">
+            <button id="mainDisruptBtn" class="btn" style="background: linear-gradient(135deg, #FF0000, #8B0000); box-shadow: 0 0 12px red; width: 120px;">⚠️ 突发状况</button>
+            <div id="disruptMenu" class="disrupt-menu">
+                <button id="vipBtn" class="btn menu-btn" style="background: linear-gradient(135deg, #FF6B00, #FFB800); color: black;">🚨 突发加急插单</button>
+                <button id="breakdownBtn" class="btn menu-btn" style="background: linear-gradient(135deg, #8B0000, #FF0000);">💥 站台物理宕机</button>
+            </div>
+        </div>
     </div>
     
     <div id="settings-btn" style="display:none;">⚙️ 账户设置</div>
@@ -192,12 +223,13 @@
         const stations = []; 
         const stationsContainer = document.getElementById('stations-container');
 
-        // ================= 🌟 核心重构：将剧本解析器独立成函数 =================
-        // 🌟 新增 isHotReload 参数，默认为 false
+        // ================= 剧本解析引擎 =================
         function loadPlaybookData(rawJson, isHotReload = false) {
-            // 1. 先把所有机器全部恢复默认通电状态
+            
+            // 1. 恢复站台物理状态默认值
             stations.forEach(st => {
                 st.isPoweredOff = false;
+                st.malfunctions = []; // 清理旧的故障时间区间记录
                 st.worker.visible = true; 
                 st.desk.material.color.setHex(0xF8FAFC); 
                 st.screen.material.color.setHex(0x00E5FF);
@@ -208,11 +240,12 @@
                 
                 const card = document.getElementById(`st-card-${st.id}`);
                 card.className = 'st-card idle';
+                card.style.borderColor = ''; // 清理红色边框强制样式
                 const text = document.getElementById(`st-status-${st.id}`);
                 text.innerHTML = `🟢 待命中`;
             });
 
-            // 2. 开始宣读断电名单
+            // 2. 宣读 AI 断电休眠名单
             const powerStatuses = rawJson.station_power_status;
             if (powerStatuses && powerStatuses.length > 0) {
                 powerStatuses.forEach(statusData => {
@@ -241,14 +274,26 @@
                 });
             }
 
+            // 3. 解析时间轴事件（包含物理宕机事件捕获）
             const groupedEvents = {};
             rawJson.timeline.forEach(event => {
-                if (!groupedEvents[event.entity_id]) groupedEvents[event.entity_id] = { box_id: event.entity_id, stIdx: event.station_id, timeline: {} };
-                if (event.event_type === 'spawn') groupedEvents[event.entity_id].timeline.spawn = event.time;
-                if (event.event_type === 'reach_branch') groupedEvents[event.entity_id].timeline.branch = event.time;
-                if (event.event_type === 'enter_buffer') groupedEvents[event.entity_id].timeline.end = event.time;
-                if (event.event_type === 'start_process') groupedEvents[event.entity_id].timeline.start = event.time;
-                if (event.event_type === 'end_process') { groupedEvents[event.entity_id].timeline.return_main = event.time; }
+                if (event.entity_id === 'STATION') {
+                    // 🚨 捕获底层的设备故障与修复事件，记录时间区间
+                    if (event.event_type === 'breakdown') {
+                        stations[event.station_id].malfunctions.push({ start: event.time, end: Infinity });
+                    } else if (event.event_type === 'fixed') {
+                        const mfs = stations[event.station_id].malfunctions;
+                        if (mfs.length > 0) { mfs[mfs.length - 1].end = event.time; }
+                    }
+                } else {
+                    // 正常的零件箱推演逻辑
+                    if (!groupedEvents[event.entity_id]) groupedEvents[event.entity_id] = { box_id: event.entity_id, stIdx: event.station_id, timeline: {} };
+                    if (event.event_type === 'spawn') groupedEvents[event.entity_id].timeline.spawn = event.time;
+                    if (event.event_type === 'reach_branch') groupedEvents[event.entity_id].timeline.branch = event.time;
+                    if (event.event_type === 'enter_buffer') groupedEvents[event.entity_id].timeline.end = event.time;
+                    if (event.event_type === 'start_process') groupedEvents[event.entity_id].timeline.start = event.time;
+                    if (event.event_type === 'end_process') { groupedEvents[event.entity_id].timeline.return_main = event.time; }
+                }
             });
             
             simData = Object.values(groupedEvents);
@@ -278,29 +323,22 @@
                 tl.exit = tl.return_branch_end + timeReturnMain;
             });
 
-            const pureSimpyTime = Math.max(...simData.map(d => d.timeline.return_main));
+            const pureSimpyTime = Math.max(0, ...simData.map(d => d.timeline.return_main));
             document.getElementById('kpi-simpy-time').innerText = pureSimpyTime.toFixed(1) + "s";
             
-            maxTime = Math.max(...simData.map(d => d.timeline.exit)) + 0.5;
+            maxTime = Math.max(10, ...simData.map(d => d.timeline.exit)) + 0.5;
             document.getElementById('timeSlider').max = maxTime; 
             document.getElementById('kpi-3d-time').innerText = maxTime.toFixed(1) + "s";
             
             document.getElementById('kpi-total').innerText = simData.length;
             document.getElementById('kpi-status').innerHTML = "🟢 数据链加载完毕，物理沙盘已就绪";
             
-            // 🚨 核心修复：如果是热更新，绝不清零当前时间！
             if (!isHotReload) {
                 currentTime = 0; 
                 lastTime = 0; 
             } else {
                 console.log(`⏱️ 触发无缝热更新，时空锚定在：${currentTime.toFixed(1)} 秒`);
             }
-            
-            labelsContainer.innerHTML = ''; 
-            activeBoxes.forEach(b => {
-                if (b.mesh.parent) b.mesh.parent.remove(b.mesh);
-            });
-            activeBoxes.clear();
         }
 
         try {
@@ -342,16 +380,14 @@
                 
                 stations.push({ 
                     id: i, x: x, screen: screen, labelDom: stLabel, laser: laser, light: light, 
-                    desk: desk, worker: worker, isPoweredOff: false 
+                    desk: desk, worker: worker, isPoweredOff: false, malfunctions: [] 
                 });
             }
 
-            // 本地读取依然有效，调用抽离后的解析函数
             document.getElementById('jsonLoader').addEventListener('change', e => {
                 const reader = new FileReader();
                 reader.onload = ev => {
                     const rawJson = JSON.parse(ev.target.result);
-                    // 本地加载文件默认是从头播放，所以不传 isHotReload (使用默认的 false)
                     loadPlaybookData(rawJson);
                 }; 
                 reader.readAsText(e.target.files[0]);
@@ -362,56 +398,114 @@
             document.getElementById('speedSelect').onchange = e => { playbackSpeed = parseFloat(e.target.value); };
             
             // ==========================================
-            // 📡 监听 VIP 加急按钮点击事件 (直接呼叫后端)
+            // 🚨 交互控制逻辑：突发状况菜单与模态框
             // ==========================================
+            const disruptMenu = document.getElementById('disruptMenu');
+            document.getElementById('mainDisruptBtn').onclick = () => {
+                disruptMenu.style.display = disruptMenu.style.display === 'block' ? 'none' : 'block';
+            };
+
+            // 1. 加急插单按钮
             document.getElementById('vipBtn').addEventListener('click', async function() {
-                const btn = this;
+                disruptMenu.style.display = 'none';
+                const btn = document.getElementById('mainDisruptBtn');
                 const originalText = btn.innerHTML;
-                
-                // 1. 按钮变灰，防止车间主任疯狂连按
-                btn.innerHTML = "⏳ AI 紧急推演中...";
-                btn.style.opacity = "0.5";
-                btn.disabled = true;
+                btn.innerHTML = "⏳ AI 紧急重排中..."; btn.style.opacity = "0.5"; btn.disabled = true;
 
                 try {
-                    console.log(`🚀 向中枢服务器发送插单请求... 当前时空坐标: ${currentTime.toFixed(1)}s`);
+                    console.log(`🚀 向中枢发送插单请求... 当前时空坐标: ${currentTime.toFixed(1)}s`);
+                    const response = await fetch(`http://127.0.0.1:9000/api/trigger_vip?current_time=${currentTime}`);
+                    if (!response.ok) throw new Error(`HTTP 报错! 状态码: ${response.status}`);
                     
-                    // ==========================================
-                    // 🚨 核心改动：把 currentTime 动态拼接到 URL 传给 Python ！！
-                    // ==========================================
-                    const response = await fetch(`http://127.0.0.1:9000/api/trigger_vip?current_time=${currentTime}`, {
-                        method: "GET",
-                        headers: {
-                            "Accept": "application/json"
-                        }
-                    });
-
-                    // 3. 检查服务器是否活着
-                    if (!response.ok) {
-                        throw new Error(`HTTP 报错! 状态码: ${response.status}`);
-                    }
-
-                    // 4. 获取最新的含有 VIP 订单的 JSON 剧本
                     const data = await response.json();
-                    
                     if (data.status === "success") {
-                        console.log("✅ 成功接收新剧本！准备重新渲染！");
-                        
-                        // 🚨 核心交接点：传入 true，触发时空锚定！
                         loadPlaybookData(data.playbook, true); 
-                        
                         alert("🚨 AI 指令已下达：加急订单已强制切入队列！");
                     }
                 } catch (error) {
-                    console.error("❌ 呼叫服务器失败:", error);
-                    alert("❌ 无法连接到 AI 中枢服务器，请确认终端里已经运行了 `python server.py`！");
+                    alert("❌ 无法连接到 AI 中枢服务器，请确认终端里运行了 server.py！");
                 } finally {
-                    // 5. 无论成功失败，恢复按钮状态
-                    btn.innerHTML = originalText;
-                    btn.style.opacity = "1";
-                    btn.disabled = false;
+                    btn.innerHTML = originalText; btn.style.opacity = "1"; btn.disabled = false;
                 }
             });
+
+            // 2. 站台故障呼出按钮
+            document.getElementById('breakdownBtn').onclick = () => {
+                disruptMenu.style.display = 'none';
+                
+                // 暂时冻结时间推演（履带此时在视觉上停住，给用户缓冲选择时间）
+                isPlaying = false; 
+                document.getElementById('playBtn').innerText = "▶ 播放";
+                
+                const container = document.getElementById('station-checkboxes');
+                container.innerHTML = '';
+                
+                // 动态生成 16 个站台的选项
+                for(let i=0; i<16; i++) {
+                    const isOff = stations[i].isPoweredOff;
+                    const stName = `S${(i+1).toString().padStart(2,'0')}`;
+                    // 如果机器已经被 AI 断电休眠，就不让选了
+                    container.innerHTML += `
+                        <label style="color: ${isOff ? '#555' : '#FFF'}; font-size: 13px; display: flex; align-items: center; gap: 5px; cursor: ${isOff ? 'not-allowed' : 'pointer'};">
+                            <input type="checkbox" value="${i}" class="malfunction-cb" ${isOff ? 'disabled' : ''}>
+                            ${stName} ${isOff ? '(休眠)' : ''}
+                        </label>
+                    `;
+                }
+                document.getElementById('malfunctionModal').style.display = 'flex';
+            };
+
+            // 3. 关闭模态框并恢复播放
+            window.closeMalfunctionModal = () => {
+                document.getElementById('malfunctionModal').style.display = 'none';
+                isPlaying = true;
+                document.getElementById('playBtn').innerText = "⏸ 暂停";
+            };
+
+            // 4. 提交宕机站台数据，让后端重算
+            window.submitMalfunction = async () => {
+                const cbs = document.querySelectorAll('.malfunction-cb:checked');
+                const selected = Array.from(cbs).map(cb => cb.value);
+                
+                if (selected.length === 0) {
+                    alert("请至少选择一台发生物理宕机的站台！"); return;
+                }
+                
+                // 校验：必须至少保留一个正在工作的健康站台
+                let activeCount = 0;
+                stations.forEach(s => { if(!s.isPoweredOff) activeCount++; });
+                if (selected.length >= activeCount) {
+                    alert("❌ 车间不能全军覆没！请至少保留 1 个处于通电状态的健康站台进行分流抢救。"); return;
+                }
+                
+                document.getElementById('malfunctionModal').style.display = 'none';
+                
+                const btn = document.getElementById('mainDisruptBtn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = "⏳ AI 紧急重排中..."; btn.style.opacity = "0.5"; btn.disabled = true;
+
+                try {
+                    const stationsStr = selected.join(',');
+                    console.log(`💥 向服务器发送宕机切流请求... 故障机床: ${stationsStr}, 时间: ${currentTime.toFixed(1)}s`);
+                    
+                    const response = await fetch(`http://127.0.0.1:9000/api/trigger_malfunction?current_time=${currentTime}&stations=${stationsStr}`);
+                    if (!response.ok) throw new Error(`HTTP 报错! 状态码: ${response.status}`);
+                    
+                    const data = await response.json();
+                    if (data.status === "success") {
+                        console.log("✅ 成功接收避险热更新剧本！");
+                        loadPlaybookData(data.playbook, true);
+                        const names = selected.map(s => `S${(parseInt(s)+1).toString().padStart(2,'0')}`);
+                        alert(`💥 故障指令生效！站台 ${names.join(', ')} 发生物理宕机，AI 已开启时空分流保护，在途箱子正在死等！`);
+                    }
+                } catch (error) {
+                    console.error(error);
+                    alert("❌ 无法连接到 AI 中枢服务器！");
+                } finally {
+                    btn.innerHTML = originalText; btn.style.opacity = "1"; btn.disabled = false;
+                    isPlaying = true; document.getElementById('playBtn').innerText = "⏸ 暂停";
+                }
+            };
 
 
             function lerp(s, e, p) { return s + (e - s) * Math.max(0, Math.min(1, p)); }
@@ -425,16 +519,10 @@
                 if (intersects.length > 0) {
                     const boxObj = intersects[0].object; const data = boxObj.userData; 
                     
-                    // 🚨 增强版：完美解析带 VIP 和带 P 后缀的零件名字，保证悬浮窗显示正确
-                    let orderId = "未知订单";
-                    let partType = "未知";
+                    let orderId = "未知订单"; let partType = "未知";
                     if (data.id.includes('-P')) {
-                        const parts = data.id.split('-P');
-                        orderId = parts[0];
-                        partType = parts[1];
-                    } else {
-                        orderId = data.id;
-                    }
+                        const parts = data.id.split('-P'); orderId = parts[0]; partType = parts[1];
+                    } else { orderId = data.id; }
                     
                     const stName = `S${(data.station + 1).toString().padStart(2,'0')}`;
                     tooltip.innerHTML = `<div style="border-bottom:1px solid #00E5FF; margin-bottom:10px; padding-bottom:6px; font-size:14px; text-shadow: 0 0 5px #00E5FF;"><strong>📦 物理物料箱</strong></div><div class="tooltip-row"><span class="tooltip-label">归属订单</span> <span class="tooltip-value highlight-text">${orderId}</span></div><div class="tooltip-row"><span class="tooltip-label">零件型号</span> <span class="tooltip-value">Type-P${partType}</span></div><div class="tooltip-row" style="margin-top:8px; border-top:1px dashed #3A5A7A; padding-top:8px;"><span class="tooltip-label">目标站台</span> <span class="tooltip-value" style="color:#00FF00;">🎯 ${stName} 号工位</span></div>`;
@@ -455,8 +543,47 @@
                     const isScrubbing = Math.abs(currentTime - lastTime - dt) > 0.5;
                     document.getElementById('timeSlider').value = currentTime; document.getElementById('timeDisplay').innerText = currentTime.toFixed(1) + "s";
                     
-                    stations.forEach(s => { 
-                        if (!s.isPoweredOff) {
+                    // ==========================================
+                    // 🚨 渲染：宕机红光警报与 UI 接管
+                    // ==========================================
+                    stations.forEach((s, i) => { 
+                        // 1. 判断该站台在当前时间戳下是否正处于宕机区间
+                        let isBrokenNow = false;
+                        if (s.malfunctions) {
+                            for (let mf of s.malfunctions) {
+                                if (currentTime >= mf.start && currentTime < mf.end) {
+                                    isBrokenNow = true; break;
+                                }
+                            }
+                        }
+                        s.isBroken = isBrokenNow;
+
+                        if (s.isPoweredOff) return; // 被 AI 休眠的机器不用管
+                        
+                        if (isBrokenNow) {
+                            // 2. 触发刺眼的呼吸红光与警报UI
+                            s.screen.material.emissiveIntensity = 0.5 + Math.sin(currentTime * 10) * 0.5;
+                            s.screen.material.color.setHex(0xFF0000);
+                            s.screen.material.emissive.setHex(0xFF0000);
+                            s.desk.material.color.setHex(0x550000);
+                            s.light.material.color.setHex(0xFF0000);
+                            s.light.material.emissive.setHex(0xFF0000);
+                            s.laser.visible = false;
+                            
+                            s.labelDom.style.color = '#FF0000';
+                            s.labelDom.style.borderColor = '#FF0000';
+                            s.labelDom.style.background = 'rgba(50, 0, 0, 0.9)';
+                            s.labelDom.innerText = `S${(i+1).toString().padStart(2, '0')} (抢修中)`;
+                        } else {
+                            // 3. 恢复健康的蓝底绿灯状态
+                            s.screen.material.color.setHex(0x00E5FF);
+                            s.screen.material.emissive.setHex(0x00E5FF);
+                            s.desk.material.color.setHex(0xF8FAFC);
+                            s.labelDom.style.color = '#00E5FF';
+                            s.labelDom.style.borderColor = '#00E5FF';
+                            s.labelDom.style.background = 'rgba(10, 25, 45, 0.9)';
+                            s.labelDom.innerText = `S${(i+1).toString().padStart(2, '0')}`;
+                            
                             s.screen.material.emissiveIntensity = 0.1; 
                             s.laser.visible = false; 
                             s.light.material.color.setHex(0x00ffcc); 
@@ -479,7 +606,8 @@
                         }
                         if (t >= tl.start && t < tl.return_main) {
                             stStatusCount[stIdx].active = true;
-                            if (!stations[stIdx].isPoweredOff) {
+                            // 如果正在加工时遭遇宕机，关闭激光灯，留给故障系统接管
+                            if (!stations[stIdx].isPoweredOff && !stations[stIdx].isBroken) {
                                 stations[stIdx].screen.material.emissiveIntensity = 1.0; 
                                 stations[stIdx].laser.visible = true; stations[stIdx].laser.position.z = 10.5 + Math.sin(t * 10) * 0.35; 
                                 stations[stIdx].light.material.color.setHex(0xff3333); stations[stIdx].light.material.emissive.setHex(0xff0000);
@@ -490,13 +618,10 @@
                             let boxObj = activeBoxes.get(boxData.box_id);
                             
                             if (!boxObj) {
-                                // 1. 甄别是否为 VIP 订单
                                 const isVIP = boxData.box_id.includes('VIP');
                                 const shortName = boxData.box_id.includes('-P') ? boxData.box_id.split('-P').pop() : boxData.box_id.slice(-3);
-                                
-                                // 2. 赋予视觉特权：VIP 专属警示红 + 自发光，普通箱子随机色
                                 const boxColor = isVIP ? 0xFF0000 : stringToColor(boxData.box_id);
-                                const emissiveColor = isVIP ? 0x660000 : 0x000000; // VIP 箱子自带暗红辉光
+                                const emissiveColor = isVIP ? 0x660000 : 0x000000;
 
                                 const mesh = new THREE.Mesh(
                                     new THREE.BoxGeometry(BOX_S, BOX_S, BOX_S), 
@@ -505,19 +630,10 @@
                                 mesh.castShadow = true; mesh.receiveShadow = true; mesh.userData = { id: boxData.box_id, station: stIdx };
                                 scene.add(mesh); 
                                 
-                                // 3. 爆改 UI 标签：VIP 尊贵标识
-                                const label = document.createElement('div'); 
-                                label.className = 'box-label'; 
+                                const label = document.createElement('div'); label.className = 'box-label'; 
                                 if (isVIP) {
-                                    label.innerText = "🚨 VIP";
-                                    label.style.background = "rgba(200, 0, 0, 0.95)";
-                                    label.style.border = "1px solid #FFD700"; // 土豪金描边
-                                    label.style.color = "#FFD700";
-                                    label.style.fontSize = "13px";
-                                    label.style.zIndex = "60"; // 保证 VIP 标签永远在最上层
-                                } else {
-                                    label.innerText = "P" + shortName;
-                                }
+                                    label.innerText = "🚨 VIP"; label.style.background = "rgba(200, 0, 0, 0.95)"; label.style.border = "1px solid #FFD700"; label.style.color = "#FFD700"; label.style.fontSize = "13px"; label.style.zIndex = "60"; 
+                                } else { label.innerText = "P" + shortName; }
                                 labelsContainer.appendChild(label);
                                 
                                 boxObj = { mesh: mesh, label: label, currentZ: 0 }; activeBoxes.set(boxData.box_id, boxObj);
@@ -554,15 +670,9 @@
                                 targetZ = boxObj.currentZ;
                             } else if (t < tl.return_branch_end) { 
                                 let progress = (t - tl.return_main) / (tl.return_branch_end - tl.return_main);
-                                targetX = eX; 
-                                targetY = lerp(Y_LOWER, Y_UPPER, progress); 
-                                targetZ = lerp(10.5, 0, progress); 
-                                boxObj.currentZ = targetZ; 
+                                targetX = eX; targetY = lerp(Y_LOWER, Y_UPPER, progress); targetZ = lerp(10.5, 0, progress); boxObj.currentZ = targetZ; 
                             } else {
-                                targetX = lerp(eX, START_X - 10, (t - tl.return_branch_end) / (tl.exit - tl.return_branch_end));
-                                targetY = Y_UPPER;
-                                targetZ = 0;
-                                boxObj.currentZ = targetZ;
+                                targetX = lerp(eX, START_X - 10, (t - tl.return_branch_end) / (tl.exit - tl.return_branch_end)); targetY = Y_UPPER; targetZ = 0; boxObj.currentZ = targetZ;
                             }
                             
                             box.position.set(targetX, targetY, targetZ); boxObj.label.style.display = 'block'; const screenPos = box.position.clone(); screenPos.y += 0.5; screenPos.project(camera);
@@ -572,12 +682,25 @@
                         }
                     });
 
+                    // 🚨 更新右侧 16 宫格面板，兼容宕机强红色调
                     for(let i=0; i<16; i++) {
                         if (stations[i].isPoweredOff) continue; 
                         
-                        const card = document.getElementById(`st-card-${i}`); const text = document.getElementById(`st-status-${i}`);
-                        if(stStatusCount[i].active) { card.className = 'st-card busy'; text.innerHTML = `🔴 组装中 | 缓存:${stStatusCount[i].buffer}`; } 
-                        else { card.className = 'st-card idle'; text.innerHTML = `🟢 待命中 | 缓存:${stStatusCount[i].buffer}`; }
+                        const card = document.getElementById(`st-card-${i}`); 
+                        const text = document.getElementById(`st-status-${i}`);
+                        
+                        if (stations[i].isBroken) {
+                            card.className = 'st-card busy'; 
+                            card.style.borderColor = '#FF0000';
+                            text.innerHTML = `🚨 抢修中 | 死等区:${stStatusCount[i].buffer}`;
+                        } else {
+                            card.style.borderColor = ''; 
+                            if(stStatusCount[i].active) { 
+                                card.className = 'st-card busy'; text.innerHTML = `🔴 组装中 | 缓存:${stStatusCount[i].buffer}`; 
+                            } else { 
+                                card.className = 'st-card idle'; text.innerHTML = `🟢 待命中 | 缓存:${stStatusCount[i].buffer}`; 
+                            }
+                        }
                     }
 
                     let completedOrdersCount = 0;
