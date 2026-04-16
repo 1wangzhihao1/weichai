@@ -72,6 +72,7 @@ def deliver_box_with_trace(sim_env, station, box_id, delay, t_main, t_branch, p_
     yield sim_env.timeout(t_main)
     logger.log_event(sim_env.now, box_id, "reach_branch", station.station_id)
     yield sim_env.timeout(t_branch)
+    # 投递入物理物理站台（受 buffer 容量与机器状态限制）
     yield sim_env.process(station.process_box(box_id, p_time, 0.0, entity_type))
 
 
@@ -95,9 +96,10 @@ def auto_search_optimal_stations(model):
     return best_limit
 
 
-def export_animation_data(trigger_vip=False, current_time=0.0):
+# 🌟 核心修改 1：扩充接收参数，加入 broken_stations 列表
+def export_animation_data(trigger_vip=False, broken_stations=None, current_time=0.0):
     print("="*80)
-    print("🎥 启动 [3D 动画剧本 & 订单档案 导出工具] (支持连环 VIP 实时插单版)...")
+    print("🎥 启动 [3D 动画剧本导出工具] (数字孪生抗扰动时空重排版)...")
     print("="*80)
 
     ai_env = PickingEnv()
@@ -111,7 +113,8 @@ def export_animation_data(trigger_vip=False, current_time=0.0):
         return
 
     optimal_stations = auto_search_optimal_stations(model)
-    final_action_mask = np.array([True] * optimal_stations + [False] * (Config.NUM_STATIONS - optimal_stations))
+    # 这是用于节能熄灯的初始静态掩码
+    energy_saving_mask = np.array([True] * optimal_stations + [False] * (Config.NUM_STATIONS - optimal_stations))
 
     sim_env = simpy.Environment()
     logger = TraceLogger()
@@ -123,73 +126,77 @@ def export_animation_data(trigger_vip=False, current_time=0.0):
 
     done = False
     order_manifest = []
+    
+    # 状态控制锁
     vip_injected = False 
+    breakdown_triggered = False
 
-    print("🧠 正在使用全局最优策略进行物理推演与双线刻录...")
+    print("🧠 正在使用 AI 策略进行物理推演与双线刻录...")
 
     while not done:
         dispatch_time_cursor = ai_env.last_dispatch_time 
 
         # ====================================================================
-        # 🚨 [真正的真 AI 动态插单 + 同步所有特征修复]
+        # 🚨 核心修改 2：调用面向对象封装的 Hooks，优雅处理突发事件！
         # ====================================================================
-        if trigger_vip and not vip_injected and dispatch_time_cursor >= current_time:
-            vip_file_path = os.path.join(project_root, "vip_urgent_order.json")
+        if dispatch_time_cursor >= current_time:
             
-            # 🚨 核心改动：如果找不到 JSON 文件，直接抛出致命错误中断运行，不再生成备用假数据！
-            if os.path.exists(vip_file_path):
-                with open(vip_file_path, 'r', encoding='utf-8') as f:
-                    vip_data_list = json.load(f) 
-            else:
-                raise FileNotFoundError(f"🚨 致命错误: 未在项目根目录找到加急配置文件 '{vip_file_path}'！请确保存放位置正确。")
-            
-            class DummyEntity:
-                def __init__(self, e_id, e_type, p_time):
-                    self.entity_id, self.entity_type, self.qty, self.p_time = e_id, e_type, 1, p_time
-            class DummyOrder:
-                def __init__(self, data):
-                    raw_id = str(data.get("vip_order_id", "VIP-999"))
-                    self.order_id = raw_id if "VIP" in raw_id.upper() else f"VIP-{raw_id}"
-                    self.entities = [DummyEntity(f"{self.order_id}-P{p['type']}", p["type"], p["p_time"]) for p in data["parts"]]
-                    self.total_process_time = sum(p["p_time"] for p in data["parts"])
+            # --- 1. 处理加急订单插单 ---
+            if trigger_vip and not vip_injected:
+                vip_file_path = os.path.join(project_root, "vip_urgent_order.json")
+                if os.path.exists(vip_file_path):
+                    with open(vip_file_path, 'r', encoding='utf-8') as f:
+                        vip_data_list = json.load(f) 
+                else:
+                    raise FileNotFoundError(f"🚨 致命错误: 未找到 {vip_file_path}！")
+                
+                class DummyEntity:
+                    def __init__(self, e_id, e_type, p_time):
+                        self.entity_id, self.entity_type, self.qty, self.p_time = e_id, e_type, 1, p_time
+                class DummyOrder:
+                    def __init__(self, data):
+                        raw_id = str(data.get("vip_order_id", "VIP-999"))
+                        self.order_id = raw_id if "VIP" in raw_id.upper() else f"VIP-{raw_id}"
+                        self.entities = [DummyEntity(f"{self.order_id}-P{p['type']}", p["type"], p["p_time"]) for p in data["parts"]]
+                        self.total_process_time = sum(p["p_time"] for p in data["parts"])
 
-            print(f"\n" + "🔴"*30)
-            print(f"🔥 [AI 引擎内核] 截获加急信号！大屏按下时点: {current_time:.1f}s, 当前仿真推演至: {dispatch_time_cursor:.1f}s")
-            print(f"🛡️ 订单保护生效：正在发车的订单必须发完！")
-            
-            for idx, vip_data in enumerate(vip_data_list):
-                vip_order = DummyOrder(vip_data)
-                insert_idx = ai_env.current_step + 1 + idx
-                
-                # 1. 把订单实体插进去
-                ai_env.logical_orders.insert(insert_idx, vip_order)
-                
-                # 2. 把订单的【总时长特征】同步塞给 AI
-                if hasattr(ai_env, 'order_process_times'):
-                    if isinstance(ai_env.order_process_times, list):
-                        ai_env.order_process_times.insert(insert_idx, vip_order.total_process_time)
-                    else:
-                        ai_env.order_process_times = np.insert(ai_env.order_process_times, insert_idx, vip_order.total_process_time)
-                
-                # 3. 把【每个零件箱的独立时长特征】同步塞给 AI
-                if hasattr(ai_env, 'order_box_p_times'):
-                    box_times = [p["p_time"] for p in vip_data["parts"]]
-                    if isinstance(ai_env.order_box_p_times, list):
-                        ai_env.order_box_p_times.insert(insert_idx, box_times)
-                    else:
-                        temp_list = list(ai_env.order_box_p_times)
-                        temp_list.insert(insert_idx, box_times)
-                        ai_env.order_box_p_times = temp_list
-                
-                print(f"   >>> {vip_order.order_id} 已强行锁定为第 {insert_idx} 顺位，特征数组注入完毕！")
-            
-            ai_env.total_orders += len(vip_data_list)
-            vip_injected = True 
-            print("🔴"*30 + "\n")
+                print(f"\n" + "🔴"*30)
+                print(f"🔥 [调度中枢] 截获加急信号！触发时空断点: {current_time:.1f}s")
+                for vip_data in vip_data_list:
+                    vip_order = DummyOrder(vip_data)
+                    # ✅ 完美封装：一行代码搞定全部复杂的数组插入与特征同步！
+                    ai_env.trigger_vip_order(vip_order)
+                vip_injected = True 
+                print("🔴"*30 + "\n")
 
-        # 以下为正常的 AI 推演与物理刻录，不动
+            # --- 2. 处理物理设备故障 ---
+            if broken_stations and not breakdown_triggered:
+                print(f"\n" + "💥"*30)
+                print(f"🔥 [调度中枢] 截获设备异常报警！受损机床: {broken_stations} | 触发时点: {current_time:.1f}s")
+                
+                # ✅ 调用 AI 大脑 Hook：彻底拉黑故障机床的路由掩码
+                ai_env.trigger_breakdown(broken_stations)
+                
+                # ✅ 调用物理基座 Hook：强行打断当前正在干活的物理机床协程，进入排队死等状态！
+                for sid in broken_stations:
+                    if 0 <= sid < Config.NUM_STATIONS:
+                        physical_stations[sid].trigger_breakdown(repair_time=600)
+                        
+                breakdown_triggered = True
+                print("💥"*30 + "\n")
+
+        # ====================================================================
+        # 🚨 核心修改 3：双重掩码合并（节能掩码 & 宕机掩码）
+        # ====================================================================
+        env_dynamic_mask = ai_env.action_masks()
+        combined_masks = np.logical_and(energy_saving_mask, env_dynamic_mask)
+        
+        # 安全兜底：如果宕机把正常开着的机器全干废了，只能退而求其次允许它开启休息的机器
+        if not np.any(combined_masks):
+            combined_masks = env_dynamic_mask
+
         obs = ai_env._get_obs()
-        action = DispatchRules.rule_ai_policy(model, obs=obs, valid_masks=final_action_mask)
+        action = DispatchRules.rule_ai_policy(model, obs=obs, valid_masks=combined_masks)
         current_order = ai_env.logical_orders[ai_env.current_step]
         target_station = physical_stations[action]
 
