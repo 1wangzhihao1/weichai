@@ -155,43 +155,29 @@ class PickingEnv(gym.Env):
             
         self.global_time = self.last_dispatch_time
         self.stations[action].free_at = self.station_workloads[action]
+        
+        # 只要派单了，就点亮机器，但不再计算开机惩罚！
+        self.station_active_status[action] = 1.0 
 
         # ========================================================
-        # 🌟 平滑奖励体系
+        # 🚀 极致稳定版：纯粹竞速奖励 (回归平滑架构，去除能耗干扰)
         # ========================================================
-        is_new_machine = False
-        if self.station_active_status[action] == 0.0:
-            is_new_machine = True
-            self.station_active_status[action] = 1.0 
-            
         reward = 0.0
         
-        # 1. 局部引导：只在“已开机”的机器里做负载均衡
-        active_indices = np.where(self.station_active_status == 1.0)[0]
-        if len(active_indices) > 0 and not is_new_machine:
-            active_costs = costs[active_indices]
-            if actual_cost == np.min(active_costs):
-                reward += 1.0  
-            else:
-                reward -= 0.5  
-                
-        # 2. 温和的开机阻力
-        if is_new_machine:
-            reward -= 2.0  
+        # 1. 局部引导：无视是否开机，只要你找到了全局最闲的那台机器，就给正反馈！
+        if actual_cost == np.min(costs):
+            reward += 1.0  # 选对给 1 分（信号极其稳定）
+        else:
+            reward -= 0.5  # 选错轻微扣 0.5 分（温和引导，绝不搞崩 AI 心态）
 
         self.current_step += 1
         done = self.current_step >= self.total_orders
         
-        # 3. 终局结算
+        # 2. 终局结算：纯粹的效率奖，没有任何“扣机器”的加分项了！
         if done:
             makespan = np.max(self.station_workloads)
-            active_machines = int(np.sum(self.station_active_status))
-            
             makespan_score = (80000.0 - makespan) / 100.0
-            saved_machines = Config.NUM_STATIONS - active_machines
-            machine_score = saved_machines * 20.0
-            
-            reward += (makespan_score + machine_score)
+            reward += makespan_score
 
         return self._get_obs(), float(reward), done, False, {}
 
