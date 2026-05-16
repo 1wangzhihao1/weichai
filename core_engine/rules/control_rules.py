@@ -1,6 +1,74 @@
+# # 文件路径: core_engine/rules/control_rules.py
+# import numpy as np
+# from typing import List, Any
+
+# class ControlRules:
+#     """
+#     【通用规则库：产线控制与安检法则】
+#     积木特性：负责红线控制、异常拦截和准入校验。
+#     在强化学习中，它生成动作掩码 (Action Masks)；在传统仿真中，它是发车推杆的物理锁。
+#     """
+
+#     @staticmethod
+#     def generate_capacity_masks(stations: List[Any], incoming_qty: int = 1) -> np.ndarray:
+#         """
+#         【红线控制】：生成容量准入掩码 (防爆仓安检门)
+#         判断每个站台当前的负载加上即将到来的货物，是否会超出其物理容量上限。
+#         参数:
+#             - stations: 站台对象列表 (传入我们在 resource_models 里定义的积木)
+#             - incoming_qty: 即将发往该站台的实体数量
+#         返回:
+#             - 布尔数组 (True表示允许进件，False表示已爆仓禁止进件)
+#         """
+#         num_stations = len(stations)
+#         masks = np.ones(num_stations, dtype=bool)
+        
+#         for i, station in enumerate(stations):
+#             # 🦆 鸭子类型检测：只要传入的模型有当前负载和容量上限，就能做安检
+#             if hasattr(station, 'current_load') and hasattr(station, 'capacity'):
+#                 if station.current_load + incoming_qty > station.capacity:
+#                     masks[i] = False
+#             # 兼容字典格式（如果在极简环境中用字典记录状态）
+#             elif isinstance(station, dict) and 'load' in station and 'capacity' in station:
+#                 if station['load'] + incoming_qty > station['capacity']:
+#                     masks[i] = False
+
+#         # 🚨 RL 框架防崩溃兜底机制 (极其重要) 🚨
+#         # 在极端堵车情况下，如果 16 个站台全部爆仓，masks 会全为 False。
+#         # sb3_contrib 的 MaskablePPO 遇到全 False 会直接引发底层的概率计算除以 0 崩溃！
+#         # 物理世界的处理是“停机死等”，但在单步决策矩阵中，我们必须强制开放所有动作，
+#         # 并让环境 (Environment) 通过物理时间的暴增来给予 AI 巨额扣分。
+#         if not np.any(masks):
+#             return np.ones(num_stations, dtype=bool)
+            
+#         return masks
+
+#     @staticmethod
+#     def check_global_starvation(stations: List[Any]) -> bool:
+#         """
+#         【状态探针】：检测是否全线饥饿 (所有站台都处于空闲/无货状态)
+#         适用场景：可用于触发仓库的“批量盲发”逻辑，或者在仿真时用来加速时钟跳跃。
+#         """
+#         for station in stations:
+#             if hasattr(station, 'current_load') and station.current_load > 0:
+#                 return False
+#         return True
+
+
+
+
 # 文件路径: core_engine/rules/control_rules.py
+import os
+import sys
 import numpy as np
 from typing import List, Any
+
+# 🌟 寻路雷达：确保能找到 scenarios 里的 config.py
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
+if project_root not in sys.path:
+    sys.path.append(project_root)
+
+from scenarios.order_picking.config import Config
 
 class ControlRules:
     """
@@ -10,34 +78,34 @@ class ControlRules:
     """
 
     @staticmethod
-    def generate_capacity_masks(stations: List[Any], incoming_qty: int = 1) -> np.ndarray:
+    def generate_capacity_masks(stations: List[Any]) -> np.ndarray:
         """
-        【红线控制】：生成容量准入掩码 (防爆仓安检门)
-        判断每个站台当前的负载加上即将到来的货物，是否会超出其物理容量上限。
+        【红线控制】：生成订单级容量准入掩码 (防爆仓安检门)
+        判断每个站台当前挂载的【订单数量】是否达到物理上限 (2个)。
+        
         参数:
-            - stations: 站台对象列表 (传入我们在 resource_models 里定义的积木)
-            - incoming_qty: 即将发往该站台的实体数量
+            - stations: 站台对象列表 (物理 SimpyStation 或逻辑环境中的对象)
         返回:
-            - 布尔数组 (True表示允许进件，False表示已爆仓禁止进件)
+            - 布尔数组 (True表示允许进件，False表示已达订单上限，禁止派单)
         """
         num_stations = len(stations)
         masks = np.ones(num_stations, dtype=bool)
         
         for i, station in enumerate(stations):
-            # 🦆 鸭子类型检测：只要传入的模型有当前负载和容量上限，就能做安检
-            if hasattr(station, 'current_load') and hasattr(station, 'capacity'):
-                if station.current_load + incoming_qty > station.capacity:
+            # 🦆 鸭子类型检测：物理站台有 active_order_count 属性
+            if hasattr(station, 'active_order_count'):
+                if station.active_order_count >= Config.MAX_ORDERS_PER_STATION:
                     masks[i] = False
-            # 兼容字典格式（如果在极简环境中用字典记录状态）
-            elif isinstance(station, dict) and 'load' in station and 'capacity' in station:
-                if station['load'] + incoming_qty > station['capacity']:
+            # 兼容字典格式（如果在强化学习环境/逻辑沙盘中用字典记录状态）
+            elif isinstance(station, dict) and 'active_order_count' in station:
+                if station['active_order_count'] >= Config.MAX_ORDERS_PER_STATION:
                     masks[i] = False
 
         # 🚨 RL 框架防崩溃兜底机制 (极其重要) 🚨
-        # 在极端堵车情况下，如果 16 个站台全部爆仓，masks 会全为 False。
+        # 在极端堵车情况下，如果 16 个站台全部达到 2 个订单上限，masks 会全为 False。
         # sb3_contrib 的 MaskablePPO 遇到全 False 会直接引发底层的概率计算除以 0 崩溃！
-        # 物理世界的处理是“停机死等”，但在单步决策矩阵中，我们必须强制开放所有动作，
-        # 并让环境 (Environment) 通过物理时间的暴增来给予 AI 巨额扣分。
+        # 物理世界的处理是“传送带死等”，但在 RL 的单步决策矩阵中，我们必须强制开放所有动作，
+        # 让环境 (Environment) 通过虚拟时钟的暴增（死等时间）来给予 AI 巨额扣分惩罚。
         if not np.any(masks):
             return np.ones(num_stations, dtype=bool)
             
@@ -46,10 +114,9 @@ class ControlRules:
     @staticmethod
     def check_global_starvation(stations: List[Any]) -> bool:
         """
-        【状态探针】：检测是否全线饥饿 (所有站台都处于空闲/无货状态)
-        适用场景：可用于触发仓库的“批量盲发”逻辑，或者在仿真时用来加速时钟跳跃。
+        【状态探针】：检测是否全线饥饿 (所有站台都处于空闲/无订单状态)
         """
         for station in stations:
-            if hasattr(station, 'current_load') and station.current_load > 0:
+            if hasattr(station, 'active_order_count') and station.active_order_count > 0:
                 return False
         return True
