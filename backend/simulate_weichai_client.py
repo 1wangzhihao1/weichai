@@ -1,125 +1,123 @@
 # 文件路径: backend/simulate_weichai_client.py
 
 import os
-import sys
 import json
 import requests
 import time
+import pandas as pd
+from collections import defaultdict
 
-# 🌟 寻路雷达：定位数据源文件
 current_dir = os.path.dirname(__file__)
 project_root = os.path.abspath(os.path.join(current_dir, '../'))
-master_json_file = os.path.join(project_root, "data", "weichai_parts_master.json")
-orders_json_file = os.path.join(project_root, "data", "weichai_history_orders.json")
+EXCEL_PATH = os.path.join(project_root, "raw_data", "DMS拣选20260201-0429.XLSX")
+JSON_OUTPUT_PATH = os.path.join(current_dir, "weichai_waves.json")
 
 BASE_URL = "http://127.0.0.1:8088/api/v1"
 
-def sync_master_data():
-    """
-    第一阶段：模拟潍柴系统同步零件主数据（工艺标准）
-    """
+def extract_excel_to_json():
+    """第一阶段：模拟甲方系统，从 Excel 提取数据并生成标准 JSON 报文"""
     print("\n" + "="*60)
-    print("📡 [第一阶段] 正在同步零件主数据字典...")
-    
-    if not os.path.exists(master_json_file):
-        print(f"🚨 找不到零件主数据文件: {master_json_file}")
-        return False
+    print(f"⏳ 正在模拟甲方系统生成 JSON 报文...")
+    if not os.path.exists(EXCEL_PATH):
+        raise FileNotFoundError(f"🚨 找不到 Excel 文件: {EXCEL_PATH}")
 
-    with open(master_json_file, 'r', encoding='utf-8') as f:
-        raw_data = json.load(f)
-        
-    formatted_parts = []
-    for part_id, info in raw_data.items():
-        formatted_parts.append({
-            "part_type": str(part_id),
-            "part_name": info["name"],
-            "process_time": float(info["process_time_sec"])
+    df = pd.read_excel(EXCEL_PATH, sheet_name=0)
+    orders_by_date = defaultdict(dict) 
+
+    for index, row in df.iterrows():
+        try:
+            row_vals = row.values
+            if len(row_vals) < 13: continue
+            
+            time_start = pd.to_datetime(row_vals[2])
+            date_str = time_start.date().isoformat() 
+            
+            order_id = str(row_vals[6]).strip()
+            status = str(row_vals[8]).strip()
+            sku = str(row_vals[9]).strip()
+            qty = float(row_vals[11])
+            
+            if status not in ['确定', '完成'] or qty <= 0: continue
+            
+            if order_id not in orders_by_date[date_str]:
+                orders_by_date[date_str][order_id] = {
+                    "order_id": order_id,
+                    "items": []
+                }
+            orders_by_date[date_str][order_id]["items"].append({
+                "part_type": sku,
+                "quantity": int(qty)
+            })
+        except Exception as e:
+            continue
+            
+    # 构建最终的 JSON 结构
+    waves_payload = []
+    for date_str, orders in sorted(orders_by_date.items()):
+        waves_payload.append({
+            "wave_name": f"ORDER_WAVE_{date_str}", # 波次名称 (比如 ORDER_WAVE_2026-04-15)
+            "orders": list(orders.values())
         })
         
-    payload = {"parts": formatted_parts}
-    target_url = f"{BASE_URL}/master_data/upload"
-    
-    try:
-        res = requests.post(target_url, json=payload, timeout=10)
-        if res.status_code == 200:
-            print(f"✅ {res.json()['message']}")
-            return True
-        else:
-            print(f"❌ 主数据同步失败: {res.status_code} - {res.text}")
-            return False
-    except Exception as e:
-        print(f"🚨 网络异常: {e}")
-        return False
+    # 保存为 JSON 文件
+    with open(JSON_OUTPUT_PATH, 'w', encoding='utf-8') as f:
+        json.dump(waves_payload, f, ensure_ascii=False, indent=2)
+        
+    print(f"✅ JSON 报文生成完毕！共 {len(waves_payload)} 个波次，保存在: {JSON_OUTPUT_PATH}")
 
-def send_orders_in_batches(batch_size=100):
-    """
-    第二阶段：模拟潍柴系统分批次下发生产订单
-    """
+def send_json_to_server(chunk_size=400):
+    """第二阶段：读取标准 JSON 报文，只负责发送网络请求"""
     print("\n" + "="*60)
-    print("📡 [第二阶段] 正在分批下发生产订单...")
+    print(f"📡 正在向 AI 中枢发送 JSON 订单报文...")
     
-    if not os.path.exists(orders_json_file):
-        print(f"🚨 找不到历史订单文件: {orders_json_file}")
-        return
-
-    with open(orders_json_file, 'r', encoding='utf-8') as f:
-        raw_data = json.load(f)
-    
-    total_count = len(raw_data)
-    print(f"📦 共发现 {total_count} 个订单待传输。")
-
+    if not os.path.exists(JSON_OUTPUT_PATH):
+         print("🚨 找不到 JSON 文件！")
+         return
+         
+    with open(JSON_OUTPUT_PATH, 'r', encoding='utf-8') as f:
+        waves_payload = json.load(f)
+        
     target_url = f"{BASE_URL}/orders/upload"
     
-    for i in range(0, total_count, batch_size):
-        chunk = raw_data[i : i + batch_size]
-        formatted_orders = []
+    # 按波次（天）发送
+    for wave in waves_payload:
+        batch_no = wave["wave_name"]
+        all_orders = wave["orders"]
+        print(f"\n📅 开始传输波次: 【{batch_no}】 (共 {len(all_orders)} 个订单)")
 
-        for item in chunk:
-            order_id = str(item.get("order_id", item.get("vip_order_id", "UNKNOWN")))
-            parts_list = item.get("parts") or item.get("entities") or item.get("items") or []
-            
-            for p in parts_list:
-                p_type_raw = str(p.get("type", p.get("part_type", p.get("entity_type", "1"))))
-                p_type = f"零件{p_type_raw}" if "零件" not in p_type_raw else p_type_raw
-                qty = p.get("qty", p.get("quantity", 1))
-                
-                formatted_orders.append({
-                    "order_id": order_id,
-                    "priority": item.get("priority", 1),
-                    "part_type": p_type,
-                    "quantity": qty
-                })
+        # 分块传输防止爆内存
+        for i in range(0, len(all_orders), chunk_size):
+            chunk_orders = all_orders[i : i + chunk_size]
+            formatted_payload = []
 
-        if not formatted_orders:
-            continue
+            for order in chunk_orders:
+                for item in order["items"]:
+                    formatted_payload.append({
+                        "order_id": order["order_id"],
+                        "part_type": item["part_type"],
+                        "quantity": item["quantity"]
+                    })
 
-        payload = {
-            "batch_no": "WEICHAI_API_STRESS_TEST",
-            "orders": formatted_orders
-        }
+            payload = {
+                "batch_no": batch_no,
+                "orders": formatted_payload
+            }
 
-        print(f"🚀 发送第 {i//batch_size + 1} 批次 ({len(formatted_orders)} 条记录)...", end="")
-        
-        try:
-            response = requests.post(target_url, json=payload, timeout=30)
-            if response.status_code == 200:
-                print(f" ✅ {response.json().get('message', '成功')}")
-            else:
-                print(f" ❌ 失败 (状态码: {response.status_code})")
-        except Exception as e:
-            print(f" 🚨 网络异常：{e}")
-            break
-        
-        time.sleep(0.5)
+            print(f"  🚀 发送数据块 {i//chunk_size + 1} ...", end="")
+            try:
+                response = requests.post(target_url, json=payload, timeout=60)
+                if response.status_code == 200:
+                    print(f" ✅ 成功")
+                else:
+                    print(f" ❌ 失败 (状态码: {response.status_code})")
+            except Exception as e:
+                print(f" 🚨 网络异常：{e}")
+                break
+            time.sleep(0.1)
 
-    print("\n🏁 [传输任务完成] 主数据与订单全部同步完毕！")
-    print("="*60)
+    print("\n🏁 [传输任务完成] 所有 JSON 波次已全部注入数据库！")
 
 if __name__ == "__main__":
-    print("🤖 [潍柴 MES 客户端模拟器] 全链路启动...")
-    # 第一阶段：必须先同步基础规则（主数据），如果失败则停止发单
-    if sync_master_data():
-        # 第二阶段：主数据同步成功后，开始疯狂发单
-        send_orders_in_batches(batch_size=50)
-    else:
-        print("🛑 主数据同步失败，为防止产生脏数据，已终止订单传输！")
+    print("🤖 [潍柴 MES 数据中间件] 启动...")
+    extract_excel_to_json()
+    send_json_to_server()

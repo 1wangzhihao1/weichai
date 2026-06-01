@@ -6,7 +6,9 @@ import AlgorithmResults from './components/AlgorithmResults.vue'
 
 const activeTab = ref('sim') // 默认显示 3D 仿真模块 ('sim' 或 'algo')
 
-const batchNo = ref('WEICHAI_API_STRESS_TEST')
+// 🌟 核心修改 1：将准星对准真实大盘波次，一键启动不迷路！
+const batchNo = ref('ORDER_WAVE_2026-04-11')
+
 const isSimulating = ref(false)
 const progress = ref(0)
 const statusMessage = ref('等待下发云端推演指令...')
@@ -16,7 +18,7 @@ const factoryRef = ref(null)
 // 16 宫格状态数据源
 const stationStatus = ref(Array(16).fill().map(() => ({ active: false, orderCount: 0, maxOrders: 2, isPoweredOff: false })))
 
-// 🌟 新增：接收 3D 沙盘实时传回的 KPI 数据
+// 接收 3D 沙盘实时传回的 KPI 数据
 const kpiData = reactive({
   ordersDone: 0,
   ordersTotal: 0,
@@ -36,7 +38,7 @@ const handleStart = async () => {
   simResult.value = null
   statusMessage.value = '正在呼叫后台 AI 调度大脑...'
   
-  // 如果当前在算法页面点击了启动，自动切回 3D 界面观看
+  // 自动切回 3D 界面观看
   activeTab.value = 'sim'
 
   try {
@@ -55,8 +57,16 @@ const startPolling = (taskId) => {
     try {
       const res = await api.getSimulationStatus(taskId)
       if (res.code === 200) {
+        // 🌟 核心修改 2：完美解析后端推过来的百分比字符串
         progress.value = parseInt(res.data.progress.replace('%', ''))
         statusMessage.value = res.data.message || '推演中...'
+
+        // 如果后端传回 failed，立刻停止并报错
+        if (res.data.status === 'failed') {
+          clearInterval(pollTimer)
+          isSimulating.value = false
+          return
+        }
 
         if (res.data.status === 'completed' || progress.value === 100) {
           clearInterval(pollTimer)
@@ -71,7 +81,7 @@ const startPolling = (taskId) => {
     } catch (error) {
       clearInterval(pollTimer)
     }
-  }, 1000) 
+  }, 1000) // 每秒心跳轮询一次
 }
 
 const fetchPlaybookAndPlay = async (taskId) => {
@@ -79,7 +89,6 @@ const fetchPlaybookAndPlay = async (taskId) => {
     const res = await api.getSimulationPlaybook(taskId)
     if (res.code === 200) {
       statusMessage.value = '数据链加载完毕，物理引擎接管！'
-      // 🌟 调用 V5.1 版的 loadAndPlay，只需传 rawJson，断电掩码解析已在内部完成
       factoryRef.value.loadAndPlay(res.data)
     }
   } catch (error) {
@@ -87,12 +96,10 @@ const fetchPlaybookAndPlay = async (taskId) => {
   }
 }
 
-// 🌟 接收 Factory3D 传来的宫格更新事件
 const onUpdateStations = (statusArray) => {
   stationStatus.value = statusArray
 }
 
-// 🌟 接收 Factory3D 传来的全局 KPI 更新事件
 const onUpdateKpi = (data) => {
   Object.assign(kpiData, data)
 }

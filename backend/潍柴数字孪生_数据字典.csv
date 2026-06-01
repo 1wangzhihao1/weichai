@@ -1,0 +1,33 @@
+﻿表名 (Table),字段名 (Column),数据类型 (Type),是否主键 (Primary Key),是否允许为空 (Nullable),备注说明 (Comment)
+t_dispatch_result,id,BIGINT,否,否,
+t_dispatch_result,task_id,VARCHAR(100),否,否,关联推演任务
+t_dispatch_result,order_id,VARCHAR(100),否,否,
+t_dispatch_result,box_id,VARCHAR(150),否,否,实体箱ID
+t_dispatch_result,target_station,INTEGER,否,否,派往几号站台
+t_dispatch_result,predicted_spawn_time,DATETIME,否,否,预测发车时间
+t_dispatch_result,predicted_start_time,DATETIME,否,否,预测开工时间
+t_dispatch_result,predicted_end_time,DATETIME,否,否,预测完工时间
+t_order_bom,id,BIGINT,否,否,
+t_order_bom,order_id,VARCHAR(100),否,否,关联订单号
+t_order_bom,part_type,VARCHAR(50),否,否,零件类型
+t_order_bom,quantity,INTEGER,否,否,需求数量
+t_order_pool,order_id,VARCHAR(100),否,否,订单流水号
+t_order_pool,batch_no,VARCHAR(100),否,否,生产批次号
+t_order_pool,priority_level,INTEGER,否,是,优先级
+t_order_pool,deadline_time,DATETIME,否,是,甲方要求的交期
+t_order_pool,is_simulated,TINYINT,否,是,是否已被推演过
+t_part_master,id,INTEGER,否,否,
+t_part_master,part_type,VARCHAR(50),否,否,零件类型
+t_part_master,standard_p_time,FLOAT,否,否,标准加工耗时(秒)
+t_part_master,variance_p_time,FLOAT,否,是,耗时波动方差(模拟工人疲劳)
+t_simulation_task,task_id,VARCHAR(100),否,否,推演任务批次号
+t_simulation_task,batch_no,VARCHAR(100),否,否,推演的订单批次
+t_simulation_task,strategy_type,VARCHAR(50),否,否,策略: AI_RL / TRADITIONAL / RANDOM
+t_simulation_task,active_stations,INTEGER,否,是,推演最终确定的启用站台数
+t_simulation_task,total_makespan_sec,FLOAT,否,是,计算出的总完工时间(秒)
+t_simulation_task,created_at,DATETIME,否,是,
+t_station_master,station_id,INTEGER,否,否,站台编号 (1-16)
+t_station_master,main_distance_m,FLOAT,否,否,主线物理距离(米)
+t_station_master,branch_length_m,FLOAT,否,否,支线物理长度(米)
+t_station_master,is_upper,TINYINT,否,否,是否为上层支线
+t_station_master,status,VARCHAR(20),否,是,状态: ACTIVE / BROKEN

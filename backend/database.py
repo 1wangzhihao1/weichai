@@ -191,24 +191,26 @@ class PartMaster(Base):
 class StationMaster(Base):
     __tablename__ = "t_station_master"
     station_id = Column(Integer, primary_key=True, autoincrement=False, comment="站台编号 (1-16)")
-    main_distance_m = Column(Float, nullable=False, comment="主线物理距离(米)")
+    main_distance_m = Column(Float, nullable=False, comment="主线物理距离(米) - 真实测绘")
     branch_length_m = Column(Float, nullable=False, comment="支线物理长度(米)")
-    is_upper = Column(Boolean, nullable=False, comment="是否为上层支线")
     status = Column(String(20), default="ACTIVE", comment="状态: ACTIVE / BROKEN")
 
 class OrderPool(Base):
     __tablename__ = "t_order_pool"
-    order_id = Column(String(100), primary_key=True, comment="订单流水号")
-    batch_no = Column(String(100), nullable=False, comment="生产批次号")
+    order_id = Column(String(100), primary_key=True, comment="订单/拣选流水号")
+    batch_no = Column(String(100), nullable=False, comment="生产批次号/波次名")
+    
+    # 🚨 已删除不合理的 start_time 字段！
+    
     priority_level = Column(Integer, default=1, comment="优先级")
-    deadline_time = Column(DateTime, default=datetime.datetime.now, comment="交期")
+    deadline_time = Column(DateTime, default=datetime.datetime.now, comment="交期死线")
     is_simulated = Column(Boolean, default=False, comment="是否已推演")
-
+    
 class OrderBOM(Base):
     __tablename__ = "t_order_bom"
     id = Column(BigInteger, primary_key=True, autoincrement=True)
-    order_id = Column(String(100), nullable=False, index=True, comment="关联订单号")
-    part_type = Column(String(50), nullable=False, comment="零件类型")
+    order_id = Column(String(100), nullable=False, index=True, comment="关联拣选单号")
+    part_type = Column(String(50), nullable=False, comment="零件类型(SKU)")
     quantity = Column(Integer, nullable=False, comment="需求数量")
 
 class SimulationTask(Base):
@@ -228,9 +230,7 @@ class DispatchResult(Base):
     box_id = Column(String(150), nullable=False, index=True, comment="实体箱ID")
     target_station = Column(Integer, nullable=False, comment="派往几号站台")
     
-    # 🌟 核心新增：精准的发车时间记录，彻底终结 3D 动画空窗期
     predicted_spawn_time = Column(DateTime, nullable=False, comment="预测发车时间")
-    
     predicted_start_time = Column(DateTime, nullable=False, comment="预测开工时间")
     predicted_end_time = Column(DateTime, nullable=False, comment="预测完工时间")
 
@@ -250,14 +250,15 @@ def seed_test_data():
             stations = []
             for i in range(Config.NUM_STATIONS):
                 info = Config.get_branch_info(i)
+                # 🌟 完美适配你最新 config.py 里的测绘级数组
                 stations.append(StationMaster(
                     station_id=i + 1,
-                    main_distance_m=Config.get_station_main_distance(i),
-                    branch_length_m=info["length_m"],
-                    is_upper=info["is_upper"]
+                    main_distance_m=Config.STATION_EXIT_FAR_DISTANCES[i], 
+                    branch_length_m=info["branch_length"]
                 ))
             db.add_all(stations)
             db.commit()
+            print("✅ 16台机床真实物理参数(精确测绘版)写入数据库成功！")
     except Exception as e:
         db.rollback()
         print(f"❌ 数据库操作失败: {e}")

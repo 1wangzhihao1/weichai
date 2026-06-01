@@ -101,7 +101,6 @@
 import os
 import sys
 
-# 🌟 寻路雷达：强制将项目根目录加入 Python 的搜索视野
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
 if project_root not in sys.path:
     sys.path.append(project_root)
@@ -109,81 +108,58 @@ if project_root not in sys.path:
 from sb3_contrib import MaskablePPO
 from sb3_contrib.common.wrappers import ActionMasker
 from stable_baselines3.common.callbacks import CheckpointCallback
-
-# 导入咱们彻底洗髓换血后的纯净版环境
 from rl_environment import PickingEnv
 
 def mask_fn(env):
-    """
-    【动作掩码提取器】
-    直接调用环境内部基于“双订单上限”生成的合法动作矩阵
-    """
     return env.action_masks()
 
 def main():
     print("="*80)
-    print("🚀 启动 [V3 终极版：订单级连续发车] 工业级 AI 训练炉...")
+    print("🚀 启动 [V5 终极物理时间轴版] 工业级 AI 训练炉...")
     print("="*80)
 
-    # 1. 实例化咱们用积木拼出来的纯净物理环境
     raw_env = PickingEnv()
-    
-    # 2. 穿上“防弹衣”：接入动作掩码拦截器
     env = ActionMasker(raw_env, mask_fn)
 
-    # 3. 存盘点设置 (🌟 全面升级为 v3 文件夹)
-    os.makedirs("./checkpoints_v3", exist_ok=True)
+    os.makedirs("./checkpoints_v5", exist_ok=True)
     checkpoint_callback = CheckpointCallback(
-        save_freq=50000,
-        save_path='./checkpoints_v3/',
-        name_prefix='ppo_weichai_v3_order_level'
+        save_freq=20000,
+        save_path='./checkpoints_v5/',
+        name_prefix='ppo_v5_order_level'
     )
 
-    # 4. 初始化或加载大脑 (🌟 全面升级为 V3 模型命名)
-    model_name = "ppo_masking_model_v3_order_level"
+    model_name = "ppo_masking_model_v5"
     model_dir = os.path.join(project_root, "output/models")
     os.makedirs(model_dir, exist_ok=True)
     model_path = os.path.join(model_dir, model_name + ".zip")
     
     if os.path.exists(model_path):
-        print(f"📥 发现 V3 存档！正在加载已有模型: {model_path}")
-        print("📈 站在新法则的肩膀上继续修炼...")
-        model = MaskablePPO.load(
-            model_path, 
-            env=env, 
-            tensorboard_log="./ppo_tensorboard_logs_v3/" # 🌟 指向 v3 日志
-        )
+        print(f"📥 发现 V5 存档！加载已有模型: {model_path}")
+        model = MaskablePPO.load(model_path, env=env, tensorboard_log="./ppo_tensorboard_logs_v5/")
     else:
-        print("🌱 物理法则已重置，未找到 V3 脑子，正在从零开始初始化新脑子...")
+        print("🌱 物理法则已彻底重置为精确时间轴，初始化 V5 新脑子...")
         model = MaskablePPO(
             "MlpPolicy", 
             env, 
             verbose=1, 
             learning_rate=0.0003,      
-            n_steps=2048,              
-            batch_size=256,            
-            ent_coef=0.01,             # 保持适度探索，稳扎稳打
+            n_steps=1000,              # 🌟 精准匹配 1000 步的滑动切片
+            batch_size=250,            
+            ent_coef=0.01,             
             seed=42,                   
-            tensorboard_log="./ppo_tensorboard_logs_v3/" # 🌟 指向 v3 日志
+            tensorboard_log="./ppo_tensorboard_logs_v5/" 
         )
 
-    # 5. 点火开炉与优雅中断
     try:
-        print("💡 正在进行 V3 极限压榨训练！随时可以按 Ctrl+C 提前收网。")
-        
-        # 建议先跑 200 万步看看收敛情况
-        model.learn(total_timesteps=2000000, callback=checkpoint_callback, reset_num_timesteps=False)
+        print("💡 正在进行 V5 训练！这次的曲线必将阶跃！")
+        model.learn(total_timesteps=1000000, callback=checkpoint_callback, reset_num_timesteps=False)
         print("\n✅ 极限训练自然完成！")
-        
     except KeyboardInterrupt:
-        print("\n🛑 接收到中断信号 (Ctrl+C)！正在执行紧急闭炉，保存当前最强大脑...")
-        
+        print("\n🛑 紧急闭炉，保存大脑...")
     finally:
-        # 覆盖保存这个进化后的终极大脑
         save_path_no_ext = model_path.replace('.zip', '')
         model.save(save_path_no_ext)
-        print(f"💾 V3 终极脑已安全保存至: {model_path}")
-        print("="*80)
+        print(f"💾 V5 终极脑已保存: {model_path}")
 
 if __name__ == "__main__":
     main()
