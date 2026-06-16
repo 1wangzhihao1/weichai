@@ -44,23 +44,14 @@ df_valid = df[mask1 & mask2 & mask3 & mask4_service].copy()
 print(f'过滤后有效数据行数: {len(df_valid)}')
 print()
 
-# ---------- 4. 排除耗时极端异常值（IQR方法，按SKU内部过滤）----------
+# ---------- 4. 保留整装与拆零的全部正常耗时 ----------
 # 计算单件耗时（每行）
 df_valid['单件耗时'] = df_valid['耗时秒'] / df_valid['已拣选数量']
 
-# 用全局IQR过滤极端值（3倍IQR以外）
-Q1 = df_valid['单件耗时'].quantile(0.25)
-Q3 = df_valid['单件耗时'].quantile(0.75)
-IQR = Q3 - Q1
-lower = Q1 - 3 * IQR
-upper = Q3 + 3 * IQR
-
-mask4 = df_valid['单件耗时'].between(lower, upper)
-print(f'单件耗时 IQR范围: [{lower:.2f}s, {upper:.2f}s]')
-print(f'排除IQR极端异常行: {(~mask4).sum()} 行')
-
-df_clean = df_valid[mask4].copy()
-print(f'最终参与计算的行数: {len(df_clean)}')
+df_clean = df_valid.copy()
+fast_rows = int((df_clean['单件耗时'] <= 0.5).sum())
+print(f'保留整装/拆零全部正常耗时记录，最终参与计算的行数: {len(df_clean)}')
+print(f'其中单件耗时 <= 0.5 秒的快速整装/短耗时记录: {fast_rows} 行')
 print()
 
 # ---------- 5. 计算每种SKU的加权平均单件耗时 ----------

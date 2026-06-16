@@ -398,6 +398,7 @@
 import os
 import sys
 import datetime
+import json
 import numpy as np
 import uvicorn
 import simpy
@@ -421,6 +422,8 @@ from config import Config
 from database import SessionLocal, OrderPool, OrderBOM, SimulationTask, PartMaster, DispatchResult
 from sb3_contrib import MaskablePPO
 from scenarios.order_picking.rl_environment import PickingEnv
+from scenarios.order_picking.inventory_preprocess import list_snapshots, load_snapshot
+from scenarios.order_picking.order_preprocessor import preprocess_orders
 from core_engine.rules.dispatch_rules import DispatchRules
 from core_engine.models.resource_model import SimpyStation
 
@@ -435,6 +438,7 @@ app.add_middleware(
 )
 
 TASK_PROGRESS = {}
+SCHEDULE_RESULTS = {}
 
 # ==========================================
 # 🌟 全局定义进度推送工具，彻底解决找不到变量的报错！
@@ -469,6 +473,15 @@ class OrderBatch(BaseModel):
 
 class SimulationRequest(BaseModel):
     batch_no: str
+    inventory_snapshot_id: str = "2025-07-01-morning"
+    evening_snapshot_id: str = "2025-07-01-evening"
+    shortage_policy: str = "exception_queue"
+
+class ScheduleDispatchRequest(BaseModel):
+    batch_no: str
+    inventory_snapshot_id: str = "2025-07-01-morning"
+    strategy: str = "ai"
+    active_station_limit: int = Config.NUM_STATIONS
 
 class DBLogger:
     def __init__(self, dispatch_records, task_id, base_time):
@@ -522,6 +535,200 @@ def launch_box(env, station, box_id, order_id, p_time, t_trans, entity_type, log
     except TypeError:
         yield env.process(station.process_box(box_id, p_time, t_trans, entity_type))
 
+
+def build_logical_orders(db, batch_no: str):
+    db_orders = db.query(OrderPool).filter(OrderPool.batch_no == batch_no).all()
+    if not db_orders:
+        raise ValueError(f"批次 {batch_no} 下没有订单数据")
+
+    order_ids = [o.order_id for o in db_orders]
+    all_boms = db.query(OrderBOM).filter(OrderBOM.order_id.in_(order_ids)).all()
+    bom_dict = {}
+    for bom in all_boms:
+        bom_dict.setdefault(bom.order_id, []).append(bom)
+
+    all_parts = db.query(PartMaster).all()
+    part_time_dict = {str(p.part_type).strip(): float(p.standard_p_time) for p in all_parts}
+
+    logical_orders = []
+    for d_order in db_orders:
+        boms = bom_dict.get(d_order.order_id, [])
+        sku_map = {}
+        for bom in boms:
+            clean_id = str(bom.part_type).strip().replace("零件", "")
+            actual_p_time = part_time_dict.get(clean_id, 4.5) * bom.quantity
+            if clean_id not in sku_map:
+                sku_map[clean_id] = {"qty": 0, "p_time": 0.0}
+            sku_map[clean_id]["qty"] += bom.quantity
+            sku_map[clean_id]["p_time"] += actual_p_time
+
+        boxes = [{"sku": k, "qty": v["qty"], "p_time": v["p_time"]} for k, v in sku_map.items()]
+        logical_orders.append(
+            {
+                "order_id": d_order.order_id,
+                "boxes": boxes,
+                "total_p_time": sum(b["p_time"] for b in boxes),
+            }
+        )
+    return logical_orders
+
+
+def load_latest_ai_model(rl_env):
+    model_dir = os.path.join(project_root, "output", "models")
+    zip_files = glob.glob(os.path.join(model_dir, "*.zip"))
+    if not zip_files:
+        raise FileNotFoundError("找不到 AI 模型文件！")
+    return MaskablePPO.load(max(zip_files, key=os.path.getctime), env=rl_env)
+
+
+def prepare_orders_with_inventory(batch_no: str, inventory_snapshot_id: str, db):
+    logical_orders = build_logical_orders(db, batch_no)
+    inventory_snapshot = load_snapshot(inventory_snapshot_id) if inventory_snapshot_id else None
+    preprocessed = preprocess_orders(logical_orders, inventory_snapshot)
+    processable_orders = preprocessed["processable_orders"]
+    preprocess_stats = preprocessed["preprocess_stats"]
+    shortage_orders = preprocessed["shortage_orders"]
+    if not processable_orders:
+        raise ValueError(
+            f"库存预处理后没有可执行订单：输入 {preprocess_stats.get('input_order_count', 0)} 单，"
+            f"缺料异常 {preprocess_stats.get('shortage_order_count', 0)} 单。请检查库存快照。"
+        )
+    return logical_orders, inventory_snapshot, processable_orders, shortage_orders, preprocess_stats
+
+
+def generate_dispatch_mapping(processable_orders, strategy: str = "ai", active_station_limit: int = Config.NUM_STATIONS):
+    station_limit = max(1, min(int(active_station_limit or Config.NUM_STATIONS), Config.NUM_STATIONS))
+    strategy_key = (strategy or "ai").lower()
+
+    rl_env = PickingEnv(dataset_type="test")
+    rl_env.unwrapped.set_orders(processable_orders, episode_length=len(processable_orders))
+    obs, _ = rl_env.reset(seed=999)
+    model = load_latest_ai_model(rl_env) if strategy_key == "ai" else None
+
+    mapping = []
+    done = False
+    sequence = 1
+    while not done:
+        current_order = rl_env.unwrapped.real_world_orders[rl_env.unwrapped.current_step]
+        station_mask = np.array([True] * station_limit + [False] * (Config.NUM_STATIONS - station_limit))
+        try:
+            env_mask = rl_env.unwrapped.action_masks()
+        except AttributeError:
+            env_mask = np.ones(Config.NUM_STATIONS, dtype=bool)
+        combined_mask = np.logical_and(station_mask, env_mask)
+        if not np.any(combined_mask):
+            combined_mask = station_mask
+
+        if strategy_key == "ai":
+            action = int(model.predict(obs, action_masks=combined_mask, deterministic=True)[0])
+        elif strategy_key == "round_robin":
+            valid_actions = np.flatnonzero(combined_mask)
+            action = int(valid_actions[(sequence - 1) % len(valid_actions)])
+        elif strategy_key == "random":
+            valid_actions = np.flatnonzero(combined_mask)
+            action = int(np.random.choice(valid_actions))
+        else:
+            raise ValueError(f"不支持的调度策略: {strategy}")
+
+        mapping.append(
+            {
+                "sequence": sequence,
+                "order_id": current_order["order_id"],
+                "target_station": action + 1,
+                "box_count": len(current_order.get("boxes", [])),
+                "total_p_time": round(float(current_order.get("total_p_time", 0.0)), 3),
+                "boxes": [
+                    {
+                        "sku": box.get("sku", ""),
+                        "qty": box.get("qty", 1),
+                        "p_time": round(float(box.get("p_time", 0.0)), 3),
+                    }
+                    for box in current_order.get("boxes", [])
+                ],
+            }
+        )
+        obs, _, done, _, _ = rl_env.step(action)
+        sequence += 1
+
+    return mapping, round(float(rl_env.unwrapped.global_time), 3), station_limit
+
+
+def save_schedule_result(task_id: str, result: dict):
+    output_dir = os.path.join(project_root, "output", "schedule_results")
+    os.makedirs(output_dir, exist_ok=True)
+    output_path = os.path.join(output_dir, f"{task_id}.json")
+    latest_path = os.path.join(output_dir, "latest.json")
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
+    with open(latest_path, "w", encoding="utf-8") as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
+    return output_path
+
+
+def run_schedule_dispatch_task(task_id: str, batch_no: str, inventory_snapshot_id: str, strategy: str, active_station_limit: int):
+    db = SessionLocal()
+    try:
+        SCHEDULE_RESULTS[task_id] = {
+            "task_id": task_id,
+            "batch_no": batch_no,
+            "status": "running",
+            "message": "正在执行纯智能调度...",
+        }
+        _, inventory_snapshot, processable_orders, shortage_orders, preprocess_stats = prepare_orders_with_inventory(
+            batch_no, inventory_snapshot_id, db
+        )
+        mapping, estimated_makespan, station_limit = generate_dispatch_mapping(
+            processable_orders,
+            strategy=strategy,
+            active_station_limit=active_station_limit,
+        )
+        result = {
+            "task_id": task_id,
+            "batch_no": batch_no,
+            "inventory_snapshot_id": inventory_snapshot_id,
+            "strategy": strategy.upper() if strategy.lower() != "ai" else "AI_RL",
+            "status": "completed",
+            "output_file": "",
+            "summary": {
+                "input_order_count": preprocess_stats.get("input_order_count", 0),
+                "scheduled_order_count": len(mapping),
+                "shortage_order_count": len(shortage_orders),
+                "reordered_count": preprocess_stats.get("reordered_count", 0),
+                "scarce_sku_count": preprocess_stats.get("scarce_sku_count", 0),
+                "inventory_sku_count": preprocess_stats.get("inventory_sku_count", 0),
+                "station_count": station_limit,
+                "estimated_env_makespan_sec": estimated_makespan,
+                "inventory_summary": (inventory_snapshot or {}).get("summary", {}),
+            },
+            "mapping": mapping,
+            "shortage_orders": [
+                {
+                    "order_id": order.get("order_id", ""),
+                    "exception_reason": order.get("exception_reason", ""),
+                    "shortage_skus": order.get("shortage_skus", []),
+                    "box_count": len(order.get("boxes", [])),
+                    "total_p_time": round(float(order.get("total_p_time", 0.0)), 3),
+                }
+                for order in shortage_orders
+            ],
+        }
+        output_path = save_schedule_result(task_id, result)
+        result["output_file"] = os.path.relpath(output_path, project_root).replace("\\", "/")
+        save_schedule_result(task_id, result)
+        SCHEDULE_RESULTS[task_id] = result
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        SCHEDULE_RESULTS[task_id] = {
+            "task_id": task_id,
+            "batch_no": batch_no,
+            "status": "failed",
+            "message": str(e),
+        }
+    finally:
+        db.close()
+
+
 def simpy_dispatch_engine(env, stations, rl_env, model, optimal_stations, dispatch_records, task_id, base_time):
     db_logger = DBLogger(dispatch_records, task_id, base_time)
     for s in stations:
@@ -556,7 +763,7 @@ def simpy_dispatch_engine(env, stations, rl_env, model, optimal_stations, dispat
             t_trans = (d_main / Config.BELT_SPEED) + (Config.BRANCH_IN_LENGTH / Config.BELT_SPEED)
 
         # =======================================================
-        # 🌟 核心修复：把 if 换成 while 真·死锁排队！
+        # 
         # 只有当站台彻底腾出一个订单坑位，才允许新订单进入
         # =======================================================
         local_cursor = dispatch_time_cursor
@@ -596,9 +803,9 @@ def simpy_dispatch_engine(env, stations, rl_env, model, optimal_stations, dispat
 
 
 # ==========================================
-# 🌟 核心任务主引擎
+# 核心任务主引擎
 # ==========================================
-def run_simulation_task(task_id: str, batch_no: str):
+def run_simulation_task(task_id: str, batch_no: str, inventory_snapshot_id: str = "2025-07-01-morning", evening_snapshot_id: str = "2025-07-01-evening"):
     db = SessionLocal()
     try:
         update_progress(task_id, "10%", f"正在提取波次 {batch_no} 的时空档案...")
@@ -628,23 +835,31 @@ def run_simulation_task(task_id: str, batch_no: str):
             boxes = [{'sku': k, 'qty': v['qty'], 'p_time': v['p_time']} for k, v in sku_map.items()]
             logical_orders.append({'order_id': d_order.order_id, 'boxes': boxes, 'total_p_time': sum(b['p_time'] for b in boxes)})
 
-        # 🌟 注释掉 LPT（大单优先）排序，严格按历史时间顺序，对齐 compare.py 的 30194 秒成绩！
+        #  注释掉 LPT（大单优先）排序，严格按历史时间顺序，对齐 compare.py 的 30194 秒成绩
         #logical_orders.sort(key=lambda x: x['total_p_time'], reverse=True)
         #print(f"\n✅ 数据提取完毕！总波次订单数: {len(logical_orders)} (已关闭大单优先，还原原版时间)")
 
-        # 实例化环境，这会不可避免地触发 Excel 读取并打印 "117147"，但别慌，我们马上“洗脑”它。
-        rl_env = PickingEnv(dataset_type='test') 
-        
-        # 🧠 环境洗脑（基因覆盖）：彻底抹去 11 万条旧数据
-        rl_env.unwrapped.real_world_orders = logical_orders
-        rl_env.unwrapped.test_orders = logical_orders
-        rl_env.unwrapped.train_orders = logical_orders
-        rl_env.unwrapped.total_orders = len(logical_orders)
-        rl_env.unwrapped.episode_length = len(logical_orders)
-        
-        # 强制复位，激活覆盖
+        initial_inventory_snapshot = load_snapshot(inventory_snapshot_id) if inventory_snapshot_id else None
+        preprocessed = preprocess_orders(logical_orders, initial_inventory_snapshot)
+        processable_orders = preprocessed["processable_orders"]
+        preprocess_stats = preprocessed["preprocess_stats"]
+        shortage_orders = preprocessed["shortage_orders"]
+
+        if not processable_orders:
+            raise ValueError(
+                f"库存预处理后没有可执行订单：输入 {preprocess_stats.get('input_order_count', 0)} 单，"
+                f"缺料异常 {preprocess_stats.get('shortage_order_count', 0)} 单。请检查库存快照。"
+            )
+
+        rl_env = PickingEnv(dataset_type='test')
+        rl_env.unwrapped.set_orders(processable_orders, episode_length=len(processable_orders))
+
         rl_env.reset(seed=999)
-        print(f"🚀 已完成环境数据清洗，确认当前实际推演箱数: {len(rl_env.unwrapped.real_world_orders)}")
+        print(
+            f"库存预处理完成：输入 {preprocess_stats['input_order_count']} 单，"
+            f"可执行 {preprocess_stats['processable_order_count']} 单，"
+            f"缺料异常 {preprocess_stats['shortage_order_count']} 单。"
+        )
         
         model_dir = os.path.join(project_root, "output/models")
         zip_files = glob.glob(os.path.join(model_dir, '*.zip'))
@@ -654,6 +869,11 @@ def run_simulation_task(task_id: str, batch_no: str):
         def fast_macro_simulate(strategy, limit):
             # 每次探测前必须归零时间
             rl_env.reset(seed=999)
+            if len(rl_env.unwrapped.real_world_orders) == 0:
+                raise ValueError(
+                    f"库存预处理后没有可执行订单：输入 {preprocess_stats.get('input_order_count', 0)} 单，"
+                    f"缺料异常 {preprocess_stats.get('shortage_order_count', 0)} 单。请检查库存快照。"
+                )
             done = False
             step = 0
             while not done:
@@ -670,7 +890,7 @@ def run_simulation_task(task_id: str, batch_no: str):
                 
                 _, _, done, _, _ = rl_env.step(action)
                 step += 1
-            return float(np.max(rl_env.unwrapped.station_available_time))
+            return float(rl_env.unwrapped.global_time)
 
         results = {}
         strategy_list = ["random", "round_robin", "ai"]
@@ -719,6 +939,7 @@ def run_simulation_task(task_id: str, batch_no: str):
         db.commit()
 
         eff = (1 - (ai_st * ai_real_makespan) / (rand_st * rand_tm)) * 100 if rand_st * rand_tm > 0 else 0.0
+        inventory_summary = (initial_inventory_snapshot or {}).get("summary", {})
 
         update_progress(task_id, "100%", "✅ 战报生成完毕！大屏可提取渲染！")
         TASK_PROGRESS[task_id].update({
@@ -726,7 +947,16 @@ def run_simulation_task(task_id: str, batch_no: str):
             "ai_result": {"active_stations": ai_st, "total_makespan": round(ai_real_makespan, 2)},
             "trad_result": {"active_stations": trad_st, "total_makespan": round(trad_tm, 2)},
             "rand_result": {"active_stations": rand_st, "total_makespan": round(rand_tm, 2)},
-            "efficiency_up": f"{eff:.2f}%"
+            "efficiency_up": f"{eff:.2f}%",
+            "inventory_result": {
+                "initial_snapshot_id": inventory_snapshot_id,
+                "evening_snapshot_id": evening_snapshot_id,
+                "summary": inventory_summary,
+                "preprocess_stats": preprocess_stats,
+                "exception_order_count": len(shortage_orders),
+                "evening_validation": None,
+                "shortage_policy": "exception_queue",
+            }
         })
     except Exception as e:
         db.rollback()
@@ -759,8 +989,57 @@ def upload_orders(batch_data: OrderBatch, db: SessionLocal = Depends(get_db)):
 @app.post("/api/v1/simulation/start")
 def start_simulation(req: SimulationRequest, bg_tasks: BackgroundTasks):
     task_id = f"TASK-{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}"
-    bg_tasks.add_task(run_simulation_task, task_id, req.batch_no)
+    bg_tasks.add_task(run_simulation_task, task_id, req.batch_no, req.inventory_snapshot_id, req.evening_snapshot_id)
     return {"code": 200, "task_id": task_id}
+
+@app.post("/api/v1/schedule/dispatch")
+def start_schedule_dispatch(req: ScheduleDispatchRequest, bg_tasks: BackgroundTasks):
+    task_id = f"SCHEDULE-{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}"
+    bg_tasks.add_task(
+        run_schedule_dispatch_task,
+        task_id,
+        req.batch_no,
+        req.inventory_snapshot_id,
+        req.strategy,
+        req.active_station_limit,
+    )
+    SCHEDULE_RESULTS[task_id] = {
+        "task_id": task_id,
+        "batch_no": req.batch_no,
+        "status": "queued",
+        "message": "纯智能调度任务已提交",
+    }
+    return {"code": 200, "task_id": task_id, "message": "纯智能调度任务已启动"}
+
+@app.get("/api/v1/schedule/result/{task_id}")
+def get_schedule_result(task_id: str):
+    if task_id in SCHEDULE_RESULTS:
+        return {"code": 200, "data": SCHEDULE_RESULTS[task_id]}
+
+    output_path = os.path.join(project_root, "output", "schedule_results", f"{task_id}.json")
+    if os.path.exists(output_path):
+        with open(output_path, "r", encoding="utf-8") as f:
+            return {"code": 200, "data": json.load(f)}
+    raise HTTPException(status_code=404, detail="调度任务不存在")
+
+@app.get("/api/v1/inventory/snapshots")
+def get_inventory_snapshots():
+    return {"code": 200, "data": list_snapshots()}
+
+@app.get("/api/v1/inventory/summary/{snapshot_id}")
+def get_inventory_summary(snapshot_id: str):
+    try:
+        snapshot = load_snapshot(snapshot_id)
+        return {
+            "code": 200,
+            "data": {
+                "snapshot_id": snapshot.get("snapshot_id"),
+                "source_file": snapshot.get("source_file"),
+                "summary": snapshot.get("summary", {}),
+            },
+        }
+    except Exception as e:
+        raise HTTPException(status_code=404, detail=str(e))
 
 @app.get("/api/v1/simulation/status/{task_id}")
 def get_status(task_id: str):
@@ -783,14 +1062,15 @@ def get_simulation_playbook(task_id: str, db: SessionLocal = Depends(get_db)):
             "timeline": []
         }
         for r in records:
-            playbook["timeline"].append({
+            item = {
                 "order_id": r.order_id,
                 "box_id": r.box_id,
                 "target_station": r.target_station,
                 "spawn_time": r.predicted_spawn_time.isoformat() if hasattr(r, 'predicted_spawn_time') and r.predicted_spawn_time else r.predicted_start_time.isoformat(),
                 "start_time": r.predicted_start_time.isoformat(),
                 "end_time": r.predicted_end_time.isoformat(),
-            })
+            }
+            playbook["timeline"].append(item)
         return {"code": 200, "data": playbook}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

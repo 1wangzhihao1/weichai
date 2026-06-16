@@ -233,7 +233,12 @@ const parsePlaybook = (playbook) => {
       const timeReturnMain = distOut / BELT_SPEED;
       tl.exit = tl.return_branch_end + timeReturnMain;
 
-      return { box_id: item.box_id, stIdx: stIdx, timeline: tl };
+      return {
+        box_id: item.box_id,
+        stIdx: stIdx,
+        timeline: tl,
+        sku: item.sku || ''
+      };
     });
 
     const activeCount = playbook.active_stations || 16;
@@ -303,7 +308,7 @@ const handleMouseMove = (event) => {
     }
 
     tooltipParams.orderId = orderId;
-    tooltipParams.partType = partType;
+    tooltipParams.partType = data.sku || partType;
     tooltipParams.stName = `S${(data.station + 1).toString().padStart(2, '0')}`;
     tooltipParams.x = clientX + 15;
     tooltipParams.y = clientY + 15;
@@ -382,7 +387,11 @@ const updateSimulation = (delta) => {
             const boxColor = stringToColor(boxData.box_id);
             const mesh = new THREE.Mesh(new THREE.BoxGeometry(BOX_S, BOX_S, BOX_S), new THREE.MeshStandardMaterial({ color: boxColor, emissive: 0x000000, roughness:0.2, metalness:0.4 }));
             mesh.castShadow = true; mesh.receiveShadow = true; 
-            mesh.userData = { id: boxData.box_id, station: stIdx };
+            mesh.userData = {
+              id: boxData.box_id,
+              station: stIdx,
+              sku: boxData.sku
+            };
             scene.add(mesh); 
             
             const label = document.createElement('div'); label.className = 'box-label'; label.innerText = "P_" + shortName; 

@@ -1,0 +1,45 @@
+{
+  "date": "2026-04-11",
+  "orders_on_date": 1857,
+  "order_id": "1076108",
+  "start_time": "2026-04-11 18:03:06.749000",
+  "box_count": 4,
+  "order_total_p_time": 382.28,
+  "total_from_boxes": 382.28,
+  "difference": 0.0,
+  "calculation_rule": "box p_time = PartMaster.standard_p_time * qty; order total_p_time = sum(box p_time)",
+  "rows": [
+    {
+      "sku": "612600082744:A01",
+      "qty": 200.0,
+      "standard_p_time": 1.347,
+      "formula": "1.347 x 200",
+      "p_time": 269.4,
+      "fallback_4_5_used": false
+    },
+    {
+      "sku": "1001062122:A01",
+      "qty": 20.0,
+      "standard_p_time": 3.243,
+      "formula": "3.243 x 20",
+      "p_time": 64.86,
+      "fallback_4_5_used": false
+    },
+    {
+      "sku": "612639000049:A01",
+      "qty": 50.0,
+      "standard_p_time": 0.652,
+      "formula": "0.652 x 50",
+      "p_time": 32.6,
+      "fallback_4_5_used": false
+    },
+    {
+      "sku": "612600081911:A01",
+      "qty": 20.0,
+      "standard_p_time": 0.771,
+      "formula": "0.771 x 20",
+      "p_time": 15.42,
+      "fallback_4_5_used": false
+    }
+  ]
+}

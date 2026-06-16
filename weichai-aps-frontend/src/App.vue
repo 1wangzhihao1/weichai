@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, nextTick } from 'vue'
+import { ref, reactive, nextTick, onMounted } from 'vue'
 import api from './api/index' 
 import Factory3D from './components/Factory3D.vue' 
 import AlgorithmResults from './components/AlgorithmResults.vue' 
@@ -8,6 +8,9 @@ const activeTab = ref('sim') // 默认显示 3D 仿真模块 ('sim' 或 'algo')
 
 // 🌟 核心修改 1：将准星对准真实大盘波次，一键启动不迷路！
 const batchNo = ref('ORDER_WAVE_2026-04-11')
+const inventorySnapshotId = ref('2025-07-01-morning')
+const eveningSnapshotId = ref('2025-07-01-evening')
+const inventorySnapshots = ref([])
 
 const isSimulating = ref(false)
 const progress = ref(0)
@@ -42,13 +45,27 @@ const handleStart = async () => {
   activeTab.value = 'sim'
 
   try {
-    const res = await api.startSimulation(batchNo.value)
+    const res = await api.startSimulation(batchNo.value, inventorySnapshotId.value, eveningSnapshotId.value)
     if (res.code === 200) {
       startPolling(res.task_id)
     }
   } catch (error) {
     statusMessage.value = '呼叫失败！请检查 FastAPI 后端 8088 端口是否运行！'
     isSimulating.value = false
+  }
+}
+
+const loadInventorySnapshots = async () => {
+  try {
+    const res = await api.getInventorySnapshots()
+    if (res.code === 200 && Array.isArray(res.data)) {
+      inventorySnapshots.value = res.data
+    }
+  } catch (error) {
+    inventorySnapshots.value = [
+      { snapshot_id: '2025-07-01-morning', summary: {} },
+      { snapshot_id: '2025-07-01-evening', summary: {} }
+    ]
   }
 }
 
@@ -103,6 +120,10 @@ const onUpdateStations = (statusArray) => {
 const onUpdateKpi = (data) => {
   Object.assign(kpiData, data)
 }
+
+onMounted(() => {
+  loadInventorySnapshots()
+})
 </script>
 
 <template>
@@ -134,6 +155,25 @@ const onUpdateKpi = (data) => {
             </button>
           </div>
           
+          <div class="inventory-selectors">
+            <label>
+              <span>日初库存快照</span>
+              <select class="custom-select" v-model="inventorySnapshotId">
+                <option v-for="item in inventorySnapshots" :key="item.snapshot_id" :value="item.snapshot_id">
+                  {{ item.snapshot_id }}
+                </option>
+              </select>
+            </label>
+            <label>
+              <span>日末校验快照</span>
+              <select class="custom-select" v-model="eveningSnapshotId">
+                <option v-for="item in inventorySnapshots" :key="item.snapshot_id" :value="item.snapshot_id">
+                  {{ item.snapshot_id }}
+                </option>
+              </select>
+            </label>
+          </div>
+
           <div v-if="isSimulating || progress > 0" class="progress-box">
             <div class="progress-track">
               <div class="progress-fill" :style="{ width: progress + '%' }"></div>
@@ -169,6 +209,23 @@ const onUpdateKpi = (data) => {
           <div class="kpi-row sub">
             <span>包含回库在内的总耗时:</span> 
             <span class="kpi-val">{{ kpiData.maxTime.toFixed(1) }} s</span>
+          </div>
+          <div class="kpi-divider"></div>
+          <div class="kpi-row sub">
+            <span>库存预处理订单:</span>
+            <span class="kpi-val">{{ simResult.inventory_result?.preprocess_stats?.processable_order_count || 0 }} / {{ simResult.inventory_result?.preprocess_stats?.input_order_count || 0 }}</span>
+          </div>
+          <div class="kpi-row sub">
+            <span>缺料异常订单:</span>
+            <span class="kpi-val text-warning">{{ simResult.inventory_result?.exception_order_count || 0 }}</span>
+          </div>
+          <div class="kpi-row sub">
+            <span>稀缺SKU数量:</span>
+            <span class="kpi-val">{{ simResult.inventory_result?.preprocess_stats?.scarce_sku_count || 0 }}</span>
+          </div>
+          <div class="kpi-row sub">
+            <span>预处理重排订单:</span>
+            <span class="kpi-val">{{ simResult.inventory_result?.preprocess_stats?.reordered_count || 0 }}</span>
           </div>
         </div>
 
@@ -238,6 +295,10 @@ const onUpdateKpi = (data) => {
 /* 自定义原生 Input 和 Button */
 .custom-input { flex: 1; padding: 8px 12px; background: rgba(0, 0, 0, 0.4); border: 1px solid #1E3A5F; color: #FFF; font-size: 13px; border-radius: 6px; outline: none; transition: 0.3s; }
 .custom-input:focus { border-color: #00E5FF; }
+.inventory-selectors { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.inventory-selectors label { display: flex; flex-direction: column; gap: 6px; color: #A0B2C6; font-size: 12px; font-weight: bold; }
+.custom-select { width: 100%; padding: 8px 10px; background: rgba(0, 0, 0, 0.4); border: 1px solid #1E3A5F; color: #FFF; font-size: 12px; border-radius: 6px; outline: none; }
+.custom-select:focus { border-color: #00E5FF; }
 .primary-btn { background: linear-gradient(135deg, #00E5FF, #0077FF); border: none; padding: 8px 20px; border-radius: 6px; color: white; font-weight: bold; cursor: pointer; transition: 0.3s; }
 .primary-btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 4px 10px rgba(0, 229, 255, 0.4); }
 .primary-btn:disabled { opacity: 0.5; cursor: not-allowed; }

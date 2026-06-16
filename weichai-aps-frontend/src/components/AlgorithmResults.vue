@@ -152,6 +152,12 @@ onUnmounted(() => { window.removeEventListener('resize', handleResize); compareC
         <div class="card"><div class="card-title">为您节省实体机床</div><div class="card-value highlight">{{ Math.max(0, (simResult.trad_result?.active_stations || 16) - (simResult.ai_result?.active_stations || 16)) }} <span class="unit">台</span></div></div>
         <div class="card"><div class="card-title">综合效率提升</div><div class="card-value highlight">{{ simResult.efficiency_up || '0%' }}</div></div>
       </div>
+      <div class="inventory-cards">
+        <div class="mini-card"><span>可执行订单</span><strong>{{ simResult.inventory_result?.preprocess_stats?.processable_order_count || 0 }}</strong></div>
+        <div class="mini-card"><span>异常订单</span><strong>{{ simResult.inventory_result?.exception_order_count || 0 }}</strong></div>
+        <div class="mini-card"><span>稀缺SKU</span><strong>{{ simResult.inventory_result?.preprocess_stats?.scarce_sku_count || 0 }}</strong></div>
+        <div class="mini-card"><span>重排订单</span><strong>{{ simResult.inventory_result?.preprocess_stats?.reordered_count || 0 }}</strong></div>
+      </div>
       <div class="charts-grid">
         <div ref="compareChartRef" class="chart-box"></div>
         <div ref="curveChartRef" class="chart-box"></div>
@@ -166,6 +172,10 @@ onUnmounted(() => { window.removeEventListener('resize', handleResize); compareC
 .empty-state h2 { color: #00E5FF; text-shadow: 0 0 10px rgba(0,229,255,0.3); margin-bottom: 10px; }
 .charts-wrapper { width: 100%; height: 100%; padding: 20px; display: flex; flex-direction: column; box-sizing: border-box;}
 .summary-cards { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 20px; height: 110px; }
+.inventory-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+.mini-card { background: rgba(15, 25, 40, 0.72); border: 1px solid #1E3A5F; border-radius: 8px; min-height: 58px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.mini-card span { color: #A0B2C6; font-size: 12px; margin-bottom: 5px; }
+.mini-card strong { color: #FFB800; font-size: 20px; font-family: monospace; }
 .card { flex: 1; background: rgba(15, 25, 40, 0.8); border: 1px solid #1E3A5F; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); position: relative; overflow: hidden;}
 .card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: #00E5FF; }
 .card:nth-child(2)::before { background: #67C23A; }

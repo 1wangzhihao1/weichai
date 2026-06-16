@@ -69,8 +69,13 @@ export default {
   },
   
   // 3. 呼叫 AI 大脑：开始极速推演最优排产策略
-  startSimulation(batchNo) {
-    return request.post('/simulation/start', { batch_no: batchNo })
+  startSimulation(batchNo, inventorySnapshotId = '2025-07-01-morning', eveningSnapshotId = '2025-07-01-evening') {
+    return request.post('/simulation/start', {
+      batch_no: batchNo,
+      inventory_snapshot_id: inventorySnapshotId,
+      evening_snapshot_id: eveningSnapshotId,
+      shortage_policy: 'exception_queue'
+    })
   },
   
   // 4. 轮询接口：获取后端多目标排产的实时进度条
@@ -81,6 +86,27 @@ export default {
   // 5. 战报提取：获取排产完成后的 3D 数字孪生甘特图剧本
   getSimulationPlaybook(taskId) {
     return request.get(`/simulation/playbook/${taskId}`)
+  },
+
+  startScheduleDispatch(batchNo, inventorySnapshotId = '2025-07-01-morning', strategy = 'ai', activeStationLimit = 16) {
+    return request.post('/schedule/dispatch', {
+      batch_no: batchNo,
+      inventory_snapshot_id: inventorySnapshotId,
+      strategy,
+      active_station_limit: activeStationLimit
+    })
+  },
+
+  getScheduleResult(taskId) {
+    return request.get(`/schedule/result/${taskId}`)
+  },
+
+  getInventorySnapshots() {
+    return request.get('/inventory/snapshots')
+  },
+
+  getInventorySummary(snapshotId) {
+    return request.get(`/inventory/summary/${snapshotId}`)
   },
   
   // 6. 数据大屏：直连后端 TensorBoard 解析器，获取真实炼丹进化曲线

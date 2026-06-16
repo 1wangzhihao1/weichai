@@ -1,233 +1,264 @@
-# import pandas as pd
-# import numpy as np
-# import sys, io
-# import os
-
-# sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-
-# # ============================================================
-# # 🌟 寻路雷达：精准定位 raw_data 文件夹
-# # ============================================================
-# # 无论你把这个脚本放在 backend 还是 data_pipeline 下，它都会往上找 raw_data
-# current_dir = os.path.dirname(os.path.abspath(__file__))
-# project_root = os.path.abspath(os.path.join(current_dir, '../')) 
-# FILE_PATH = os.path.join(project_root, 'raw_data', 'DMS拣选20260201-0429.XLSX')
-
-# # 如果上面的寻路没找到，做一个极简的 fallback 兜底
-# if not os.path.exists(FILE_PATH):
-#     FILE_PATH = "../raw_data/DMS拣选20260201-0429.XLSX"
-
-# print(f"📂 正在读取数据文件: {FILE_PATH}")
-
-# # ============================================================
-# # 计算每种SKU的平均单件分拣时间
-# # 公式：SKU单件耗时 = 所有行的耗时总和 / 所有行的已拣选数量总和
-# # ============================================================
-
-# # ---------- 1. 读取数据 ----------
-# try:
-#     df = pd.read_excel(FILE_PATH, sheet_name=0)
-#     print(f'✅ 成功装载原始数据行数: {len(df)}')
-# except Exception as e:
-#     print(f"❌ 读取文件失败，请确保 {FILE_PATH} 存在！报错: {e}")
-#     sys.exit(1)
-
-# # ---------- 2. 计算每行耗时（秒）----------
-# df['开始时间'] = pd.to_datetime(df['开始时间'])
-# df['结束时间'] = pd.to_datetime(df['结束时间'])
-# df['耗时秒'] = (df['结束时间'] - df['开始时间']).dt.total_seconds()
-
-# # ---------- 3. 排除异常行 ----------
-
-# # 规则1：已拣选数量=0（Tote溢出标记行或未实际拣选）
-# mask1 = df['已拣选数量'] > 0
-# print(f'排除已拣选数量=0的行: {(~mask1).sum()} 行')
-
-# # 规则2：耗时<=0（时间戳异常，结束时间早于或等于开始时间）
-# mask2 = df['耗时秒'] > 0
-# print(f'排除耗时<=0的行: {(~mask2).sum()} 行')
-
-# # 规则3：确认代码不是"确定"（非正常完成的行）
-# mask3 = df['确认代码'] == '确定'
-# print(f'排除确认代码非"确定"的行: {(~mask3).sum()} 行')
-
-# # 规则4：保留DMS相关数据（区域含DMS 或 终端ID含DMS 的行都保留）
-# mask4_service = (
-#     df['服务限定符'].isin(['DMS', 'DMS_URGENT']) |
-#     df['区域'].str.contains('DMS', na=False) |
-#     df['终端 ID'].str.contains('DMS', na=False)
-# )
-# print(f'排除非DMS相关的行: {(~mask4_service).sum()} 行（保留：服务类型/区域/终端ID任一含DMS）')
-
-# # 合并规则，得到有效数据
-# df_valid = df[mask1 & mask2 & mask3 & mask4_service].copy()
-# print(f'过滤后有效数据行数: {len(df_valid)}')
-# print()
-
-# # ---------- 4. 排除耗时极端异常值（IQR方法，按SKU内部过滤）----------
-# # 计算单件耗时（每行）
-# df_valid['单件耗时'] = df_valid['耗时秒'] / df_valid['已拣选数量']
-
-# # 用全局IQR过滤极端值（3倍IQR以外）
-# Q1 = df_valid['单件耗时'].quantile(0.25)
-# Q3 = df_valid['单件耗时'].quantile(0.75)
-# IQR = Q3 - Q1
-# lower = Q1 - 3 * IQR
-# upper = Q3 + 3 * IQR
-
-# mask4 = df_valid['单件耗时'].between(lower, upper)
-# print(f'单件耗时 IQR范围: [{lower:.2f}s, {upper:.2f}s]')
-# print(f'排除IQR极端异常行: {(~mask4).sum()} 行')
-
-# df_clean = df_valid[mask4].copy()
-# print(f'最终参与计算的行数: {len(df_clean)}')
-# print()
-
-# # ---------- 5. 计算每种SKU的加权平均单件耗时 ----------
-# # 公式：单件平均耗时 = sum(耗时秒) / sum(已拣选数量)
-# sku_stats = df_clean.groupby('SKU').agg(
-#     物料名称        = ('物料名称', 'first'),
-#     出现行数        = ('耗时秒', 'count'),
-#     总已拣选数量    = ('已拣选数量', 'sum'),
-#     总耗时秒        = ('耗时秒', 'sum'),
-# ).reset_index()
-
-# sku_stats['单件平均耗时秒'] = (sku_stats['总耗时秒'] / sku_stats['总已拣选数量']).round(3)
-# sku_stats = sku_stats.sort_values('单件平均耗时秒', ascending=False).reset_index(drop=True)
-
-# # ---------- 6. 只保留3列，重命名 ----------
-# result = sku_stats[['SKU', '物料名称', '单件平均耗时秒']].copy()
-# result.columns = ['SKU', '物料名称', '单个SKU拣选时间(秒)']
-# result = result.sort_values('单个SKU拣选时间(秒)', ascending=False).reset_index(drop=True)
-
-# # ---------- 7. 保存到 TXT ----------
-# output_txt = 'DMS拣选20260201-0429_SKU平均分拣时间.txt'
-# with open(output_txt, 'w', encoding='utf-8') as f:
-#     f.write(f'{"SKU":<25} {"物料名称":<25} {"单个SKU拣选时间(秒)":>18}\n')
-#     f.write('-' * 72 + '\n')
-#     for _, row in result.iterrows():
-#         f.write(f'{row["SKU"]:<25} {row["物料名称"]:<25} {row["单个SKU拣选时间(秒)"]:>18.3f}\n')
-# print(f'共 {len(result)} 种SKU，结果已保存至: {output_txt}')
-
-# # ---------- 8. 打印前20行预览 ----------
-# print()
-# print(result.head(20).to_string(index=False))
-
-
-
-# 文件路径: backend/sku_avg_time.py
-import pandas as pd
-import numpy as np
-import sys
-import io
 import os
+import sys
+from typing import Dict, List, Optional
 
-# 强制输出流采用 UTF-8 编码，防止 Windows 终端打印物料名称时出现中文乱码
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+import pandas as pd
+from openpyxl import load_workbook
 
-# ============================================================
-# 🌟 寻路雷达：精准定位 raw_data 和 数据库
-# ============================================================
 current_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.abspath(os.path.join(current_dir, '../')) 
-
+project_root = os.path.abspath(os.path.join(current_dir, ".."))
+if current_dir not in sys.path:
+    sys.path.insert(0, current_dir)
 if project_root not in sys.path:
-    sys.path.append(project_root)
+    sys.path.insert(0, project_root)
 
-from database import SessionLocal, PartMaster
+from database import PartMaster, SessionLocal
 
-FILE_PATH = os.path.join(project_root, 'raw_data', 'DMS拣选20260201-0429.XLSX')
-if not os.path.exists(FILE_PATH):
-    FILE_PATH = "../raw_data/DMS拣选20260201-0429.XLSX"
 
-print(f"📂 正在读取原始生产大账本: {FILE_PATH}")
+def _first_existing_column(df: pd.DataFrame, names: List[str], fallback_index: int):
+    for name in names:
+        if name in df.columns:
+            return name
+    if fallback_index < len(df.columns):
+        return df.columns[fallback_index]
+    raise ValueError(f"Missing required column. Tried names={names}, fallback_index={fallback_index}")
 
-# ============================================================
-# 核心工艺清洗算法 (保留甲方提供的原生 Excel IQR 过滤逻辑)
-# ============================================================
 
-# ---------- 1. 读取历史全量数据 ----------
-try:
-    df = pd.read_excel(FILE_PATH, sheet_name=0)
-    print(f'✅ 成功装载原始数据行数: {len(df)}')
-except Exception as e:
-    print(f"❌ 读取文件失败，请检查路径！报错: {e}")
-    sys.exit(1)
+def _find_excel_files() -> List[str]:
+    files = []
+    raw_dir = os.path.join(project_root, "raw_data")
+    july_dir = os.path.join(raw_dir, "7.1")
 
-# ---------- 2. 计算每行实际动作耗时（秒）----------
-df['开始时间'] = pd.to_datetime(df['开始时间'])
-df['结束时间'] = pd.to_datetime(df['结束时间'])
-df['耗时秒'] = (df['结束时间'] - df['开始时间']).dt.total_seconds()
+    if os.path.isdir(raw_dir):
+        for name in os.listdir(raw_dir):
+            lower_name = name.lower()
+            if name.startswith("~$") or not lower_name.endswith((".xlsx", ".xls")):
+                continue
+            if "DMS" in name:
+                files.append(os.path.join(raw_dir, name))
 
-# ---------- 3. 排除异常怠工与干扰数据 ----------
-mask1 = df['已拣选数量'] > 0
-mask2 = df['耗时秒'] > 0
-mask3 = df['确认代码'] == '确定'
+    if os.path.isdir(july_dir):
+        for name in os.listdir(july_dir):
+            lower_name = name.lower()
+            if name.startswith("~$") or not lower_name.endswith((".xlsx", ".xls")):
+                continue
+            if "库存" not in name:
+                files.append(os.path.join(july_dir, name))
 
-df_valid = df[mask1 & mask2 & mask3].copy()
-df_valid['单件耗时'] = df_valid['耗时秒'] / df_valid['已拣选数量']
+    unique_files = []
+    seen = set()
+    for path in files:
+        abs_path = os.path.abspath(path)
+        if abs_path not in seen and os.path.exists(abs_path):
+            unique_files.append(abs_path)
+            seen.add(abs_path)
+    return unique_files
 
-# ---------- 4. 利用 IQR 算法进行物理去噪 ----------
-Q1 = df_valid['单件耗时'].quantile(0.25)
-Q3 = df_valid['单件耗时'].quantile(0.75)
-IQR = Q3 - Q1
-lower = Q1 - 3 * IQR
-upper = Q3 + 3 * IQR
 
-df_clean = df_valid[df_valid['单件耗时'].between(lower, upper)].copy()
-print(f'🚀 过滤干扰后，参与标准提纯的有效行数: {len(df_clean)}')
+def _normalize_sku(value) -> str:
+    return str(value or "").strip()
 
-# ---------- 5. 按真实 SKU 分组计算加权单件平均分拣时间 ----------
-sku_stats = df_clean.groupby('SKU').agg(
-    物料名称        = ('物料名称', 'first'),
-    总已拣选数量    = ('已拣选数量', 'sum'),
-    总耗时秒        = ('耗时秒', 'sum'),
-).reset_index()
 
-sku_stats['单件平均耗时秒'] = (sku_stats['总耗时秒'] / sku_stats['总已拣选数量']).round(3)
-sku_stats = sku_stats.sort_values('单件平均耗时秒', ascending=False).reset_index(drop=True)
+def _load_clean_rows(path: str) -> pd.DataFrame:
+    wb = load_workbook(path, read_only=True, data_only=True)
+    ws = wb.worksheets[0]
+    rows = ws.iter_rows(values_only=True)
+    header = next(rows, None)
+    if not header:
+        wb.close()
+        return pd.DataFrame()
 
-print("\n📝 【提纯后的真实 SKU 工艺耗时库 (Top 5)】")
-print(sku_stats[['SKU', '物料名称', '单件平均耗时秒']].head(5).to_string(index=False))
+    index_by_name = {str(name).strip(): idx for idx, name in enumerate(header) if name is not None}
 
-# ============================================================
-# 💾 将算法生成的干净数据直插数据库 (大扫除覆盖模式)
-# ============================================================
-print("\n🔄 开始向数据库同步纯净的工艺定额...")
+    def idx(names: List[str], fallback: int) -> int:
+        for name in names:
+            if name in index_by_name:
+                return index_by_name[name]
+        return fallback
 
-db = SessionLocal()
-if hasattr(db, '__next__'): 
-    db = next(db)
+    start_idx = idx(["开始时间"], 2)
+    end_idx = idx(["结束时间"], 3)
+    status_idx = idx(["状态"], 8)
+    sku_idx = idx(["SKU"], 9)
+    name_idx = idx(["物料名称"], 10)
+    picked_qty_idx = idx(["已拣选数量"], 12)
+    confirm_idx = idx(["确认代码"], 16)
 
-try:
-    # 🌟 核心：先无情清空历史所有的废弃假数据
-    deleted_rows = db.query(PartMaster).delete()
-    print(f"🧹 已清空历史废弃工艺数据: {deleted_rows} 条")
-    
-    insert_count = 0
-    
-    # 遍历我们刚用算法算出来的 DataFrame，全部作为新数据插入
-    for _, row in sku_stats.iterrows():
-        raw_sku = str(row['SKU']).strip()  
-        avg_time = float(row['单件平均耗时秒'])
-        
-        new_part = PartMaster(
-            part_type=raw_sku,        
-            standard_p_time=avg_time  
+    records = []
+    max_idx = max(start_idx, end_idx, status_idx, sku_idx, name_idx, picked_qty_idx, confirm_idx)
+    for row in rows:
+        if len(row) <= max_idx:
+            continue
+        sku = _normalize_sku(row[sku_idx])
+        if not sku or sku.lower() == "nan":
+            continue
+        status = str(row[status_idx] or "").strip()
+        confirm = str(row[confirm_idx] or "").strip()
+        if status not in {"完成", "确定", ""}:
+            continue
+        if confirm not in {"确定", "完成", ""}:
+            continue
+        try:
+            qty = float(row[picked_qty_idx] or 0.0)
+        except Exception:
+            continue
+        if qty <= 0:
+            continue
+
+        start_time = pd.to_datetime(row[start_idx], errors="coerce")
+        end_time = pd.to_datetime(row[end_idx], errors="coerce")
+        if pd.isna(start_time) or pd.isna(end_time):
+            continue
+        duration = (end_time - start_time).total_seconds()
+        if duration <= 0:
+            continue
+
+        records.append(
+            {
+                "source_file": os.path.basename(path),
+                "SKU": sku,
+                "物料名称": str(row[name_idx] or ""),
+                "已拣选数量": qty,
+                "耗时秒": duration,
+                "单件耗时": duration / qty,
+            }
         )
-        db.add(new_part)
-        insert_count += 1
-            
-    # 提交事务
-    db.commit()
-    print("=" * 50)
-    print(f"🎉 算法清洗端到端同步大捷！")
-    print(f"▶️ 成功录入纯净的真实物理 SKU: {insert_count} 条")
-    print("=" * 50)
 
-except Exception as e:
-    db.rollback()
-    print(f"❌ 写入数据库失败，事务已回滚！详细错误: {e}")
-finally:
-    db.close()
-    print("🔌 数据库连接已安全断开。")
+    wb.close()
+    return pd.DataFrame.from_records(records)
+
+
+def filter_long_time_outliers(df: pd.DataFrame) -> pd.DataFrame:
+    if df.empty:
+        return df
+
+    q1 = float(df["单件耗时"].quantile(0.25))
+    q3 = float(df["单件耗时"].quantile(0.75))
+    iqr = q3 - q1
+    iqr_upper = q3 + 3.0 * iqr if iqr > 0 else q3
+    hard_upper = 300.0
+    upper = max(iqr_upper, hard_upper)
+
+    clean = df[df["单件耗时"] <= upper].copy()
+    removed = len(df) - len(clean)
+    clean.attrs["long_outlier_upper"] = upper
+    clean.attrs["long_outlier_removed"] = removed
+    clean.attrs["long_outlier_iqr_upper"] = iqr_upper
+    clean.attrs["long_outlier_hard_upper"] = hard_upper
+    return clean
+
+
+def build_sku_average_times(files: Optional[List[str]] = None) -> pd.DataFrame:
+    source_files = files or _find_excel_files()
+    if not source_files:
+        raise FileNotFoundError("No picking Excel files found under raw_data and raw_data/7.1")
+
+    frames = []
+    print("=" * 80)
+    print("SKU average picking time rebuild")
+    print("=" * 80)
+    for path in source_files:
+        clean = _load_clean_rows(path)
+        frames.append(clean)
+        fast_rows = int((clean["单件耗时"] <= 0.5).sum())
+        print(f"Source: {path}")
+        print(f"  valid rows: {len(clean)}")
+        print(f"  unique SKU : {clean['SKU'].nunique()}")
+        print(f"  fast rows  : {fast_rows} (unit time <= 0.5s, kept)")
+
+    df_before_long_filter = pd.concat(frames, ignore_index=True)
+    df_clean = filter_long_time_outliers(df_before_long_filter)
+    upper = float(df_clean.attrs.get("long_outlier_upper", 0.0))
+    removed = int(df_clean.attrs.get("long_outlier_removed", 0))
+    iqr_upper = float(df_clean.attrs.get("long_outlier_iqr_upper", 0.0))
+    hard_upper = float(df_clean.attrs.get("long_outlier_hard_upper", 0.0))
+    print("-" * 80)
+    print(f"Total valid rows before long-outlier filter: {len(df_before_long_filter)}")
+    print(f"Long outlier upper bound: {upper:.3f}s per unit (max of IQR upper {iqr_upper:.3f}s and hard upper {hard_upper:.3f}s)")
+    print(f"Removed long-outlier rows: {removed}")
+    print(f"Total valid rows after long-outlier filter : {len(df_clean)}")
+    print(f"Total unique SKU : {df_clean['SKU'].nunique()}")
+    print("Only long-time outliers are filtered; fast full-package picking records are kept.")
+
+    sku_stats = (
+        df_clean.groupby("SKU")
+        .agg(
+            物料名称=("物料名称", "first"),
+            来源文件数=("source_file", "nunique"),
+            出现行数=("耗时秒", "count"),
+            总已拣选数量=("已拣选数量", "sum"),
+            总耗时秒=("耗时秒", "sum"),
+        )
+        .reset_index()
+    )
+    sku_stats["单件平均耗时秒"] = (sku_stats["总耗时秒"] / sku_stats["总已拣选数量"]).round(3)
+    sku_stats = sku_stats.sort_values("单件平均耗时秒", ascending=False).reset_index(drop=True)
+    return sku_stats
+
+
+def sync_to_part_master(sku_stats: pd.DataFrame, dry_run: bool = False) -> Dict[str, int]:
+    if dry_run:
+        return {"deleted": 0, "inserted": int(len(sku_stats))}
+
+    db = SessionLocal()
+    if hasattr(db, "__next__"):
+        db = next(db)
+    try:
+        deleted_rows = db.query(PartMaster).delete()
+        inserted = 0
+        for _, row in sku_stats.iterrows():
+            db.add(
+                PartMaster(
+                    part_type=str(row["SKU"]).strip(),
+                    standard_p_time=float(row["单件平均耗时秒"]),
+                )
+            )
+            inserted += 1
+        db.commit()
+        return {"deleted": int(deleted_rows), "inserted": inserted}
+    except Exception:
+        db.rollback()
+        raise
+    finally:
+        db.close()
+
+
+def main():
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Rebuild t_part_master from historical picking Excel files, keeping full-package fast picks."
+    )
+    parser.add_argument(
+        "--excel",
+        action="append",
+        default=None,
+        help="Picking Excel path. Can be provided multiple times. Default: DMS file plus raw_data/7.1 picking file.",
+    )
+    parser.add_argument("--dry-run", action="store_true", help="Compute only; do not update database.")
+    args = parser.parse_args()
+
+    files = [os.path.abspath(path) for path in args.excel] if args.excel else None
+    sku_stats = build_sku_average_times(files)
+
+    print("-" * 80)
+    print("Top 10 slowest SKU:")
+    print(sku_stats[["SKU", "物料名称", "单件平均耗时秒", "来源文件数", "出现行数"]].head(10).to_string(index=False))
+
+    d00_count = int(sku_stats["SKU"].astype(str).str.endswith(":D00").sum())
+    a01_count = int(sku_stats["SKU"].astype(str).str.endswith(":A01").sum())
+    print("-" * 80)
+    print(f"SKU suffix count: D00={d00_count}, A01={a01_count}")
+    print("Full SKU codes are kept separate, for example 610800050009:D00 != 610800050009:A01.")
+
+    result = sync_to_part_master(sku_stats, dry_run=args.dry_run)
+    print("-" * 80)
+    if args.dry_run:
+        print(f"Dry run complete. Would insert {result['inserted']} SKU rows into t_part_master.")
+    else:
+        print(f"Database updated. Deleted {result['deleted']} old rows, inserted {result['inserted']} SKU rows.")
+    print("=" * 80)
+
+
+if __name__ == "__main__":
+    main()
