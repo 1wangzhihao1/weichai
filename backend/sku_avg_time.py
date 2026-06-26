@@ -7,12 +7,10 @@ from openpyxl import load_workbook
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, ".."))
-if current_dir not in sys.path:
-    sys.path.insert(0, current_dir)
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
-from database import PartMaster, SessionLocal
+from backend.database import PartMaster, SessionLocal
 
 
 def _first_existing_column(df: pd.DataFrame, names: List[str], fallback_index: int):
@@ -26,24 +24,14 @@ def _first_existing_column(df: pd.DataFrame, names: List[str], fallback_index: i
 
 def _find_excel_files() -> List[str]:
     files = []
-    raw_dir = os.path.join(project_root, "raw_data")
-    july_dir = os.path.join(raw_dir, "7.1")
+    sku_time_dir = os.path.join(project_root, "raw_data", "sku_time")
 
-    if os.path.isdir(raw_dir):
-        for name in os.listdir(raw_dir):
+    if os.path.isdir(sku_time_dir):
+        for name in os.listdir(sku_time_dir):
             lower_name = name.lower()
             if name.startswith("~$") or not lower_name.endswith((".xlsx", ".xls")):
                 continue
-            if "DMS" in name:
-                files.append(os.path.join(raw_dir, name))
-
-    if os.path.isdir(july_dir):
-        for name in os.listdir(july_dir):
-            lower_name = name.lower()
-            if name.startswith("~$") or not lower_name.endswith((".xlsx", ".xls")):
-                continue
-            if "库存" not in name:
-                files.append(os.path.join(july_dir, name))
+            files.append(os.path.join(sku_time_dir, name))
 
     unique_files = []
     seen = set()
@@ -151,7 +139,7 @@ def filter_long_time_outliers(df: pd.DataFrame) -> pd.DataFrame:
 def build_sku_average_times(files: Optional[List[str]] = None) -> pd.DataFrame:
     source_files = files or _find_excel_files()
     if not source_files:
-        raise FileNotFoundError("No picking Excel files found under raw_data and raw_data/7.1")
+        raise FileNotFoundError("No picking Excel files found under raw_data/sku_time")
 
     frames = []
     print("=" * 80)
@@ -233,7 +221,7 @@ def main():
         "--excel",
         action="append",
         default=None,
-        help="Picking Excel path. Can be provided multiple times. Default: DMS file plus raw_data/7.1 picking file.",
+        help="Picking Excel path. Can be provided multiple times. Default: all Excel files under raw_data/sku_time.",
     )
     parser.add_argument("--dry-run", action="store_true", help="Compute only; do not update database.")
     args = parser.parse_args()

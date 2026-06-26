@@ -1,0 +1,3202 @@
+[
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 1,
+    "round_robin_makespan": 172819.984,
+    "random_makespan": 172819.984,
+    "ai_makespan": 172819.984
+  },
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 2,
+    "round_robin_makespan": 99032.844,
+    "random_makespan": 114690.273,
+    "ai_makespan": 95641.039
+  },
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 3,
+    "round_robin_makespan": 70548.102,
+    "random_makespan": 89861.414,
+    "ai_makespan": 63476.387
+  },
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 4,
+    "round_robin_makespan": 56714.699,
+    "random_makespan": 73514.75,
+    "ai_makespan": 50992.199
+  },
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 5,
+    "round_robin_makespan": 48370.355,
+    "random_makespan": 64141.984,
+    "ai_makespan": 43347.219
+  },
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 6,
+    "round_robin_makespan": 40350.586,
+    "random_makespan": 60538.539,
+    "ai_makespan": 36267.023
+  },
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 7,
+    "round_robin_makespan": 38523.523,
+    "random_makespan": 53759.715,
+    "ai_makespan": 31685.975
+  },
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 8,
+    "round_robin_makespan": 33038.27,
+    "random_makespan": 50440.461,
+    "ai_makespan": 27199.254
+  },
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 9,
+    "round_robin_makespan": 30273.859,
+    "random_makespan": 44743.148,
+    "ai_makespan": 24518.35
+  },
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 10,
+    "round_robin_makespan": 28680.529,
+    "random_makespan": 47471.0,
+    "ai_makespan": 22696.385
+  },
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 11,
+    "round_robin_makespan": 28003.271,
+    "random_makespan": 44496.328,
+    "ai_makespan": 21174.109
+  },
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 12,
+    "round_robin_makespan": 25564.533,
+    "random_makespan": 42397.371,
+    "ai_makespan": 19881.699
+  },
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 13,
+    "round_robin_makespan": 23750.102,
+    "random_makespan": 41676.734,
+    "ai_makespan": 18758.561
+  },
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 14,
+    "round_robin_makespan": 22585.812,
+    "random_makespan": 38938.199,
+    "ai_makespan": 17847.6
+  },
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 15,
+    "round_robin_makespan": 22355.934,
+    "random_makespan": 38886.613,
+    "ai_makespan": 17131.414
+  },
+  {
+    "date": "2026-04-02",
+    "orders": 1187,
+    "station_limit": 16,
+    "round_robin_makespan": 21037.879,
+    "random_makespan": 37689.062,
+    "ai_makespan": 16438.738
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 1,
+    "round_robin_makespan": 186349.469,
+    "random_makespan": 186349.469,
+    "ai_makespan": 186349.469
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 2,
+    "round_robin_makespan": 103391.172,
+    "random_makespan": 123401.375,
+    "ai_makespan": 100429.594
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 3,
+    "round_robin_makespan": 73057.68,
+    "random_makespan": 91639.617,
+    "ai_makespan": 65999.352
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 4,
+    "round_robin_makespan": 58437.0,
+    "random_makespan": 79745.273,
+    "ai_makespan": 52195.578
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 5,
+    "round_robin_makespan": 47764.785,
+    "random_makespan": 68126.898,
+    "ai_makespan": 42570.859
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 6,
+    "round_robin_makespan": 41801.219,
+    "random_makespan": 58731.348,
+    "ai_makespan": 35220.211
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 7,
+    "round_robin_makespan": 38396.824,
+    "random_makespan": 57306.375,
+    "ai_makespan": 29980.877
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 8,
+    "round_robin_makespan": 34317.188,
+    "random_makespan": 51434.547,
+    "ai_makespan": 25574.559
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 9,
+    "round_robin_makespan": 30367.178,
+    "random_makespan": 47606.195,
+    "ai_makespan": 23336.094
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 10,
+    "round_robin_makespan": 28639.18,
+    "random_makespan": 47158.273,
+    "ai_makespan": 20952.375
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 11,
+    "round_robin_makespan": 26636.816,
+    "random_makespan": 45138.684,
+    "ai_makespan": 18764.924
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 12,
+    "round_robin_makespan": 24642.223,
+    "random_makespan": 42272.531,
+    "ai_makespan": 17515.996
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 13,
+    "round_robin_makespan": 23574.479,
+    "random_makespan": 40237.797,
+    "ai_makespan": 16692.82
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 14,
+    "round_robin_makespan": 23082.691,
+    "random_makespan": 36974.469,
+    "ai_makespan": 15843.357
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 15,
+    "round_robin_makespan": 21138.09,
+    "random_makespan": 39049.098,
+    "ai_makespan": 14415.274
+  },
+  {
+    "date": "2026-04-03",
+    "orders": 1361,
+    "station_limit": 16,
+    "round_robin_makespan": 20420.459,
+    "random_makespan": 36645.465,
+    "ai_makespan": 13883.849
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 1,
+    "round_robin_makespan": 212412.172,
+    "random_makespan": 212412.172,
+    "ai_makespan": 212412.172
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 2,
+    "round_robin_makespan": 118982.586,
+    "random_makespan": 137542.75,
+    "ai_makespan": 116845.094
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 3,
+    "round_robin_makespan": 84205.742,
+    "random_makespan": 106749.516,
+    "ai_makespan": 75346.906
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 4,
+    "round_robin_makespan": 67298.836,
+    "random_makespan": 87405.992,
+    "ai_makespan": 60682.629
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 5,
+    "round_robin_makespan": 55227.004,
+    "random_makespan": 80400.516,
+    "ai_makespan": 49028.41
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 6,
+    "round_robin_makespan": 47971.297,
+    "random_makespan": 69024.062,
+    "ai_makespan": 41013.184
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 7,
+    "round_robin_makespan": 42719.922,
+    "random_makespan": 65544.594,
+    "ai_makespan": 34281.461
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 8,
+    "round_robin_makespan": 38264.965,
+    "random_makespan": 59977.156,
+    "ai_makespan": 29549.758
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 9,
+    "round_robin_makespan": 35196.555,
+    "random_makespan": 55139.398,
+    "ai_makespan": 26556.564
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 10,
+    "round_robin_makespan": 32386.779,
+    "random_makespan": 54447.43,
+    "ai_makespan": 24242.674
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 11,
+    "round_robin_makespan": 30917.488,
+    "random_makespan": 52971.797,
+    "ai_makespan": 22117.746
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 12,
+    "round_robin_makespan": 28344.877,
+    "random_makespan": 48181.359,
+    "ai_makespan": 20210.332
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 13,
+    "round_robin_makespan": 26930.676,
+    "random_makespan": 44622.234,
+    "ai_makespan": 19195.971
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 14,
+    "round_robin_makespan": 25969.926,
+    "random_makespan": 44818.348,
+    "ai_makespan": 18330.516
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 15,
+    "round_robin_makespan": 23949.33,
+    "random_makespan": 41998.938,
+    "ai_makespan": 16698.721
+  },
+  {
+    "date": "2026-04-06",
+    "orders": 1560,
+    "station_limit": 16,
+    "round_robin_makespan": 23511.039,
+    "random_makespan": 42345.836,
+    "ai_makespan": 16187.627
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 1,
+    "round_robin_makespan": 189211.531,
+    "random_makespan": 189211.531,
+    "ai_makespan": 189211.531
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 2,
+    "round_robin_makespan": 106661.438,
+    "random_makespan": 123013.094,
+    "ai_makespan": 103170.445
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 3,
+    "round_robin_makespan": 74003.203,
+    "random_makespan": 94051.961,
+    "ai_makespan": 66832.594
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 4,
+    "round_robin_makespan": 58882.867,
+    "random_makespan": 75786.398,
+    "ai_makespan": 53296.871
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 5,
+    "round_robin_makespan": 47547.316,
+    "random_makespan": 68445.133,
+    "ai_makespan": 44075.09
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 6,
+    "round_robin_makespan": 41926.91,
+    "random_makespan": 61580.797,
+    "ai_makespan": 36302.988
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 7,
+    "round_robin_makespan": 35449.695,
+    "random_makespan": 56580.66,
+    "ai_makespan": 31029.371
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 8,
+    "round_robin_makespan": 31837.07,
+    "random_makespan": 50027.355,
+    "ai_makespan": 26563.771
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 9,
+    "round_robin_makespan": 29744.99,
+    "random_makespan": 47912.973,
+    "ai_makespan": 23186.584
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 10,
+    "round_robin_makespan": 26468.961,
+    "random_makespan": 48285.629,
+    "ai_makespan": 20872.1
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 11,
+    "round_robin_makespan": 26035.848,
+    "random_makespan": 41751.781,
+    "ai_makespan": 19438.791
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 12,
+    "round_robin_makespan": 23558.012,
+    "random_makespan": 42452.078,
+    "ai_makespan": 17926.949
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 13,
+    "round_robin_makespan": 22602.064,
+    "random_makespan": 39993.508,
+    "ai_makespan": 16359.019
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 14,
+    "round_robin_makespan": 20477.201,
+    "random_makespan": 36973.816,
+    "ai_makespan": 15455.274
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 15,
+    "round_robin_makespan": 19452.877,
+    "random_makespan": 37885.75,
+    "ai_makespan": 14897.571
+  },
+  {
+    "date": "2026-04-07",
+    "orders": 1398,
+    "station_limit": 16,
+    "round_robin_makespan": 18399.215,
+    "random_makespan": 35881.371,
+    "ai_makespan": 13884.534
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 1,
+    "round_robin_makespan": 183030.781,
+    "random_makespan": 183030.781,
+    "ai_makespan": 183030.781
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 2,
+    "round_robin_makespan": 102434.141,
+    "random_makespan": 118534.922,
+    "ai_makespan": 99195.156
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 3,
+    "round_robin_makespan": 72680.266,
+    "random_makespan": 91037.039,
+    "ai_makespan": 65555.602
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 4,
+    "round_robin_makespan": 56173.945,
+    "random_makespan": 74952.844,
+    "ai_makespan": 52855.039
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 5,
+    "round_robin_makespan": 46780.77,
+    "random_makespan": 67652.648,
+    "ai_makespan": 42652.785
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 6,
+    "round_robin_makespan": 40329.82,
+    "random_makespan": 59546.531,
+    "ai_makespan": 35231.801
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 7,
+    "round_robin_makespan": 35739.758,
+    "random_makespan": 55190.363,
+    "ai_makespan": 30056.957
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 8,
+    "round_robin_makespan": 31707.305,
+    "random_makespan": 50466.707,
+    "ai_makespan": 25942.893
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 9,
+    "round_robin_makespan": 29739.709,
+    "random_makespan": 44646.145,
+    "ai_makespan": 23297.006
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 10,
+    "round_robin_makespan": 27013.072,
+    "random_makespan": 45682.883,
+    "ai_makespan": 21273.068
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 11,
+    "round_robin_makespan": 24397.832,
+    "random_makespan": 42534.125,
+    "ai_makespan": 18976.297
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 12,
+    "round_robin_makespan": 23206.939,
+    "random_makespan": 41229.516,
+    "ai_makespan": 17718.523
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 13,
+    "round_robin_makespan": 20926.859,
+    "random_makespan": 39691.988,
+    "ai_makespan": 16513.883
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 14,
+    "round_robin_makespan": 19920.156,
+    "random_makespan": 36726.922,
+    "ai_makespan": 15631.967
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 15,
+    "round_robin_makespan": 19529.145,
+    "random_makespan": 35214.008,
+    "ai_makespan": 14786.608
+  },
+  {
+    "date": "2026-04-08",
+    "orders": 1388,
+    "station_limit": 16,
+    "round_robin_makespan": 19214.42,
+    "random_makespan": 35718.578,
+    "ai_makespan": 14013.708
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 1,
+    "round_robin_makespan": 228733.453,
+    "random_makespan": 228733.453,
+    "ai_makespan": 228733.453
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 2,
+    "round_robin_makespan": 129761.352,
+    "random_makespan": 151049.25,
+    "ai_makespan": 123619.18
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 3,
+    "round_robin_makespan": 92266.781,
+    "random_makespan": 115646.352,
+    "ai_makespan": 80797.719
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 4,
+    "round_robin_makespan": 73637.992,
+    "random_makespan": 98056.883,
+    "ai_makespan": 65283.055
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 5,
+    "round_robin_makespan": 62572.625,
+    "random_makespan": 86195.805,
+    "ai_makespan": 52440.727
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 6,
+    "round_robin_makespan": 54326.102,
+    "random_makespan": 75052.914,
+    "ai_makespan": 43335.039
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 7,
+    "round_robin_makespan": 49446.715,
+    "random_makespan": 72600.352,
+    "ai_makespan": 36274.578
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 8,
+    "round_robin_makespan": 43237.84,
+    "random_makespan": 67009.438,
+    "ai_makespan": 32031.32
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 9,
+    "round_robin_makespan": 38935.047,
+    "random_makespan": 59448.539,
+    "ai_makespan": 28523.117
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 10,
+    "round_robin_makespan": 37083.121,
+    "random_makespan": 60847.57,
+    "ai_makespan": 25519.533
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 11,
+    "round_robin_makespan": 34886.012,
+    "random_makespan": 54128.676,
+    "ai_makespan": 23681.514
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 12,
+    "round_robin_makespan": 32823.184,
+    "random_makespan": 52685.09,
+    "ai_makespan": 21578.883
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 13,
+    "round_robin_makespan": 31751.023,
+    "random_makespan": 49956.984,
+    "ai_makespan": 20408.662
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 14,
+    "round_robin_makespan": 30095.822,
+    "random_makespan": 49630.09,
+    "ai_makespan": 19174.637
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 15,
+    "round_robin_makespan": 28024.604,
+    "random_makespan": 48280.207,
+    "ai_makespan": 18025.354
+  },
+  {
+    "date": "2026-04-09",
+    "orders": 1608,
+    "station_limit": 16,
+    "round_robin_makespan": 26898.814,
+    "random_makespan": 47486.562,
+    "ai_makespan": 17364.73
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 1,
+    "round_robin_makespan": 184924.172,
+    "random_makespan": 184924.172,
+    "ai_makespan": 184924.172
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 2,
+    "round_robin_makespan": 102135.734,
+    "random_makespan": 118175.562,
+    "ai_makespan": 100412.211
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 3,
+    "round_robin_makespan": 71192.117,
+    "random_makespan": 94802.219,
+    "ai_makespan": 65702.875
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 4,
+    "round_robin_makespan": 55817.758,
+    "random_makespan": 78179.0,
+    "ai_makespan": 52639.309
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 5,
+    "round_robin_makespan": 47311.059,
+    "random_makespan": 67272.109,
+    "ai_makespan": 43512.004
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 6,
+    "round_robin_makespan": 39714.613,
+    "random_makespan": 61355.766,
+    "ai_makespan": 36043.918
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 7,
+    "round_robin_makespan": 35407.906,
+    "random_makespan": 53517.859,
+    "ai_makespan": 30636.67
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 8,
+    "round_robin_makespan": 31742.564,
+    "random_makespan": 51611.188,
+    "ai_makespan": 26148.875
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 9,
+    "round_robin_makespan": 29681.674,
+    "random_makespan": 45906.781,
+    "ai_makespan": 23743.143
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 10,
+    "round_robin_makespan": 27048.389,
+    "random_makespan": 47975.586,
+    "ai_makespan": 21175.318
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 11,
+    "round_robin_makespan": 24827.82,
+    "random_makespan": 42319.512,
+    "ai_makespan": 19681.709
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 12,
+    "round_robin_makespan": 22584.412,
+    "random_makespan": 43044.227,
+    "ai_makespan": 18468.984
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 13,
+    "round_robin_makespan": 21815.785,
+    "random_makespan": 40292.973,
+    "ai_makespan": 17259.154
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 14,
+    "round_robin_makespan": 20798.232,
+    "random_makespan": 37385.285,
+    "ai_makespan": 16335.826
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 15,
+    "round_robin_makespan": 19681.432,
+    "random_makespan": 37853.086,
+    "ai_makespan": 15289.508
+  },
+  {
+    "date": "2026-04-10",
+    "orders": 1377,
+    "station_limit": 16,
+    "round_robin_makespan": 18794.799,
+    "random_makespan": 36422.562,
+    "ai_makespan": 14533.938
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 1,
+    "round_robin_makespan": 249813.828,
+    "random_makespan": 249813.828,
+    "ai_makespan": 249813.828
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 2,
+    "round_robin_makespan": 137293.703,
+    "random_makespan": 159417.594,
+    "ai_makespan": 136452.703
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 3,
+    "round_robin_makespan": 95686.758,
+    "random_makespan": 126445.062,
+    "ai_makespan": 87573.938
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 4,
+    "round_robin_makespan": 75434.469,
+    "random_makespan": 101354.484,
+    "ai_makespan": 70196.156
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 5,
+    "round_robin_makespan": 62253.945,
+    "random_makespan": 90359.102,
+    "ai_makespan": 56418.527
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 6,
+    "round_robin_makespan": 52765.777,
+    "random_makespan": 79786.289,
+    "ai_makespan": 47421.301
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 7,
+    "round_robin_makespan": 46358.984,
+    "random_makespan": 70628.219,
+    "ai_makespan": 40031.387
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 8,
+    "round_robin_makespan": 42087.828,
+    "random_makespan": 68115.656,
+    "ai_makespan": 34065.625
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 9,
+    "round_robin_makespan": 37821.504,
+    "random_makespan": 64018.145,
+    "ai_makespan": 30500.473
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 10,
+    "round_robin_makespan": 34908.559,
+    "random_makespan": 61115.934,
+    "ai_makespan": 27793.822
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 11,
+    "round_robin_makespan": 32218.658,
+    "random_makespan": 56254.797,
+    "ai_makespan": 25242.285
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 12,
+    "round_robin_makespan": 29692.916,
+    "random_makespan": 54538.785,
+    "ai_makespan": 23242.686
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 13,
+    "round_robin_makespan": 28558.201,
+    "random_makespan": 54189.836,
+    "ai_makespan": 21987.496
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 14,
+    "round_robin_makespan": 26928.84,
+    "random_makespan": 49029.781,
+    "ai_makespan": 20194.07
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 15,
+    "round_robin_makespan": 26174.471,
+    "random_makespan": 48723.25,
+    "ai_makespan": 19440.412
+  },
+  {
+    "date": "2026-04-11",
+    "orders": 1857,
+    "station_limit": 16,
+    "round_robin_makespan": 23799.789,
+    "random_makespan": 46629.262,
+    "ai_makespan": 18010.221
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 1,
+    "round_robin_makespan": 242148.766,
+    "random_makespan": 242148.766,
+    "ai_makespan": 242148.766
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 2,
+    "round_robin_makespan": 135047.75,
+    "random_makespan": 157753.531,
+    "ai_makespan": 131003.07
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 3,
+    "round_robin_makespan": 93889.758,
+    "random_makespan": 124028.336,
+    "ai_makespan": 85617.258
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 4,
+    "round_robin_makespan": 72834.289,
+    "random_makespan": 98718.773,
+    "ai_makespan": 68490.398
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 5,
+    "round_robin_makespan": 60293.754,
+    "random_makespan": 85195.422,
+    "ai_makespan": 54791.629
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 6,
+    "round_robin_makespan": 52179.371,
+    "random_makespan": 75695.438,
+    "ai_makespan": 45829.379
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 7,
+    "round_robin_makespan": 45327.945,
+    "random_makespan": 70596.5,
+    "ai_makespan": 38922.23
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 8,
+    "round_robin_makespan": 40119.582,
+    "random_makespan": 62301.43,
+    "ai_makespan": 33744.699
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 9,
+    "round_robin_makespan": 35997.527,
+    "random_makespan": 58995.766,
+    "ai_makespan": 29741.336
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 10,
+    "round_robin_makespan": 34082.586,
+    "random_makespan": 60047.168,
+    "ai_makespan": 26736.857
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 11,
+    "round_robin_makespan": 30035.98,
+    "random_makespan": 54181.004,
+    "ai_makespan": 24615.238
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 12,
+    "round_robin_makespan": 28717.588,
+    "random_makespan": 53084.441,
+    "ai_makespan": 22760.119
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 13,
+    "round_robin_makespan": 27378.85,
+    "random_makespan": 50313.949,
+    "ai_makespan": 20934.986
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 14,
+    "round_robin_makespan": 25507.807,
+    "random_makespan": 46460.16,
+    "ai_makespan": 19679.428
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 15,
+    "round_robin_makespan": 24297.881,
+    "random_makespan": 47539.348,
+    "ai_makespan": 18431.656
+  },
+  {
+    "date": "2026-04-12",
+    "orders": 1765,
+    "station_limit": 16,
+    "round_robin_makespan": 23002.955,
+    "random_makespan": 45563.73,
+    "ai_makespan": 17615.289
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 1,
+    "round_robin_makespan": 196113.234,
+    "random_makespan": 196113.234,
+    "ai_makespan": 196113.234
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 2,
+    "round_robin_makespan": 109489.68,
+    "random_makespan": 128316.102,
+    "ai_makespan": 107437.734
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 3,
+    "round_robin_makespan": 78030.969,
+    "random_makespan": 99360.531,
+    "ai_makespan": 69206.695
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 4,
+    "round_robin_makespan": 62234.559,
+    "random_makespan": 81653.5,
+    "ai_makespan": 55633.773
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 5,
+    "round_robin_makespan": 50329.996,
+    "random_makespan": 71408.734,
+    "ai_makespan": 45046.559
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 6,
+    "round_robin_makespan": 44157.211,
+    "random_makespan": 63787.152,
+    "ai_makespan": 37916.684
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 7,
+    "round_robin_makespan": 38772.539,
+    "random_makespan": 59654.047,
+    "ai_makespan": 31983.85
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 8,
+    "round_robin_makespan": 34768.367,
+    "random_makespan": 52707.73,
+    "ai_makespan": 27294.387
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 9,
+    "round_robin_makespan": 31959.666,
+    "random_makespan": 49643.059,
+    "ai_makespan": 24415.854
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 10,
+    "round_robin_makespan": 28821.932,
+    "random_makespan": 50787.938,
+    "ai_makespan": 22582.359
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 11,
+    "round_robin_makespan": 26389.994,
+    "random_makespan": 45447.379,
+    "ai_makespan": 20396.18
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 12,
+    "round_robin_makespan": 25959.475,
+    "random_makespan": 45697.527,
+    "ai_makespan": 18791.354
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 13,
+    "round_robin_makespan": 23688.1,
+    "random_makespan": 43140.367,
+    "ai_makespan": 17203.77
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 14,
+    "round_robin_makespan": 22615.434,
+    "random_makespan": 40578.844,
+    "ai_makespan": 16789.902
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 15,
+    "round_robin_makespan": 21236.973,
+    "random_makespan": 39410.328,
+    "ai_makespan": 15202.815
+  },
+  {
+    "date": "2026-04-13",
+    "orders": 1585,
+    "station_limit": 16,
+    "round_robin_makespan": 21654.035,
+    "random_makespan": 38628.324,
+    "ai_makespan": 14657.711
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 1,
+    "round_robin_makespan": 204613.109,
+    "random_makespan": 204613.109,
+    "ai_makespan": 204613.109
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 2,
+    "round_robin_makespan": 113545.0,
+    "random_makespan": 129574.281,
+    "ai_makespan": 112010.898
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 3,
+    "round_robin_makespan": 79084.18,
+    "random_makespan": 104783.633,
+    "ai_makespan": 72136.469
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 4,
+    "round_robin_makespan": 62154.938,
+    "random_makespan": 86225.398,
+    "ai_makespan": 59191.449
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 5,
+    "round_robin_makespan": 52151.562,
+    "random_makespan": 76271.297,
+    "ai_makespan": 46460.836
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 6,
+    "round_robin_makespan": 43670.16,
+    "random_makespan": 65254.98,
+    "ai_makespan": 39024.75
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 7,
+    "round_robin_makespan": 38935.863,
+    "random_makespan": 60081.559,
+    "ai_makespan": 32766.42
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 8,
+    "round_robin_makespan": 34635.234,
+    "random_makespan": 53329.766,
+    "ai_makespan": 28339.793
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 9,
+    "round_robin_makespan": 31141.607,
+    "random_makespan": 50180.793,
+    "ai_makespan": 25365.744
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 10,
+    "round_robin_makespan": 29296.305,
+    "random_makespan": 50577.887,
+    "ai_makespan": 22958.658
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 11,
+    "round_robin_makespan": 26463.99,
+    "random_makespan": 46832.906,
+    "ai_makespan": 20835.096
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 12,
+    "round_robin_makespan": 25514.453,
+    "random_makespan": 45632.602,
+    "ai_makespan": 19467.326
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 13,
+    "round_robin_makespan": 23863.455,
+    "random_makespan": 42573.418,
+    "ai_makespan": 17983.176
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 14,
+    "round_robin_makespan": 22155.762,
+    "random_makespan": 42282.301,
+    "ai_makespan": 16940.186
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 15,
+    "round_robin_makespan": 21524.82,
+    "random_makespan": 40722.891,
+    "ai_makespan": 15810.791
+  },
+  {
+    "date": "2026-04-14",
+    "orders": 1608,
+    "station_limit": 16,
+    "round_robin_makespan": 20415.09,
+    "random_makespan": 39176.148,
+    "ai_makespan": 14971.744
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 1,
+    "round_robin_makespan": 231806.844,
+    "random_makespan": 231806.844,
+    "ai_makespan": 231806.844
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 2,
+    "round_robin_makespan": 129493.281,
+    "random_makespan": 150739.734,
+    "ai_makespan": 126830.172
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 3,
+    "round_robin_makespan": 92037.93,
+    "random_makespan": 118037.305,
+    "ai_makespan": 81405.992
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 4,
+    "round_robin_makespan": 72669.008,
+    "random_makespan": 97514.07,
+    "ai_makespan": 64823.746
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 5,
+    "round_robin_makespan": 59654.812,
+    "random_makespan": 86468.844,
+    "ai_makespan": 52939.797
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 6,
+    "round_robin_makespan": 52723.773,
+    "random_makespan": 74720.0,
+    "ai_makespan": 44441.672
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 7,
+    "round_robin_makespan": 45602.52,
+    "random_makespan": 70603.031,
+    "ai_makespan": 36630.414
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 8,
+    "round_robin_makespan": 41409.27,
+    "random_makespan": 65167.887,
+    "ai_makespan": 32158.824
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 9,
+    "round_robin_makespan": 38361.34,
+    "random_makespan": 57798.965,
+    "ai_makespan": 28365.387
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 10,
+    "round_robin_makespan": 35677.18,
+    "random_makespan": 60313.684,
+    "ai_makespan": 25559.418
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 11,
+    "round_robin_makespan": 33174.984,
+    "random_makespan": 53479.137,
+    "ai_makespan": 23485.75
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 12,
+    "round_robin_makespan": 32259.742,
+    "random_makespan": 53401.207,
+    "ai_makespan": 21523.691
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 13,
+    "round_robin_makespan": 29882.438,
+    "random_makespan": 51370.078,
+    "ai_makespan": 20092.631
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 14,
+    "round_robin_makespan": 28142.775,
+    "random_makespan": 49080.113,
+    "ai_makespan": 19028.875
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 15,
+    "round_robin_makespan": 26478.703,
+    "random_makespan": 45694.086,
+    "ai_makespan": 17908.125
+  },
+  {
+    "date": "2026-04-15",
+    "orders": 1661,
+    "station_limit": 16,
+    "round_robin_makespan": 25807.334,
+    "random_makespan": 44360.664,
+    "ai_makespan": 17129.381
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 1,
+    "round_robin_makespan": 185807.031,
+    "random_makespan": 185807.031,
+    "ai_makespan": 185807.031
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 2,
+    "round_robin_makespan": 103177.891,
+    "random_makespan": 121651.234,
+    "ai_makespan": 101037.328
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 3,
+    "round_robin_makespan": 74028.641,
+    "random_makespan": 93441.711,
+    "ai_makespan": 65951.789
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 4,
+    "round_robin_makespan": 57379.316,
+    "random_makespan": 79433.82,
+    "ai_makespan": 54696.473
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 5,
+    "round_robin_makespan": 47761.883,
+    "random_makespan": 68110.078,
+    "ai_makespan": 42949.957
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 6,
+    "round_robin_makespan": 42316.137,
+    "random_makespan": 59526.742,
+    "ai_makespan": 35871.281
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 7,
+    "round_robin_makespan": 37819.82,
+    "random_makespan": 55586.129,
+    "ai_makespan": 30430.361
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 8,
+    "round_robin_makespan": 32941.406,
+    "random_makespan": 52908.266,
+    "ai_makespan": 26322.922
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 9,
+    "round_robin_makespan": 29951.004,
+    "random_makespan": 47690.113,
+    "ai_makespan": 23239.768
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 10,
+    "round_robin_makespan": 27680.689,
+    "random_makespan": 49283.812,
+    "ai_makespan": 20870.275
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 11,
+    "round_robin_makespan": 26298.104,
+    "random_makespan": 44676.273,
+    "ai_makespan": 18893.75
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 12,
+    "round_robin_makespan": 24340.887,
+    "random_makespan": 42248.664,
+    "ai_makespan": 17687.854
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 13,
+    "round_robin_makespan": 23257.178,
+    "random_makespan": 38645.438,
+    "ai_makespan": 16378.949
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 14,
+    "round_robin_makespan": 22165.395,
+    "random_makespan": 40511.082,
+    "ai_makespan": 15469.958
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 15,
+    "round_robin_makespan": 21004.029,
+    "random_makespan": 37360.699,
+    "ai_makespan": 14949.52
+  },
+  {
+    "date": "2026-04-16",
+    "orders": 1554,
+    "station_limit": 16,
+    "round_robin_makespan": 19963.52,
+    "random_makespan": 37068.527,
+    "ai_makespan": 13711.19
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 1,
+    "round_robin_makespan": 176263.094,
+    "random_makespan": 176263.094,
+    "ai_makespan": 176263.094
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 2,
+    "round_robin_makespan": 99566.961,
+    "random_makespan": 114270.883,
+    "ai_makespan": 96515.469
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 3,
+    "round_robin_makespan": 71367.484,
+    "random_makespan": 89315.148,
+    "ai_makespan": 63318.199
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 4,
+    "round_robin_makespan": 57079.379,
+    "random_makespan": 75654.156,
+    "ai_makespan": 51420.672
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 5,
+    "round_robin_makespan": 46961.586,
+    "random_makespan": 63756.641,
+    "ai_makespan": 42411.18
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 6,
+    "round_robin_makespan": 40224.109,
+    "random_makespan": 58500.273,
+    "ai_makespan": 34207.18
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 7,
+    "round_robin_makespan": 35356.785,
+    "random_makespan": 53808.398,
+    "ai_makespan": 29442.029
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 8,
+    "round_robin_makespan": 33670.121,
+    "random_makespan": 50878.621,
+    "ai_makespan": 24811.156
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 9,
+    "round_robin_makespan": 29056.766,
+    "random_makespan": 44807.094,
+    "ai_makespan": 22510.797
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 10,
+    "round_robin_makespan": 27610.326,
+    "random_makespan": 45940.473,
+    "ai_makespan": 20331.023
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 11,
+    "round_robin_makespan": 25451.527,
+    "random_makespan": 42335.688,
+    "ai_makespan": 18321.299
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 12,
+    "round_robin_makespan": 24072.838,
+    "random_makespan": 39921.957,
+    "ai_makespan": 17008.555
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 13,
+    "round_robin_makespan": 22285.762,
+    "random_makespan": 39722.238,
+    "ai_makespan": 15948.912
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 14,
+    "round_robin_makespan": 20568.836,
+    "random_makespan": 36788.773,
+    "ai_makespan": 15141.086
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 15,
+    "round_robin_makespan": 19791.748,
+    "random_makespan": 34929.613,
+    "ai_makespan": 14058.127
+  },
+  {
+    "date": "2026-04-17",
+    "orders": 1442,
+    "station_limit": 16,
+    "round_robin_makespan": 19473.059,
+    "random_makespan": 36372.98,
+    "ai_makespan": 13466.484
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 1,
+    "round_robin_makespan": 194038.094,
+    "random_makespan": 194038.094,
+    "ai_makespan": 194038.094
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 2,
+    "round_robin_makespan": 107062.031,
+    "random_makespan": 128115.609,
+    "ai_makespan": 106497.773
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 3,
+    "round_robin_makespan": 77477.25,
+    "random_makespan": 98750.305,
+    "ai_makespan": 69619.789
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 4,
+    "round_robin_makespan": 59483.133,
+    "random_makespan": 80012.773,
+    "ai_makespan": 56140.379
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 5,
+    "round_robin_makespan": 49874.16,
+    "random_makespan": 70787.875,
+    "ai_makespan": 45613.941
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 6,
+    "round_robin_makespan": 43003.062,
+    "random_makespan": 62949.434,
+    "ai_makespan": 38771.402
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 7,
+    "round_robin_makespan": 37829.141,
+    "random_makespan": 58510.27,
+    "ai_makespan": 31809.205
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 8,
+    "round_robin_makespan": 34937.086,
+    "random_makespan": 53472.824,
+    "ai_makespan": 27220.314
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 9,
+    "round_robin_makespan": 31215.703,
+    "random_makespan": 49955.996,
+    "ai_makespan": 24080.049
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 10,
+    "round_robin_makespan": 27861.49,
+    "random_makespan": 50371.465,
+    "ai_makespan": 21948.791
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 11,
+    "round_robin_makespan": 26334.926,
+    "random_makespan": 45443.402,
+    "ai_makespan": 19949.797
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 12,
+    "round_robin_makespan": 24369.568,
+    "random_makespan": 45235.008,
+    "ai_makespan": 18369.932
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 13,
+    "round_robin_makespan": 23293.512,
+    "random_makespan": 42030.57,
+    "ai_makespan": 17385.836
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 14,
+    "round_robin_makespan": 21574.949,
+    "random_makespan": 41176.043,
+    "ai_makespan": 16402.693
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 15,
+    "round_robin_makespan": 20637.906,
+    "random_makespan": 37909.203,
+    "ai_makespan": 15518.537
+  },
+  {
+    "date": "2026-04-18",
+    "orders": 1611,
+    "station_limit": 16,
+    "round_robin_makespan": 19537.789,
+    "random_makespan": 36885.188,
+    "ai_makespan": 14589.431
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 1,
+    "round_robin_makespan": 215488.203,
+    "random_makespan": 215488.203,
+    "ai_makespan": 215488.203
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 2,
+    "round_robin_makespan": 118646.039,
+    "random_makespan": 140976.281,
+    "ai_makespan": 117656.547
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 3,
+    "round_robin_makespan": 84922.336,
+    "random_makespan": 109151.789,
+    "ai_makespan": 76588.945
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 4,
+    "round_robin_makespan": 65892.203,
+    "random_makespan": 89539.32,
+    "ai_makespan": 61726.664
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 5,
+    "round_robin_makespan": 53973.383,
+    "random_makespan": 78075.609,
+    "ai_makespan": 49395.867
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 6,
+    "round_robin_makespan": 47372.676,
+    "random_makespan": 70737.195,
+    "ai_makespan": 41388.207
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 7,
+    "round_robin_makespan": 40852.992,
+    "random_makespan": 63716.664,
+    "ai_makespan": 35071.434
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 8,
+    "round_robin_makespan": 37082.195,
+    "random_makespan": 59460.086,
+    "ai_makespan": 29457.42
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 9,
+    "round_robin_makespan": 33188.586,
+    "random_makespan": 53008.555,
+    "ai_makespan": 26690.768
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 10,
+    "round_robin_makespan": 30877.303,
+    "random_makespan": 55766.734,
+    "ai_makespan": 24104.363
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 11,
+    "round_robin_makespan": 29797.674,
+    "random_makespan": 50421.473,
+    "ai_makespan": 22306.668
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 12,
+    "round_robin_makespan": 27728.682,
+    "random_makespan": 50087.324,
+    "ai_makespan": 20457.494
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 13,
+    "round_robin_makespan": 25879.859,
+    "random_makespan": 45390.012,
+    "ai_makespan": 19113.281
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 14,
+    "round_robin_makespan": 24115.441,
+    "random_makespan": 44843.301,
+    "ai_makespan": 17984.328
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 15,
+    "round_robin_makespan": 23055.662,
+    "random_makespan": 42336.215,
+    "ai_makespan": 16743.359
+  },
+  {
+    "date": "2026-04-20",
+    "orders": 1642,
+    "station_limit": 16,
+    "round_robin_makespan": 21702.246,
+    "random_makespan": 42061.992,
+    "ai_makespan": 15597.065
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 1,
+    "round_robin_makespan": 208936.531,
+    "random_makespan": 208936.531,
+    "ai_makespan": 208936.531
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 2,
+    "round_robin_makespan": 113803.453,
+    "random_makespan": 135490.609,
+    "ai_makespan": 113847.75
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 3,
+    "round_robin_makespan": 81307.289,
+    "random_makespan": 106546.555,
+    "ai_makespan": 73710.672
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 4,
+    "round_robin_makespan": 64147.137,
+    "random_makespan": 86324.43,
+    "ai_makespan": 58812.34
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 5,
+    "round_robin_makespan": 52093.289,
+    "random_makespan": 73876.75,
+    "ai_makespan": 48590.469
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 6,
+    "round_robin_makespan": 44980.801,
+    "random_makespan": 65566.727,
+    "ai_makespan": 39400.68
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 7,
+    "round_robin_makespan": 39294.242,
+    "random_makespan": 62634.48,
+    "ai_makespan": 34247.742
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 8,
+    "round_robin_makespan": 36596.73,
+    "random_makespan": 57685.867,
+    "ai_makespan": 29004.561
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 9,
+    "round_robin_makespan": 32666.555,
+    "random_makespan": 52585.312,
+    "ai_makespan": 25784.521
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 10,
+    "round_robin_makespan": 29494.852,
+    "random_makespan": 50865.207,
+    "ai_makespan": 23136.537
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 11,
+    "round_robin_makespan": 27490.039,
+    "random_makespan": 49306.383,
+    "ai_makespan": 20880.416
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 12,
+    "round_robin_makespan": 25419.67,
+    "random_makespan": 47663.176,
+    "ai_makespan": 19608.41
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 13,
+    "round_robin_makespan": 25189.186,
+    "random_makespan": 44505.121,
+    "ai_makespan": 18373.836
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 14,
+    "round_robin_makespan": 22859.441,
+    "random_makespan": 43440.973,
+    "ai_makespan": 17122.383
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 15,
+    "round_robin_makespan": 21408.297,
+    "random_makespan": 39367.234,
+    "ai_makespan": 16138.945
+  },
+  {
+    "date": "2026-04-21",
+    "orders": 1588,
+    "station_limit": 16,
+    "round_robin_makespan": 20773.492,
+    "random_makespan": 37788.262,
+    "ai_makespan": 15156.6
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 1,
+    "round_robin_makespan": 223753.938,
+    "random_makespan": 223753.938,
+    "ai_makespan": 223753.938
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 2,
+    "round_robin_makespan": 125019.867,
+    "random_makespan": 147115.344,
+    "ai_makespan": 122159.539
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 3,
+    "round_robin_makespan": 89898.117,
+    "random_makespan": 115359.477,
+    "ai_makespan": 80353.062
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 4,
+    "round_robin_makespan": 70968.18,
+    "random_makespan": 90422.82,
+    "ai_makespan": 63852.465
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 5,
+    "round_robin_makespan": 57737.164,
+    "random_makespan": 80500.844,
+    "ai_makespan": 52252.469
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 6,
+    "round_robin_makespan": 49956.656,
+    "random_makespan": 75794.367,
+    "ai_makespan": 42723.887
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 7,
+    "round_robin_makespan": 43812.762,
+    "random_makespan": 65120.363,
+    "ai_makespan": 36850.062
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 8,
+    "round_robin_makespan": 39982.438,
+    "random_makespan": 63795.898,
+    "ai_makespan": 31332.178
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 9,
+    "round_robin_makespan": 36268.676,
+    "random_makespan": 56333.836,
+    "ai_makespan": 28163.012
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 10,
+    "round_robin_makespan": 33483.219,
+    "random_makespan": 56532.02,
+    "ai_makespan": 25311.096
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 11,
+    "round_robin_makespan": 31052.703,
+    "random_makespan": 51988.23,
+    "ai_makespan": 23178.197
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 12,
+    "round_robin_makespan": 29330.49,
+    "random_makespan": 52468.672,
+    "ai_makespan": 21102.424
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 13,
+    "round_robin_makespan": 27437.312,
+    "random_makespan": 48638.277,
+    "ai_makespan": 20045.857
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 14,
+    "round_robin_makespan": 25944.312,
+    "random_makespan": 45741.145,
+    "ai_makespan": 18444.084
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 15,
+    "round_robin_makespan": 25416.191,
+    "random_makespan": 45162.785,
+    "ai_makespan": 17814.832
+  },
+  {
+    "date": "2026-04-22",
+    "orders": 1795,
+    "station_limit": 16,
+    "round_robin_makespan": 23935.975,
+    "random_makespan": 42712.891,
+    "ai_makespan": 16827.787
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 1,
+    "round_robin_makespan": 206001.859,
+    "random_makespan": 206001.859,
+    "ai_makespan": 206001.859
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 2,
+    "round_robin_makespan": 116499.023,
+    "random_makespan": 134005.219,
+    "ai_makespan": 113154.859
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 3,
+    "round_robin_makespan": 84076.086,
+    "random_makespan": 104663.086,
+    "ai_makespan": 73521.633
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 4,
+    "round_robin_makespan": 66796.836,
+    "random_makespan": 85997.078,
+    "ai_makespan": 59520.23
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 5,
+    "round_robin_makespan": 55545.133,
+    "random_makespan": 76886.734,
+    "ai_makespan": 48005.281
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 6,
+    "round_robin_makespan": 48409.969,
+    "random_makespan": 69053.891,
+    "ai_makespan": 40488.777
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 7,
+    "round_robin_makespan": 41951.609,
+    "random_makespan": 64224.402,
+    "ai_makespan": 33906.207
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 8,
+    "round_robin_makespan": 38725.496,
+    "random_makespan": 58504.586,
+    "ai_makespan": 29146.67
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 9,
+    "round_robin_makespan": 34406.012,
+    "random_makespan": 55337.34,
+    "ai_makespan": 26071.775
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 10,
+    "round_robin_makespan": 32474.566,
+    "random_makespan": 52074.586,
+    "ai_makespan": 23855.047
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 11,
+    "round_robin_makespan": 30371.455,
+    "random_makespan": 49407.285,
+    "ai_makespan": 21336.629
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 12,
+    "round_robin_makespan": 29323.65,
+    "random_makespan": 46770.285,
+    "ai_makespan": 20517.662
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 13,
+    "round_robin_makespan": 27501.914,
+    "random_makespan": 45652.59,
+    "ai_makespan": 18475.439
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 14,
+    "round_robin_makespan": 25453.211,
+    "random_makespan": 45558.035,
+    "ai_makespan": 17609.301
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 15,
+    "round_robin_makespan": 24933.219,
+    "random_makespan": 43565.508,
+    "ai_makespan": 16657.633
+  },
+  {
+    "date": "2026-04-23",
+    "orders": 1752,
+    "station_limit": 16,
+    "round_robin_makespan": 23373.529,
+    "random_makespan": 43215.211,
+    "ai_makespan": 15574.555
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 1,
+    "round_robin_makespan": 192212.609,
+    "random_makespan": 192212.609,
+    "ai_makespan": 192212.609
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 2,
+    "round_robin_makespan": 108223.297,
+    "random_makespan": 126602.867,
+    "ai_makespan": 105682.375
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 3,
+    "round_robin_makespan": 77127.828,
+    "random_makespan": 94941.734,
+    "ai_makespan": 68570.242
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 4,
+    "round_robin_makespan": 61183.836,
+    "random_makespan": 82454.062,
+    "ai_makespan": 56226.492
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 5,
+    "round_robin_makespan": 50066.105,
+    "random_makespan": 70114.18,
+    "ai_makespan": 44399.242
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 6,
+    "round_robin_makespan": 43700.922,
+    "random_makespan": 64845.324,
+    "ai_makespan": 37377.703
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 7,
+    "round_robin_makespan": 39174.836,
+    "random_makespan": 59256.754,
+    "ai_makespan": 32136.48
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 8,
+    "round_robin_makespan": 35003.66,
+    "random_makespan": 53510.035,
+    "ai_makespan": 27347.934
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 9,
+    "round_robin_makespan": 31946.57,
+    "random_makespan": 50484.629,
+    "ai_makespan": 24246.367
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 10,
+    "round_robin_makespan": 30050.268,
+    "random_makespan": 50939.707,
+    "ai_makespan": 21940.219
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 11,
+    "round_robin_makespan": 27981.367,
+    "random_makespan": 46721.652,
+    "ai_makespan": 20242.518
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 12,
+    "round_robin_makespan": 25642.588,
+    "random_makespan": 45152.559,
+    "ai_makespan": 18392.547
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 13,
+    "round_robin_makespan": 24764.805,
+    "random_makespan": 43042.012,
+    "ai_makespan": 17778.66
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 14,
+    "round_robin_makespan": 23745.979,
+    "random_makespan": 38757.105,
+    "ai_makespan": 16355.16
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 15,
+    "round_robin_makespan": 22053.842,
+    "random_makespan": 40589.203,
+    "ai_makespan": 15503.511
+  },
+  {
+    "date": "2026-04-24",
+    "orders": 1583,
+    "station_limit": 16,
+    "round_robin_makespan": 21339.121,
+    "random_makespan": 38976.809,
+    "ai_makespan": 14524.604
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 1,
+    "round_robin_makespan": 224055.125,
+    "random_makespan": 224055.125,
+    "ai_makespan": 224055.125
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 2,
+    "round_robin_makespan": 126988.32,
+    "random_makespan": 145438.781,
+    "ai_makespan": 122010.516
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 3,
+    "round_robin_makespan": 89154.555,
+    "random_makespan": 113667.352,
+    "ai_makespan": 79815.773
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 4,
+    "round_robin_makespan": 70439.906,
+    "random_makespan": 94454.055,
+    "ai_makespan": 64065.055
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 5,
+    "round_robin_makespan": 59236.551,
+    "random_makespan": 84148.094,
+    "ai_makespan": 51960.574
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 6,
+    "round_robin_makespan": 52072.375,
+    "random_makespan": 72952.445,
+    "ai_makespan": 43082.887
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 7,
+    "round_robin_makespan": 45662.695,
+    "random_makespan": 68847.633,
+    "ai_makespan": 36255.309
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 8,
+    "round_robin_makespan": 41511.953,
+    "random_makespan": 62287.0,
+    "ai_makespan": 30920.523
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 9,
+    "round_robin_makespan": 38245.102,
+    "random_makespan": 58109.613,
+    "ai_makespan": 27796.336
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 10,
+    "round_robin_makespan": 35435.0,
+    "random_makespan": 59628.203,
+    "ai_makespan": 25264.541
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 11,
+    "round_robin_makespan": 32925.059,
+    "random_makespan": 55218.188,
+    "ai_makespan": 23162.875
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 12,
+    "round_robin_makespan": 31074.707,
+    "random_makespan": 53010.312,
+    "ai_makespan": 21426.93
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 13,
+    "round_robin_makespan": 29227.566,
+    "random_makespan": 49613.73,
+    "ai_makespan": 19876.941
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 14,
+    "round_robin_makespan": 27550.285,
+    "random_makespan": 48268.949,
+    "ai_makespan": 18656.547
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 15,
+    "round_robin_makespan": 26285.432,
+    "random_makespan": 47640.523,
+    "ai_makespan": 17592.521
+  },
+  {
+    "date": "2026-04-25",
+    "orders": 1724,
+    "station_limit": 16,
+    "round_robin_makespan": 25783.928,
+    "random_makespan": 43839.531,
+    "ai_makespan": 17271.723
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 1,
+    "round_robin_makespan": 197428.906,
+    "random_makespan": 197428.906,
+    "ai_makespan": 197428.906
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 2,
+    "round_robin_makespan": 108777.766,
+    "random_makespan": 132125.0,
+    "ai_makespan": 107854.539
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 3,
+    "round_robin_makespan": 75445.906,
+    "random_makespan": 100726.734,
+    "ai_makespan": 69984.648
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 4,
+    "round_robin_makespan": 60260.734,
+    "random_makespan": 81384.875,
+    "ai_makespan": 57047.023
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 5,
+    "round_robin_makespan": 51418.004,
+    "random_makespan": 71978.789,
+    "ai_makespan": 47135.812
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 6,
+    "round_robin_makespan": 41984.242,
+    "random_makespan": 63073.988,
+    "ai_makespan": 38372.082
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 7,
+    "round_robin_makespan": 37712.883,
+    "random_makespan": 58639.441,
+    "ai_makespan": 32476.537
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 8,
+    "round_robin_makespan": 33352.387,
+    "random_makespan": 53881.109,
+    "ai_makespan": 27353.398
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 9,
+    "round_robin_makespan": 30775.963,
+    "random_makespan": 48727.652,
+    "ai_makespan": 25150.846
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 10,
+    "round_robin_makespan": 28434.572,
+    "random_makespan": 49663.363,
+    "ai_makespan": 22548.293
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 11,
+    "round_robin_makespan": 25870.342,
+    "random_makespan": 46780.895,
+    "ai_makespan": 20339.957
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 12,
+    "round_robin_makespan": 24228.334,
+    "random_makespan": 44188.008,
+    "ai_makespan": 19092.262
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 13,
+    "round_robin_makespan": 23157.863,
+    "random_makespan": 43584.25,
+    "ai_makespan": 17541.057
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 14,
+    "round_robin_makespan": 21425.105,
+    "random_makespan": 40175.82,
+    "ai_makespan": 16637.109
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 15,
+    "round_robin_makespan": 20359.625,
+    "random_makespan": 39189.906,
+    "ai_makespan": 15590.679
+  },
+  {
+    "date": "2026-04-26",
+    "orders": 1558,
+    "station_limit": 16,
+    "round_robin_makespan": 19172.219,
+    "random_makespan": 38671.887,
+    "ai_makespan": 14771.31
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 1,
+    "round_robin_makespan": 224129.531,
+    "random_makespan": 224129.531,
+    "ai_makespan": 224129.531
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 2,
+    "round_robin_makespan": 124127.836,
+    "random_makespan": 145692.688,
+    "ai_makespan": 121885.492
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 3,
+    "round_robin_makespan": 86827.688,
+    "random_makespan": 112714.797,
+    "ai_makespan": 79669.117
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 4,
+    "round_robin_makespan": 68594.492,
+    "random_makespan": 91160.352,
+    "ai_makespan": 64194.051
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 5,
+    "round_robin_makespan": 56947.645,
+    "random_makespan": 79864.594,
+    "ai_makespan": 52088.223
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 6,
+    "round_robin_makespan": 48045.516,
+    "random_makespan": 70535.211,
+    "ai_makespan": 42590.508
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 7,
+    "round_robin_makespan": 42399.215,
+    "random_makespan": 69283.844,
+    "ai_makespan": 36041.328
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 8,
+    "round_robin_makespan": 38179.359,
+    "random_makespan": 59674.836,
+    "ai_makespan": 30771.982
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 9,
+    "round_robin_makespan": 34681.734,
+    "random_makespan": 55137.281,
+    "ai_makespan": 27600.738
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 10,
+    "round_robin_makespan": 31548.652,
+    "random_makespan": 56795.008,
+    "ai_makespan": 25316.363
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 11,
+    "round_robin_makespan": 29739.875,
+    "random_makespan": 50578.984,
+    "ai_makespan": 22875.451
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 12,
+    "round_robin_makespan": 27788.559,
+    "random_makespan": 49748.93,
+    "ai_makespan": 21117.826
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 13,
+    "round_robin_makespan": 25732.98,
+    "random_makespan": 45880.004,
+    "ai_makespan": 19758.908
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 14,
+    "round_robin_makespan": 24362.625,
+    "random_makespan": 47010.992,
+    "ai_makespan": 18368.854
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 15,
+    "round_robin_makespan": 22555.572,
+    "random_makespan": 42565.703,
+    "ai_makespan": 17806.486
+  },
+  {
+    "date": "2026-04-27",
+    "orders": 1676,
+    "station_limit": 16,
+    "round_robin_makespan": 22330.186,
+    "random_makespan": 43351.527,
+    "ai_makespan": 16798.684
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 1,
+    "round_robin_makespan": 193020.266,
+    "random_makespan": 193020.266,
+    "ai_makespan": 193020.266
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 2,
+    "round_robin_makespan": 107766.18,
+    "random_makespan": 126967.562,
+    "ai_makespan": 105679.383
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 3,
+    "round_robin_makespan": 75410.602,
+    "random_makespan": 98755.414,
+    "ai_makespan": 69032.391
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 4,
+    "round_robin_makespan": 59778.719,
+    "random_makespan": 79554.969,
+    "ai_makespan": 56076.844
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 5,
+    "round_robin_makespan": 48646.0,
+    "random_makespan": 71930.055,
+    "ai_makespan": 45169.426
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 6,
+    "round_robin_makespan": 42923.93,
+    "random_makespan": 61781.344,
+    "ai_makespan": 37733.645
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 7,
+    "round_robin_makespan": 36871.711,
+    "random_makespan": 56632.738,
+    "ai_makespan": 31550.414
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 8,
+    "round_robin_makespan": 34029.137,
+    "random_makespan": 54434.531,
+    "ai_makespan": 26891.713
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 9,
+    "round_robin_makespan": 29993.816,
+    "random_makespan": 48984.219,
+    "ai_makespan": 24287.025
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 10,
+    "round_robin_makespan": 27564.875,
+    "random_makespan": 48600.449,
+    "ai_makespan": 21683.949
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 11,
+    "round_robin_makespan": 26553.139,
+    "random_makespan": 44212.617,
+    "ai_makespan": 20459.088
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 12,
+    "round_robin_makespan": 24363.027,
+    "random_makespan": 43773.555,
+    "ai_makespan": 18352.617
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 13,
+    "round_robin_makespan": 23096.15,
+    "random_makespan": 41877.391,
+    "ai_makespan": 17172.51
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 14,
+    "round_robin_makespan": 21822.904,
+    "random_makespan": 41288.965,
+    "ai_makespan": 16405.123
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 15,
+    "round_robin_makespan": 20731.545,
+    "random_makespan": 41093.18,
+    "ai_makespan": 15366.401
+  },
+  {
+    "date": "2026-04-28",
+    "orders": 1613,
+    "station_limit": 16,
+    "round_robin_makespan": 19989.129,
+    "random_makespan": 37441.375,
+    "ai_makespan": 14477.983
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 1,
+    "round_robin_makespan": 97748.477,
+    "random_makespan": 97748.477,
+    "ai_makespan": 97748.477
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 2,
+    "round_robin_makespan": 54055.039,
+    "random_makespan": 62905.258,
+    "ai_makespan": 53353.816
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 3,
+    "round_robin_makespan": 39135.781,
+    "random_makespan": 48122.699,
+    "ai_makespan": 34983.043
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 4,
+    "round_robin_makespan": 29652.99,
+    "random_makespan": 38897.445,
+    "ai_makespan": 27871.307
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 5,
+    "round_robin_makespan": 24954.148,
+    "random_makespan": 37172.004,
+    "ai_makespan": 23301.756
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 6,
+    "round_robin_makespan": 20862.406,
+    "random_makespan": 32371.217,
+    "ai_makespan": 18925.766
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 7,
+    "round_robin_makespan": 19066.848,
+    "random_makespan": 29384.289,
+    "ai_makespan": 16310.212
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 8,
+    "round_robin_makespan": 16443.303,
+    "random_makespan": 24610.934,
+    "ai_makespan": 13645.934
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 9,
+    "round_robin_makespan": 15706.767,
+    "random_makespan": 24470.908,
+    "ai_makespan": 12436.2
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 10,
+    "round_robin_makespan": 14304.47,
+    "random_makespan": 23940.553,
+    "ai_makespan": 11107.953
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 11,
+    "round_robin_makespan": 13055.931,
+    "random_makespan": 21877.268,
+    "ai_makespan": 10489.84
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 12,
+    "round_robin_makespan": 11930.155,
+    "random_makespan": 21679.355,
+    "ai_makespan": 9350.096
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 13,
+    "round_robin_makespan": 11194.065,
+    "random_makespan": 20961.533,
+    "ai_makespan": 8832.588
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 14,
+    "round_robin_makespan": 10961.17,
+    "random_makespan": 19159.396,
+    "ai_makespan": 8262.977
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 15,
+    "round_robin_makespan": 9729.811,
+    "random_makespan": 18866.23,
+    "ai_makespan": 7798.857
+  },
+  {
+    "date": "2026-04-29",
+    "orders": 766,
+    "station_limit": 16,
+    "round_robin_makespan": 9773.232,
+    "random_makespan": 18819.289,
+    "ai_makespan": 7616.482
+  }
+]

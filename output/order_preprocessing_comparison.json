@@ -1,0 +1,4349 @@
+{
+  "generated_on": "2026-06-23",
+  "dataset": "2025-07-01-picking-file",
+  "picking_file": "D:\\weichai\\weichai_model_rules_malfunction\\raw_data\\7.1\\7.1拣选.XLSX",
+  "snapshot_id": "2025-07-01-morning",
+  "strategy": "ai",
+  "station_limit": 16,
+  "order_mode": "default",
+  "shortage_mode": "keep",
+  "unit_release": "after_pick",
+  "unit_select_policy": "best_fit",
+  "seed": 888,
+  "model_path": "D:\\weichai\\weichai_model_rules_malfunction\\output\\models\\ppo_masking_model_v6.zip",
+  "preprocess_stats": {
+    "input_order_count": 581,
+    "processable_order_count": 581,
+    "shortage_order_count": 59,
+    "reordered_count": 579,
+    "moved_order_count": 579,
+    "scarce_sku_count": 186,
+    "inventory_low_unit_sku_count": 2798,
+    "inventory_sku_count": 4409,
+    "inventory_wait_estimate_before": 310.946,
+    "inventory_wait_estimate_after": 7.572,
+    "spread_accepted": true,
+    "adjacent_scarce_conflicts_before": 5,
+    "adjacent_scarce_conflicts_after": 3,
+    "adjacent_primary_conflicts_before": 4,
+    "adjacent_primary_conflicts_after": 3
+  },
+  "shortage_order_count": 59,
+  "shortage_order_sample": [
+    {
+      "order_id": "708911",
+      "shortage_skus": [
+        "612600080871:D00"
+      ]
+    },
+    {
+      "order_id": "708987",
+      "shortage_skus": [
+        "610800130225:D00"
+      ]
+    },
+    {
+      "order_id": "709003",
+      "shortage_skus": [
+        "1000151350:D00"
+      ]
+    },
+    {
+      "order_id": "709004",
+      "shortage_skus": [
+        "13034708:D00"
+      ]
+    },
+    {
+      "order_id": "709082",
+      "shortage_skus": [
+        "1003616419:D00"
+      ]
+    },
+    {
+      "order_id": "709085",
+      "shortage_skus": [
+        "13059267:D00"
+      ]
+    },
+    {
+      "order_id": "709209",
+      "shortage_skus": [
+        "1000169399:D00"
+      ]
+    },
+    {
+      "order_id": "709210",
+      "shortage_skus": [
+        "13038248:D00"
+      ]
+    },
+    {
+      "order_id": "709208",
+      "shortage_skus": [
+        "13038248:D00",
+        "13038335:D00"
+      ]
+    },
+    {
+      "order_id": "709241",
+      "shortage_skus": [
+        "612600116804:D00"
+      ]
+    },
+    {
+      "order_id": "709253",
+      "shortage_skus": [
+        "610800110295:D00"
+      ]
+    },
+    {
+      "order_id": "709192",
+      "shortage_skus": [
+        "13024432:D00"
+      ]
+    },
+    {
+      "order_id": "709268",
+      "shortage_skus": [
+        "612600116804:D00"
+      ]
+    },
+    {
+      "order_id": "709263",
+      "shortage_skus": [
+        "13058052:D00"
+      ]
+    },
+    {
+      "order_id": "709254",
+      "shortage_skus": [
+        "612600010564:D00"
+      ]
+    },
+    {
+      "order_id": "709255",
+      "shortage_skus": [
+        "90013050071:D00",
+        "612600012938:D00"
+      ]
+    },
+    {
+      "order_id": "709275",
+      "shortage_skus": [
+        "13058052:D00"
+      ]
+    },
+    {
+      "order_id": "709252",
+      "shortage_skus": [
+        "61800060157:D00"
+      ]
+    },
+    {
+      "order_id": "709363",
+      "shortage_skus": [
+        "610800060130:D00",
+        "1001063342:D00"
+      ]
+    },
+    {
+      "order_id": "709368",
+      "shortage_skus": [
+        "612630080102:D00"
+      ]
+    },
+    {
+      "order_id": "709384",
+      "shortage_skus": [
+        "1001640092:D00"
+      ]
+    },
+    {
+      "order_id": "709392",
+      "shortage_skus": [
+        "1003737649:D00"
+      ]
+    },
+    {
+      "order_id": "709379",
+      "shortage_skus": [
+        "13024961:D00"
+      ]
+    },
+    {
+      "order_id": "709390",
+      "shortage_skus": [
+        "1001063342:D00"
+      ]
+    },
+    {
+      "order_id": "709367",
+      "shortage_skus": [
+        "610800060130:D00"
+      ]
+    },
+    {
+      "order_id": "709369",
+      "shortage_skus": [
+        "612600131011:D00"
+      ]
+    },
+    {
+      "order_id": "709389",
+      "shortage_skus": [
+        "1003737649:D00"
+      ]
+    },
+    {
+      "order_id": "709394",
+      "shortage_skus": [
+        "610800060130:D00",
+        "1001063342:D00"
+      ]
+    },
+    {
+      "order_id": "709375",
+      "shortage_skus": [
+        "1000583278:D00",
+        "15035710N:D00"
+      ]
+    },
+    {
+      "order_id": "709378",
+      "shortage_skus": [
+        "1003737649:D00"
+      ]
+    },
+    {
+      "order_id": "709388",
+      "shortage_skus": [
+        "612600040702:D00",
+        "610800080167:D00",
+        "1001626772:D00",
+        "1009542004:D00"
+      ]
+    },
+    {
+      "order_id": "709366",
+      "shortage_skus": [
+        "610800060130:D00",
+        "1007159083:D00"
+      ]
+    },
+    {
+      "order_id": "709376",
+      "shortage_skus": [
+        "612660080074:D00",
+        "1001727935:D00"
+      ]
+    },
+    {
+      "order_id": "709387",
+      "shortage_skus": [
+        "612600070477:D00"
+      ]
+    },
+    {
+      "order_id": "709374",
+      "shortage_skus": [
+        "610800060130:D00"
+      ]
+    },
+    {
+      "order_id": "709386",
+      "shortage_skus": [
+        "612600130734:D00",
+        "612600061720:D00"
+      ]
+    },
+    {
+      "order_id": "709251",
+      "shortage_skus": [
+        "612600012938:D00"
+      ]
+    },
+    {
+      "order_id": "709385",
+      "shortage_skus": [
+        "1000615237:D00",
+        "61500040014:D00"
+      ]
+    },
+    {
+      "order_id": "709365",
+      "shortage_skus": [
+        "612600061720:D00",
+        "1000941064:D00"
+      ]
+    },
+    {
+      "order_id": "709371",
+      "shortage_skus": [
+        "61500040014:D00"
+      ]
+    },
+    {
+      "order_id": "709372",
+      "shortage_skus": [
+        "61500020046:D00"
+      ]
+    },
+    {
+      "order_id": "709380",
+      "shortage_skus": [
+        "610800060130:D00",
+        "1001063342:D00"
+      ]
+    },
+    {
+      "order_id": "709370",
+      "shortage_skus": [
+        "612630010098:D00"
+      ]
+    },
+    {
+      "order_id": "709373",
+      "shortage_skus": [
+        "61500020046:D00"
+      ]
+    },
+    {
+      "order_id": "709391",
+      "shortage_skus": [
+        "1001063342:D00"
+      ]
+    },
+    {
+      "order_id": "709393",
+      "shortage_skus": [
+        "1001063342:D00"
+      ]
+    },
+    {
+      "order_id": "709403",
+      "shortage_skus": [
+        "13068994:D00"
+      ]
+    },
+    {
+      "order_id": "709405",
+      "shortage_skus": [
+        "1005746394:D00"
+      ]
+    },
+    {
+      "order_id": "709425",
+      "shortage_skus": [
+        "612600090991:D00"
+      ]
+    },
+    {
+      "order_id": "709395",
+      "shortage_skus": [
+        "612630080102:D00",
+        "1001063342:D00",
+        "1009850338:D00"
+      ]
+    },
+    {
+      "order_id": "709438",
+      "shortage_skus": [
+        "610800040155:D00"
+      ]
+    },
+    {
+      "order_id": "709439",
+      "shortage_skus": [
+        "13036103:D00"
+      ]
+    },
+    {
+      "order_id": "709442",
+      "shortage_skus": [
+        "13059154:D00"
+      ]
+    },
+    {
+      "order_id": "709443",
+      "shortage_skus": [
+        "13051900:D00"
+      ]
+    },
+    {
+      "order_id": "709446",
+      "shortage_skus": [
+        "13062314:D00"
+      ]
+    },
+    {
+      "order_id": "709447",
+      "shortage_skus": [
+        "13038333:D00"
+      ]
+    },
+    {
+      "order_id": "709445",
+      "shortage_skus": [
+        "13059154:D00"
+      ]
+    },
+    {
+      "order_id": "709448",
+      "shortage_skus": [
+        "13062314:D00"
+      ]
+    },
+    {
+      "order_id": "709449",
+      "shortage_skus": [
+        "1007079352:D00"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "case": "without_order_preprocessing",
+      "order_count": 581,
+      "box_count": 1613,
+      "makespan_sec": 8116.281,
+      "total_inventory_wait_sec": 1460.518,
+      "inventory_wait_events": 11,
+      "shortage_event_count": 82,
+      "unit_empty_count": 70,
+      "mapping_sample": [
+        {
+          "sequence": 1,
+          "order_id": "708719",
+          "target_station": 8,
+          "box_count": 4,
+          "total_p_time": 58.989
+        },
+        {
+          "sequence": 2,
+          "order_id": "708720",
+          "target_station": 14,
+          "box_count": 4,
+          "total_p_time": 86.358
+        },
+        {
+          "sequence": 3,
+          "order_id": "708730",
+          "target_station": 8,
+          "box_count": 4,
+          "total_p_time": 50.136
+        },
+        {
+          "sequence": 4,
+          "order_id": "708724",
+          "target_station": 6,
+          "box_count": 4,
+          "total_p_time": 33.961
+        },
+        {
+          "sequence": 5,
+          "order_id": "708727",
+          "target_station": 6,
+          "box_count": 1,
+          "total_p_time": 106.4
+        },
+        {
+          "sequence": 6,
+          "order_id": "708721",
+          "target_station": 14,
+          "box_count": 4,
+          "total_p_time": 41.31
+        },
+        {
+          "sequence": 7,
+          "order_id": "708731",
+          "target_station": 15,
+          "box_count": 4,
+          "total_p_time": 126.183
+        },
+        {
+          "sequence": 8,
+          "order_id": "708723",
+          "target_station": 16,
+          "box_count": 4,
+          "total_p_time": 133.236
+        },
+        {
+          "sequence": 9,
+          "order_id": "708725",
+          "target_station": 12,
+          "box_count": 4,
+          "total_p_time": 82.779
+        },
+        {
+          "sequence": 10,
+          "order_id": "708726",
+          "target_station": 3,
+          "box_count": 1,
+          "total_p_time": 55.146
+        },
+        {
+          "sequence": 11,
+          "order_id": "708760",
+          "target_station": 5,
+          "box_count": 4,
+          "total_p_time": 177.965
+        },
+        {
+          "sequence": 12,
+          "order_id": "708718",
+          "target_station": 4,
+          "box_count": 2,
+          "total_p_time": 38.067
+        },
+        {
+          "sequence": 13,
+          "order_id": "708765",
+          "target_station": 13,
+          "box_count": 4,
+          "total_p_time": 216.529
+        },
+        {
+          "sequence": 14,
+          "order_id": "708732",
+          "target_station": 2,
+          "box_count": 3,
+          "total_p_time": 37.929
+        },
+        {
+          "sequence": 15,
+          "order_id": "708728",
+          "target_station": 11,
+          "box_count": 2,
+          "total_p_time": 206.96
+        },
+        {
+          "sequence": 16,
+          "order_id": "708764",
+          "target_station": 2,
+          "box_count": 4,
+          "total_p_time": 210.85
+        },
+        {
+          "sequence": 17,
+          "order_id": "708767",
+          "target_station": 5,
+          "box_count": 1,
+          "total_p_time": 30.9
+        },
+        {
+          "sequence": 18,
+          "order_id": "708761",
+          "target_station": 4,
+          "box_count": 4,
+          "total_p_time": 193.801
+        },
+        {
+          "sequence": 19,
+          "order_id": "708722",
+          "target_station": 7,
+          "box_count": 4,
+          "total_p_time": 219.162
+        },
+        {
+          "sequence": 20,
+          "order_id": "708766",
+          "target_station": 1,
+          "box_count": 4,
+          "total_p_time": 129.444
+        },
+        {
+          "sequence": 21,
+          "order_id": "708742",
+          "target_station": 9,
+          "box_count": 4,
+          "total_p_time": 127.017
+        },
+        {
+          "sequence": 22,
+          "order_id": "708762",
+          "target_station": 9,
+          "box_count": 4,
+          "total_p_time": 221.235
+        },
+        {
+          "sequence": 23,
+          "order_id": "708733",
+          "target_station": 3,
+          "box_count": 2,
+          "total_p_time": 43.55
+        },
+        {
+          "sequence": 24,
+          "order_id": "708763",
+          "target_station": 10,
+          "box_count": 4,
+          "total_p_time": 175.594
+        },
+        {
+          "sequence": 25,
+          "order_id": "708729",
+          "target_station": 1,
+          "box_count": 1,
+          "total_p_time": 63.45
+        },
+        {
+          "sequence": 26,
+          "order_id": "708734",
+          "target_station": 10,
+          "box_count": 4,
+          "total_p_time": 114.923
+        },
+        {
+          "sequence": 27,
+          "order_id": "708738",
+          "target_station": 8,
+          "box_count": 4,
+          "total_p_time": 135.182
+        },
+        {
+          "sequence": 28,
+          "order_id": "708737",
+          "target_station": 2,
+          "box_count": 4,
+          "total_p_time": 138.724
+        },
+        {
+          "sequence": 29,
+          "order_id": "708745",
+          "target_station": 4,
+          "box_count": 4,
+          "total_p_time": 291.867
+        },
+        {
+          "sequence": 30,
+          "order_id": "708744",
+          "target_station": 6,
+          "box_count": 4,
+          "total_p_time": 246.907
+        },
+        {
+          "sequence": 31,
+          "order_id": "708741",
+          "target_station": 11,
+          "box_count": 4,
+          "total_p_time": 342.934
+        },
+        {
+          "sequence": 32,
+          "order_id": "708735",
+          "target_station": 7,
+          "box_count": 4,
+          "total_p_time": 118.126
+        },
+        {
+          "sequence": 33,
+          "order_id": "708740",
+          "target_station": 15,
+          "box_count": 4,
+          "total_p_time": 227.275
+        },
+        {
+          "sequence": 34,
+          "order_id": "708905",
+          "target_station": 3,
+          "box_count": 1,
+          "total_p_time": 159.33
+        },
+        {
+          "sequence": 35,
+          "order_id": "708906",
+          "target_station": 16,
+          "box_count": 1,
+          "total_p_time": 254.2
+        },
+        {
+          "sequence": 36,
+          "order_id": "708746",
+          "target_station": 12,
+          "box_count": 4,
+          "total_p_time": 74.932
+        },
+        {
+          "sequence": 37,
+          "order_id": "708907",
+          "target_station": 8,
+          "box_count": 1,
+          "total_p_time": 91.2
+        },
+        {
+          "sequence": 38,
+          "order_id": "708743",
+          "target_station": 13,
+          "box_count": 4,
+          "total_p_time": 158.117
+        },
+        {
+          "sequence": 39,
+          "order_id": "708904",
+          "target_station": 3,
+          "box_count": 1,
+          "total_p_time": 16.896
+        },
+        {
+          "sequence": 40,
+          "order_id": "708739",
+          "target_station": 5,
+          "box_count": 4,
+          "total_p_time": 185.335
+        },
+        {
+          "sequence": 41,
+          "order_id": "708747",
+          "target_station": 14,
+          "box_count": 3,
+          "total_p_time": 56.096
+        },
+        {
+          "sequence": 42,
+          "order_id": "708736",
+          "target_station": 12,
+          "box_count": 4,
+          "total_p_time": 193.496
+        },
+        {
+          "sequence": 43,
+          "order_id": "708813",
+          "target_station": 1,
+          "box_count": 4,
+          "total_p_time": 69.785
+        },
+        {
+          "sequence": 44,
+          "order_id": "708812",
+          "target_station": 14,
+          "box_count": 4,
+          "total_p_time": 206.22
+        },
+        {
+          "sequence": 45,
+          "order_id": "708809",
+          "target_station": 1,
+          "box_count": 4,
+          "total_p_time": 100.358
+        },
+        {
+          "sequence": 46,
+          "order_id": "708768",
+          "target_station": 5,
+          "box_count": 4,
+          "total_p_time": 221.926
+        },
+        {
+          "sequence": 47,
+          "order_id": "708810",
+          "target_station": 9,
+          "box_count": 4,
+          "total_p_time": 147.293
+        },
+        {
+          "sequence": 48,
+          "order_id": "708910",
+          "target_station": 6,
+          "box_count": 1,
+          "total_p_time": 5.974
+        },
+        {
+          "sequence": 49,
+          "order_id": "708769",
+          "target_station": 16,
+          "box_count": 4,
+          "total_p_time": 165.761
+        },
+        {
+          "sequence": 50,
+          "order_id": "708804",
+          "target_station": 4,
+          "box_count": 4,
+          "total_p_time": 104.284
+        }
+      ],
+      "timeline_sample": [
+        {
+          "order_id": "708719",
+          "sku": "61560110210:D00",
+          "target_station": 8,
+          "unit_id": "T32000011094",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 65.146,
+          "finish_process": 72.256,
+          "remaining_qty": 4.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708719",
+          "sku": "9000000741:D00",
+          "target_station": 8,
+          "unit_id": "T31001678424",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 72.256,
+          "finish_process": 78.007,
+          "remaining_qty": 392.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708719",
+          "sku": "612600080685:D00",
+          "target_station": 8,
+          "unit_id": "T31002312961",
+          "qty": 6.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 78.007,
+          "finish_process": 99.151,
+          "remaining_qty": 579.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708719",
+          "sku": "612600083079:D00",
+          "target_station": 8,
+          "unit_id": "T32000047768",
+          "qty": 36.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 99.151,
+          "finish_process": 124.135,
+          "remaining_qty": 264.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708720",
+          "sku": "612600061654:D00",
+          "target_station": 14,
+          "unit_id": "T31001191311",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 114.003,
+          "finish_process": 146.859,
+          "remaining_qty": 36.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708720",
+          "sku": "90003862428:D00",
+          "target_station": 14,
+          "unit_id": "T32000328067",
+          "qty": 6.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 146.859,
+          "finish_process": 147.339,
+          "remaining_qty": 991.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708720",
+          "sku": "612600115573:D00",
+          "target_station": 14,
+          "unit_id": "T31001921703",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 147.339,
+          "finish_process": 189.345,
+          "remaining_qty": 2769.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708720",
+          "sku": "612600040565:D00",
+          "target_station": 14,
+          "unit_id": "T31002150914",
+          "qty": 18.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 189.345,
+          "finish_process": 200.361,
+          "remaining_qty": 468.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708730",
+          "sku": "612600061323:D00",
+          "target_station": 8,
+          "unit_id": "T31002104132",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 124.135,
+          "finish_process": 143.701,
+          "remaining_qty": 10.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708730",
+          "sku": "612600010446:D00",
+          "target_station": 8,
+          "unit_id": "T33002028076",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 143.701,
+          "finish_process": 146.215,
+          "remaining_qty": 128.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708730",
+          "sku": "90012290007:D00",
+          "target_station": 8,
+          "unit_id": "T31001801252",
+          "qty": 9.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 146.215,
+          "finish_process": 151.813,
+          "remaining_qty": 1234.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708730",
+          "sku": "612600090292:D00",
+          "target_station": 8,
+          "unit_id": "T31001859854",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 151.813,
+          "finish_process": 174.271,
+          "remaining_qty": 154.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708724",
+          "sku": "612600115514:D00",
+          "target_station": 6,
+          "unit_id": "T32000264263",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 68.86,
+          "finish_process": 89.095,
+          "remaining_qty": 169.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708724",
+          "sku": "612600082135:D00",
+          "target_station": 6,
+          "unit_id": "T31001715631",
+          "qty": 12.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 89.095,
+          "finish_process": 91.819,
+          "remaining_qty": 28.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708724",
+          "sku": "90003962621:D00",
+          "target_station": 6,
+          "unit_id": "T31001028047",
+          "qty": 2.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 91.819,
+          "finish_process": 92.729,
+          "remaining_qty": 63.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708724",
+          "sku": "61460070014:D00",
+          "target_station": 6,
+          "unit_id": "T33001980927",
+          "qty": 6.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 92.729,
+          "finish_process": 102.821,
+          "remaining_qty": 278.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708727",
+          "sku": "90003989301:D00",
+          "target_station": 6,
+          "unit_id": "T31002043030",
+          "qty": 100.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 102.821,
+          "finish_process": 209.221,
+          "remaining_qty": 900.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708721",
+          "sku": "612600081911:D00",
+          "target_station": 14,
+          "unit_id": "T31002057310",
+          "qty": 6.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 200.361,
+          "finish_process": 212.217,
+          "remaining_qty": 494.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708721",
+          "sku": "1001931763:D00",
+          "target_station": 14,
+          "unit_id": "T33002032437",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 212.217,
+          "finish_process": 223.029,
+          "remaining_qty": 5.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708721",
+          "sku": "18872339:D00",
+          "target_station": 14,
+          "unit_id": "T32000388614",
+          "qty": 6.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 223.029,
+          "finish_process": 223.527,
+          "remaining_qty": 592.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708721",
+          "sku": "612600040404:D00",
+          "target_station": 14,
+          "unit_id": "T31002008847",
+          "qty": 6.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 223.527,
+          "finish_process": 241.671,
+          "remaining_qty": 139.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708731",
+          "sku": "612600013280:D00",
+          "target_station": 15,
+          "unit_id": "T31001131414",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 146.646,
+          "finish_process": 167.961,
+          "remaining_qty": 22.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708731",
+          "sku": "612600115662:D00",
+          "target_station": 15,
+          "unit_id": "T33001031841",
+          "qty": 48.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 167.961,
+          "finish_process": 202.953,
+          "remaining_qty": 744.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708731",
+          "sku": "90003989301:D00",
+          "target_station": 15,
+          "unit_id": "T31001814067",
+          "qty": 12.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 202.953,
+          "finish_process": 215.721,
+          "remaining_qty": 45.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708731",
+          "sku": "612600111852:D00",
+          "target_station": 15,
+          "unit_id": "T31002312676",
+          "qty": 12.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 215.721,
+          "finish_process": 272.829,
+          "remaining_qty": 96.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708723",
+          "sku": "612600061635:D00",
+          "target_station": 16,
+          "unit_id": "T31002036581",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 159.789,
+          "finish_process": 193.281,
+          "remaining_qty": 58.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708723",
+          "sku": "1001063336:D00",
+          "target_station": 16,
+          "unit_id": "T31001910652",
+          "qty": 9.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 193.281,
+          "finish_process": 193.686,
+          "remaining_qty": 160.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708723",
+          "sku": "612600083299:D00",
+          "target_station": 16,
+          "unit_id": "T31001384924",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 193.686,
+          "finish_process": 238.053,
+          "remaining_qty": 5.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708723",
+          "sku": "188250083:D00",
+          "target_station": 16,
+          "unit_id": "T32000355822",
+          "qty": 12.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 238.053,
+          "finish_process": 293.025,
+          "remaining_qty": 11170.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708725",
+          "sku": "90012290006:D00",
+          "target_station": 12,
+          "unit_id": "T31002221653",
+          "qty": 18.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 137.217,
+          "finish_process": 140.799,
+          "remaining_qty": 917.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708725",
+          "sku": "612600070375:D00",
+          "target_station": 12,
+          "unit_id": "T31001775975",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 140.799,
+          "finish_process": 142.434,
+          "remaining_qty": 497.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708725",
+          "sku": "612600061948:D00",
+          "target_station": 12,
+          "unit_id": "T32000297062",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 142.434,
+          "finish_process": 188.541,
+          "remaining_qty": 3.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708725",
+          "sku": "1002229596:D00",
+          "target_station": 12,
+          "unit_id": "T31001862754",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 188.541,
+          "finish_process": 219.996,
+          "remaining_qty": 245.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708726",
+          "sku": "AZ1500090132:D00",
+          "target_station": 3,
+          "unit_id": "T31002138406",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 78.931,
+          "finish_process": 134.077,
+          "remaining_qty": 47.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708760",
+          "sku": "1001190745:D00",
+          "target_station": 5,
+          "unit_id": "T33002008073",
+          "qty": 10.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 94.717,
+          "finish_process": 141.507,
+          "remaining_qty": 80.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708760",
+          "sku": "1002241293:D00",
+          "target_station": 5,
+          "unit_id": "T32000091810",
+          "qty": 20.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 141.507,
+          "finish_process": 191.927,
+          "remaining_qty": 154.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708760",
+          "sku": "1001068631:D00",
+          "target_station": 5,
+          "unit_id": "T31001930398",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 191.927,
+          "finish_process": 252.067,
+          "remaining_qty": 316.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708760",
+          "sku": "1006891720:D00",
+          "target_station": 5,
+          "unit_id": "T31001402121",
+          "qty": 7.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 252.067,
+          "finish_process": 272.682,
+          "remaining_qty": 311.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708718",
+          "sku": "612600130734:D00",
+          "target_station": 4,
+          "unit_id": "T31002112384",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 93.574,
+          "finish_process": 121.297,
+          "remaining_qty": 16.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708718",
+          "sku": "612600080168:D00",
+          "target_station": 4,
+          "unit_id": "T31001925936",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 121.297,
+          "finish_process": 131.641,
+          "remaining_qty": 784.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708765",
+          "sku": "612600112246:D00",
+          "target_station": 13,
+          "unit_id": "T31001585085",
+          "qty": 7.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 160.86,
+          "finish_process": 187.089,
+          "remaining_qty": 34.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708765",
+          "sku": "612600010446:D00",
+          "target_station": 13,
+          "unit_id": "T31002309912",
+          "qty": 50.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 187.089,
+          "finish_process": 228.989,
+          "remaining_qty": 141.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708765",
+          "sku": "1005963135:D00",
+          "target_station": 13,
+          "unit_id": "T31002084947",
+          "qty": 28.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 228.989,
+          "finish_process": 302.797,
+          "remaining_qty": 63.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708765",
+          "sku": "1012217910:D00",
+          "target_station": 13,
+          "unit_id": "T33001981123",
+          "qty": 28.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 302.797,
+          "finish_process": 377.389,
+          "remaining_qty": 36.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708732",
+          "sku": "612600130724:D00",
+          "target_station": 2,
+          "unit_id": "T31001421425",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 88.289,
+          "finish_process": 101.957,
+          "remaining_qty": 75.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708732",
+          "sku": "612600131011:D00",
+          "target_station": 2,
+          "unit_id": "T32000266983",
+          "qty": 6.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 101.957,
+          "finish_process": 105.983,
+          "remaining_qty": 13.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708732",
+          "sku": "612630060017:D00",
+          "target_station": 2,
+          "unit_id": "T32000373152",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 105.983,
+          "finish_process": 126.218,
+          "remaining_qty": 105.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708728",
+          "sku": "1010724108:D00",
+          "target_station": 11,
+          "unit_id": "T31000338157",
+          "qty": 40.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 157.074,
+          "finish_process": 212.234,
+          "remaining_qty": 145.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708728",
+          "sku": "01169029:D00",
+          "target_station": 11,
+          "unit_id": "T33001038768",
+          "qty": 60.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 212.234,
+          "finish_process": 364.034,
+          "remaining_qty": 45.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708764",
+          "sku": "13058845:D00",
+          "target_station": 2,
+          "unit_id": "T31000899283",
+          "qty": 24.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 126.218,
+          "finish_process": 200.906,
+          "remaining_qty": 3.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708764",
+          "sku": "612630110043:D00",
+          "target_station": 2,
+          "unit_id": "T31002023899",
+          "qty": 40.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 200.906,
+          "finish_process": 218.706,
+          "remaining_qty": 1854.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708764",
+          "sku": "612600011919:D00",
+          "target_station": 2,
+          "unit_id": "T31001369195",
+          "qty": 14.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 218.706,
+          "finish_process": 263.632,
+          "remaining_qty": 376.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708764",
+          "sku": "1001284318:D00",
+          "target_station": 2,
+          "unit_id": "T31000590989",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 263.632,
+          "finish_process": 337.068,
+          "remaining_qty": 15.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708767",
+          "sku": "12151677:D00",
+          "target_station": 5,
+          "unit_id": "T33001045031",
+          "qty": 10.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 272.682,
+          "finish_process": 303.582,
+          "remaining_qty": 1.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708761",
+          "sku": "13023057:D00",
+          "target_station": 4,
+          "unit_id": "T31001910228",
+          "qty": 20.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 131.641,
+          "finish_process": 202.361,
+          "remaining_qty": 0.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708761",
+          "sku": "612630061189:D00",
+          "target_station": 4,
+          "unit_id": "T31002229618",
+          "qty": 7.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 202.361,
+          "finish_process": 232.118,
+          "remaining_qty": 14.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708761",
+          "sku": "1004574609:D00",
+          "target_station": 4,
+          "unit_id": "T32000181131",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 232.118,
+          "finish_process": 270.942,
+          "remaining_qty": 196.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708761",
+          "sku": "13023058:D00",
+          "target_station": 4,
+          "unit_id": "T31002312164",
+          "qty": 20.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 270.942,
+          "finish_process": 325.442,
+          "remaining_qty": 156.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708722",
+          "sku": "612600013956:D00",
+          "target_station": 7,
+          "unit_id": "T31001802976",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 145.003,
+          "finish_process": 147.658,
+          "remaining_qty": 828.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708722",
+          "sku": "9000000719:D00",
+          "target_station": 7,
+          "unit_id": "T32000266159",
+          "qty": 12.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 147.658,
+          "finish_process": 151.042,
+          "remaining_qty": 1245.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708722",
+          "sku": "81560110187:D00",
+          "target_station": 7,
+          "unit_id": "T33000078789",
+          "qty": 18.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 151.042,
+          "finish_process": 156.748,
+          "remaining_qty": 64.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708722",
+          "sku": "612600081893:D00",
+          "target_station": 7,
+          "unit_id": "T31001435340",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 156.748,
+          "finish_process": 364.165,
+          "remaining_qty": 2.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708766",
+          "sku": "13021568:D00",
+          "target_station": 1,
+          "unit_id": "T33001047118",
+          "qty": 10.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 108.146,
+          "finish_process": 147.346,
+          "remaining_qty": 21.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708766",
+          "sku": "612600114166:D00",
+          "target_station": 1,
+          "unit_id": "T33001048687",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 147.346,
+          "finish_process": 165.038,
+          "remaining_qty": 184.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708766",
+          "sku": "612600115282:D00",
+          "target_station": 1,
+          "unit_id": "T31001670449",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 165.038,
+          "finish_process": 198.77,
+          "remaining_qty": 13.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708766",
+          "sku": "1000644232:D00",
+          "target_station": 1,
+          "unit_id": "T32000401908",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 198.77,
+          "finish_process": 237.59,
+          "remaining_qty": 85.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708742",
+          "sku": "1003183819:D00",
+          "target_station": 9,
+          "unit_id": "T31000428072",
+          "qty": 1.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 171.289,
+          "finish_process": 193.981,
+          "remaining_qty": 77.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708742",
+          "sku": "13054909:D00",
+          "target_station": 9,
+          "unit_id": "T31002140977",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 193.981,
+          "finish_process": 211.117,
+          "remaining_qty": 89.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708742",
+          "sku": "1001954768:D00",
+          "target_station": 9,
+          "unit_id": "T31001193121",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 211.117,
+          "finish_process": 234.586,
+          "remaining_qty": 5.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708742",
+          "sku": "13023046:D00",
+          "target_station": 9,
+          "unit_id": "T31001853171",
+          "qty": 10.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 234.586,
+          "finish_process": 298.306,
+          "remaining_qty": 42.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708762",
+          "sku": "13024352:D00",
+          "target_station": 9,
+          "unit_id": "T31001921578",
+          "qty": 160.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 298.306,
+          "finish_process": 330.146,
+          "remaining_qty": 297.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708762",
+          "sku": "1001934100:D00",
+          "target_station": 9,
+          "unit_id": "T31002151330",
+          "qty": 204.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 330.146,
+          "finish_process": 451.526,
+          "remaining_qty": 222.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708762",
+          "sku": "611600090011:D00",
+          "target_station": 9,
+          "unit_id": "T31002195294",
+          "qty": 7.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 451.526,
+          "finish_process": 488.871,
+          "remaining_qty": 365.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708762",
+          "sku": "1000129488:D00",
+          "target_station": 9,
+          "unit_id": "T31001530796",
+          "qty": 10.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 488.871,
+          "finish_process": 519.541,
+          "remaining_qty": 15.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708733",
+          "sku": "1009819197:D00",
+          "target_station": 3,
+          "unit_id": "T31002179764",
+          "qty": 2.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 140.431,
+          "finish_process": 157.241,
+          "remaining_qty": 5.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708733",
+          "sku": "1009819196:D00",
+          "target_station": 3,
+          "unit_id": "T33002059130",
+          "qty": 2.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 157.241,
+          "finish_process": 183.981,
+          "remaining_qty": 4.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708763",
+          "sku": "1005101828:D00",
+          "target_station": 10,
+          "unit_id": "T31001590427",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 193.431,
+          "finish_process": 236.855,
+          "remaining_qty": 18.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708763",
+          "sku": "612600014589:D00",
+          "target_station": 10,
+          "unit_id": "T33002040683",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 236.855,
+          "finish_process": 255.155,
+          "remaining_qty": 8.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708763",
+          "sku": "13062098:D00",
+          "target_station": 10,
+          "unit_id": "T32000400136",
+          "qty": 10.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 255.155,
+          "finish_process": 293.005,
+          "remaining_qty": 0.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708763",
+          "sku": "1003492760:D00",
+          "target_station": 10,
+          "unit_id": "T31001908652",
+          "qty": 84.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 293.005,
+          "finish_process": 369.025,
+          "remaining_qty": 82.0,
+          "shortage_reason": null
+        }
+      ],
+      "shortage_event_sample": [
+        {
+          "order_id": "708911",
+          "sku": "612600080871:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 1266.877
+        },
+        {
+          "order_id": "708987",
+          "sku": "610800130225:D00",
+          "qty": 4.0,
+          "reason": "insufficient_qty",
+          "available_qty": 3.0,
+          "request_time": 1602.699
+        },
+        {
+          "order_id": "709003",
+          "sku": "1000151350:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 1617.699
+        },
+        {
+          "order_id": "709004",
+          "sku": "13034708:D00",
+          "qty": 30.0,
+          "reason": "insufficient_qty",
+          "available_qty": 20.0,
+          "request_time": 1625.199
+        },
+        {
+          "order_id": "709082",
+          "sku": "1003616419:D00",
+          "qty": 800.0,
+          "reason": "insufficient_qty",
+          "available_qty": 104.0,
+          "request_time": 3796.001
+        },
+        {
+          "order_id": "709085",
+          "sku": "13059267:D00",
+          "qty": 2.0,
+          "reason": "insufficient_qty",
+          "available_qty": 1.0,
+          "request_time": 3832.125
+        },
+        {
+          "order_id": "709132",
+          "sku": "13058050:D00",
+          "qty": 8.0,
+          "reason": "insufficient_qty",
+          "available_qty": 4.0,
+          "request_time": 4128.607
+        },
+        {
+          "order_id": "709209",
+          "sku": "1000169399:D00",
+          "qty": 10.0,
+          "reason": "insufficient_qty",
+          "available_qty": 8.0,
+          "request_time": 5208.423
+        },
+        {
+          "order_id": "709210",
+          "sku": "13038248:D00",
+          "qty": 14.0,
+          "reason": "insufficient_qty",
+          "available_qty": 7.0,
+          "request_time": 5221.923
+        },
+        {
+          "order_id": "709208",
+          "sku": "13038248:D00",
+          "qty": 16.0,
+          "reason": "insufficient_qty",
+          "available_qty": 7.0,
+          "request_time": 5680.293
+        },
+        {
+          "order_id": "709208",
+          "sku": "13038335:D00",
+          "qty": 10.0,
+          "reason": "insufficient_qty",
+          "available_qty": 9.0,
+          "request_time": 5681.793
+        },
+        {
+          "order_id": "709219",
+          "sku": "13034708:D00",
+          "qty": 12.0,
+          "reason": "insufficient_qty",
+          "available_qty": 6.0,
+          "request_time": 5687.793
+        },
+        {
+          "order_id": "709241",
+          "sku": "612600116804:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 5759.864
+        },
+        {
+          "order_id": "709253",
+          "sku": "610800110295:D00",
+          "qty": 6.0,
+          "reason": "insufficient_qty",
+          "available_qty": 2.0,
+          "request_time": 5761.364
+        },
+        {
+          "order_id": "709192",
+          "sku": "13024432:D00",
+          "qty": 17.0,
+          "reason": "insufficient_qty",
+          "available_qty": 6.0,
+          "request_time": 5765.864
+        },
+        {
+          "order_id": "709268",
+          "sku": "612600116804:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 5768.864
+        },
+        {
+          "order_id": "709263",
+          "sku": "13058052:D00",
+          "qty": 29.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 5773.364
+        },
+        {
+          "order_id": "709254",
+          "sku": "612600010564:D00",
+          "qty": 5.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 5904.101
+        },
+        {
+          "order_id": "709255",
+          "sku": "90013050071:D00",
+          "qty": 50.0,
+          "reason": "insufficient_qty",
+          "available_qty": 36.0,
+          "request_time": 5917.601
+        },
+        {
+          "order_id": "709255",
+          "sku": "612600012938:D00",
+          "qty": 22.0,
+          "reason": "insufficient_qty",
+          "available_qty": 21.0,
+          "request_time": 5919.101
+        },
+        {
+          "order_id": "709275",
+          "sku": "13058052:D00",
+          "qty": 7.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 5920.601
+        },
+        {
+          "order_id": "709252",
+          "sku": "61800060157:D00",
+          "qty": 30.0,
+          "reason": "insufficient_qty",
+          "available_qty": 15.0,
+          "request_time": 5922.101
+        },
+        {
+          "order_id": "709363",
+          "sku": "610800060130:D00",
+          "qty": 34.0,
+          "reason": "insufficient_qty",
+          "available_qty": 22.0,
+          "request_time": 6173.024
+        },
+        {
+          "order_id": "709363",
+          "sku": "1001063342:D00",
+          "qty": 200.0,
+          "reason": "insufficient_qty",
+          "available_qty": 78.0,
+          "request_time": 6174.524
+        },
+        {
+          "order_id": "709368",
+          "sku": "612630080102:D00",
+          "qty": 3.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6176.024
+        },
+        {
+          "order_id": "709384",
+          "sku": "1001640092:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6198.245
+        },
+        {
+          "order_id": "709392",
+          "sku": "1003737649:D00",
+          "qty": 7.0,
+          "reason": "insufficient_qty",
+          "available_qty": 5.0,
+          "request_time": 6199.745
+        },
+        {
+          "order_id": "709379",
+          "sku": "13024961:D00",
+          "qty": 100.0,
+          "reason": "insufficient_qty",
+          "available_qty": 82.0,
+          "request_time": 6201.245
+        },
+        {
+          "order_id": "709390",
+          "sku": "1001063342:D00",
+          "qty": 200.0,
+          "reason": "insufficient_qty",
+          "available_qty": 78.0,
+          "request_time": 6369.465
+        },
+        {
+          "order_id": "709367",
+          "sku": "610800060130:D00",
+          "qty": 36.0,
+          "reason": "insufficient_qty",
+          "available_qty": 22.0,
+          "request_time": 6370.965
+        },
+        {
+          "order_id": "709369",
+          "sku": "612600131011:D00",
+          "qty": 44.0,
+          "reason": "insufficient_qty",
+          "available_qty": 13.0,
+          "request_time": 6372.465
+        },
+        {
+          "order_id": "709389",
+          "sku": "1003737649:D00",
+          "qty": 7.0,
+          "reason": "insufficient_qty",
+          "available_qty": 5.0,
+          "request_time": 6373.965
+        },
+        {
+          "order_id": "709394",
+          "sku": "610800060130:D00",
+          "qty": 27.0,
+          "reason": "insufficient_qty",
+          "available_qty": 22.0,
+          "request_time": 6375.465
+        },
+        {
+          "order_id": "709394",
+          "sku": "1001063342:D00",
+          "qty": 200.0,
+          "reason": "insufficient_qty",
+          "available_qty": 78.0,
+          "request_time": 6376.965
+        },
+        {
+          "order_id": "709375",
+          "sku": "1000583278:D00",
+          "qty": 4.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6378.465
+        },
+        {
+          "order_id": "709375",
+          "sku": "15035710N:D00",
+          "qty": 4.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6379.965
+        },
+        {
+          "order_id": "709378",
+          "sku": "1003737649:D00",
+          "qty": 8.0,
+          "reason": "insufficient_qty",
+          "available_qty": 5.0,
+          "request_time": 6381.465
+        },
+        {
+          "order_id": "709388",
+          "sku": "612600040702:D00",
+          "qty": 6.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6382.965
+        },
+        {
+          "order_id": "709388",
+          "sku": "610800080167:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6384.465
+        },
+        {
+          "order_id": "709388",
+          "sku": "1001626772:D00",
+          "qty": 15.0,
+          "reason": "insufficient_qty",
+          "available_qty": 5.0,
+          "request_time": 6385.965
+        },
+        {
+          "order_id": "709388",
+          "sku": "1009542004:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6387.465
+        },
+        {
+          "order_id": "709366",
+          "sku": "610800060130:D00",
+          "qty": 37.0,
+          "reason": "insufficient_qty",
+          "available_qty": 22.0,
+          "request_time": 6388.965
+        },
+        {
+          "order_id": "709366",
+          "sku": "1007159083:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6390.465
+        },
+        {
+          "order_id": "709376",
+          "sku": "612660080074:D00",
+          "qty": 16.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6391.965
+        },
+        {
+          "order_id": "709376",
+          "sku": "1001727935:D00",
+          "qty": 8.0,
+          "reason": "insufficient_qty",
+          "available_qty": 6.0,
+          "request_time": 6393.465
+        },
+        {
+          "order_id": "709387",
+          "sku": "612600070477:D00",
+          "qty": 100.0,
+          "reason": "insufficient_qty",
+          "available_qty": 67.0,
+          "request_time": 6397.985
+        },
+        {
+          "order_id": "709374",
+          "sku": "610800060130:D00",
+          "qty": 30.0,
+          "reason": "insufficient_qty",
+          "available_qty": 22.0,
+          "request_time": 6421.282
+        },
+        {
+          "order_id": "709386",
+          "sku": "612600130734:D00",
+          "qty": 20.0,
+          "reason": "insufficient_qty",
+          "available_qty": 16.0,
+          "request_time": 6422.782
+        },
+        {
+          "order_id": "709386",
+          "sku": "612600061720:D00",
+          "qty": 132.0,
+          "reason": "insufficient_qty",
+          "available_qty": 109.0,
+          "request_time": 6424.282
+        },
+        {
+          "order_id": "709251",
+          "sku": "612600012938:D00",
+          "qty": 30.0,
+          "reason": "insufficient_qty",
+          "available_qty": 21.0,
+          "request_time": 6427.282
+        },
+        {
+          "order_id": "709385",
+          "sku": "1000615237:D00",
+          "qty": 5.0,
+          "reason": "insufficient_qty",
+          "available_qty": 1.0,
+          "request_time": 6464.432
+        },
+        {
+          "order_id": "709385",
+          "sku": "61500040014:D00",
+          "qty": 192.0,
+          "reason": "insufficient_qty",
+          "available_qty": 119.0,
+          "request_time": 6465.932
+        },
+        {
+          "order_id": "709365",
+          "sku": "612600061720:D00",
+          "qty": 300.0,
+          "reason": "insufficient_qty",
+          "available_qty": 109.0,
+          "request_time": 6467.432
+        },
+        {
+          "order_id": "709365",
+          "sku": "1000941064:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6468.932
+        },
+        {
+          "order_id": "709371",
+          "sku": "61500040014:D00",
+          "qty": 180.0,
+          "reason": "insufficient_qty",
+          "available_qty": 119.0,
+          "request_time": 6471.932
+        },
+        {
+          "order_id": "709372",
+          "sku": "61500020046:D00",
+          "qty": 120.0,
+          "reason": "insufficient_qty",
+          "available_qty": 23.0,
+          "request_time": 6476.432
+        },
+        {
+          "order_id": "709380",
+          "sku": "610800060130:D00",
+          "qty": 37.0,
+          "reason": "insufficient_qty",
+          "available_qty": 22.0,
+          "request_time": 6483.932
+        },
+        {
+          "order_id": "709380",
+          "sku": "1001063342:D00",
+          "qty": 200.0,
+          "reason": "insufficient_qty",
+          "available_qty": 78.0,
+          "request_time": 6485.432
+        },
+        {
+          "order_id": "709370",
+          "sku": "612630010098:D00",
+          "qty": 30.0,
+          "reason": "insufficient_qty",
+          "available_qty": 11.0,
+          "request_time": 6520.804
+        },
+        {
+          "order_id": "709373",
+          "sku": "61500020046:D00",
+          "qty": 120.0,
+          "reason": "insufficient_qty",
+          "available_qty": 23.0,
+          "request_time": 6568.009
+        },
+        {
+          "order_id": "709391",
+          "sku": "1001063342:D00",
+          "qty": 100.0,
+          "reason": "insufficient_qty",
+          "available_qty": 78.0,
+          "request_time": 6572.509
+        },
+        {
+          "order_id": "709393",
+          "sku": "1001063342:D00",
+          "qty": 100.0,
+          "reason": "insufficient_qty",
+          "available_qty": 78.0,
+          "request_time": 6587.357
+        },
+        {
+          "order_id": "709403",
+          "sku": "13068994:D00",
+          "qty": 25.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6635.777
+        },
+        {
+          "order_id": "709345",
+          "sku": "13025125:D00",
+          "qty": 30.0,
+          "reason": "insufficient_qty",
+          "available_qty": 23.0,
+          "request_time": 7018.025
+        },
+        {
+          "order_id": "709405",
+          "sku": "1005746394:D00",
+          "qty": 2.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 7036.025
+        },
+        {
+          "order_id": "709351",
+          "sku": "13034708:D00",
+          "qty": 16.0,
+          "reason": "insufficient_qty",
+          "available_qty": 6.0,
+          "request_time": 7446.299
+        },
+        {
+          "order_id": "709425",
+          "sku": "612600090991:D00",
+          "qty": 6.0,
+          "reason": "insufficient_qty",
+          "available_qty": 4.0,
+          "request_time": 7573.269
+        },
+        {
+          "order_id": "709395",
+          "sku": "612630080102:D00",
+          "qty": 27.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 7626.026
+        },
+        {
+          "order_id": "709395",
+          "sku": "1001063342:D00",
+          "qty": 149.0,
+          "reason": "insufficient_qty",
+          "available_qty": 51.0,
+          "request_time": 7627.526
+        },
+        {
+          "order_id": "709395",
+          "sku": "1009850338:D00",
+          "qty": 20.0,
+          "reason": "insufficient_qty",
+          "available_qty": 2.0,
+          "request_time": 7629.026
+        },
+        {
+          "order_id": "709434",
+          "sku": "13023057:D00",
+          "qty": 24.0,
+          "reason": "insufficient_qty",
+          "available_qty": 18.0,
+          "request_time": 7672.749
+        },
+        {
+          "order_id": "709438",
+          "sku": "610800040155:D00",
+          "qty": 3.0,
+          "reason": "insufficient_qty",
+          "available_qty": 2.0,
+          "request_time": 7674.249
+        },
+        {
+          "order_id": "709439",
+          "sku": "13036103:D00",
+          "qty": 10.0,
+          "reason": "insufficient_qty",
+          "available_qty": 8.0,
+          "request_time": 7675.749
+        },
+        {
+          "order_id": "709436",
+          "sku": "13023057:D00",
+          "qty": 15.0,
+          "reason": "insufficient_qty",
+          "available_qty": 11.0,
+          "request_time": 7907.912
+        },
+        {
+          "order_id": "709442",
+          "sku": "13059154:D00",
+          "qty": 4.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 7909.412
+        },
+        {
+          "order_id": "709443",
+          "sku": "13036334:D00",
+          "qty": 4.0,
+          "reason": "insufficient_qty",
+          "available_qty": 4.0,
+          "request_time": 7910.912
+        },
+        {
+          "order_id": "709443",
+          "sku": "13051900:D00",
+          "qty": 10.0,
+          "reason": "insufficient_qty",
+          "available_qty": 4.0,
+          "request_time": 7912.412
+        },
+        {
+          "order_id": "709446",
+          "sku": "13062314:D00",
+          "qty": 10.0,
+          "reason": "insufficient_qty",
+          "available_qty": 0.0,
+          "request_time": 7915.412
+        },
+        {
+          "order_id": "709447",
+          "sku": "13038333:D00",
+          "qty": 4.0,
+          "reason": "insufficient_qty",
+          "available_qty": 1.0,
+          "request_time": 7918.412
+        },
+        {
+          "order_id": "709445",
+          "sku": "13059154:D00",
+          "qty": 2.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 7919.912
+        }
+      ]
+    },
+    {
+      "case": "with_order_preprocessing",
+      "order_count": 581,
+      "box_count": 1613,
+      "makespan_sec": 7178.674,
+      "total_inventory_wait_sec": 298.223,
+      "inventory_wait_events": 6,
+      "shortage_event_count": 82,
+      "unit_empty_count": 68,
+      "mapping_sample": [
+        {
+          "sequence": 1,
+          "order_id": "708721",
+          "target_station": 8,
+          "box_count": 4,
+          "total_p_time": 41.31
+        },
+        {
+          "sequence": 2,
+          "order_id": "708724",
+          "target_station": 8,
+          "box_count": 4,
+          "total_p_time": 33.961
+        },
+        {
+          "sequence": 3,
+          "order_id": "708727",
+          "target_station": 14,
+          "box_count": 1,
+          "total_p_time": 106.4
+        },
+        {
+          "sequence": 4,
+          "order_id": "708726",
+          "target_station": 6,
+          "box_count": 1,
+          "total_p_time": 55.146
+        },
+        {
+          "sequence": 5,
+          "order_id": "708719",
+          "target_station": 6,
+          "box_count": 4,
+          "total_p_time": 58.989
+        },
+        {
+          "sequence": 6,
+          "order_id": "708728",
+          "target_station": 14,
+          "box_count": 2,
+          "total_p_time": 206.96
+        },
+        {
+          "sequence": 7,
+          "order_id": "708730",
+          "target_station": 16,
+          "box_count": 4,
+          "total_p_time": 50.136
+        },
+        {
+          "sequence": 8,
+          "order_id": "708767",
+          "target_station": 12,
+          "box_count": 1,
+          "total_p_time": 30.9
+        },
+        {
+          "sequence": 9,
+          "order_id": "708723",
+          "target_station": 5,
+          "box_count": 4,
+          "total_p_time": 133.236
+        },
+        {
+          "sequence": 10,
+          "order_id": "708722",
+          "target_station": 13,
+          "box_count": 4,
+          "total_p_time": 219.162
+        },
+        {
+          "sequence": 11,
+          "order_id": "708725",
+          "target_station": 11,
+          "box_count": 4,
+          "total_p_time": 82.779
+        },
+        {
+          "sequence": 12,
+          "order_id": "708718",
+          "target_station": 11,
+          "box_count": 2,
+          "total_p_time": 38.067
+        },
+        {
+          "sequence": 13,
+          "order_id": "708762",
+          "target_station": 5,
+          "box_count": 4,
+          "total_p_time": 221.235
+        },
+        {
+          "sequence": 14,
+          "order_id": "708733",
+          "target_station": 2,
+          "box_count": 2,
+          "total_p_time": 43.55
+        },
+        {
+          "sequence": 15,
+          "order_id": "708763",
+          "target_station": 7,
+          "box_count": 4,
+          "total_p_time": 175.594
+        },
+        {
+          "sequence": 16,
+          "order_id": "708729",
+          "target_station": 10,
+          "box_count": 1,
+          "total_p_time": 63.45
+        },
+        {
+          "sequence": 17,
+          "order_id": "708765",
+          "target_station": 2,
+          "box_count": 4,
+          "total_p_time": 216.529
+        },
+        {
+          "sequence": 18,
+          "order_id": "708732",
+          "target_station": 9,
+          "box_count": 3,
+          "total_p_time": 37.929
+        },
+        {
+          "sequence": 19,
+          "order_id": "708764",
+          "target_station": 10,
+          "box_count": 4,
+          "total_p_time": 210.85
+        },
+        {
+          "sequence": 20,
+          "order_id": "708761",
+          "target_station": 15,
+          "box_count": 4,
+          "total_p_time": 193.801
+        },
+        {
+          "sequence": 21,
+          "order_id": "708766",
+          "target_station": 9,
+          "box_count": 4,
+          "total_p_time": 129.444
+        },
+        {
+          "sequence": 22,
+          "order_id": "708738",
+          "target_station": 12,
+          "box_count": 4,
+          "total_p_time": 135.182
+        },
+        {
+          "sequence": 23,
+          "order_id": "708737",
+          "target_station": 3,
+          "box_count": 4,
+          "total_p_time": 138.724
+        },
+        {
+          "sequence": 24,
+          "order_id": "708741",
+          "target_station": 8,
+          "box_count": 4,
+          "total_p_time": 342.934
+        },
+        {
+          "sequence": 25,
+          "order_id": "708905",
+          "target_station": 1,
+          "box_count": 1,
+          "total_p_time": 159.33
+        },
+        {
+          "sequence": 26,
+          "order_id": "708906",
+          "target_station": 15,
+          "box_count": 1,
+          "total_p_time": 254.2
+        },
+        {
+          "sequence": 27,
+          "order_id": "708731",
+          "target_station": 4,
+          "box_count": 4,
+          "total_p_time": 126.183
+        },
+        {
+          "sequence": 28,
+          "order_id": "708907",
+          "target_station": 2,
+          "box_count": 1,
+          "total_p_time": 91.2
+        },
+        {
+          "sequence": 29,
+          "order_id": "708742",
+          "target_station": 13,
+          "box_count": 4,
+          "total_p_time": 127.017
+        },
+        {
+          "sequence": 30,
+          "order_id": "708904",
+          "target_station": 3,
+          "box_count": 1,
+          "total_p_time": 16.896
+        },
+        {
+          "sequence": 31,
+          "order_id": "708745",
+          "target_station": 6,
+          "box_count": 4,
+          "total_p_time": 291.867
+        },
+        {
+          "sequence": 32,
+          "order_id": "708739",
+          "target_station": 7,
+          "box_count": 4,
+          "total_p_time": 185.335
+        },
+        {
+          "sequence": 33,
+          "order_id": "708747",
+          "target_station": 4,
+          "box_count": 3,
+          "total_p_time": 56.096
+        },
+        {
+          "sequence": 34,
+          "order_id": "708736",
+          "target_station": 8,
+          "box_count": 4,
+          "total_p_time": 193.496
+        },
+        {
+          "sequence": 35,
+          "order_id": "708812",
+          "target_station": 12,
+          "box_count": 4,
+          "total_p_time": 206.22
+        },
+        {
+          "sequence": 36,
+          "order_id": "708809",
+          "target_station": 16,
+          "box_count": 4,
+          "total_p_time": 100.358
+        },
+        {
+          "sequence": 37,
+          "order_id": "708735",
+          "target_station": 1,
+          "box_count": 4,
+          "total_p_time": 118.126
+        },
+        {
+          "sequence": 38,
+          "order_id": "708740",
+          "target_station": 5,
+          "box_count": 4,
+          "total_p_time": 227.275
+        },
+        {
+          "sequence": 39,
+          "order_id": "708910",
+          "target_station": 9,
+          "box_count": 1,
+          "total_p_time": 5.974
+        },
+        {
+          "sequence": 40,
+          "order_id": "708743",
+          "target_station": 11,
+          "box_count": 4,
+          "total_p_time": 158.117
+        },
+        {
+          "sequence": 41,
+          "order_id": "708804",
+          "target_station": 10,
+          "box_count": 4,
+          "total_p_time": 104.284
+        },
+        {
+          "sequence": 42,
+          "order_id": "708807",
+          "target_station": 14,
+          "box_count": 4,
+          "total_p_time": 159.383
+        },
+        {
+          "sequence": 43,
+          "order_id": "708772",
+          "target_station": 16,
+          "box_count": 2,
+          "total_p_time": 525.712
+        },
+        {
+          "sequence": 44,
+          "order_id": "708770",
+          "target_station": 6,
+          "box_count": 4,
+          "total_p_time": 201.958
+        },
+        {
+          "sequence": 45,
+          "order_id": "708774",
+          "target_station": 2,
+          "box_count": 2,
+          "total_p_time": 103.738
+        },
+        {
+          "sequence": 46,
+          "order_id": "708811",
+          "target_station": 4,
+          "box_count": 4,
+          "total_p_time": 139.643
+        },
+        {
+          "sequence": 47,
+          "order_id": "708808",
+          "target_station": 9,
+          "box_count": 4,
+          "total_p_time": 284.858
+        },
+        {
+          "sequence": 48,
+          "order_id": "708805",
+          "target_station": 4,
+          "box_count": 4,
+          "total_p_time": 135.397
+        },
+        {
+          "sequence": 49,
+          "order_id": "708773",
+          "target_station": 7,
+          "box_count": 4,
+          "total_p_time": 133.997
+        },
+        {
+          "sequence": 50,
+          "order_id": "708777",
+          "target_station": 11,
+          "box_count": 4,
+          "total_p_time": 133.904
+        }
+      ],
+      "timeline_sample": [
+        {
+          "order_id": "708721",
+          "sku": "612600081911:D00",
+          "target_station": 8,
+          "unit_id": "T31002057310",
+          "qty": 6.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 65.146,
+          "finish_process": 77.002,
+          "remaining_qty": 494.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708721",
+          "sku": "1001931763:D00",
+          "target_station": 8,
+          "unit_id": "T33002032437",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 77.002,
+          "finish_process": 87.814,
+          "remaining_qty": 5.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708721",
+          "sku": "18872339:D00",
+          "target_station": 8,
+          "unit_id": "T32000388614",
+          "qty": 6.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 87.814,
+          "finish_process": 88.312,
+          "remaining_qty": 592.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708721",
+          "sku": "612600040404:D00",
+          "target_station": 8,
+          "unit_id": "T31002008847",
+          "qty": 6.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 88.312,
+          "finish_process": 106.456,
+          "remaining_qty": 139.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708724",
+          "sku": "612600115514:D00",
+          "target_station": 8,
+          "unit_id": "T32000264263",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 106.456,
+          "finish_process": 126.691,
+          "remaining_qty": 169.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708724",
+          "sku": "612600082135:D00",
+          "target_station": 8,
+          "unit_id": "T31001715631",
+          "qty": 12.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 126.691,
+          "finish_process": 129.415,
+          "remaining_qty": 28.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708724",
+          "sku": "90003962621:D00",
+          "target_station": 8,
+          "unit_id": "T31001028047",
+          "qty": 2.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 129.415,
+          "finish_process": 130.325,
+          "remaining_qty": 63.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708724",
+          "sku": "61460070014:D00",
+          "target_station": 8,
+          "unit_id": "T33001980927",
+          "qty": 6.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 130.325,
+          "finish_process": 140.417,
+          "remaining_qty": 278.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708727",
+          "sku": "90003989301:D00",
+          "target_station": 14,
+          "unit_id": "T31002043030",
+          "qty": 100.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 120.003,
+          "finish_process": 226.403,
+          "remaining_qty": 900.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708726",
+          "sku": "AZ1500090132:D00",
+          "target_station": 6,
+          "unit_id": "T31002138406",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 64.36,
+          "finish_process": 119.506,
+          "remaining_qty": 47.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708719",
+          "sku": "61560110210:D00",
+          "target_station": 6,
+          "unit_id": "T32000011094",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 119.506,
+          "finish_process": 126.616,
+          "remaining_qty": 4.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708719",
+          "sku": "9000000741:D00",
+          "target_station": 6,
+          "unit_id": "T31001678424",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 126.616,
+          "finish_process": 132.367,
+          "remaining_qty": 392.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708719",
+          "sku": "612600080685:D00",
+          "target_station": 6,
+          "unit_id": "T31002312961",
+          "qty": 6.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 132.367,
+          "finish_process": 153.511,
+          "remaining_qty": 579.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708719",
+          "sku": "612600083079:D00",
+          "target_station": 6,
+          "unit_id": "T32000047768",
+          "qty": 36.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 153.511,
+          "finish_process": 178.495,
+          "remaining_qty": 264.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708728",
+          "sku": "1010724108:D00",
+          "target_station": 14,
+          "unit_id": "T31000338157",
+          "qty": 40.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 226.403,
+          "finish_process": 281.563,
+          "remaining_qty": 145.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708728",
+          "sku": "01169029:D00",
+          "target_station": 14,
+          "unit_id": "T33001038768",
+          "qty": 60.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 281.563,
+          "finish_process": 433.363,
+          "remaining_qty": 45.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708730",
+          "sku": "612600061323:D00",
+          "target_station": 16,
+          "unit_id": "T31002104132",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 146.289,
+          "finish_process": 165.855,
+          "remaining_qty": 10.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708730",
+          "sku": "612600010446:D00",
+          "target_station": 16,
+          "unit_id": "T33002028076",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 165.855,
+          "finish_process": 168.369,
+          "remaining_qty": 128.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708730",
+          "sku": "90012290007:D00",
+          "target_station": 16,
+          "unit_id": "T31001801252",
+          "qty": 9.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 168.369,
+          "finish_process": 173.967,
+          "remaining_qty": 1234.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708730",
+          "sku": "612600090292:D00",
+          "target_station": 16,
+          "unit_id": "T31001859854",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 173.967,
+          "finish_process": 196.425,
+          "remaining_qty": 154.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708767",
+          "sku": "12151677:D00",
+          "target_station": 12,
+          "unit_id": "T33001045031",
+          "qty": 10.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 123.717,
+          "finish_process": 154.617,
+          "remaining_qty": 1.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708723",
+          "sku": "612600061635:D00",
+          "target_station": 5,
+          "unit_id": "T31002036581",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 75.217,
+          "finish_process": 108.709,
+          "remaining_qty": 58.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708723",
+          "sku": "1001063336:D00",
+          "target_station": 5,
+          "unit_id": "T31001910652",
+          "qty": 9.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 108.709,
+          "finish_process": 109.114,
+          "remaining_qty": 160.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708723",
+          "sku": "612600083299:D00",
+          "target_station": 5,
+          "unit_id": "T31001384924",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 109.114,
+          "finish_process": 153.481,
+          "remaining_qty": 5.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708723",
+          "sku": "188250083:D00",
+          "target_station": 5,
+          "unit_id": "T32000355822",
+          "qty": 12.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 153.481,
+          "finish_process": 208.453,
+          "remaining_qty": 11170.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708722",
+          "sku": "612600013956:D00",
+          "target_station": 13,
+          "unit_id": "T31001802976",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 138.36,
+          "finish_process": 141.015,
+          "remaining_qty": 828.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708722",
+          "sku": "9000000719:D00",
+          "target_station": 13,
+          "unit_id": "T32000266159",
+          "qty": 12.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 141.015,
+          "finish_process": 144.399,
+          "remaining_qty": 1245.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708722",
+          "sku": "81560110187:D00",
+          "target_station": 13,
+          "unit_id": "T33000078789",
+          "qty": 18.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 144.399,
+          "finish_process": 150.105,
+          "remaining_qty": 64.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708722",
+          "sku": "612600081893:D00",
+          "target_station": 13,
+          "unit_id": "T31001435340",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 150.105,
+          "finish_process": 357.522,
+          "remaining_qty": 2.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708725",
+          "sku": "90012290006:D00",
+          "target_station": 11,
+          "unit_id": "T31002221653",
+          "qty": 18.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 130.074,
+          "finish_process": 133.656,
+          "remaining_qty": 917.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708725",
+          "sku": "612600070375:D00",
+          "target_station": 11,
+          "unit_id": "T31001775975",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 133.656,
+          "finish_process": 135.291,
+          "remaining_qty": 497.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708725",
+          "sku": "612600061948:D00",
+          "target_station": 11,
+          "unit_id": "T32000297062",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 135.291,
+          "finish_process": 181.398,
+          "remaining_qty": 3.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708725",
+          "sku": "1002229596:D00",
+          "target_station": 11,
+          "unit_id": "T31001862754",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 181.398,
+          "finish_process": 212.853,
+          "remaining_qty": 245.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708718",
+          "sku": "612600130734:D00",
+          "target_station": 11,
+          "unit_id": "T31002112384",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 212.853,
+          "finish_process": 240.576,
+          "remaining_qty": 16.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708718",
+          "sku": "612600080168:D00",
+          "target_station": 11,
+          "unit_id": "T31001925936",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 240.576,
+          "finish_process": 250.92,
+          "remaining_qty": 784.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708762",
+          "sku": "13024352:D00",
+          "target_station": 5,
+          "unit_id": "T31001921578",
+          "qty": 160.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 208.453,
+          "finish_process": 240.293,
+          "remaining_qty": 297.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708762",
+          "sku": "1001934100:D00",
+          "target_station": 5,
+          "unit_id": "T31002151330",
+          "qty": 204.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 240.293,
+          "finish_process": 361.673,
+          "remaining_qty": 222.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708762",
+          "sku": "611600090011:D00",
+          "target_station": 5,
+          "unit_id": "T31002195294",
+          "qty": 7.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 361.673,
+          "finish_process": 399.018,
+          "remaining_qty": 365.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708762",
+          "sku": "1000129488:D00",
+          "target_station": 5,
+          "unit_id": "T31001530796",
+          "qty": 10.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 399.018,
+          "finish_process": 429.688,
+          "remaining_qty": 15.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708733",
+          "sku": "1009819197:D00",
+          "target_station": 2,
+          "unit_id": "T31002179764",
+          "qty": 2.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 80.789,
+          "finish_process": 97.599,
+          "remaining_qty": 5.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708733",
+          "sku": "1009819196:D00",
+          "target_station": 2,
+          "unit_id": "T33002059130",
+          "qty": 2.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 97.599,
+          "finish_process": 124.339,
+          "remaining_qty": 4.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708763",
+          "sku": "1005101828:D00",
+          "target_station": 7,
+          "unit_id": "T31001590427",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 119.503,
+          "finish_process": 162.927,
+          "remaining_qty": 18.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708763",
+          "sku": "612600014589:D00",
+          "target_station": 7,
+          "unit_id": "T33002040683",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 162.927,
+          "finish_process": 181.227,
+          "remaining_qty": 8.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708763",
+          "sku": "13062098:D00",
+          "target_station": 7,
+          "unit_id": "T32000400136",
+          "qty": 10.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 181.227,
+          "finish_process": 219.077,
+          "remaining_qty": 0.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708763",
+          "sku": "1003492760:D00",
+          "target_station": 7,
+          "unit_id": "T31001908652",
+          "qty": 84.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 219.077,
+          "finish_process": 295.097,
+          "remaining_qty": 82.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708729",
+          "sku": "13033668:D00",
+          "target_station": 10,
+          "unit_id": "T32000151985",
+          "qty": 5.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 146.931,
+          "finish_process": 210.381,
+          "remaining_qty": 4.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708765",
+          "sku": "612600112246:D00",
+          "target_station": 2,
+          "unit_id": "T31001585085",
+          "qty": 7.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 124.339,
+          "finish_process": 150.568,
+          "remaining_qty": 34.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708765",
+          "sku": "612600010446:D00",
+          "target_station": 2,
+          "unit_id": "T31002309912",
+          "qty": 50.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 150.568,
+          "finish_process": 192.468,
+          "remaining_qty": 141.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708765",
+          "sku": "1005963135:D00",
+          "target_station": 2,
+          "unit_id": "T31002084947",
+          "qty": 28.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 192.468,
+          "finish_process": 266.276,
+          "remaining_qty": 63.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708765",
+          "sku": "1012217910:D00",
+          "target_station": 2,
+          "unit_id": "T33001981123",
+          "qty": 28.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 266.276,
+          "finish_process": 340.868,
+          "remaining_qty": 36.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708732",
+          "sku": "612600130724:D00",
+          "target_station": 9,
+          "unit_id": "T31001421425",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 147.289,
+          "finish_process": 160.957,
+          "remaining_qty": 75.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708732",
+          "sku": "612600131011:D00",
+          "target_station": 9,
+          "unit_id": "T32000266983",
+          "qty": 6.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 160.957,
+          "finish_process": 164.983,
+          "remaining_qty": 13.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708732",
+          "sku": "612630060017:D00",
+          "target_station": 9,
+          "unit_id": "T32000373152",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 164.983,
+          "finish_process": 185.218,
+          "remaining_qty": 105.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708764",
+          "sku": "13058845:D00",
+          "target_station": 10,
+          "unit_id": "T31000899283",
+          "qty": 24.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 210.381,
+          "finish_process": 285.069,
+          "remaining_qty": 3.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708764",
+          "sku": "612630110043:D00",
+          "target_station": 10,
+          "unit_id": "T31002023899",
+          "qty": 40.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 285.069,
+          "finish_process": 302.869,
+          "remaining_qty": 1854.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708764",
+          "sku": "612600011919:D00",
+          "target_station": 10,
+          "unit_id": "T31001369195",
+          "qty": 14.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 302.869,
+          "finish_process": 347.795,
+          "remaining_qty": 376.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708764",
+          "sku": "1001284318:D00",
+          "target_station": 10,
+          "unit_id": "T31000590989",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 347.795,
+          "finish_process": 421.231,
+          "remaining_qty": 15.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708761",
+          "sku": "13023057:D00",
+          "target_station": 15,
+          "unit_id": "T31001910228",
+          "qty": 20.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 200.646,
+          "finish_process": 271.366,
+          "remaining_qty": 0.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708761",
+          "sku": "612630061189:D00",
+          "target_station": 15,
+          "unit_id": "T31002229618",
+          "qty": 7.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 271.366,
+          "finish_process": 301.123,
+          "remaining_qty": 14.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708761",
+          "sku": "1004574609:D00",
+          "target_station": 15,
+          "unit_id": "T32000181131",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 301.123,
+          "finish_process": 339.947,
+          "remaining_qty": 196.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708761",
+          "sku": "13023058:D00",
+          "target_station": 15,
+          "unit_id": "T31002312164",
+          "qty": 20.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 339.947,
+          "finish_process": 394.447,
+          "remaining_qty": 156.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708766",
+          "sku": "13021568:D00",
+          "target_station": 9,
+          "unit_id": "T33001047118",
+          "qty": 10.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 185.218,
+          "finish_process": 224.418,
+          "remaining_qty": 21.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708766",
+          "sku": "612600114166:D00",
+          "target_station": 9,
+          "unit_id": "T33001048687",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 224.418,
+          "finish_process": 242.11,
+          "remaining_qty": 184.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708766",
+          "sku": "612600115282:D00",
+          "target_station": 9,
+          "unit_id": "T31001670449",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 242.11,
+          "finish_process": 275.842,
+          "remaining_qty": 13.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708766",
+          "sku": "1000644232:D00",
+          "target_station": 9,
+          "unit_id": "T32000401908",
+          "qty": 4.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 275.842,
+          "finish_process": 314.662,
+          "remaining_qty": 85.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708738",
+          "sku": "13024269:D00",
+          "target_station": 12,
+          "unit_id": "T32000209634",
+          "qty": 10.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 191.217,
+          "finish_process": 253.237,
+          "remaining_qty": 25.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708738",
+          "sku": "9000000203:D00",
+          "target_station": 12,
+          "unit_id": "T33001013962",
+          "qty": 2.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 253.237,
+          "finish_process": 253.741,
+          "remaining_qty": 734.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708738",
+          "sku": "1002023704:D00",
+          "target_station": 12,
+          "unit_id": "T33000072642",
+          "qty": 1.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 253.741,
+          "finish_process": 293.831,
+          "remaining_qty": 0.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708738",
+          "sku": "1005101828:D00",
+          "target_station": 12,
+          "unit_id": "T33002030415",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 293.831,
+          "finish_process": 326.399,
+          "remaining_qty": 77.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708737",
+          "sku": "612630060040:D00",
+          "target_station": 3,
+          "unit_id": "T32000333640",
+          "qty": 1.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 132.931,
+          "finish_process": 135.65,
+          "remaining_qty": 78.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708737",
+          "sku": "611600110028:D00",
+          "target_station": 3,
+          "unit_id": "T32000323860",
+          "qty": 10.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 135.65,
+          "finish_process": 173.94,
+          "remaining_qty": 107.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708737",
+          "sku": "1001934100:D00",
+          "target_station": 3,
+          "unit_id": "T31001042115",
+          "qty": 126.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 173.94,
+          "finish_process": 248.91,
+          "remaining_qty": 574.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708737",
+          "sku": "1000126465:D00",
+          "target_station": 3,
+          "unit_id": "T31001800059",
+          "qty": 5.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 248.91,
+          "finish_process": 271.655,
+          "remaining_qty": 77.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708741",
+          "sku": "12151677:D00",
+          "target_station": 8,
+          "unit_id": "T31002251809",
+          "qty": 60.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 174.646,
+          "finish_process": 360.046,
+          "remaining_qty": 36.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708741",
+          "sku": "1002372414:D00",
+          "target_station": 8,
+          "unit_id": "T31002250553",
+          "qty": 1.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 360.046,
+          "finish_process": 384.6,
+          "remaining_qty": 80.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708741",
+          "sku": "13055008:D00",
+          "target_station": 8,
+          "unit_id": "T31001517849",
+          "qty": 10.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 384.6,
+          "finish_process": 476.2,
+          "remaining_qty": 5.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708741",
+          "sku": "612600911535:D00",
+          "target_station": 8,
+          "unit_id": "T31002044322",
+          "qty": 10.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 476.2,
+          "finish_process": 517.58,
+          "remaining_qty": 191.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708905",
+          "sku": "1000694677:D00",
+          "target_station": 1,
+          "unit_id": "T32000197928",
+          "qty": 30.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 130.646,
+          "finish_process": 289.976,
+          "remaining_qty": 7.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708906",
+          "sku": "1003138828:D00",
+          "target_station": 15,
+          "unit_id": "T32000400169",
+          "qty": 200.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 394.447,
+          "finish_process": 648.647,
+          "remaining_qty": 100.0,
+          "shortage_reason": null
+        },
+        {
+          "order_id": "708731",
+          "sku": "612600013280:D00",
+          "target_station": 4,
+          "unit_id": "T31001131414",
+          "qty": 3.0,
+          "inventory_wait_sec": 0.0,
+          "start_process": 155.074,
+          "finish_process": 176.389,
+          "remaining_qty": 22.0,
+          "shortage_reason": null
+        }
+      ],
+      "shortage_event_sample": [
+        {
+          "order_id": "708911",
+          "sku": "612600080871:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 1287.816
+        },
+        {
+          "order_id": "708987",
+          "sku": "610800130225:D00",
+          "qty": 4.0,
+          "reason": "insufficient_qty",
+          "available_qty": 3.0,
+          "request_time": 1469.753
+        },
+        {
+          "order_id": "709003",
+          "sku": "1000151350:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 4483.276
+        },
+        {
+          "order_id": "709004",
+          "sku": "13034708:D00",
+          "qty": 30.0,
+          "reason": "insufficient_qty",
+          "available_qty": 6.0,
+          "request_time": 4674.702
+        },
+        {
+          "order_id": "709082",
+          "sku": "1003616419:D00",
+          "qty": 800.0,
+          "reason": "insufficient_qty",
+          "available_qty": 104.0,
+          "request_time": 4676.202
+        },
+        {
+          "order_id": "709132",
+          "sku": "13058050:D00",
+          "qty": 8.0,
+          "reason": "insufficient_qty",
+          "available_qty": 4.0,
+          "request_time": 4677.702
+        },
+        {
+          "order_id": "709209",
+          "sku": "1000169399:D00",
+          "qty": 10.0,
+          "reason": "insufficient_qty",
+          "available_qty": 6.0,
+          "request_time": 4679.202
+        },
+        {
+          "order_id": "709210",
+          "sku": "13038248:D00",
+          "qty": 14.0,
+          "reason": "insufficient_qty",
+          "available_qty": 7.0,
+          "request_time": 4683.702
+        },
+        {
+          "order_id": "709241",
+          "sku": "612600116804:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 4686.702
+        },
+        {
+          "order_id": "709253",
+          "sku": "610800110295:D00",
+          "qty": 6.0,
+          "reason": "insufficient_qty",
+          "available_qty": 0.0,
+          "request_time": 4710.558
+        },
+        {
+          "order_id": "709268",
+          "sku": "612600116804:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 4712.058
+        },
+        {
+          "order_id": "709263",
+          "sku": "13058052:D00",
+          "qty": 29.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 4713.558
+        },
+        {
+          "order_id": "709275",
+          "sku": "13058052:D00",
+          "qty": 7.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 5132.502
+        },
+        {
+          "order_id": "709252",
+          "sku": "61800060157:D00",
+          "qty": 30.0,
+          "reason": "insufficient_qty",
+          "available_qty": 15.0,
+          "request_time": 5137.002
+        },
+        {
+          "order_id": "709368",
+          "sku": "612630080102:D00",
+          "qty": 3.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 5138.502
+        },
+        {
+          "order_id": "709384",
+          "sku": "1001640092:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 5140.002
+        },
+        {
+          "order_id": "709392",
+          "sku": "1003737649:D00",
+          "qty": 7.0,
+          "reason": "insufficient_qty",
+          "available_qty": 5.0,
+          "request_time": 5144.502
+        },
+        {
+          "order_id": "709379",
+          "sku": "13024961:D00",
+          "qty": 100.0,
+          "reason": "insufficient_qty",
+          "available_qty": 82.0,
+          "request_time": 5146.002
+        },
+        {
+          "order_id": "709390",
+          "sku": "1001063342:D00",
+          "qty": 200.0,
+          "reason": "insufficient_qty",
+          "available_qty": 78.0,
+          "request_time": 5147.502
+        },
+        {
+          "order_id": "709367",
+          "sku": "610800060130:D00",
+          "qty": 36.0,
+          "reason": "insufficient_qty",
+          "available_qty": 22.0,
+          "request_time": 5149.002
+        },
+        {
+          "order_id": "709369",
+          "sku": "612600131011:D00",
+          "qty": 44.0,
+          "reason": "insufficient_qty",
+          "available_qty": 13.0,
+          "request_time": 5191.015
+        },
+        {
+          "order_id": "709389",
+          "sku": "1003737649:D00",
+          "qty": 7.0,
+          "reason": "insufficient_qty",
+          "available_qty": 5.0,
+          "request_time": 5193.593
+        },
+        {
+          "order_id": "709378",
+          "sku": "1003737649:D00",
+          "qty": 8.0,
+          "reason": "insufficient_qty",
+          "available_qty": 5.0,
+          "request_time": 5195.093
+        },
+        {
+          "order_id": "709219",
+          "sku": "13034708:D00",
+          "qty": 12.0,
+          "reason": "insufficient_qty",
+          "available_qty": 6.0,
+          "request_time": 5201.093
+        },
+        {
+          "order_id": "709192",
+          "sku": "13024432:D00",
+          "qty": 17.0,
+          "reason": "insufficient_qty",
+          "available_qty": 6.0,
+          "request_time": 5205.593
+        },
+        {
+          "order_id": "709254",
+          "sku": "612600010564:D00",
+          "qty": 5.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 5210.093
+        },
+        {
+          "order_id": "709387",
+          "sku": "612600070477:D00",
+          "qty": 100.0,
+          "reason": "insufficient_qty",
+          "available_qty": 67.0,
+          "request_time": 5211.593
+        },
+        {
+          "order_id": "709374",
+          "sku": "610800060130:D00",
+          "qty": 30.0,
+          "reason": "insufficient_qty",
+          "available_qty": 22.0,
+          "request_time": 5237.887
+        },
+        {
+          "order_id": "709085",
+          "sku": "13059267:D00",
+          "qty": 2.0,
+          "reason": "insufficient_qty",
+          "available_qty": 1.0,
+          "request_time": 5239.387
+        },
+        {
+          "order_id": "709251",
+          "sku": "612600012938:D00",
+          "qty": 30.0,
+          "reason": "insufficient_qty",
+          "available_qty": 21.0,
+          "request_time": 5399.531
+        },
+        {
+          "order_id": "709208",
+          "sku": "13038248:D00",
+          "qty": 16.0,
+          "reason": "insufficient_qty",
+          "available_qty": 7.0,
+          "request_time": 5401.031
+        },
+        {
+          "order_id": "709208",
+          "sku": "13038335:D00",
+          "qty": 10.0,
+          "reason": "insufficient_qty",
+          "available_qty": 9.0,
+          "request_time": 5402.531
+        },
+        {
+          "order_id": "709255",
+          "sku": "90013050071:D00",
+          "qty": 50.0,
+          "reason": "insufficient_qty",
+          "available_qty": 36.0,
+          "request_time": 5404.031
+        },
+        {
+          "order_id": "709255",
+          "sku": "612600012938:D00",
+          "qty": 22.0,
+          "reason": "insufficient_qty",
+          "available_qty": 21.0,
+          "request_time": 5405.531
+        },
+        {
+          "order_id": "709371",
+          "sku": "61500040014:D00",
+          "qty": 180.0,
+          "reason": "insufficient_qty",
+          "available_qty": 119.0,
+          "request_time": 5408.531
+        },
+        {
+          "order_id": "709372",
+          "sku": "61500020046:D00",
+          "qty": 120.0,
+          "reason": "insufficient_qty",
+          "available_qty": 23.0,
+          "request_time": 5413.031
+        },
+        {
+          "order_id": "709363",
+          "sku": "610800060130:D00",
+          "qty": 34.0,
+          "reason": "insufficient_qty",
+          "available_qty": 22.0,
+          "request_time": 5420.531
+        },
+        {
+          "order_id": "709363",
+          "sku": "1001063342:D00",
+          "qty": 200.0,
+          "reason": "insufficient_qty",
+          "available_qty": 78.0,
+          "request_time": 5422.031
+        },
+        {
+          "order_id": "709370",
+          "sku": "612630010098:D00",
+          "qty": 30.0,
+          "reason": "insufficient_qty",
+          "available_qty": 11.0,
+          "request_time": 5429.531
+        },
+        {
+          "order_id": "709373",
+          "sku": "61500020046:D00",
+          "qty": 120.0,
+          "reason": "insufficient_qty",
+          "available_qty": 23.0,
+          "request_time": 5435.531
+        },
+        {
+          "order_id": "709391",
+          "sku": "1001063342:D00",
+          "qty": 100.0,
+          "reason": "insufficient_qty",
+          "available_qty": 78.0,
+          "request_time": 5440.031
+        },
+        {
+          "order_id": "709393",
+          "sku": "1001063342:D00",
+          "qty": 100.0,
+          "reason": "insufficient_qty",
+          "available_qty": 78.0,
+          "request_time": 5453.531
+        },
+        {
+          "order_id": "709403",
+          "sku": "13068994:D00",
+          "qty": 25.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 5553.8
+        },
+        {
+          "order_id": "709345",
+          "sku": "13025125:D00",
+          "qty": 30.0,
+          "reason": "insufficient_qty",
+          "available_qty": 23.0,
+          "request_time": 5838.953
+        },
+        {
+          "order_id": "709405",
+          "sku": "1005746394:D00",
+          "qty": 2.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 5883.79
+        },
+        {
+          "order_id": "709351",
+          "sku": "13034708:D00",
+          "qty": 16.0,
+          "reason": "insufficient_qty",
+          "available_qty": 6.0,
+          "request_time": 6255.047
+        },
+        {
+          "order_id": "709425",
+          "sku": "612600090991:D00",
+          "qty": 6.0,
+          "reason": "insufficient_qty",
+          "available_qty": 4.0,
+          "request_time": 6455.546
+        },
+        {
+          "order_id": "709394",
+          "sku": "610800060130:D00",
+          "qty": 27.0,
+          "reason": "insufficient_qty",
+          "available_qty": 0.0,
+          "request_time": 6457.046
+        },
+        {
+          "order_id": "709394",
+          "sku": "1001063342:D00",
+          "qty": 200.0,
+          "reason": "insufficient_qty",
+          "available_qty": 78.0,
+          "request_time": 6458.546
+        },
+        {
+          "order_id": "709375",
+          "sku": "1000583278:D00",
+          "qty": 4.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6461.546
+        },
+        {
+          "order_id": "709375",
+          "sku": "15035710N:D00",
+          "qty": 4.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6463.046
+        },
+        {
+          "order_id": "709434",
+          "sku": "13023057:D00",
+          "qty": 24.0,
+          "reason": "insufficient_qty",
+          "available_qty": 18.0,
+          "request_time": 6593.92
+        },
+        {
+          "order_id": "709438",
+          "sku": "610800040155:D00",
+          "qty": 3.0,
+          "reason": "insufficient_qty",
+          "available_qty": 2.0,
+          "request_time": 6595.42
+        },
+        {
+          "order_id": "709439",
+          "sku": "13036103:D00",
+          "qty": 10.0,
+          "reason": "insufficient_qty",
+          "available_qty": 8.0,
+          "request_time": 6596.92
+        },
+        {
+          "order_id": "709366",
+          "sku": "610800060130:D00",
+          "qty": 37.0,
+          "reason": "insufficient_qty",
+          "available_qty": 0.0,
+          "request_time": 6601.42
+        },
+        {
+          "order_id": "709366",
+          "sku": "1007159083:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6602.92
+        },
+        {
+          "order_id": "709436",
+          "sku": "13023057:D00",
+          "qty": 15.0,
+          "reason": "insufficient_qty",
+          "available_qty": 11.0,
+          "request_time": 6604.42
+        },
+        {
+          "order_id": "709442",
+          "sku": "13059154:D00",
+          "qty": 4.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6605.92
+        },
+        {
+          "order_id": "709376",
+          "sku": "612660080074:D00",
+          "qty": 16.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6607.42
+        },
+        {
+          "order_id": "709376",
+          "sku": "1001727935:D00",
+          "qty": 8.0,
+          "reason": "insufficient_qty",
+          "available_qty": 6.0,
+          "request_time": 6608.92
+        },
+        {
+          "order_id": "709446",
+          "sku": "13062314:D00",
+          "qty": 10.0,
+          "reason": "insufficient_qty",
+          "available_qty": 0.0,
+          "request_time": 6689.366
+        },
+        {
+          "order_id": "709445",
+          "sku": "13059154:D00",
+          "qty": 2.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6690.866
+        },
+        {
+          "order_id": "709448",
+          "sku": "13062314:D00",
+          "qty": 20.0,
+          "reason": "insufficient_qty",
+          "available_qty": 0.0,
+          "request_time": 6692.366
+        },
+        {
+          "order_id": "709449",
+          "sku": "1007079352:D00",
+          "qty": 6.0,
+          "reason": "insufficient_qty",
+          "available_qty": 5.0,
+          "request_time": 6693.866
+        },
+        {
+          "order_id": "709447",
+          "sku": "13038333:D00",
+          "qty": 4.0,
+          "reason": "insufficient_qty",
+          "available_qty": 1.0,
+          "request_time": 6698.366
+        },
+        {
+          "order_id": "709386",
+          "sku": "612600130734:D00",
+          "qty": 20.0,
+          "reason": "insufficient_qty",
+          "available_qty": 16.0,
+          "request_time": 6699.866
+        },
+        {
+          "order_id": "709386",
+          "sku": "612600061720:D00",
+          "qty": 132.0,
+          "reason": "insufficient_qty",
+          "available_qty": 109.0,
+          "request_time": 6701.366
+        },
+        {
+          "order_id": "709385",
+          "sku": "1000615237:D00",
+          "qty": 5.0,
+          "reason": "insufficient_qty",
+          "available_qty": 1.0,
+          "request_time": 6702.866
+        },
+        {
+          "order_id": "709385",
+          "sku": "61500040014:D00",
+          "qty": 192.0,
+          "reason": "insufficient_qty",
+          "available_qty": 119.0,
+          "request_time": 6704.366
+        },
+        {
+          "order_id": "709365",
+          "sku": "612600061720:D00",
+          "qty": 300.0,
+          "reason": "insufficient_qty",
+          "available_qty": 109.0,
+          "request_time": 6705.866
+        },
+        {
+          "order_id": "709365",
+          "sku": "1000941064:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6707.366
+        },
+        {
+          "order_id": "709380",
+          "sku": "610800060130:D00",
+          "qty": 37.0,
+          "reason": "insufficient_qty",
+          "available_qty": 0.0,
+          "request_time": 6710.366
+        },
+        {
+          "order_id": "709380",
+          "sku": "1001063342:D00",
+          "qty": 200.0,
+          "reason": "insufficient_qty",
+          "available_qty": 51.0,
+          "request_time": 6711.866
+        },
+        {
+          "order_id": "709443",
+          "sku": "13036334:D00",
+          "qty": 4.0,
+          "reason": "insufficient_qty",
+          "available_qty": 4.0,
+          "request_time": 6713.366
+        },
+        {
+          "order_id": "709443",
+          "sku": "13051900:D00",
+          "qty": 10.0,
+          "reason": "insufficient_qty",
+          "available_qty": 2.0,
+          "request_time": 6714.866
+        },
+        {
+          "order_id": "709395",
+          "sku": "612630080102:D00",
+          "qty": 27.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6716.366
+        },
+        {
+          "order_id": "709395",
+          "sku": "1001063342:D00",
+          "qty": 149.0,
+          "reason": "insufficient_qty",
+          "available_qty": 51.0,
+          "request_time": 6717.866
+        },
+        {
+          "order_id": "709395",
+          "sku": "1009850338:D00",
+          "qty": 20.0,
+          "reason": "insufficient_qty",
+          "available_qty": 2.0,
+          "request_time": 6719.366
+        },
+        {
+          "order_id": "709388",
+          "sku": "612600040702:D00",
+          "qty": 6.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6720.866
+        },
+        {
+          "order_id": "709388",
+          "sku": "610800080167:D00",
+          "qty": 1.0,
+          "reason": "missing_sku",
+          "available_qty": 0.0,
+          "request_time": 6722.366
+        }
+      ],
+      "removed_shortage_orders": 0
+    }
+  ],
+  "comparison": {
+    "baseline_makespan_sec": 8116.281,
+    "preprocessed_makespan_sec": 7178.674,
+    "makespan_delta_sec": -937.607,
+    "preprocessing_improvement_pct": 11.552,
+    "baseline_inventory_wait_sec": 1460.518,
+    "preprocessed_inventory_wait_sec": 298.223,
+    "inventory_wait_delta_sec": -1162.295,
+    "inventory_wait_improvement_pct": 79.581
+  }
+}

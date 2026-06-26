@@ -1,7 +1,7 @@
 # 文件路径: backend/export_db_dict.py
 import pandas as pd
 from sqlalchemy import inspect
-from database import engine  # 假设你在 database.py 中定义了 engine
+from backend.database import engine  # 假设你在 database.py 中定义了 engine
 
 def export_data_dictionary():
     print("🔍 正在扫描数据库结构...")

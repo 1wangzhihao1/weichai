@@ -163,11 +163,7 @@ project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 if project_root not in sys.path:
     sys.path.append(project_root)
 
-scenario_dir = os.path.join(project_root, 'scenarios', 'order_picking')
-if scenario_dir not in sys.path:
-    sys.path.append(scenario_dir)
-
-from config import Config
+from scenarios.order_picking.config import Config
 
 # ==========================================
 # 🔌 第一步：配置数据库连接管道

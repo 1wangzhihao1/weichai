@@ -13,15 +13,16 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, "../../"))
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
-backend_dir = os.path.join(project_root, "backend")
-if backend_dir not in sys.path:
-    sys.path.insert(0, backend_dir)
-
-from database import PartMaster, SessionLocal
 from scenarios.order_picking.config import Config
 from scenarios.order_picking.inventory_preprocess import load_snapshot
 from scenarios.order_picking.order_preprocessor import preprocess_orders
-from scenarios.order_picking.rl_environment import PickingEnv
+from scenarios.order_picking.rl_environment import PickingEnv, build_part_times_from_excel
+
+try:
+    from backend.database import PartMaster, SessionLocal
+except Exception:
+    PartMaster = None
+    SessionLocal = None
 
 
 def parse_args():
@@ -82,6 +83,9 @@ def find_default_picking_file():
 
 
 def load_part_time_dict():
+    if PartMaster is None or SessionLocal is None:
+        return {}
+
     db = SessionLocal()
     if hasattr(db, "__next__"):
         db = next(db)
@@ -103,6 +107,8 @@ def load_pick_orders_from_excel(path):
         raise FileNotFoundError(f"Picking file not found: {path}")
 
     part_time_dict = load_part_time_dict()
+    if not part_time_dict:
+        part_time_dict = build_part_times_from_excel(path)
     df = pd.read_excel(path, sheet_name=0)
     order_aggregation = {}
 

@@ -15,12 +15,9 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, "../../"))
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
-if current_dir not in sys.path:
-    sys.path.insert(0, current_dir)
-
-from config import Config
+from scenarios.order_picking.config import Config
 from core_engine.models.resource_model import SimpyStation
-from rl_environment import PickingEnv
+from scenarios.order_picking.rl_environment import PickingEnv
 
 
 def parse_args():

@@ -1,0 +1,48 @@
+{
+  "generated_on": "2026-06-16",
+  "source_file": "D:\\weichai\\weichai_model_rules_malfunction\\raw_data\\7.1\\7.1拣选.XLSX",
+  "results": [
+    {
+      "date": "2025-07-01",
+      "valid_rows": 1866,
+      "order_count": 581,
+      "sku_count": 927,
+      "historical_station_count": 6,
+      "historical_station_ids": [
+        1,
+        2,
+        5,
+        7,
+        8,
+        10
+      ],
+      "station_task_counts": {
+        "1": 17,
+        "2": 27,
+        "5": 432,
+        "7": 527,
+        "8": 419,
+        "10": 444
+      },
+      "pick_gap_seconds": 12.0,
+      "process_time_source": "part_master",
+      "actual_start_time": "2025-07-01T07:51:08.717000",
+      "actual_end_time": "2025-07-01T20:09:41.176000",
+      "actual_span_seconds": 44312.459,
+      "actual_span_hours": 12.309,
+      "observed_gap_stats": {
+        "group_col": "终端 ID",
+        "sample_count": 1859,
+        "median_sec": 2.153,
+        "p75_sec": 3.094,
+        "p90_sec": 26.944,
+        "p95_sec": 71.397,
+        "mean_sec": 29.172,
+        "trimmed_mean_le_p95_sec": 5.952
+      },
+      "historical_replay_makespan_seconds": 32068.831,
+      "historical_replay_makespan_hours": 8.908,
+      "deadline_seconds": 30600.0
+    }
+  ]
+}

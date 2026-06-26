@@ -10,36 +10,116 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, "../../"))
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
-backend_dir = os.path.join(project_root, "backend")
-if backend_dir not in sys.path:
-    sys.path.insert(0, backend_dir)
-
-from database import PartMaster, SessionLocal
+try:
+    from backend.database import PartMaster, SessionLocal
+except Exception:
+    PartMaster = None
+    SessionLocal = None
 from scenarios.order_picking.config import Config
 
 EXCEL_PATH = os.path.join(project_root, "raw_data", "DMS拣选20260201-0429.XLSX")
-if not os.path.exists(EXCEL_PATH):
-    EXCEL_PATH = os.path.join(project_root, "raw_data", "DMS鎷ｉ€?0260201-0429.XLSX")
+
+TARGET_MAKESPAN_FACTOR = 1.2
+MAKESPAN_SUCCESS_REWARD = 100.0
+MAKESPAN_OVERRUN_PENALTY = 0.01
+MAKESPAN_MAX_PENALTY = 300.0
+
+
+def find_default_excel():
+    if os.path.exists(EXCEL_PATH):
+        return EXCEL_PATH
+
+    raw_dir = os.path.join(project_root, "raw_data")
+    if not os.path.isdir(raw_dir):
+        return EXCEL_PATH
+
+    for name in os.listdir(raw_dir):
+        lower = name.lower()
+        if name.startswith("~$"):
+            continue
+        if name.startswith("DMS") and lower.endswith((".xlsx", ".xls")):
+            return os.path.join(raw_dir, name)
+
+    return EXCEL_PATH
+
+
+EXCEL_PATH = find_default_excel()
+
+
+def load_part_times_from_database():
+    if PartMaster is None or SessionLocal is None:
+        return {}
+
+    db = SessionLocal()
+    if hasattr(db, "__next__"):
+        db = next(db)
+    try:
+        all_parts = db.query(PartMaster).all()
+        return {str(p.part_type).strip(): float(p.standard_p_time) for p in all_parts}
+    except Exception:
+        return {}
+    finally:
+        try:
+            db.close()
+        except Exception:
+            pass
+
+
+def build_part_times_from_excel(excel_path):
+    if not os.path.exists(excel_path):
+        return {}
+
+    try:
+        df = pd.read_excel(excel_path, sheet_name=0)
+    except Exception:
+        return {}
+
+    rows = []
+    for _, row in df.iterrows():
+        try:
+            row_vals = row.values
+            if len(row_vals) < 13:
+                continue
+            start_time = pd.to_datetime(row_vals[2], errors="coerce")
+            end_time = pd.to_datetime(row_vals[3], errors="coerce")
+            status = str(row_vals[8]).strip()
+            sku = str(row_vals[9]).strip()
+            picked_qty = float(row_vals[12])
+            if pd.isna(start_time) or pd.isna(end_time):
+                continue
+            duration = (end_time - start_time).total_seconds()
+            if status not in ["确定", "完成"] or not sku or picked_qty <= 0 or duration <= 0:
+                continue
+            rows.append((sku, duration, picked_qty, duration / picked_qty))
+        except Exception:
+            continue
+
+    if not rows:
+        return {}
+
+    clean = pd.DataFrame(rows, columns=["sku", "duration", "qty", "unit_time"])
+    q1 = clean["unit_time"].quantile(0.25)
+    q3 = clean["unit_time"].quantile(0.75)
+    upper = max(float(q3 + 3.0 * (q3 - q1)), 300.0)
+    clean = clean[clean["unit_time"] <= upper]
+    grouped = clean.groupby("sku").agg(duration=("duration", "sum"), qty=("qty", "sum"))
+    return (grouped["duration"] / grouped["qty"]).to_dict()
 
 
 def load_and_aggregate_real_orders():
     print("[RL 数据管道] 正在装载标准工艺定额...")
-    db = SessionLocal()
-    if hasattr(db, "__next__"):
-        db = next(db)
-    part_time_dict = {}
-    try:
-        all_parts = db.query(PartMaster).all()
-        part_time_dict = {str(p.part_type).strip(): float(p.standard_p_time) for p in all_parts}
-    except Exception:
-        pass
-    finally:
-        db.close()
+    part_time_dict = load_part_times_from_database()
+    if part_time_dict:
+        print(f"[RL 数据管道] 已从数据库读取 {len(part_time_dict)} 条 SKU 工艺定额。")
+    else:
+        part_time_dict = build_part_times_from_excel(EXCEL_PATH)
+        print(f"[RL 数据管道] 数据库不可用，已从 Excel 计算 {len(part_time_dict)} 条 SKU 工艺定额。")
 
     print("[RL 数据管道] 正在按照【同订单同SKU合并为1箱】法则解析大盘...")
     try:
         df = pd.read_excel(EXCEL_PATH, sheet_name=0)
-    except Exception:
+    except Exception as exc:
+        print(f"[RL 数据管道] 读取订单 Excel 失败: {EXCEL_PATH} ({exc})")
         return []
 
     order_aggregation = {}
@@ -128,7 +208,7 @@ class PickingEnv(gym.Env):
     def reset(self, seed=None, options=None):
         super().reset(seed=seed)
         max_start = max(0, self.total_orders - self.episode_length)
-        self.start_idx = np.random.randint(0, max_start + 1) if max_start > 0 else 0
+        self.start_idx = int(self.np_random.integers(0, max_start + 1)) if max_start > 0 else 0
         self.end_idx = min(self.start_idx + self.episode_length, self.total_orders)
 
         self.current_step = self.start_idx
@@ -243,5 +323,32 @@ class PickingEnv(gym.Env):
         jam_delay = max(0.0, time_passed - expected_time)
         reward = -(jam_delay * 0.5)
         reward -= self.expected_exit_times[action] * 0.001
+        info = {}
 
-        return self._get_obs(), float(reward), done, False, {}
+        if done:
+            episode_orders = self.real_world_orders[self.start_idx : self.end_idx]
+            total_process_time = sum(
+                float(box.get("p_time", 0.0))
+                for order in episode_orders
+                for box in order.get("boxes", [])
+            )
+            target_makespan = (total_process_time / Config.NUM_STATIONS) * TARGET_MAKESPAN_FACTOR
+            makespan = float(self.global_time)
+
+            if target_makespan > 0:
+                if makespan <= target_makespan:
+                    terminal_reward = MAKESPAN_SUCCESS_REWARD
+                else:
+                    overrun = makespan - target_makespan
+                    terminal_reward = -min(MAKESPAN_MAX_PENALTY, overrun * MAKESPAN_OVERRUN_PENALTY)
+
+                reward += terminal_reward
+                info.update(
+                    {
+                        "makespan": makespan,
+                        "target_makespan": float(target_makespan),
+                        "terminal_makespan_reward": float(terminal_reward),
+                    }
+                )
+
+        return self._get_obs(), float(reward), done, False, info

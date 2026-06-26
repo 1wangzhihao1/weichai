@@ -414,12 +414,8 @@ project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 if project_root not in sys.path:
     sys.path.append(project_root)
 
-scenario_dir = os.path.join(project_root, 'scenarios', 'order_picking')
-if scenario_dir not in sys.path:
-    sys.path.append(scenario_dir)
-
-from config import Config
-from database import SessionLocal, OrderPool, OrderBOM, SimulationTask, PartMaster, DispatchResult
+from scenarios.order_picking.config import Config
+from backend.database import SessionLocal, OrderPool, OrderBOM, SimulationTask, PartMaster, DispatchResult
 from sb3_contrib import MaskablePPO
 from scenarios.order_picking.rl_environment import PickingEnv
 from scenarios.order_picking.inventory_preprocess import list_snapshots, load_snapshot
