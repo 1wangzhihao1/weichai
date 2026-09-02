@@ -1,7 +1,14 @@
 import pandas as pd
 import numpy as np
 import sys, io
+from pathlib import Path
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+project_root = Path(__file__).resolve().parents[2]
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
+
+from scenarios.order_picking.data_paths import historical_picking_excel
 
 # ============================================================
 # 计算每种SKU的平均单件分拣时间
@@ -9,7 +16,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 # ============================================================
 
 # ---------- 1. 读取数据 ----------
-df = pd.read_excel('DMS拣选20260201-0429.XLSX', sheet_name=0)
+df = pd.read_excel(historical_picking_excel(), sheet_name=0)
 print(f'原始数据行数: {len(df)}')
 
 # ---------- 2. 计算每行耗时（秒）----------

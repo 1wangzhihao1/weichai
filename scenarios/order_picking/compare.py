@@ -16,6 +16,7 @@ if project_root not in sys.path:
 from sb3_contrib import MaskablePPO
 
 from scenarios.order_picking.config import Config
+from scenarios.order_picking.data_paths import OUTPUT_DIR, MODEL_DIR, resolve_model_path
 from scenarios.order_picking.rl_environment import PickingEnv
 
 plt.rcParams["font.sans-serif"] = ["SimHei", "Microsoft YaHei", "PingFang SC", "sans-serif"]
@@ -72,20 +73,18 @@ def set_daily_orders(env, daily_orders):
 
 
 def load_latest_model(env):
-    model_dir = os.path.join(project_root, "output", "models")
-    zip_files = glob.glob(os.path.join(model_dir, "*.zip"))
-    if not zip_files:
-        print("WARN: No .zip model found under output/models; AI strategy will be skipped.")
+    model_path = resolve_model_path()
+    if not model_path or not model_path.exists():
+        print(f"WARN: No configured or fallback .zip model found under {MODEL_DIR}; AI strategy will be skipped.")
         return None, None
 
-    latest_model_path = max(zip_files, key=os.path.getctime)
     try:
-        model = MaskablePPO.load(latest_model_path, env=env)
-        print(f"Loaded model: {os.path.basename(latest_model_path)}")
-        return model, latest_model_path
+        model = MaskablePPO.load(str(model_path), env=env)
+        print(f"Loaded model: {model_path.name}")
+        return model, str(model_path)
     except Exception as exc:
         print(f"WARN: Model load failed: {exc}; AI strategy will be skipped.")
-        return None, latest_model_path
+        return None, str(model_path)
 
 
 def run_simulation(env, strategy, max_stations, model=None, seed=888):
@@ -186,7 +185,7 @@ def summarize_records(records, selected_dates, orders_by_date, model_path):
 
 
 def save_results(records, summary):
-    output_dir = os.path.join(project_root, "output")
+    output_dir = str(OUTPUT_DIR)
     os.makedirs(output_dir, exist_ok=True)
     detail_path = os.path.join(output_dir, "comparison_daily_results.json")
     summary_path = os.path.join(output_dir, "comparison_daily_summary.json")
@@ -251,7 +250,7 @@ def plot_summary(summary):
     plt.grid(True, alpha=0.3)
     plt.legend(fontsize=10)
 
-    output_img = os.path.join(project_root, "output", "performance_comparison.png")
+    output_img = os.path.join(str(OUTPUT_DIR), "performance_comparison.png")
     plt.savefig(output_img, dpi=300, bbox_inches="tight")
     plt.close()
     return output_img

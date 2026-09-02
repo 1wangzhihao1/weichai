@@ -11,27 +11,24 @@ if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
 from backend.database import PartMaster, SessionLocal
+from scenarios.order_picking.data_paths import SKU_TIME_DIR
 
 
-def _first_existing_column(df: pd.DataFrame, names: List[str], fallback_index: int):
+def _first_existing_column(df: pd.DataFrame, names: List[str], fallback_index: int = -1):
     for name in names:
         if name in df.columns:
             return name
-    if fallback_index < len(df.columns):
-        return df.columns[fallback_index]
-    raise ValueError(f"Missing required column. Tried names={names}, fallback_index={fallback_index}")
+    raise ValueError(f"Missing required column by name. Tried names={names}")
 
 
 def _find_excel_files() -> List[str]:
     files = []
-    sku_time_dir = os.path.join(project_root, "raw_data", "sku_time")
-
-    if os.path.isdir(sku_time_dir):
-        for name in os.listdir(sku_time_dir):
+    if SKU_TIME_DIR.is_dir():
+        for name in os.listdir(SKU_TIME_DIR):
             lower_name = name.lower()
             if name.startswith("~$") or not lower_name.endswith((".xlsx", ".xls")):
                 continue
-            files.append(os.path.join(sku_time_dir, name))
+            files.append(str(SKU_TIME_DIR / name))
 
     unique_files = []
     seen = set()
@@ -62,7 +59,7 @@ def _load_clean_rows(path: str) -> pd.DataFrame:
         for name in names:
             if name in index_by_name:
                 return index_by_name[name]
-        return fallback
+        raise ValueError(f"{os.path.basename(path)} missing required column by name: {names}")
 
     start_idx = idx(["开始时间"], 2)
     end_idx = idx(["结束时间"], 3)
@@ -209,6 +206,21 @@ def sync_to_part_master(sku_stats: pd.DataFrame, dry_run: bool = False) -> Dict[
         raise
     finally:
         db.close()
+
+
+def rebuild_sku_avg_time(files: Optional[List[str]] = None, dry_run: bool = False) -> Dict[str, object]:
+    """Rebuild SKU standard picking time rows and return a backend-friendly summary."""
+    source_files = [os.path.abspath(path) for path in files] if files else _find_excel_files()
+    sku_stats = build_sku_average_times(source_files)
+    result = sync_to_part_master(sku_stats, dry_run=dry_run)
+
+    return {
+        "source_files": source_files,
+        "sku_count": int(len(sku_stats)),
+        "deleted": int(result["deleted"]),
+        "inserted": int(result["inserted"]),
+        "dry_run": bool(dry_run),
+    }
 
 
 def main():

@@ -1,6 +1,7 @@
 # 文件路径: backend/simulate_weichai_client.py
 
 import os
+import sys
 import json
 import requests
 import time
@@ -9,7 +10,12 @@ from collections import defaultdict
 
 current_dir = os.path.dirname(__file__)
 project_root = os.path.abspath(os.path.join(current_dir, '../'))
-EXCEL_PATH = os.path.join(project_root, "raw_data", "DMS拣选20260201-0429.XLSX")
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
+from scenarios.order_picking.data_paths import historical_picking_excel
+
+EXCEL_PATH = str(historical_picking_excel())
 JSON_OUTPUT_PATH = os.path.join(current_dir, "weichai_waves.json")
 
 BASE_URL = "http://127.0.0.1:8088/api/v1"
@@ -22,22 +28,25 @@ def extract_excel_to_json():
         raise FileNotFoundError(f"🚨 找不到 Excel 文件: {EXCEL_PATH}")
 
     df = pd.read_excel(EXCEL_PATH, sheet_name=0)
+    df.columns = df.columns.astype(str).str.strip().str.replace("\n", "").str.replace("\r", "")
+    required_columns = ["开始时间", "拣选列表", "状态", "SKU", "目标数量", "已拣选数量"]
+    missing = [column for column in required_columns if column not in df.columns]
+    if missing:
+        raise ValueError(f"Excel missing required columns by name: {missing}")
     orders_by_date = defaultdict(dict) 
 
     for index, row in df.iterrows():
         try:
-            row_vals = row.values
-            if len(row_vals) < 13: continue
-            
-            time_start = pd.to_datetime(row_vals[2])
+            time_start = pd.to_datetime(row["开始时间"])
             date_str = time_start.date().isoformat() 
             
-            order_id = str(row_vals[6]).strip()
-            status = str(row_vals[8]).strip()
-            sku = str(row_vals[9]).strip()
-            qty = float(row_vals[11])
+            order_id = str(row["拣选列表"]).strip()
+            status = str(row["状态"]).strip()
+            sku = str(row["SKU"]).strip()
+            qty = float(row["目标数量"] or 0)
+            picked_qty = float(row["已拣选数量"] or 0)
             
-            if status not in ['确定', '完成'] or qty <= 0: continue
+            if status not in ['确定', '完成'] or qty <= 0 or picked_qty <= 0: continue
             
             if order_id not in orders_by_date[date_str]:
                 orders_by_date[date_str][order_id] = {

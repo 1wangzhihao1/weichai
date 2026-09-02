@@ -1,5 +1,4 @@
 import argparse
-import glob
 import json
 import os
 import sys
@@ -14,6 +13,7 @@ project_root = os.path.abspath(os.path.join(current_dir, "../../"))
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
 from scenarios.order_picking.config import Config
+from scenarios.order_picking.data_paths import DEFAULT_DAILY_DATE, OUTPUT_DIR, find_daily_picking_excel, resolve_model_path
 from scenarios.order_picking.inventory_preprocess import load_snapshot
 from scenarios.order_picking.order_preprocessor import preprocess_orders
 from scenarios.order_picking.rl_environment import PickingEnv, build_part_times_from_excel
@@ -27,10 +27,11 @@ except Exception:
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Compare order preprocessing with dynamic inventory resource simulation on July 1 data."
+        description="Compare order preprocessing with dynamic inventory resource simulation on one daily data set."
     )
-    parser.add_argument("--picking-file", default=None, help="July 1 picking Excel file.")
-    parser.add_argument("--snapshot-id", default="2025-07-01-morning")
+    parser.add_argument("--date", default=DEFAULT_DAILY_DATE, help="Daily data date, for example 2025-07-01.")
+    parser.add_argument("--picking-file", default=None, help="Daily picking Excel file.")
+    parser.add_argument("--snapshot-id", default=None)
     parser.add_argument("--strategy", choices=["ai", "round_robin", "random"], default="ai")
     parser.add_argument("--station-limit", type=int, default=Config.NUM_STATIONS)
     parser.add_argument("--seed", type=int, default=888)
@@ -61,25 +62,19 @@ def parse_args():
     )
     parser.add_argument(
         "--output",
-        default=os.path.join(project_root, "output", "order_preprocessing_comparison.json"),
+        default=os.path.join(str(OUTPUT_DIR), "order_preprocessing_comparison.json"),
     )
-    return parser.parse_args()
+    args = parser.parse_args()
+    if not args.snapshot_id:
+        args.snapshot_id = f"{args.date}-morning"
+    return args
 
 
-def find_default_picking_file():
-    base_dir = os.path.join(project_root, "raw_data", "7.1")
-    candidates = []
-    for pattern in ("*.XLSX", "*.xlsx"):
-        candidates.extend(glob.glob(os.path.join(base_dir, pattern)))
-    for path in candidates:
-        name = os.path.basename(path)
-        if "拣选" in name:
-            return path
-    for path in candidates:
-        name = os.path.basename(path)
-        if "库存" not in name:
-            return path
-    raise FileNotFoundError(f"No July 1 picking Excel file found under {base_dir}")
+def find_default_picking_file(date=DEFAULT_DAILY_DATE):
+    path = find_daily_picking_excel(date)
+    if path:
+        return str(path)
+    raise FileNotFoundError(f"No daily picking Excel file found for {date}")
 
 
 def load_part_time_dict():
@@ -101,8 +96,8 @@ def normalize_sku(value):
     return str(value or "").strip()
 
 
-def load_pick_orders_from_excel(path):
-    path = os.path.abspath(path or find_default_picking_file())
+def load_pick_orders_from_excel(path, date=DEFAULT_DAILY_DATE):
+    path = os.path.abspath(path or find_default_picking_file(date))
     if not os.path.exists(path):
         raise FileNotFoundError(f"Picking file not found: {path}")
 
@@ -110,22 +105,25 @@ def load_pick_orders_from_excel(path):
     if not part_time_dict:
         part_time_dict = build_part_times_from_excel(path)
     df = pd.read_excel(path, sheet_name=0)
+    df.columns = df.columns.astype(str).str.strip().str.replace("\n", "").str.replace("\r", "")
+    required_columns = ["开始时间", "拣选列表", "状态", "SKU", "目标数量", "已拣选数量"]
+    missing = [column for column in required_columns if column not in df.columns]
+    if missing:
+        raise ValueError(f"Picking Excel missing required columns by name: {missing}")
     order_aggregation = {}
 
     for _, row in df.iterrows():
         try:
-            row_vals = row.values
-            if len(row_vals) < 12:
-                continue
-            time_start = pd.to_datetime(row_vals[2])
-            order_id = str(row_vals[6]).strip()
-            status = str(row_vals[8]).strip()
-            sku = normalize_sku(row_vals[9])
-            qty = float(row_vals[11])
+            time_start = pd.to_datetime(row["开始时间"])
+            order_id = str(row["拣选列表"]).strip()
+            status = str(row["状态"]).strip()
+            sku = normalize_sku(row["SKU"])
+            qty = float(row["目标数量"] or 0)
+            picked_qty = float(row["已拣选数量"] or 0)
         except Exception:
             continue
 
-        if qty <= 0:
+        if qty <= 0 or picked_qty <= 0:
             continue
         if status and status.lower() != "nan" and status not in {"确定", "完成", "纭畾", "瀹屾垚"}:
             continue
@@ -160,12 +158,10 @@ def load_pick_orders_from_excel(path):
 def load_latest_model(env):
     from sb3_contrib import MaskablePPO
 
-    model_dir = os.path.join(project_root, "output", "models")
-    zip_files = glob.glob(os.path.join(model_dir, "*.zip"))
-    if not zip_files:
+    model_path = resolve_model_path()
+    if not model_path or not model_path.exists():
         return None, None
-    model_path = max(zip_files, key=os.path.getctime)
-    return MaskablePPO.load(model_path, env=env), model_path
+    return MaskablePPO.load(str(model_path), env=env), str(model_path)
 
 
 def set_orders(env, orders):
@@ -195,7 +191,7 @@ def build_station_mapping(orders, strategy, station_limit, seed, model=None):
 
         if strategy == "ai":
             if model is None:
-                raise RuntimeError("AI strategy requested, but no model was found under output/models.")
+                raise RuntimeError("AI strategy requested, but no configured model was found.")
             action = int(model.predict(obs, action_masks=combined_mask, deterministic=True)[0])
         elif strategy == "round_robin":
             valid_actions = np.flatnonzero(combined_mask)
@@ -415,7 +411,7 @@ def summarize_case(name, orders, result, extra=None):
 
 def main():
     args = parse_args()
-    original_orders, picking_file = load_pick_orders_from_excel(args.picking_file)
+    original_orders, picking_file = load_pick_orders_from_excel(args.picking_file, date=args.date)
     if args.max_orders and args.max_orders > 0:
         original_orders = original_orders[: args.max_orders]
 
@@ -482,7 +478,7 @@ def main():
 
     report = {
         "generated_on": date.today().isoformat(),
-        "dataset": "2025-07-01-picking-file",
+        "dataset": f"{args.date}-picking-file",
         "picking_file": os.path.abspath(picking_file),
         "snapshot_id": args.snapshot_id,
         "strategy": args.strategy,
@@ -527,7 +523,7 @@ def main():
     print("=" * 80)
     print("Order preprocessing comparison with dynamic inventory simulation")
     print("=" * 80)
-    print("Dataset       : 2025-07-01 picking file")
+    print(f"Dataset       : {args.date} picking file")
     print(f"Picking file  : {os.path.abspath(picking_file)}")
     print(f"Snapshot      : {args.snapshot_id}")
     print(f"Strategy      : {args.strategy}")

@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "generated_on": "2026-08-24",
+    "source_file": "D:\\weichai\\weichai_model_rules_malfunction\\raw_data\\historical\\picking\\DMS拣选20260201-0429.XLSX",
+    "process_time_source": "actual",
+    "operation_gap_seconds": 7.33,
+    "validated_days": 1,
+    "within_10_pct_days": 1,
+    "within_10_pct_ratio": 1.0,
+    "mean_error_pct": 6.573,
+    "median_error_pct": 6.573,
+    "max_error_pct": 6.573
+  },
+  "results": [
+    {
+      "date": "2026-04-11",
+      "valid_rows": 6137,
+      "orders": 1857,
+      "boxes": 5431,
+      "stations": 14,
+      "operation_gap_seconds": 7.33,
+      "real_makespan_seconds": 53971.678,
+      "simulated_makespan_seconds": 57519.36,
+      "error_pct": 6.573,
+      "within_10_pct": true,
+      "critical_station": 2,
+      "critical_station_box_count": 175
+    }
+  ]
+}

@@ -1,15 +1,28 @@
+import argparse
 import json
 import os
+import sys
 from functools import lru_cache
 from pathlib import Path
 from typing import Dict, List, Optional
 
 import pandas as pd
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_INVENTORY_DIR = PROJECT_ROOT / "raw_data" / "7.1"
-DEFAULT_CACHE_DIR = PROJECT_ROOT / "data" / "inventory"
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from scenarios.order_picking.data_paths import (
+    DEFAULT_DAILY_DATE,
+    INVENTORY_CACHE_DIR,
+    daily_inventory_dir,
+    find_inventory_excel,
+)
+from scenarios.order_picking.app_config import get_config_value
+
+DEFAULT_INVENTORY_DATE = DEFAULT_DAILY_DATE
+DEFAULT_INVENTORY_DIR = daily_inventory_dir(DEFAULT_INVENTORY_DATE)
+DEFAULT_CACHE_DIR = INVENTORY_CACHE_DIR
 
 COLUMN_CANDIDATES = {
     "sku": ["物料编号/SKU", "鐗╂枡缂栧彿/SKU", "SKU"],
@@ -44,10 +57,32 @@ def _snapshot_path(snapshot_id: str, cache_dir: Path = DEFAULT_CACHE_DIR) -> Pat
     return cache_dir / f"{snapshot_id}.json"
 
 
-def _find_file(name_hint: str, base_dir: Path = DEFAULT_INVENTORY_DIR) -> Optional[Path]:
+def _date_from_snapshot_id(snapshot_id: str) -> str:
+    parts = str(snapshot_id or "").split("-")
+    if len(parts) >= 3:
+        return "-".join(parts[:3])
+    return DEFAULT_INVENTORY_DATE
+
+
+def _snapshot_specs(date: str = DEFAULT_INVENTORY_DATE):
+    morning_hint = str(get_config_value("inventory", "morning_file_hint", "早库存单元"))
+    evening_hint = str(get_config_value("inventory", "evening_file_hint", "晚库存单元"))
+    return (
+        (f"{date}-morning", morning_hint),
+        (f"{date}-evening", evening_hint),
+    )
+
+
+def _find_file(name_hint: str, base_dir: Optional[Path] = None, date: str = DEFAULT_INVENTORY_DATE) -> Optional[Path]:
+    if base_dir is None:
+        source = find_inventory_excel(name_hint, date=date)
+        if source is not None:
+            return source
+        base_dir = DEFAULT_INVENTORY_DIR
+
     if not base_dir.exists():
         return None
-    for suffix in ("*.XLSX", "*.xlsx"):
+    for suffix in ("*.XLSX", "*.xlsx", "*.xls"):
         for path in base_dir.glob(suffix):
             if name_hint in path.name:
                 return path
@@ -143,7 +178,7 @@ def save_snapshot(snapshot: dict, cache_dir: Path = DEFAULT_CACHE_DIR) -> Path:
 def load_snapshot(snapshot_id: str, cache_dir: Path = DEFAULT_CACHE_DIR) -> dict:
     path = _snapshot_path(snapshot_id, cache_dir)
     if not path.exists():
-        generated = ensure_default_snapshots(cache_dir=cache_dir)
+        generated = ensure_default_snapshots(cache_dir=cache_dir, date=_date_from_snapshot_id(snapshot_id))
         if snapshot_id not in generated and not path.exists():
             raise FileNotFoundError(f"Inventory snapshot not found: {snapshot_id}")
     with path.open("r", encoding="utf-8") as f:
@@ -169,18 +204,70 @@ def list_snapshots(cache_dir: Path = DEFAULT_CACHE_DIR) -> List[dict]:
     return snapshots
 
 
-@lru_cache(maxsize=1)
-def ensure_default_snapshots(cache_dir: Path = DEFAULT_CACHE_DIR) -> tuple:
+def generate_inventory_snapshots(
+    date: str = DEFAULT_INVENTORY_DATE,
+    cache_dir: Path = DEFAULT_CACHE_DIR,
+    force: bool = False,
+) -> List[dict]:
     generated = []
-    for snapshot_id, hint in (("2025-07-01-morning", "早库存单元"), ("2025-07-01-evening", "晚库存单元")):
+    for snapshot_id, hint in _snapshot_specs(date):
         path = _snapshot_path(snapshot_id, cache_dir)
-        if path.exists():
-            generated.append(snapshot_id)
+        if path.exists() and not force:
+            with path.open("r", encoding="utf-8") as f:
+                generated.append(json.load(f))
             continue
-        source = _find_file(hint)
+
+        source = _find_file(hint, date=date)
         if source is None:
             continue
+
         snapshot = read_inventory_excel(source, snapshot_id=snapshot_id)
-        save_snapshot(snapshot, cache_dir=cache_dir)
-        generated.append(snapshot_id)
-    return tuple(generated)
+        saved_path = save_snapshot(snapshot, cache_dir=cache_dir)
+        snapshot["cache_file"] = str(saved_path)
+        generated.append(snapshot)
+
+    return generated
+
+
+@lru_cache(maxsize=32)
+def ensure_default_snapshots(cache_dir: Path = DEFAULT_CACHE_DIR, date: str = DEFAULT_INVENTORY_DATE) -> tuple:
+    snapshots = generate_inventory_snapshots(date=date, cache_dir=cache_dir, force=False)
+    return tuple(snapshot.get("snapshot_id") for snapshot in snapshots)
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Generate inventory snapshot JSON files from daily inventory Excel.")
+    parser.add_argument("--date", default=DEFAULT_INVENTORY_DATE, help="Daily data date, for example 2025-07-01.")
+    parser.add_argument("--cache-dir", default=str(DEFAULT_CACHE_DIR), help="Inventory snapshot cache directory.")
+    parser.add_argument("--force", action="store_true", help="Rebuild snapshots even if cache JSON already exists.")
+    parser.add_argument("--list", action="store_true", help="List cached inventory snapshots after generation.")
+    args = parser.parse_args()
+
+    cache_dir = Path(args.cache_dir)
+    snapshots = generate_inventory_snapshots(date=args.date, cache_dir=cache_dir, force=args.force)
+
+    print("=" * 80)
+    print("Inventory snapshot preprocessing")
+    print("=" * 80)
+    print(f"Date      : {args.date}")
+    print(f"Cache dir : {cache_dir}")
+    if not snapshots:
+        print("No snapshots generated or found. Please check daily inventory Excel files.")
+    for snapshot in snapshots:
+        summary = snapshot.get("summary", {})
+        print(
+            f"{snapshot.get('snapshot_id')}: "
+            f"sku={summary.get('sku_count', 0)}, "
+            f"base_units={summary.get('base_unit_count', 0)}, "
+            f"source={snapshot.get('source_file', '')}"
+        )
+
+    if args.list:
+        print("-" * 80)
+        for item in list_snapshots(cache_dir=cache_dir):
+            print(item.get("snapshot_id"))
+    print("=" * 80)
+
+
+if __name__ == "__main__":
+    main()

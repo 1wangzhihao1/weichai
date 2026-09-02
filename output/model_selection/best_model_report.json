@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-06-30T19:09:34",
+  "best_checkpoint": "D:\\weichai\\weichai_model_rules_malfunction\\scenarios\\order_picking\\checkpoints_v6\\ppo_v6_order_level_1520000_steps.zip",
+  "best_checkpoint_name": "ppo_v6_order_level_1520000_steps.zip",
+  "best_checkpoint_step": 1520000,
+  "target_model": "D:\\weichai\\weichai_model_rules_malfunction\\output\\models\\ppo_masking_model_v6.zip",
+  "score_total_makespan": 682367.625,
+  "score_avg_makespan": 45491.175,
+  "station_results": [
+    {
+      "station_limit": 16,
+      "ai_makespan": 19848.369
+    },
+    {
+      "station_limit": 15,
+      "ai_makespan": 20999.857
+    },
+    {
+      "station_limit": 14,
+      "ai_makespan": 22730.799
+    },
+    {
+      "station_limit": 13,
+      "ai_makespan": 24024.154
+    },
+    {
+      "station_limit": 12,
+      "ai_makespan": 25949.082
+    },
+    {
+      "station_limit": 11,
+      "ai_makespan": 27733.605
+    },
+    {
+      "station_limit": 10,
+      "ai_makespan": 30248.58
+    },
+    {
+      "station_limit": 9,
+      "ai_makespan": 33041.531
+    },
+    {
+      "station_limit": 8,
+      "ai_makespan": 36894.035
+    },
+    {
+      "station_limit": 7,
+      "ai_makespan": 41420.25
+    },
+    {
+      "station_limit": 6,
+      "ai_makespan": 47218.582
+    },
+    {
+      "station_limit": 5,
+      "ai_makespan": 56700.938
+    },
+    {
+      "station_limit": 4,
+      "ai_makespan": 71541.398
+    },
+    {
+      "station_limit": 3,
+      "ai_makespan": 92432.023
+    },
+    {
+      "station_limit": 2,
+      "ai_makespan": 131584.422
+    }
+  ],
+  "eval_order_count": 2000,
+  "eval_orders_file": "D:\\weichai\\weichai_model_rules_malfunction\\output\\model_selection\\fixed_eval_orders.json"
+}

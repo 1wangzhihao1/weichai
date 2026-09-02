@@ -16,8 +16,9 @@ if project_root not in sys.path:
 
 from backend.database import PartMaster, SessionLocal
 from scenarios.order_picking.config import Config
+from scenarios.order_picking.data_paths import historical_picking_excel
 
-EXCEL_PATH = os.path.join(project_root, "raw_data", "DMS拣选20260201-0429.XLSX")
+EXCEL_PATH = str(historical_picking_excel())
 DEFAULT_DATE = "2026-04-11"
 DEFAULT_PICK_GAP_SECONDS = 3.0
 DEFAULT_GLOBAL_BREAK_THRESHOLD_SECONDS = 30 * 60

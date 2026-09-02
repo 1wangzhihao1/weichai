@@ -1,6 +1,6 @@
 {
   "snapshot_id": "2025-07-01-evening",
-  "source_file": "D:\\weichai\\weichai_model_rules_malfunction\\raw_data\\7.1\\7.1晚库存单元.XLSX",
+  "source_file": "D:\\weichai\\weichai_model_rules_malfunction\\raw_data\\daily\\2025-07-01\\inventory\\2025-07-01_晚库存单元.XLSX",
   "sku_units": {
     "01110618:D00": [
       {

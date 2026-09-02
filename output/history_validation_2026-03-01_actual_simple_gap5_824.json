@@ -1,0 +1,58 @@
+{
+  "summary": {
+    "generated_on": "2026-09-01",
+    "source_file": "D:\\weichai\\weichai_model_rules_malfunction\\raw_data\\historical\\picking\\DMS拣选20260201-0429.XLSX",
+    "process_time_source": "actual",
+    "engine": "simple",
+    "selected_dates": [
+      "2026-03-01"
+    ],
+    "real_time_mode": "net",
+    "global_break_threshold_seconds": 1800.0,
+    "operation_gap_seconds": 5.824,
+    "scope_excluded_station_orders": {
+      "excluded_stations": [],
+      "removed_orders": 0,
+      "removed_rows": 0,
+      "kept_orders": 1473,
+      "kept_rows": 4795
+    },
+    "validated_days": 1,
+    "within_10_pct_days": 1,
+    "within_10_pct_ratio": 1.0,
+    "mean_error_pct": 2.45,
+    "median_error_pct": 2.45,
+    "max_error_pct": 2.45,
+    "failed_days": []
+  },
+  "results": [
+    {
+      "date": "2026-03-01",
+      "engine": "simple",
+      "valid_rows": 4795,
+      "orders": 1473,
+      "boxes": 4256,
+      "stations": 11,
+      "operation_gap_seconds": 5.824,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 53457.453,
+      "gross_real_makespan_seconds": 56829.075,
+      "net_real_makespan_seconds": 53457.453,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 1,
+      "global_break_total_seconds": 3371.622,
+      "simulated_makespan_seconds": 52147.929,
+      "error_pct": 2.45,
+      "within_10_pct": true,
+      "critical_station": 2,
+      "critical_station_box_count": 170,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [],
+        "removed_orders": 0,
+        "removed_rows": 0,
+        "kept_orders": 1473,
+        "kept_rows": 4795
+      }
+    }
+  ]
+}

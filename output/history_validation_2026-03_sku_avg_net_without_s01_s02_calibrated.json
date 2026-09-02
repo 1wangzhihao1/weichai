@@ -1,0 +1,995 @@
+{
+  "summary": {
+    "generated_on": "2026-08-28",
+    "source_file": "D:\\weichai\\weichai_model_rules_malfunction\\raw_data\\historical\\picking\\DMS拣选20260201-0429.XLSX",
+    "process_time_source": "sku_average",
+    "selected_dates": [
+      "2026-03-01",
+      "2026-03-02",
+      "2026-03-03",
+      "2026-03-04",
+      "2026-03-05",
+      "2026-03-06",
+      "2026-03-07",
+      "2026-03-08",
+      "2026-03-09",
+      "2026-03-10",
+      "2026-03-11",
+      "2026-03-12",
+      "2026-03-13",
+      "2026-03-14",
+      "2026-03-15",
+      "2026-03-16",
+      "2026-03-17",
+      "2026-03-18",
+      "2026-03-19",
+      "2026-03-20",
+      "2026-03-21",
+      "2026-03-22",
+      "2026-03-23",
+      "2026-03-24",
+      "2026-03-25",
+      "2026-03-26",
+      "2026-03-27",
+      "2026-03-28",
+      "2026-03-29",
+      "2026-03-30",
+      "2026-03-31"
+    ],
+    "real_time_mode": "net",
+    "global_break_threshold_seconds": 1800.0,
+    "operation_gap_seconds": 4.139,
+    "scope_excluded_station_orders": {
+      "excluded_stations": [
+        1,
+        2
+      ],
+      "removed_orders": 125,
+      "removed_rows": 269,
+      "kept_orders": 1348,
+      "kept_rows": 4526
+    },
+    "validated_days": 31,
+    "within_10_pct_days": 29,
+    "within_10_pct_ratio": 0.935,
+    "mean_error_pct": 4.805,
+    "median_error_pct": 4.576,
+    "max_error_pct": 11.836,
+    "failed_days": [
+      "2026-03-01",
+      "2026-03-21"
+    ]
+  },
+  "results": [
+    {
+      "date": "2026-03-01",
+      "valid_rows": 4526,
+      "orders": 1348,
+      "boxes": 4019,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 45877.585,
+      "gross_real_makespan_seconds": 45877.585,
+      "net_real_makespan_seconds": 45877.585,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 51307.851,
+      "error_pct": 11.836,
+      "within_10_pct": false,
+      "critical_station": 7,
+      "critical_station_box_count": 511,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 125,
+        "removed_rows": 269,
+        "kept_orders": 1348,
+        "kept_rows": 4526
+      }
+    },
+    {
+      "date": "2026-03-02",
+      "valid_rows": 4563,
+      "orders": 1385,
+      "boxes": 4007,
+      "stations": 8,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 45040.557,
+      "gross_real_makespan_seconds": 45040.557,
+      "net_real_makespan_seconds": 45040.557,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 47832.897,
+      "error_pct": 6.2,
+      "within_10_pct": true,
+      "critical_station": 7,
+      "critical_station_box_count": 444,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 114,
+        "removed_rows": 265,
+        "kept_orders": 1385,
+        "kept_rows": 4563
+      }
+    },
+    {
+      "date": "2026-03-03",
+      "valid_rows": 4253,
+      "orders": 1337,
+      "boxes": 3743,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 46432.367,
+      "gross_real_makespan_seconds": 46432.367,
+      "net_real_makespan_seconds": 46432.367,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 48012.584,
+      "error_pct": 3.403,
+      "within_10_pct": true,
+      "critical_station": 7,
+      "critical_station_box_count": 443,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 117,
+        "removed_rows": 277,
+        "kept_orders": 1337,
+        "kept_rows": 4253
+      }
+    },
+    {
+      "date": "2026-03-04",
+      "valid_rows": 4564,
+      "orders": 1385,
+      "boxes": 4067,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 47228.312,
+      "gross_real_makespan_seconds": 47228.312,
+      "net_real_makespan_seconds": 47228.312,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 50304.488,
+      "error_pct": 6.513,
+      "within_10_pct": true,
+      "critical_station": 7,
+      "critical_station_box_count": 482,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 138,
+        "removed_rows": 328,
+        "kept_orders": 1385,
+        "kept_rows": 4564
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "valid_rows": 4848,
+      "orders": 1503,
+      "boxes": 4251,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 47791.109,
+      "gross_real_makespan_seconds": 47791.109,
+      "net_real_makespan_seconds": 47791.109,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 48278.352,
+      "error_pct": 1.02,
+      "within_10_pct": true,
+      "critical_station": 7,
+      "critical_station_box_count": 477,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 67,
+        "removed_rows": 83,
+        "kept_orders": 1503,
+        "kept_rows": 4848
+      }
+    },
+    {
+      "date": "2026-03-06",
+      "valid_rows": 4431,
+      "orders": 1355,
+      "boxes": 3915,
+      "stations": 8,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 47751.887,
+      "gross_real_makespan_seconds": 47751.887,
+      "net_real_makespan_seconds": 47751.887,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 50656.491,
+      "error_pct": 6.083,
+      "within_10_pct": true,
+      "critical_station": 9,
+      "critical_station_box_count": 510,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 70,
+        "removed_rows": 73,
+        "kept_orders": 1355,
+        "kept_rows": 4431
+      }
+    },
+    {
+      "date": "2026-03-07",
+      "valid_rows": 4831,
+      "orders": 1452,
+      "boxes": 4247,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 47010.408,
+      "gross_real_makespan_seconds": 47010.408,
+      "net_real_makespan_seconds": 47010.408,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 51418.62,
+      "error_pct": 9.377,
+      "within_10_pct": true,
+      "critical_station": 7,
+      "critical_station_box_count": 485,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 69,
+        "removed_rows": 84,
+        "kept_orders": 1452,
+        "kept_rows": 4831
+      }
+    },
+    {
+      "date": "2026-03-08",
+      "valid_rows": 4575,
+      "orders": 1385,
+      "boxes": 4006,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 45437.932,
+      "gross_real_makespan_seconds": 45437.932,
+      "net_real_makespan_seconds": 45437.932,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 48761.974,
+      "error_pct": 7.316,
+      "within_10_pct": true,
+      "critical_station": 9,
+      "critical_station_box_count": 435,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 24,
+        "removed_rows": 27,
+        "kept_orders": 1385,
+        "kept_rows": 4575
+      }
+    },
+    {
+      "date": "2026-03-09",
+      "valid_rows": 4565,
+      "orders": 1302,
+      "boxes": 4016,
+      "stations": 8,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 37847.651,
+      "gross_real_makespan_seconds": 37847.651,
+      "net_real_makespan_seconds": 37847.651,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 40720.29,
+      "error_pct": 7.59,
+      "within_10_pct": true,
+      "critical_station": 9,
+      "critical_station_box_count": 521,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 122,
+        "removed_rows": 273,
+        "kept_orders": 1302,
+        "kept_rows": 4565
+      }
+    },
+    {
+      "date": "2026-03-10",
+      "valid_rows": 4621,
+      "orders": 1346,
+      "boxes": 4068,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 38973.679,
+      "gross_real_makespan_seconds": 38973.679,
+      "net_real_makespan_seconds": 38973.679,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 39992.406,
+      "error_pct": 2.614,
+      "within_10_pct": true,
+      "critical_station": 10,
+      "critical_station_box_count": 495,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 90,
+        "removed_rows": 128,
+        "kept_orders": 1346,
+        "kept_rows": 4621
+      }
+    },
+    {
+      "date": "2026-03-11",
+      "valid_rows": 4605,
+      "orders": 1410,
+      "boxes": 4066,
+      "stations": 8,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 38465.841,
+      "gross_real_makespan_seconds": 38465.841,
+      "net_real_makespan_seconds": 38465.841,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 39937.49,
+      "error_pct": 3.826,
+      "within_10_pct": true,
+      "critical_station": 8,
+      "critical_station_box_count": 506,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 90,
+        "removed_rows": 105,
+        "kept_orders": 1410,
+        "kept_rows": 4605
+      }
+    },
+    {
+      "date": "2026-03-12",
+      "valid_rows": 4661,
+      "orders": 1423,
+      "boxes": 4137,
+      "stations": 8,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 47270.362,
+      "gross_real_makespan_seconds": 47270.362,
+      "net_real_makespan_seconds": 47270.362,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 44059.081,
+      "error_pct": 6.793,
+      "within_10_pct": true,
+      "critical_station": 5,
+      "critical_station_box_count": 541,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 60,
+        "removed_rows": 63,
+        "kept_orders": 1423,
+        "kept_rows": 4661
+      }
+    },
+    {
+      "date": "2026-03-13",
+      "valid_rows": 4916,
+      "orders": 1516,
+      "boxes": 4328,
+      "stations": 10,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 53059.389,
+      "gross_real_makespan_seconds": 53059.389,
+      "net_real_makespan_seconds": 53059.389,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 51753.815,
+      "error_pct": 2.461,
+      "within_10_pct": true,
+      "critical_station": 7,
+      "critical_station_box_count": 498,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 60,
+        "removed_rows": 63,
+        "kept_orders": 1516,
+        "kept_rows": 4916
+      }
+    },
+    {
+      "date": "2026-03-14",
+      "valid_rows": 4932,
+      "orders": 1461,
+      "boxes": 4340,
+      "stations": 10,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 47071.752,
+      "gross_real_makespan_seconds": 47071.752,
+      "net_real_makespan_seconds": 47071.752,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 48754.629,
+      "error_pct": 3.575,
+      "within_10_pct": true,
+      "critical_station": 9,
+      "critical_station_box_count": 432,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 149,
+        "removed_rows": 299,
+        "kept_orders": 1461,
+        "kept_rows": 4932
+      }
+    },
+    {
+      "date": "2026-03-15",
+      "valid_rows": 4484,
+      "orders": 1361,
+      "boxes": 3929,
+      "stations": 10,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 47640.182,
+      "gross_real_makespan_seconds": 47640.182,
+      "net_real_makespan_seconds": 47640.182,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 49950.838,
+      "error_pct": 4.85,
+      "within_10_pct": true,
+      "critical_station": 9,
+      "critical_station_box_count": 486,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 124,
+        "removed_rows": 327,
+        "kept_orders": 1361,
+        "kept_rows": 4484
+      }
+    },
+    {
+      "date": "2026-03-16",
+      "valid_rows": 4851,
+      "orders": 1430,
+      "boxes": 4234,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 46791.548,
+      "gross_real_makespan_seconds": 46791.548,
+      "net_real_makespan_seconds": 46791.548,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 51153.672,
+      "error_pct": 9.322,
+      "within_10_pct": true,
+      "critical_station": 7,
+      "critical_station_box_count": 431,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 72,
+        "removed_rows": 78,
+        "kept_orders": 1430,
+        "kept_rows": 4851
+      }
+    },
+    {
+      "date": "2026-03-17",
+      "valid_rows": 4784,
+      "orders": 1438,
+      "boxes": 4252,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 37762.045,
+      "gross_real_makespan_seconds": 37762.045,
+      "net_real_makespan_seconds": 37762.045,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 37096.329,
+      "error_pct": 1.763,
+      "within_10_pct": true,
+      "critical_station": 6,
+      "critical_station_box_count": 475,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 64,
+        "removed_rows": 79,
+        "kept_orders": 1438,
+        "kept_rows": 4784
+      }
+    },
+    {
+      "date": "2026-03-18",
+      "valid_rows": 5113,
+      "orders": 1530,
+      "boxes": 4547,
+      "stations": 10,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 38472.229,
+      "gross_real_makespan_seconds": 38472.229,
+      "net_real_makespan_seconds": 38472.229,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 37329.468,
+      "error_pct": 2.97,
+      "within_10_pct": true,
+      "critical_station": 8,
+      "critical_station_box_count": 480,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 102,
+        "removed_rows": 115,
+        "kept_orders": 1530,
+        "kept_rows": 5113
+      }
+    },
+    {
+      "date": "2026-03-19",
+      "valid_rows": 4548,
+      "orders": 1341,
+      "boxes": 4054,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 50040.022,
+      "gross_real_makespan_seconds": 50040.022,
+      "net_real_makespan_seconds": 50040.022,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 46126.245,
+      "error_pct": 7.821,
+      "within_10_pct": true,
+      "critical_station": 10,
+      "critical_station_box_count": 417,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 149,
+        "removed_rows": 363,
+        "kept_orders": 1341,
+        "kept_rows": 4548
+      }
+    },
+    {
+      "date": "2026-03-20",
+      "valid_rows": 4935,
+      "orders": 1525,
+      "boxes": 4426,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 46745.808,
+      "gross_real_makespan_seconds": 46745.808,
+      "net_real_makespan_seconds": 46745.808,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 47296.786,
+      "error_pct": 1.179,
+      "within_10_pct": true,
+      "critical_station": 5,
+      "critical_station_box_count": 496,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 131,
+        "removed_rows": 335,
+        "kept_orders": 1525,
+        "kept_rows": 4935
+      }
+    },
+    {
+      "date": "2026-03-21",
+      "valid_rows": 5042,
+      "orders": 1500,
+      "boxes": 4424,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 46612.619,
+      "gross_real_makespan_seconds": 46612.619,
+      "net_real_makespan_seconds": 46612.619,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 51941.566,
+      "error_pct": 11.432,
+      "within_10_pct": false,
+      "critical_station": 9,
+      "critical_station_box_count": 494,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 166,
+        "removed_rows": 348,
+        "kept_orders": 1500,
+        "kept_rows": 5042
+      }
+    },
+    {
+      "date": "2026-03-22",
+      "valid_rows": 4521,
+      "orders": 1326,
+      "boxes": 3962,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 45169.449,
+      "gross_real_makespan_seconds": 45169.449,
+      "net_real_makespan_seconds": 45169.449,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 44511.284,
+      "error_pct": 1.457,
+      "within_10_pct": true,
+      "critical_station": 9,
+      "critical_station_box_count": 452,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 164,
+        "removed_rows": 350,
+        "kept_orders": 1326,
+        "kept_rows": 4521
+      }
+    },
+    {
+      "date": "2026-03-23",
+      "valid_rows": 4188,
+      "orders": 1214,
+      "boxes": 3683,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 37255.916,
+      "gross_real_makespan_seconds": 37255.916,
+      "net_real_makespan_seconds": 37255.916,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 35421.606,
+      "error_pct": 4.924,
+      "within_10_pct": true,
+      "critical_station": 5,
+      "critical_station_box_count": 533,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 74,
+        "removed_rows": 79,
+        "kept_orders": 1214,
+        "kept_rows": 4188
+      }
+    },
+    {
+      "date": "2026-03-24",
+      "valid_rows": 4926,
+      "orders": 1434,
+      "boxes": 4315,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 47921.03,
+      "gross_real_makespan_seconds": 47921.03,
+      "net_real_makespan_seconds": 47921.03,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 50244.807,
+      "error_pct": 4.849,
+      "within_10_pct": true,
+      "critical_station": 7,
+      "critical_station_box_count": 481,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 68,
+        "removed_rows": 75,
+        "kept_orders": 1434,
+        "kept_rows": 4926
+      }
+    },
+    {
+      "date": "2026-03-25",
+      "valid_rows": 4826,
+      "orders": 1425,
+      "boxes": 4225,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 49325.041,
+      "gross_real_makespan_seconds": 49325.041,
+      "net_real_makespan_seconds": 49325.041,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 54022.077,
+      "error_pct": 9.523,
+      "within_10_pct": true,
+      "critical_station": 7,
+      "critical_station_box_count": 393,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 68,
+        "removed_rows": 76,
+        "kept_orders": 1425,
+        "kept_rows": 4826
+      }
+    },
+    {
+      "date": "2026-03-26",
+      "valid_rows": 5121,
+      "orders": 1495,
+      "boxes": 4555,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 49657.863,
+      "gross_real_makespan_seconds": 49657.863,
+      "net_real_makespan_seconds": 49657.863,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 49657.555,
+      "error_pct": 0.001,
+      "within_10_pct": true,
+      "critical_station": 5,
+      "critical_station_box_count": 521,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 79,
+        "removed_rows": 86,
+        "kept_orders": 1495,
+        "kept_rows": 5121
+      }
+    },
+    {
+      "date": "2026-03-27",
+      "valid_rows": 4594,
+      "orders": 1401,
+      "boxes": 4052,
+      "stations": 10,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 38040.86,
+      "gross_real_makespan_seconds": 38040.86,
+      "net_real_makespan_seconds": 38040.86,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 38243.357,
+      "error_pct": 0.532,
+      "within_10_pct": true,
+      "critical_station": 10,
+      "critical_station_box_count": 461,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 95,
+        "removed_rows": 157,
+        "kept_orders": 1401,
+        "kept_rows": 4594
+      }
+    },
+    {
+      "date": "2026-03-28",
+      "valid_rows": 4465,
+      "orders": 1376,
+      "boxes": 3896,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 38802.232,
+      "gross_real_makespan_seconds": 38802.232,
+      "net_real_makespan_seconds": 38802.232,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 38646.146,
+      "error_pct": 0.402,
+      "within_10_pct": true,
+      "critical_station": 11,
+      "critical_station_box_count": 440,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 74,
+        "removed_rows": 88,
+        "kept_orders": 1376,
+        "kept_rows": 4465
+      }
+    },
+    {
+      "date": "2026-03-29",
+      "valid_rows": 4584,
+      "orders": 1344,
+      "boxes": 4078,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 36750.793,
+      "gross_real_makespan_seconds": 36750.793,
+      "net_real_makespan_seconds": 36750.793,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 35996.515,
+      "error_pct": 2.052,
+      "within_10_pct": true,
+      "critical_station": 6,
+      "critical_station_box_count": 456,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 61,
+        "removed_rows": 65,
+        "kept_orders": 1344,
+        "kept_rows": 4584
+      }
+    },
+    {
+      "date": "2026-03-30",
+      "valid_rows": 4822,
+      "orders": 1387,
+      "boxes": 4308,
+      "stations": 9,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 45780.922,
+      "gross_real_makespan_seconds": 45780.922,
+      "net_real_makespan_seconds": 45780.922,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 47875.692,
+      "error_pct": 4.576,
+      "within_10_pct": true,
+      "critical_station": 5,
+      "critical_station_box_count": 508,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 63,
+        "removed_rows": 90,
+        "kept_orders": 1387,
+        "kept_rows": 4822
+      }
+    },
+    {
+      "date": "2026-03-31",
+      "valid_rows": 4416,
+      "orders": 1268,
+      "boxes": 3908,
+      "stations": 8,
+      "operation_gap_seconds": 4.139,
+      "real_time_mode": "net",
+      "real_makespan_seconds": 36663.573,
+      "gross_real_makespan_seconds": 36663.573,
+      "net_real_makespan_seconds": 36663.573,
+      "global_break_threshold_seconds": 1800.0,
+      "global_break_count": 0,
+      "global_break_total_seconds": 0.0,
+      "simulated_makespan_seconds": 35679.999,
+      "error_pct": 2.683,
+      "within_10_pct": true,
+      "critical_station": 11,
+      "critical_station_box_count": 439,
+      "scope_excluded_station_orders": {
+        "excluded_stations": [
+          1,
+          2
+        ],
+        "removed_orders": 92,
+        "removed_rows": 105,
+        "kept_orders": 1268,
+        "kept_rows": 4416
+      }
+    }
+  ]
+}

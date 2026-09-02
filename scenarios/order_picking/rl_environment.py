@@ -16,8 +16,9 @@ except Exception:
     PartMaster = None
     SessionLocal = None
 from scenarios.order_picking.config import Config
+from scenarios.order_picking.data_paths import historical_picking_excel
 
-EXCEL_PATH = os.path.join(project_root, "raw_data", "DMS拣选20260201-0429.XLSX")
+EXCEL_PATH = str(historical_picking_excel())
 
 TARGET_MAKESPAN_FACTOR = 1.2
 MAKESPAN_SUCCESS_REWARD = 100.0
@@ -28,17 +29,6 @@ MAKESPAN_MAX_PENALTY = 300.0
 def find_default_excel():
     if os.path.exists(EXCEL_PATH):
         return EXCEL_PATH
-
-    raw_dir = os.path.join(project_root, "raw_data")
-    if not os.path.isdir(raw_dir):
-        return EXCEL_PATH
-
-    for name in os.listdir(raw_dir):
-        lower = name.lower()
-        if name.startswith("~$"):
-            continue
-        if name.startswith("DMS") and lower.endswith((".xlsx", ".xls")):
-            return os.path.join(raw_dir, name)
 
     return EXCEL_PATH
 
@@ -71,24 +61,27 @@ def build_part_times_from_excel(excel_path):
 
     try:
         df = pd.read_excel(excel_path, sheet_name=0)
+        df.columns = df.columns.astype(str).str.strip().str.replace("\n", "").str.replace("\r", "")
     except Exception:
+        return {}
+
+    required_columns = ["开始时间", "结束时间", "状态", "SKU", "目标数量", "已拣选数量"]
+    if any(column not in df.columns for column in required_columns):
         return {}
 
     rows = []
     for _, row in df.iterrows():
         try:
-            row_vals = row.values
-            if len(row_vals) < 13:
-                continue
-            start_time = pd.to_datetime(row_vals[2], errors="coerce")
-            end_time = pd.to_datetime(row_vals[3], errors="coerce")
-            status = str(row_vals[8]).strip()
-            sku = str(row_vals[9]).strip()
-            picked_qty = float(row_vals[12])
+            start_time = pd.to_datetime(row["开始时间"], errors="coerce")
+            end_time = pd.to_datetime(row["结束时间"], errors="coerce")
+            status = str(row["状态"]).strip()
+            sku = str(row["SKU"]).strip()
+            target_qty = float(row["目标数量"] or 0)
+            picked_qty = float(row["已拣选数量"] or 0)
             if pd.isna(start_time) or pd.isna(end_time):
                 continue
             duration = (end_time - start_time).total_seconds()
-            if status not in ["确定", "完成"] or not sku or picked_qty <= 0 or duration <= 0:
+            if status not in ["确定", "完成"] or not sku or target_qty <= 0 or picked_qty <= 0 or duration <= 0:
                 continue
             rows.append((sku, duration, picked_qty, duration / picked_qty))
         except Exception:
@@ -118,25 +111,30 @@ def load_and_aggregate_real_orders():
     print("[RL 数据管道] 正在按照【同订单同SKU合并为1箱】法则解析大盘...")
     try:
         df = pd.read_excel(EXCEL_PATH, sheet_name=0)
+        df.columns = df.columns.astype(str).str.strip().str.replace("\n", "").str.replace("\r", "")
     except Exception as exc:
         print(f"[RL 数据管道] 读取订单 Excel 失败: {EXCEL_PATH} ({exc})")
+        return []
+
+    required_columns = ["开始时间", "拣选列表", "状态", "SKU", "目标数量", "已拣选数量"]
+    missing = [column for column in required_columns if column not in df.columns]
+    if missing:
+        print(f"[RL 数据管道] 订单 Excel 缺少必要列: {missing}")
         return []
 
     order_aggregation = {}
     for _, row in df.iterrows():
         try:
-            row_vals = row.values
-            if len(row_vals) < 13:
-                continue
-            time_start = pd.to_datetime(row_vals[2])
-            order_id = str(row_vals[6]).strip()
-            status = str(row_vals[8]).strip()
-            sku = str(row_vals[9]).strip()
-            qty = float(row_vals[11])
+            time_start = pd.to_datetime(row["开始时间"])
+            order_id = str(row["拣选列表"]).strip()
+            status = str(row["状态"]).strip()
+            sku = str(row["SKU"]).strip()
+            qty = float(row["目标数量"] or 0)
+            picked_qty = float(row["已拣选数量"] or 0)
         except Exception:
             continue
 
-        if status not in ["确定", "完成"] or qty <= 0:
+        if status not in ["确定", "完成"] or qty <= 0 or picked_qty <= 0:
             continue
 
         box_process_time = part_time_dict.get(sku, 4.5) * int(qty)

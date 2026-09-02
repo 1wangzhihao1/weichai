@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, nextTick, onMounted } from 'vue'
+import { ref, reactive, computed, nextTick, onMounted, watch } from 'vue'
 import api from './api/index' 
 import Factory3D from './components/Factory3D.vue' 
 import AlgorithmResults from './components/AlgorithmResults.vue' 
@@ -7,12 +7,20 @@ import AlgorithmResults from './components/AlgorithmResults.vue'
 const activeTab = ref('sim') // 默认显示 3D 仿真模块 ('sim' 或 'algo')
 
 // 🌟 核心修改 1：将准星对准真实大盘波次，一键启动不迷路！
-const batchNo = ref('ORDER_WAVE_2026-04-11')
-const inventorySnapshotId = ref('2025-07-01-morning')
-const eveningSnapshotId = ref('2025-07-01-evening')
+const batchNo = ref('')
+const inventorySnapshotId = ref('')
+const eveningSnapshotId = ref('')
 const inventorySnapshots = ref([])
+const orderBatches = ref([])
+const selectedStrategy = ref('ai')
+const activeStationLimit = ref(16)
+const requestedStationLimit = ref(16)
+const historyDate = ref('')
+const operationGapSeconds = ref(null)
+const operationGapByStrategy = ref({})
 
 const isSimulating = ref(false)
+const isRefreshingSkuTime = ref(false)
 const progress = ref(0)
 const statusMessage = ref('等待下发云端推演指令...')
 const simResult = ref(null)
@@ -20,6 +28,7 @@ const factoryRef = ref(null)
 
 // 16 宫格状态数据源
 const stationStatus = ref(Array(16).fill().map(() => ({ active: false, orderCount: 0, maxOrders: 2, isPoweredOff: false })))
+const poweredStationCount = computed(() => stationStatus.value.filter(item => !item.isPoweredOff).length)
 
 // 接收 3D 沙盘实时传回的 KPI 数据
 const kpiData = reactive({
@@ -35,6 +44,11 @@ const kpiData = reactive({
 
 let pollTimer = null
 
+const defaultOperationGapForStrategy = (strategy) => {
+  const map = operationGapByStrategy.value || {}
+  return map[strategy] ?? map.ai ?? operationGapSeconds.value
+}
+
 const handleStart = async () => {
   isSimulating.value = true
   progress.value = 0
@@ -45,13 +59,39 @@ const handleStart = async () => {
   activeTab.value = 'sim'
 
   try {
-    const res = await api.startSimulation(batchNo.value, inventorySnapshotId.value, eveningSnapshotId.value)
+    const processTimeSource = selectedStrategy.value === 'history_actual' ? 'actual' : 'sku_average'
+    requestedStationLimit.value = Number(activeStationLimit.value) || 16
+    const res = await api.startSimulation(batchNo.value, inventorySnapshotId.value, eveningSnapshotId.value, {
+      strategy: selectedStrategy.value,
+      activeStationLimit: requestedStationLimit.value,
+      historyDate: historyDate.value || null,
+      processTimeSource,
+      operationGapSeconds: operationGapSeconds.value === null || operationGapSeconds.value === ''
+        ? null
+        : Number(operationGapSeconds.value)
+    })
     if (res.code === 200) {
       startPolling(res.task_id)
     }
   } catch (error) {
     statusMessage.value = '呼叫失败！请检查 FastAPI 后端 8088 端口是否运行！'
     isSimulating.value = false
+  }
+}
+
+const handleRefreshSkuTime = async () => {
+  isRefreshingSkuTime.value = true
+  statusMessage.value = '正在刷新 SKU 平均处理时间...'
+  try {
+    const res = await api.rebuildSkuTime()
+    const data = res.data || {}
+    const inserted = data.inserted ?? 0
+    const removed = data.removed_outliers ?? 0
+    statusMessage.value = `SKU 工时刷新完成：写入 ${inserted} 条，过滤极长异常 ${removed} 条`
+  } catch (error) {
+    statusMessage.value = 'SKU 工时刷新失败，请检查后端服务、数据库和工时 Excel 文件'
+  } finally {
+    isRefreshingSkuTime.value = false
   }
 }
 
@@ -62,28 +102,72 @@ const loadInventorySnapshots = async () => {
       inventorySnapshots.value = res.data
     }
   } catch (error) {
-    inventorySnapshots.value = [
-      { snapshot_id: '2025-07-01-morning', summary: {} },
-      { snapshot_id: '2025-07-01-evening', summary: {} }
-    ]
+    inventorySnapshots.value = [inventorySnapshotId.value, eveningSnapshotId.value]
+      .filter(Boolean)
+      .map(snapshotId => ({ snapshot_id: snapshotId, summary: {} }))
   }
 }
+
+const loadOrderBatches = async () => {
+  try {
+    const res = await api.getOrderBatches()
+    if (res.code === 200 && Array.isArray(res.data)) {
+      orderBatches.value = res.data
+      if (!batchNo.value && orderBatches.value.length > 0) {
+        batchNo.value = orderBatches.value[0].batch_no
+      }
+      if (batchNo.value && !orderBatches.value.some(item => item.batch_no === batchNo.value)) {
+        orderBatches.value.unshift({ batch_no: batchNo.value, order_count: 0 })
+      }
+    }
+  } catch (error) {
+    if (batchNo.value) {
+      orderBatches.value = [{ batch_no: batchNo.value, order_count: 0 }]
+    }
+  }
+}
+
+const loadAppConfig = async () => {
+  try {
+    const res = await api.getAppConfig()
+    if (res.code === 200 && res.data) {
+      batchNo.value = res.data.default_batch_no || batchNo.value
+      inventorySnapshotId.value = res.data.default_initial_snapshot_id || inventorySnapshotId.value
+      eveningSnapshotId.value = res.data.default_evening_snapshot_id || eveningSnapshotId.value
+      selectedStrategy.value = res.data.default_strategy || selectedStrategy.value
+      activeStationLimit.value = res.data.default_active_station_limit || activeStationLimit.value
+      requestedStationLimit.value = Number(activeStationLimit.value) || 16
+      operationGapByStrategy.value = res.data.operation_gap_seconds_by_strategy || {}
+      operationGapSeconds.value = res.data.operation_gap_seconds ?? operationGapSeconds.value
+      operationGapSeconds.value = defaultOperationGapForStrategy(selectedStrategy.value)
+    }
+  } catch (error) {
+    batchNo.value = batchNo.value || ''
+    inventorySnapshotId.value = inventorySnapshotId.value || ''
+    eveningSnapshotId.value = eveningSnapshotId.value || ''
+  }
+}
+
+watch(selectedStrategy, (strategy) => {
+  operationGapSeconds.value = defaultOperationGapForStrategy(strategy)
+})
 
 const startPolling = (taskId) => {
   pollTimer = setInterval(async () => {
     try {
       const res = await api.getSimulationStatus(taskId)
       if (res.code === 200) {
-        // 🌟 核心修改 2：完美解析后端推过来的百分比字符串
-        progress.value = parseInt(res.data.progress.replace('%', ''))
-        statusMessage.value = res.data.message || '推演中...'
-
         // 如果后端传回 failed，立刻停止并报错
         if (res.data.status === 'failed') {
+          statusMessage.value = res.data.message || '推演失败'
           clearInterval(pollTimer)
           isSimulating.value = false
           return
         }
+
+        // 🌟 核心修改 2：完美解析后端推过来的百分比字符串
+        progress.value = parseInt(String(res.data.progress || '0').replace('%', ''))
+        statusMessage.value = res.data.message || '推演中...'
 
         if (res.data.status === 'completed' || progress.value === 100) {
           clearInterval(pollTimer)
@@ -105,6 +189,9 @@ const fetchPlaybookAndPlay = async (taskId) => {
   try {
     const res = await api.getSimulationPlaybook(taskId)
     if (res.code === 200) {
+      if (res.data?.active_stations) {
+        activeStationLimit.value = res.data.active_stations
+      }
       statusMessage.value = '数据链加载完毕，物理引擎接管！'
       factoryRef.value.loadAndPlay(res.data)
     }
@@ -121,8 +208,9 @@ const onUpdateKpi = (data) => {
   Object.assign(kpiData, data)
 }
 
-onMounted(() => {
-  loadInventorySnapshots()
+onMounted(async () => {
+  await loadAppConfig()
+  await Promise.all([loadInventorySnapshots(), loadOrderBatches()])
 })
 </script>
 
@@ -148,14 +236,40 @@ onMounted(() => {
         
         <div class="control-box">
           <div class="panel-title">🎛️ 孪生排产控制中枢</div>
-          <div style="display: flex; gap: 10px;">
-            <input type="text" class="custom-input" v-model="batchNo" placeholder="请输入要推演的订单批次号" />
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <select class="custom-select batch-select" v-model="batchNo">
+              <option v-for="item in orderBatches" :key="item.batch_no" :value="item.batch_no">
+                {{ item.batch_no }}{{ item.order_count ? ` (${item.order_count}单)` : '' }}
+              </option>
+            </select>
+            <select class="custom-select" v-model="selectedStrategy">
+              <option value="ai">AI强化学习</option>
+              <option value="random">随机分配</option>
+              <option value="round_robin">轮询分配</option>
+              <option value="history_actual">历史分配-真实耗时</option>
+              <option value="history_sku_avg">历史分配-SKU平均耗时</option>
+            </select>
             <button class="primary-btn" :disabled="isSimulating" @click="handleStart">
               {{ isSimulating ? '计算中...' : '⚡ 启动' }}
+            </button>
+            <button class="secondary-btn" :disabled="isSimulating || isRefreshingSkuTime" @click="handleRefreshSkuTime">
+              {{ isRefreshingSkuTime ? '刷新中...' : '刷新SKU工时' }}
             </button>
           </div>
           
           <div class="inventory-selectors">
+            <label>
+              <span>{{ isSimulating ? '站台上限' : '启用站台' }}</span>
+              <input class="custom-input" type="number" min="1" max="16" v-model="activeStationLimit" />
+            </label>
+            <label v-if="selectedStrategy.startsWith('history')">
+              <span>历史日期</span>
+              <input class="custom-input" type="date" v-model="historyDate" />
+            </label>
+            <label>
+              <span>综合间隔(秒)</span>
+              <input class="custom-input" type="number" min="0" step="0.1" v-model="operationGapSeconds" />
+            </label>
             <label>
               <span>日初库存快照</span>
               <select class="custom-select" v-model="inventorySnapshotId">
@@ -174,7 +288,7 @@ onMounted(() => {
             </label>
           </div>
 
-          <div v-if="isSimulating || progress > 0" class="progress-box">
+          <div v-if="isSimulating || isRefreshingSkuTime || progress > 0" class="progress-box">
             <div class="progress-track">
               <div class="progress-fill" :style="{ width: progress + '%' }"></div>
             </div>
@@ -230,7 +344,7 @@ onMounted(() => {
         </div>
 
         <div class="station-monitor">
-          <div class="panel-title">📡 产线 16 站台实时状态矩阵</div>
+          <div class="panel-title">📡 产线 {{ poweredStationCount }} 站台实时状态矩阵</div>
           <div class="st-grid">
             <div v-for="(item, idx) in stationStatus" :key="idx" 
                  :class="['st-card', item.isPoweredOff ? 'off' : (item.active ? 'busy' : 'idle')]">
@@ -295,13 +409,19 @@ onMounted(() => {
 /* 自定义原生 Input 和 Button */
 .custom-input { flex: 1; padding: 8px 12px; background: rgba(0, 0, 0, 0.4); border: 1px solid #1E3A5F; color: #FFF; font-size: 13px; border-radius: 6px; outline: none; transition: 0.3s; }
 .custom-input:focus { border-color: #00E5FF; }
-.inventory-selectors { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.batch-select { flex: 1; min-width: 0; }
+.inventory-selectors { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 12px; }
 .inventory-selectors label { display: flex; flex-direction: column; gap: 6px; color: #A0B2C6; font-size: 12px; font-weight: bold; }
 .custom-select { width: 100%; padding: 8px 10px; background: rgba(0, 0, 0, 0.4); border: 1px solid #1E3A5F; color: #FFF; font-size: 12px; border-radius: 6px; outline: none; }
 .custom-select:focus { border-color: #00E5FF; }
+.custom-input { width: 100%; padding: 8px 10px; background: rgba(0, 0, 0, 0.4); border: 1px solid #1E3A5F; color: #FFF; font-size: 12px; border-radius: 6px; outline: none; box-sizing: border-box; }
+.custom-input:focus { border-color: #00E5FF; }
 .primary-btn { background: linear-gradient(135deg, #00E5FF, #0077FF); border: none; padding: 8px 20px; border-radius: 6px; color: white; font-weight: bold; cursor: pointer; transition: 0.3s; }
 .primary-btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 4px 10px rgba(0, 229, 255, 0.4); }
 .primary-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.secondary-btn { background: rgba(0, 229, 255, 0.08); border: 1px solid rgba(0, 229, 255, 0.55); padding: 8px 14px; border-radius: 6px; color: #00E5FF; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.secondary-btn:hover:not(:disabled) { background: rgba(0, 229, 255, 0.16); transform: translateY(-1px); }
+.secondary-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
 /* 进度条 */
 .progress-box { margin-top: 15px; }

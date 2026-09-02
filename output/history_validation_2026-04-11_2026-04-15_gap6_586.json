@@ -1,0 +1,86 @@
+{
+  "summary": {
+    "generated_on": "2026-08-24",
+    "source_file": "D:\\weichai\\weichai_model_rules_malfunction\\raw_data\\historical\\picking\\DMS拣选20260201-0429.XLSX",
+    "process_time_source": "actual",
+    "operation_gap_seconds": 6.586,
+    "validated_days": 5,
+    "within_10_pct_days": 4,
+    "within_10_pct_ratio": 0.8,
+    "mean_error_pct": 7.814,
+    "median_error_pct": 5.629,
+    "max_error_pct": 23.449
+  },
+  "results": [
+    {
+      "date": "2026-04-11",
+      "valid_rows": 6137,
+      "orders": 1857,
+      "boxes": 5431,
+      "stations": 14,
+      "operation_gap_seconds": 6.586,
+      "real_makespan_seconds": 53971.678,
+      "simulated_makespan_seconds": 57009.72,
+      "error_pct": 5.629,
+      "within_10_pct": true,
+      "critical_station": 2,
+      "critical_station_box_count": 175
+    },
+    {
+      "date": "2026-04-12",
+      "valid_rows": 5988,
+      "orders": 1765,
+      "boxes": 5310,
+      "stations": 12,
+      "operation_gap_seconds": 6.586,
+      "real_makespan_seconds": 55048.816,
+      "simulated_makespan_seconds": 58987.659,
+      "error_pct": 7.155,
+      "within_10_pct": true,
+      "critical_station": 2,
+      "critical_station_box_count": 77
+    },
+    {
+      "date": "2026-04-13",
+      "valid_rows": 5134,
+      "orders": 1585,
+      "boxes": 4615,
+      "stations": 11,
+      "operation_gap_seconds": 6.586,
+      "real_makespan_seconds": 52872.695,
+      "simulated_makespan_seconds": 51373.102,
+      "error_pct": 2.836,
+      "within_10_pct": true,
+      "critical_station": 1,
+      "critical_station_box_count": 91
+    },
+    {
+      "date": "2026-04-14",
+      "valid_rows": 5373,
+      "orders": 1608,
+      "boxes": 4808,
+      "stations": 11,
+      "operation_gap_seconds": 6.586,
+      "real_makespan_seconds": 84410.555,
+      "simulated_makespan_seconds": 64617.015,
+      "error_pct": 23.449,
+      "within_10_pct": false,
+      "critical_station": 2,
+      "critical_station_box_count": 90
+    },
+    {
+      "date": "2026-04-15",
+      "valid_rows": 5546,
+      "orders": 1661,
+      "boxes": 4958,
+      "stations": 12,
+      "operation_gap_seconds": 6.586,
+      "real_makespan_seconds": 52486.378,
+      "simulated_makespan_seconds": 52486.395,
+      "error_pct": 0.0,
+      "within_10_pct": true,
+      "critical_station": 2,
+      "critical_station_box_count": 44
+    }
+  ]
+}

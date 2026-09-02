@@ -17,6 +17,7 @@ if project_root not in sys.path:
     sys.path.insert(0, project_root)
 from scenarios.order_picking.config import Config
 from core_engine.models.resource_model import SimpyStation
+from scenarios.order_picking.data_paths import OUTPUT_DIR, MODEL_DIR, resolve_model_path
 from scenarios.order_picking.rl_environment import PickingEnv
 
 
@@ -38,7 +39,7 @@ def parse_args():
         help="Choose the minimum AI station count satisfying Config.DEADLINE_SECONDS.",
     )
     parser.add_argument("--station-limit", type=int, help="Use a fixed station count instead of scanning.")
-    parser.add_argument("--model", help="Optional model .zip path. Defaults to the newest file under output/models.")
+    parser.add_argument("--model", help="Optional model .zip path. Defaults to the configured active model.")
     parser.add_argument("--seed", type=int, default=999)
     parser.add_argument(
         "--max-orders",
@@ -47,7 +48,7 @@ def parse_args():
     )
     parser.add_argument(
         "--output",
-        default=os.path.join(project_root, "output", "simpy_verify_results.json"),
+        default=os.path.join(str(OUTPUT_DIR), "simpy_verify_results.json"),
         help="JSON output path.",
     )
     return parser.parse_args()
@@ -84,16 +85,11 @@ def set_orders(env, orders):
 
 
 def load_model(model_path, env):
-    if model_path:
-        resolved = model_path
-    else:
-        model_dir = os.path.join(project_root, "output", "models")
-        candidates = glob.glob(os.path.join(model_dir, "*.zip"))
-        if not candidates:
-            raise FileNotFoundError(f"No .zip model found under {model_dir}.")
-        resolved = max(candidates, key=os.path.getctime)
-    model = MaskablePPO.load(resolved, env=env)
-    return model, resolved
+    resolved = resolve_model_path(model_path)
+    if not resolved or not resolved.exists():
+        raise FileNotFoundError(f"No configured or fallback .zip model found under {MODEL_DIR}.")
+    model = MaskablePPO.load(str(resolved), env=env)
+    return model, str(resolved)
 
 
 def run_rl_episode(orders, model, station_limit, seed):

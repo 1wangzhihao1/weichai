@@ -1,0 +1,1950 @@
+{
+  "generated_on": "2026-07-07",
+  "deadline_seconds": 30600.0,
+  "results": [
+    {
+      "date": "2026-04-09",
+      "algorithm_order_count": 1608,
+      "history_order_count": 1608,
+      "history_box_count": 5314,
+      "historical_station_count": 10,
+      "ai_best_stations": 9,
+      "ai_best_makespan_sec": 29673.869,
+      "round_robin_best_stations": 14,
+      "round_robin_best_makespan_sec": 30095.822,
+      "random_best_stations": 16,
+      "random_best_makespan_sec": 44911.203,
+      "ai_same_history_station_makespan_sec": 26484.795,
+      "round_robin_same_history_station_makespan_sec": 37083.121,
+      "random_same_history_station_makespan_sec": 55853.004,
+      "actual_span_sec": 50248.5,
+      "global_break_total_sec": 0.0,
+      "actual_net_work_sec": 50248.5,
+      "history_replay_makespan_sec": 31377.534,
+      "history_replay_station_count": 10,
+      "ai_vs_round_robin_best_improvement_pct": 1.402,
+      "ai_vs_random_best_improvement_pct": 33.928,
+      "ai_vs_actual_net_improvement_pct": 47.292,
+      "ai_vs_history_replay_same_station_improvement_pct": 15.593,
+      "ai_vs_history_replay_best_improvement_pct": 5.43,
+      "strategy_scans": [
+        {
+          "station_limit": 1,
+          "ai_makespan_sec": 228733.453,
+          "round_robin_makespan_sec": 228733.453,
+          "random_makespan_sec": 228733.453
+        },
+        {
+          "station_limit": 2,
+          "ai_makespan_sec": 118612.562,
+          "round_robin_makespan_sec": 129761.352,
+          "random_makespan_sec": 149828.203
+        },
+        {
+          "station_limit": 3,
+          "ai_makespan_sec": 81745.898,
+          "round_robin_makespan_sec": 92266.781,
+          "random_makespan_sec": 117896.203
+        },
+        {
+          "station_limit": 4,
+          "ai_makespan_sec": 63755.531,
+          "round_robin_makespan_sec": 73637.992,
+          "random_makespan_sec": 99223.32
+        },
+        {
+          "station_limit": 5,
+          "ai_makespan_sec": 49860.977,
+          "round_robin_makespan_sec": 62572.625,
+          "random_makespan_sec": 89081.266
+        },
+        {
+          "station_limit": 6,
+          "ai_makespan_sec": 41663.172,
+          "round_robin_makespan_sec": 54326.102,
+          "random_makespan_sec": 73207.031
+        },
+        {
+          "station_limit": 7,
+          "ai_makespan_sec": 36351.84,
+          "round_robin_makespan_sec": 49446.715,
+          "random_makespan_sec": 73795.484
+        },
+        {
+          "station_limit": 8,
+          "ai_makespan_sec": 32620.82,
+          "round_robin_makespan_sec": 43237.84,
+          "random_makespan_sec": 65594.352
+        },
+        {
+          "station_limit": 9,
+          "ai_makespan_sec": 29673.869,
+          "round_robin_makespan_sec": 38935.047,
+          "random_makespan_sec": 60542.203
+        },
+        {
+          "station_limit": 10,
+          "ai_makespan_sec": 26484.795,
+          "round_robin_makespan_sec": 37083.121,
+          "random_makespan_sec": 55853.004
+        },
+        {
+          "station_limit": 11,
+          "ai_makespan_sec": 24703.697,
+          "round_robin_makespan_sec": 34886.012,
+          "random_makespan_sec": 56784.996
+        },
+        {
+          "station_limit": 12,
+          "ai_makespan_sec": 22717.43,
+          "round_robin_makespan_sec": 32823.184,
+          "random_makespan_sec": 55475.234
+        },
+        {
+          "station_limit": 13,
+          "ai_makespan_sec": 21511.482,
+          "round_robin_makespan_sec": 31751.023,
+          "random_makespan_sec": 50515.602
+        },
+        {
+          "station_limit": 14,
+          "ai_makespan_sec": 19843.541,
+          "round_robin_makespan_sec": 30095.822,
+          "random_makespan_sec": 50532.926
+        },
+        {
+          "station_limit": 15,
+          "ai_makespan_sec": 18420.744,
+          "round_robin_makespan_sec": 28024.604,
+          "random_makespan_sec": 47119.359
+        },
+        {
+          "station_limit": 16,
+          "ai_makespan_sec": 17571.402,
+          "round_robin_makespan_sec": 26898.814,
+          "random_makespan_sec": 44911.203
+        }
+      ],
+      "ai_vs_round_robin_station_hour_efficiency_pct": 36.616,
+      "ai_vs_random_station_hour_efficiency_pct": 62.834,
+      "ai_vs_actual_net_station_hour_efficiency_pct": 46.851,
+      "ai_vs_history_replay_station_hour_efficiency_pct": 14.887
+    },
+    {
+      "date": "2026-04-11",
+      "algorithm_order_count": 1857,
+      "history_order_count": 1857,
+      "history_box_count": 6137,
+      "historical_station_count": 14,
+      "ai_best_stations": 10,
+      "ai_best_makespan_sec": 29052.73,
+      "round_robin_best_stations": 12,
+      "round_robin_best_makespan_sec": 29692.916,
+      "random_best_stations": 16,
+      "random_best_makespan_sec": 45471.32,
+      "ai_same_history_station_makespan_sec": 21240.025,
+      "round_robin_same_history_station_makespan_sec": 26928.84,
+      "random_same_history_station_makespan_sec": 51734.672,
+      "actual_span_sec": 53971.678,
+      "global_break_total_sec": 0.0,
+      "actual_net_work_sec": 53971.678,
+      "history_replay_makespan_sec": 30674.304,
+      "history_replay_station_count": 14,
+      "ai_vs_round_robin_best_improvement_pct": 2.156,
+      "ai_vs_random_best_improvement_pct": 36.108,
+      "ai_vs_actual_net_improvement_pct": 60.646,
+      "ai_vs_history_replay_same_station_improvement_pct": 30.756,
+      "ai_vs_history_replay_best_improvement_pct": 5.286,
+      "strategy_scans": [
+        {
+          "station_limit": 1,
+          "ai_makespan_sec": 249813.828,
+          "round_robin_makespan_sec": 249813.828,
+          "random_makespan_sec": 249813.828
+        },
+        {
+          "station_limit": 2,
+          "ai_makespan_sec": 127229.273,
+          "round_robin_makespan_sec": 137293.703,
+          "random_makespan_sec": 158076.109
+        },
+        {
+          "station_limit": 3,
+          "ai_makespan_sec": 88819.375,
+          "round_robin_makespan_sec": 95686.758,
+          "random_makespan_sec": 124022.32
+        },
+        {
+          "station_limit": 4,
+          "ai_makespan_sec": 68670.625,
+          "round_robin_makespan_sec": 75434.469,
+          "random_makespan_sec": 101856.539
+        },
+        {
+          "station_limit": 5,
+          "ai_makespan_sec": 54022.125,
+          "round_robin_makespan_sec": 62253.945,
+          "random_makespan_sec": 87947.031
+        },
+        {
+          "station_limit": 6,
+          "ai_makespan_sec": 45400.629,
+          "round_robin_makespan_sec": 52765.777,
+          "random_makespan_sec": 81721.164
+        },
+        {
+          "station_limit": 7,
+          "ai_makespan_sec": 39541.395,
+          "round_robin_makespan_sec": 46358.984,
+          "random_makespan_sec": 73439.547
+        },
+        {
+          "station_limit": 8,
+          "ai_makespan_sec": 34731.422,
+          "round_robin_makespan_sec": 42087.828,
+          "random_makespan_sec": 69769.797
+        },
+        {
+          "station_limit": 9,
+          "ai_makespan_sec": 31859.523,
+          "round_robin_makespan_sec": 37821.504,
+          "random_makespan_sec": 61040.535
+        },
+        {
+          "station_limit": 10,
+          "ai_makespan_sec": 29052.73,
+          "round_robin_makespan_sec": 34908.559,
+          "random_makespan_sec": 60034.609
+        },
+        {
+          "station_limit": 11,
+          "ai_makespan_sec": 27054.99,
+          "round_robin_makespan_sec": 32218.658,
+          "random_makespan_sec": 54324.957
+        },
+        {
+          "station_limit": 12,
+          "ai_makespan_sec": 24894.125,
+          "round_robin_makespan_sec": 29692.916,
+          "random_makespan_sec": 52363.215
+        },
+        {
+          "station_limit": 13,
+          "ai_makespan_sec": 22984.701,
+          "round_robin_makespan_sec": 28558.201,
+          "random_makespan_sec": 51815.531
+        },
+        {
+          "station_limit": 14,
+          "ai_makespan_sec": 21240.025,
+          "round_robin_makespan_sec": 26928.84,
+          "random_makespan_sec": 51734.672
+        },
+        {
+          "station_limit": 15,
+          "ai_makespan_sec": 20032.543,
+          "round_robin_makespan_sec": 26174.471,
+          "random_makespan_sec": 46847.168
+        },
+        {
+          "station_limit": 16,
+          "ai_makespan_sec": 18726.777,
+          "round_robin_makespan_sec": 23799.789,
+          "random_makespan_sec": 45471.32
+        }
+      ],
+      "ai_vs_round_robin_station_hour_efficiency_pct": 18.463,
+      "ai_vs_random_station_hour_efficiency_pct": 60.067,
+      "ai_vs_actual_net_station_hour_efficiency_pct": 61.55,
+      "ai_vs_history_replay_station_hour_efficiency_pct": 32.347
+    },
+    {
+      "date": "2026-04-12",
+      "algorithm_order_count": 1765,
+      "history_order_count": 1765,
+      "history_box_count": 5988,
+      "historical_station_count": 12,
+      "ai_best_stations": 10,
+      "ai_best_makespan_sec": 27912.465,
+      "round_robin_best_stations": 11,
+      "round_robin_best_makespan_sec": 30035.98,
+      "random_best_stations": 15,
+      "random_best_makespan_sec": 46168.988,
+      "ai_same_history_station_makespan_sec": 23707.402,
+      "round_robin_same_history_station_makespan_sec": 28717.588,
+      "random_same_history_station_makespan_sec": 52141.934,
+      "actual_span_sec": 55048.816,
+      "global_break_total_sec": 0.0,
+      "actual_net_work_sec": 55048.816,
+      "history_replay_makespan_sec": 33964.269,
+      "history_replay_station_count": 12,
+      "ai_vs_round_robin_best_improvement_pct": 7.07,
+      "ai_vs_random_best_improvement_pct": 39.543,
+      "ai_vs_actual_net_improvement_pct": 56.934,
+      "ai_vs_history_replay_same_station_improvement_pct": 30.199,
+      "ai_vs_history_replay_best_improvement_pct": 17.818,
+      "strategy_scans": [
+        {
+          "station_limit": 1,
+          "ai_makespan_sec": 242148.766,
+          "round_robin_makespan_sec": 242148.766,
+          "random_makespan_sec": 242148.766
+        },
+        {
+          "station_limit": 2,
+          "ai_makespan_sec": 123624.781,
+          "round_robin_makespan_sec": 135047.75,
+          "random_makespan_sec": 155698.953
+        },
+        {
+          "station_limit": 3,
+          "ai_makespan_sec": 86032.219,
+          "round_robin_makespan_sec": 93889.758,
+          "random_makespan_sec": 117505.805
+        },
+        {
+          "station_limit": 4,
+          "ai_makespan_sec": 66993.625,
+          "round_robin_makespan_sec": 72834.289,
+          "random_makespan_sec": 97608.453
+        },
+        {
+          "station_limit": 5,
+          "ai_makespan_sec": 52287.008,
+          "round_robin_makespan_sec": 60293.754,
+          "random_makespan_sec": 86471.492
+        },
+        {
+          "station_limit": 6,
+          "ai_makespan_sec": 44122.703,
+          "round_robin_makespan_sec": 52179.371,
+          "random_makespan_sec": 77451.805
+        },
+        {
+          "station_limit": 7,
+          "ai_makespan_sec": 38369.148,
+          "round_robin_makespan_sec": 45327.945,
+          "random_makespan_sec": 70889.992
+        },
+        {
+          "station_limit": 8,
+          "ai_makespan_sec": 33668.832,
+          "round_robin_makespan_sec": 40119.582,
+          "random_makespan_sec": 67187.414
+        },
+        {
+          "station_limit": 9,
+          "ai_makespan_sec": 31688.57,
+          "round_robin_makespan_sec": 35997.527,
+          "random_makespan_sec": 62982.516
+        },
+        {
+          "station_limit": 10,
+          "ai_makespan_sec": 27912.465,
+          "round_robin_makespan_sec": 34082.586,
+          "random_makespan_sec": 57799.035
+        },
+        {
+          "station_limit": 11,
+          "ai_makespan_sec": 25406.512,
+          "round_robin_makespan_sec": 30035.98,
+          "random_makespan_sec": 54945.867
+        },
+        {
+          "station_limit": 12,
+          "ai_makespan_sec": 23707.402,
+          "round_robin_makespan_sec": 28717.588,
+          "random_makespan_sec": 52141.934
+        },
+        {
+          "station_limit": 13,
+          "ai_makespan_sec": 22077.945,
+          "round_robin_makespan_sec": 27378.85,
+          "random_makespan_sec": 50857.684
+        },
+        {
+          "station_limit": 14,
+          "ai_makespan_sec": 21370.654,
+          "round_robin_makespan_sec": 25507.807,
+          "random_makespan_sec": 46661.609
+        },
+        {
+          "station_limit": 15,
+          "ai_makespan_sec": 19536.729,
+          "round_robin_makespan_sec": 24297.881,
+          "random_makespan_sec": 46168.988
+        },
+        {
+          "station_limit": 16,
+          "ai_makespan_sec": 18308.062,
+          "round_robin_makespan_sec": 23002.955,
+          "random_makespan_sec": 46668.352
+        }
+      ],
+      "ai_vs_round_robin_station_hour_efficiency_pct": 15.518,
+      "ai_vs_random_station_hour_efficiency_pct": 59.695,
+      "ai_vs_actual_net_station_hour_efficiency_pct": 57.746,
+      "ai_vs_history_replay_station_hour_efficiency_pct": 31.515
+    },
+    {
+      "date": "2026-04-13",
+      "algorithm_order_count": 1585,
+      "history_order_count": 1585,
+      "history_box_count": 5134,
+      "historical_station_count": 11,
+      "ai_best_stations": 8,
+      "ai_best_makespan_sec": 27576.717,
+      "round_robin_best_stations": 10,
+      "round_robin_best_makespan_sec": 28821.932,
+      "random_best_stations": 16,
+      "random_best_makespan_sec": 38850.016,
+      "ai_same_history_station_makespan_sec": 20874.686,
+      "round_robin_same_history_station_makespan_sec": 26389.994,
+      "random_same_history_station_makespan_sec": 45573.094,
+      "actual_span_sec": 52872.695,
+      "global_break_total_sec": 3668.276,
+      "actual_net_work_sec": 49204.419,
+      "history_replay_makespan_sec": 26267.203,
+      "history_replay_station_count": 11,
+      "ai_vs_round_robin_best_improvement_pct": 4.32,
+      "ai_vs_random_best_improvement_pct": 29.017,
+      "ai_vs_actual_net_improvement_pct": 57.576,
+      "ai_vs_history_replay_same_station_improvement_pct": 20.529,
+      "ai_vs_history_replay_best_improvement_pct": -4.985,
+      "strategy_scans": [
+        {
+          "station_limit": 1,
+          "ai_makespan_sec": 196113.234,
+          "round_robin_makespan_sec": 196113.234,
+          "random_makespan_sec": 196113.234
+        },
+        {
+          "station_limit": 2,
+          "ai_makespan_sec": 101364.945,
+          "round_robin_makespan_sec": 109489.68,
+          "random_makespan_sec": 124619.133
+        },
+        {
+          "station_limit": 3,
+          "ai_makespan_sec": 69994.336,
+          "round_robin_makespan_sec": 78030.969,
+          "random_makespan_sec": 97659.281
+        },
+        {
+          "station_limit": 4,
+          "ai_makespan_sec": 54729.875,
+          "round_robin_makespan_sec": 62234.559,
+          "random_makespan_sec": 81862.461
+        },
+        {
+          "station_limit": 5,
+          "ai_makespan_sec": 42988.844,
+          "round_robin_makespan_sec": 50329.996,
+          "random_makespan_sec": 69907.789
+        },
+        {
+          "station_limit": 6,
+          "ai_makespan_sec": 36094.285,
+          "round_robin_makespan_sec": 44157.211,
+          "random_makespan_sec": 64230.566
+        },
+        {
+          "station_limit": 7,
+          "ai_makespan_sec": 31026.678,
+          "round_robin_makespan_sec": 38772.539,
+          "random_makespan_sec": 57373.684
+        },
+        {
+          "station_limit": 8,
+          "ai_makespan_sec": 27576.717,
+          "round_robin_makespan_sec": 34768.367,
+          "random_makespan_sec": 55208.504
+        },
+        {
+          "station_limit": 9,
+          "ai_makespan_sec": 24794.703,
+          "round_robin_makespan_sec": 31959.666,
+          "random_makespan_sec": 50504.621
+        },
+        {
+          "station_limit": 10,
+          "ai_makespan_sec": 23014.869,
+          "round_robin_makespan_sec": 28821.932,
+          "random_makespan_sec": 47164.566
+        },
+        {
+          "station_limit": 11,
+          "ai_makespan_sec": 20874.686,
+          "round_robin_makespan_sec": 26389.994,
+          "random_makespan_sec": 45573.094
+        },
+        {
+          "station_limit": 12,
+          "ai_makespan_sec": 19417.775,
+          "round_robin_makespan_sec": 25959.475,
+          "random_makespan_sec": 42487.164
+        },
+        {
+          "station_limit": 13,
+          "ai_makespan_sec": 18152.182,
+          "round_robin_makespan_sec": 23688.1,
+          "random_makespan_sec": 41952.883
+        },
+        {
+          "station_limit": 14,
+          "ai_makespan_sec": 16830.148,
+          "round_robin_makespan_sec": 22615.434,
+          "random_makespan_sec": 40349.746
+        },
+        {
+          "station_limit": 15,
+          "ai_makespan_sec": 15943.109,
+          "round_robin_makespan_sec": 21236.973,
+          "random_makespan_sec": 40706.094
+        },
+        {
+          "station_limit": 16,
+          "ai_makespan_sec": 15775.576,
+          "round_robin_makespan_sec": 21654.035,
+          "random_makespan_sec": 38850.016
+        }
+      ],
+      "ai_vs_round_robin_station_hour_efficiency_pct": 23.456,
+      "ai_vs_random_station_hour_efficiency_pct": 64.509,
+      "ai_vs_actual_net_station_hour_efficiency_pct": 59.24,
+      "ai_vs_history_replay_station_hour_efficiency_pct": 23.647
+    },
+    {
+      "date": "2026-04-14",
+      "algorithm_order_count": 1608,
+      "history_order_count": 1608,
+      "history_box_count": 5373,
+      "historical_station_count": 11,
+      "ai_best_stations": 8,
+      "ai_best_makespan_sec": 29132.867,
+      "round_robin_best_stations": 10,
+      "round_robin_best_makespan_sec": 29296.305,
+      "random_best_stations": 16,
+      "random_best_makespan_sec": 37952.641,
+      "ai_same_history_station_makespan_sec": 21947.025,
+      "round_robin_same_history_station_makespan_sec": 26463.99,
+      "random_same_history_station_makespan_sec": 45309.008,
+      "actual_span_sec": 84410.555,
+      "global_break_total_sec": 27275.746,
+      "actual_net_work_sec": 57134.809,
+      "history_replay_makespan_sec": 28835.137,
+      "history_replay_station_count": 11,
+      "ai_vs_round_robin_best_improvement_pct": 0.558,
+      "ai_vs_random_best_improvement_pct": 23.239,
+      "ai_vs_actual_net_improvement_pct": 61.587,
+      "ai_vs_history_replay_same_station_improvement_pct": 23.888,
+      "ai_vs_history_replay_best_improvement_pct": -1.033,
+      "strategy_scans": [
+        {
+          "station_limit": 1,
+          "ai_makespan_sec": 204613.109,
+          "round_robin_makespan_sec": 204613.109,
+          "random_makespan_sec": 204613.109
+        },
+        {
+          "station_limit": 2,
+          "ai_makespan_sec": 104584.109,
+          "round_robin_makespan_sec": 113545.0,
+          "random_makespan_sec": 133750.844
+        },
+        {
+          "station_limit": 3,
+          "ai_makespan_sec": 73991.055,
+          "round_robin_makespan_sec": 79084.18,
+          "random_makespan_sec": 99356.305
+        },
+        {
+          "station_limit": 4,
+          "ai_makespan_sec": 57223.23,
+          "round_robin_makespan_sec": 62154.938,
+          "random_makespan_sec": 84731.648
+        },
+        {
+          "station_limit": 5,
+          "ai_makespan_sec": 44700.809,
+          "round_robin_makespan_sec": 52151.562,
+          "random_makespan_sec": 74448.039
+        },
+        {
+          "station_limit": 6,
+          "ai_makespan_sec": 37208.922,
+          "round_robin_makespan_sec": 43670.16,
+          "random_makespan_sec": 66674.125
+        },
+        {
+          "station_limit": 7,
+          "ai_makespan_sec": 32563.33,
+          "round_robin_makespan_sec": 38935.863,
+          "random_makespan_sec": 59568.195
+        },
+        {
+          "station_limit": 8,
+          "ai_makespan_sec": 29132.867,
+          "round_robin_makespan_sec": 34635.234,
+          "random_makespan_sec": 55480.387
+        },
+        {
+          "station_limit": 9,
+          "ai_makespan_sec": 26657.918,
+          "round_robin_makespan_sec": 31141.607,
+          "random_makespan_sec": 51083.277
+        },
+        {
+          "station_limit": 10,
+          "ai_makespan_sec": 23475.291,
+          "round_robin_makespan_sec": 29296.305,
+          "random_makespan_sec": 50949.938
+        },
+        {
+          "station_limit": 11,
+          "ai_makespan_sec": 21947.025,
+          "round_robin_makespan_sec": 26463.99,
+          "random_makespan_sec": 45309.008
+        },
+        {
+          "station_limit": 12,
+          "ai_makespan_sec": 20253.631,
+          "round_robin_makespan_sec": 25514.453,
+          "random_makespan_sec": 46396.34
+        },
+        {
+          "station_limit": 13,
+          "ai_makespan_sec": 19032.305,
+          "round_robin_makespan_sec": 23863.455,
+          "random_makespan_sec": 45007.676
+        },
+        {
+          "station_limit": 14,
+          "ai_makespan_sec": 18077.062,
+          "round_robin_makespan_sec": 22155.762,
+          "random_makespan_sec": 42067.422
+        },
+        {
+          "station_limit": 15,
+          "ai_makespan_sec": 16530.943,
+          "round_robin_makespan_sec": 21524.82,
+          "random_makespan_sec": 41916.441
+        },
+        {
+          "station_limit": 16,
+          "ai_makespan_sec": 15966.533,
+          "round_robin_makespan_sec": 20415.09,
+          "random_makespan_sec": 37952.641
+        }
+      ],
+      "ai_vs_round_robin_station_hour_efficiency_pct": 20.446,
+      "ai_vs_random_station_hour_efficiency_pct": 61.619,
+      "ai_vs_actual_net_station_hour_efficiency_pct": 62.917,
+      "ai_vs_history_replay_station_hour_efficiency_pct": 26.522
+    },
+    {
+      "date": "2026-04-15",
+      "algorithm_order_count": 1661,
+      "history_order_count": 1661,
+      "history_box_count": 5546,
+      "historical_station_count": 12,
+      "ai_best_stations": 9,
+      "ai_best_makespan_sec": 29467.338,
+      "round_robin_best_stations": 13,
+      "round_robin_best_makespan_sec": 29882.438,
+      "random_best_stations": 15,
+      "random_best_makespan_sec": 42735.809,
+      "ai_same_history_station_makespan_sec": 22621.797,
+      "round_robin_same_history_station_makespan_sec": 32259.742,
+      "random_same_history_station_makespan_sec": 51602.422,
+      "actual_span_sec": 52486.378,
+      "global_break_total_sec": 0.0,
+      "actual_net_work_sec": 52486.378,
+      "history_replay_makespan_sec": 29796.819,
+      "history_replay_station_count": 12,
+      "ai_vs_round_robin_best_improvement_pct": 1.389,
+      "ai_vs_random_best_improvement_pct": 31.048,
+      "ai_vs_actual_net_improvement_pct": 56.9,
+      "ai_vs_history_replay_same_station_improvement_pct": 24.08,
+      "ai_vs_history_replay_best_improvement_pct": 1.106,
+      "strategy_scans": [
+        {
+          "station_limit": 1,
+          "ai_makespan_sec": 231806.844,
+          "round_robin_makespan_sec": 231806.844,
+          "random_makespan_sec": 231806.844
+        },
+        {
+          "station_limit": 2,
+          "ai_makespan_sec": 119664.523,
+          "round_robin_makespan_sec": 129493.281,
+          "random_makespan_sec": 149100.625
+        },
+        {
+          "station_limit": 3,
+          "ai_makespan_sec": 82380.828,
+          "round_robin_makespan_sec": 92037.93,
+          "random_makespan_sec": 116754.93
+        },
+        {
+          "station_limit": 4,
+          "ai_makespan_sec": 62919.238,
+          "round_robin_makespan_sec": 72669.008,
+          "random_makespan_sec": 100623.328
+        },
+        {
+          "station_limit": 5,
+          "ai_makespan_sec": 50609.504,
+          "round_robin_makespan_sec": 59654.812,
+          "random_makespan_sec": 81504.156
+        },
+        {
+          "station_limit": 6,
+          "ai_makespan_sec": 42358.176,
+          "round_robin_makespan_sec": 52723.773,
+          "random_makespan_sec": 74735.25
+        },
+        {
+          "station_limit": 7,
+          "ai_makespan_sec": 36856.707,
+          "round_robin_makespan_sec": 45602.52,
+          "random_makespan_sec": 70981.383
+        },
+        {
+          "station_limit": 8,
+          "ai_makespan_sec": 32493.402,
+          "round_robin_makespan_sec": 41409.27,
+          "random_makespan_sec": 64347.984
+        },
+        {
+          "station_limit": 9,
+          "ai_makespan_sec": 29467.338,
+          "round_robin_makespan_sec": 38361.34,
+          "random_makespan_sec": 59074.77
+        },
+        {
+          "station_limit": 10,
+          "ai_makespan_sec": 26545.768,
+          "round_robin_makespan_sec": 35677.18,
+          "random_makespan_sec": 58898.543
+        },
+        {
+          "station_limit": 11,
+          "ai_makespan_sec": 24403.006,
+          "round_robin_makespan_sec": 33174.984,
+          "random_makespan_sec": 52442.102
+        },
+        {
+          "station_limit": 12,
+          "ai_makespan_sec": 22621.797,
+          "round_robin_makespan_sec": 32259.742,
+          "random_makespan_sec": 51602.422
+        },
+        {
+          "station_limit": 13,
+          "ai_makespan_sec": 21241.504,
+          "round_robin_makespan_sec": 29882.438,
+          "random_makespan_sec": 50945.574
+        },
+        {
+          "station_limit": 14,
+          "ai_makespan_sec": 19831.051,
+          "round_robin_makespan_sec": 28142.775,
+          "random_makespan_sec": 47304.383
+        },
+        {
+          "station_limit": 15,
+          "ai_makespan_sec": 19014.748,
+          "round_robin_makespan_sec": 26478.703,
+          "random_makespan_sec": 42735.809
+        },
+        {
+          "station_limit": 16,
+          "ai_makespan_sec": 17758.297,
+          "round_robin_makespan_sec": 25807.334,
+          "random_makespan_sec": 47516.262
+        }
+      ],
+      "ai_vs_round_robin_station_hour_efficiency_pct": 31.731,
+      "ai_vs_random_station_hour_efficiency_pct": 58.629,
+      "ai_vs_actual_net_station_hour_efficiency_pct": 57.893,
+      "ai_vs_history_replay_station_hour_efficiency_pct": 25.829
+    },
+    {
+      "date": "2026-04-18",
+      "algorithm_order_count": 1611,
+      "history_order_count": 1611,
+      "history_box_count": 5314,
+      "historical_station_count": 12,
+      "ai_best_stations": 8,
+      "ai_best_makespan_sec": 27859.596,
+      "round_robin_best_stations": 10,
+      "round_robin_best_makespan_sec": 27861.49,
+      "random_best_stations": 16,
+      "random_best_makespan_sec": 38379.262,
+      "ai_same_history_station_makespan_sec": 19615.082,
+      "round_robin_same_history_station_makespan_sec": 24369.568,
+      "random_same_history_station_makespan_sec": 42028.406,
+      "actual_span_sec": 78203.65,
+      "global_break_total_sec": 25887.378,
+      "actual_net_work_sec": 52316.272,
+      "history_replay_makespan_sec": 23944.092,
+      "history_replay_station_count": 12,
+      "ai_vs_round_robin_best_improvement_pct": 0.007,
+      "ai_vs_random_best_improvement_pct": 27.41,
+      "ai_vs_actual_net_improvement_pct": 62.507,
+      "ai_vs_history_replay_same_station_improvement_pct": 18.08,
+      "ai_vs_history_replay_best_improvement_pct": -16.353,
+      "strategy_scans": [
+        {
+          "station_limit": 1,
+          "ai_makespan_sec": 194038.094,
+          "round_robin_makespan_sec": 194038.094,
+          "random_makespan_sec": 194038.094
+        },
+        {
+          "station_limit": 2,
+          "ai_makespan_sec": 98556.719,
+          "round_robin_makespan_sec": 107062.031,
+          "random_makespan_sec": 126014.297
+        },
+        {
+          "station_limit": 3,
+          "ai_makespan_sec": 69962.734,
+          "round_robin_makespan_sec": 77477.25,
+          "random_makespan_sec": 96506.984
+        },
+        {
+          "station_limit": 4,
+          "ai_makespan_sec": 54216.902,
+          "round_robin_makespan_sec": 59483.133,
+          "random_makespan_sec": 84782.773
+        },
+        {
+          "station_limit": 5,
+          "ai_makespan_sec": 42545.809,
+          "round_robin_makespan_sec": 49874.16,
+          "random_makespan_sec": 68271.875
+        },
+        {
+          "station_limit": 6,
+          "ai_makespan_sec": 36023.0,
+          "round_robin_makespan_sec": 43003.062,
+          "random_makespan_sec": 62839.461
+        },
+        {
+          "station_limit": 7,
+          "ai_makespan_sec": 31117.889,
+          "round_robin_makespan_sec": 37829.141,
+          "random_makespan_sec": 58480.188
+        },
+        {
+          "station_limit": 8,
+          "ai_makespan_sec": 27859.596,
+          "round_robin_makespan_sec": 34937.086,
+          "random_makespan_sec": 55342.539
+        },
+        {
+          "station_limit": 9,
+          "ai_makespan_sec": 24664.748,
+          "round_robin_makespan_sec": 31215.703,
+          "random_makespan_sec": 46829.672
+        },
+        {
+          "station_limit": 10,
+          "ai_makespan_sec": 23065.74,
+          "round_robin_makespan_sec": 27861.49,
+          "random_makespan_sec": 48346.465
+        },
+        {
+          "station_limit": 11,
+          "ai_makespan_sec": 21252.6,
+          "round_robin_makespan_sec": 26334.926,
+          "random_makespan_sec": 45852.586
+        },
+        {
+          "station_limit": 12,
+          "ai_makespan_sec": 19615.082,
+          "round_robin_makespan_sec": 24369.568,
+          "random_makespan_sec": 42028.406
+        },
+        {
+          "station_limit": 13,
+          "ai_makespan_sec": 18330.168,
+          "round_robin_makespan_sec": 23293.512,
+          "random_makespan_sec": 42837.441
+        },
+        {
+          "station_limit": 14,
+          "ai_makespan_sec": 17222.637,
+          "round_robin_makespan_sec": 21574.949,
+          "random_makespan_sec": 41799.207
+        },
+        {
+          "station_limit": 15,
+          "ai_makespan_sec": 15699.699,
+          "round_robin_makespan_sec": 20637.906,
+          "random_makespan_sec": 38679.84
+        },
+        {
+          "station_limit": 16,
+          "ai_makespan_sec": 15138.604,
+          "round_robin_makespan_sec": 19537.789,
+          "random_makespan_sec": 38379.262
+        }
+      ],
+      "ai_vs_round_robin_station_hour_efficiency_pct": 20.005,
+      "ai_vs_random_station_hour_efficiency_pct": 63.705,
+      "ai_vs_actual_net_station_hour_efficiency_pct": 64.498,
+      "ai_vs_history_replay_station_hour_efficiency_pct": 22.432
+    },
+    {
+      "date": "2026-04-20",
+      "algorithm_order_count": 1642,
+      "history_order_count": 1642,
+      "history_box_count": 5371,
+      "historical_station_count": 12,
+      "ai_best_stations": 9,
+      "ai_best_makespan_sec": 27952.68,
+      "round_robin_best_stations": 11,
+      "round_robin_best_makespan_sec": 29797.674,
+      "random_best_stations": 16,
+      "random_best_makespan_sec": 39776.043,
+      "ai_same_history_station_makespan_sec": 21792.562,
+      "round_robin_same_history_station_makespan_sec": 27728.682,
+      "random_same_history_station_makespan_sec": 44682.914,
+      "actual_span_sec": 51544.082,
+      "global_break_total_sec": 0.0,
+      "actual_net_work_sec": 51544.082,
+      "history_replay_makespan_sec": 27203.873,
+      "history_replay_station_count": 12,
+      "ai_vs_round_robin_best_improvement_pct": 6.192,
+      "ai_vs_random_best_improvement_pct": 29.725,
+      "ai_vs_actual_net_improvement_pct": 57.721,
+      "ai_vs_history_replay_same_station_improvement_pct": 19.892,
+      "ai_vs_history_replay_best_improvement_pct": -2.753,
+      "strategy_scans": [
+        {
+          "station_limit": 1,
+          "ai_makespan_sec": 215488.203,
+          "round_robin_makespan_sec": 215488.203,
+          "random_makespan_sec": 215488.203
+        },
+        {
+          "station_limit": 2,
+          "ai_makespan_sec": 109474.438,
+          "round_robin_makespan_sec": 118646.039,
+          "random_makespan_sec": 140605.703
+        },
+        {
+          "station_limit": 3,
+          "ai_makespan_sec": 76914.672,
+          "round_robin_makespan_sec": 84922.336,
+          "random_makespan_sec": 104744.328
+        },
+        {
+          "station_limit": 4,
+          "ai_makespan_sec": 59755.922,
+          "round_robin_makespan_sec": 65892.203,
+          "random_makespan_sec": 87223.555
+        },
+        {
+          "station_limit": 5,
+          "ai_makespan_sec": 47192.898,
+          "round_robin_makespan_sec": 53973.383,
+          "random_makespan_sec": 78056.469
+        },
+        {
+          "station_limit": 6,
+          "ai_makespan_sec": 39248.664,
+          "round_robin_makespan_sec": 47372.676,
+          "random_makespan_sec": 67377.812
+        },
+        {
+          "station_limit": 7,
+          "ai_makespan_sec": 34164.375,
+          "round_robin_makespan_sec": 40852.992,
+          "random_makespan_sec": 63520.586
+        },
+        {
+          "station_limit": 8,
+          "ai_makespan_sec": 30609.469,
+          "round_robin_makespan_sec": 37082.195,
+          "random_makespan_sec": 57994.879
+        },
+        {
+          "station_limit": 9,
+          "ai_makespan_sec": 27952.68,
+          "round_robin_makespan_sec": 33188.586,
+          "random_makespan_sec": 56178.77
+        },
+        {
+          "station_limit": 10,
+          "ai_makespan_sec": 25290.852,
+          "round_robin_makespan_sec": 30877.303,
+          "random_makespan_sec": 53694.438
+        },
+        {
+          "station_limit": 11,
+          "ai_makespan_sec": 23413.588,
+          "round_robin_makespan_sec": 29797.674,
+          "random_makespan_sec": 48734.402
+        },
+        {
+          "station_limit": 12,
+          "ai_makespan_sec": 21792.562,
+          "round_robin_makespan_sec": 27728.682,
+          "random_makespan_sec": 44682.914
+        },
+        {
+          "station_limit": 13,
+          "ai_makespan_sec": 20036.844,
+          "round_robin_makespan_sec": 25879.859,
+          "random_makespan_sec": 47134.617
+        },
+        {
+          "station_limit": 14,
+          "ai_makespan_sec": 18706.541,
+          "round_robin_makespan_sec": 24115.441,
+          "random_makespan_sec": 48254.258
+        },
+        {
+          "station_limit": 15,
+          "ai_makespan_sec": 17534.553,
+          "round_robin_makespan_sec": 23055.662,
+          "random_makespan_sec": 43548.164
+        },
+        {
+          "station_limit": 16,
+          "ai_makespan_sec": 16398.998,
+          "round_robin_makespan_sec": 21702.246,
+          "random_makespan_sec": 39776.043
+        }
+      ],
+      "ai_vs_round_robin_station_hour_efficiency_pct": 23.248,
+      "ai_vs_random_station_hour_efficiency_pct": 60.47,
+      "ai_vs_actual_net_station_hour_efficiency_pct": 59.327,
+      "ai_vs_history_replay_station_hour_efficiency_pct": 22.936
+    },
+    {
+      "date": "2026-04-21",
+      "algorithm_order_count": 1588,
+      "history_order_count": 1588,
+      "history_box_count": 5283,
+      "historical_station_count": 12,
+      "ai_best_stations": 8,
+      "ai_best_makespan_sec": 29678.254,
+      "round_robin_best_stations": 10,
+      "round_robin_best_makespan_sec": 29494.852,
+      "random_best_stations": 16,
+      "random_best_makespan_sec": 40377.805,
+      "ai_same_history_station_makespan_sec": 20680.666,
+      "round_robin_same_history_station_makespan_sec": 25419.67,
+      "random_same_history_station_makespan_sec": 47338.945,
+      "actual_span_sec": 57825.519,
+      "global_break_total_sec": 6408.287,
+      "actual_net_work_sec": 51417.232,
+      "history_replay_makespan_sec": 23904.57,
+      "history_replay_station_count": 12,
+      "ai_vs_round_robin_best_improvement_pct": -0.622,
+      "ai_vs_random_best_improvement_pct": 26.499,
+      "ai_vs_actual_net_improvement_pct": 59.779,
+      "ai_vs_history_replay_same_station_improvement_pct": 13.487,
+      "ai_vs_history_replay_best_improvement_pct": -24.153,
+      "strategy_scans": [
+        {
+          "station_limit": 1,
+          "ai_makespan_sec": 208936.531,
+          "round_robin_makespan_sec": 208936.531,
+          "random_makespan_sec": 208936.531
+        },
+        {
+          "station_limit": 2,
+          "ai_makespan_sec": 106473.742,
+          "round_robin_makespan_sec": 113803.453,
+          "random_makespan_sec": 132845.656
+        },
+        {
+          "station_limit": 3,
+          "ai_makespan_sec": 74916.984,
+          "round_robin_makespan_sec": 81307.289,
+          "random_makespan_sec": 103139.555
+        },
+        {
+          "station_limit": 4,
+          "ai_makespan_sec": 57813.996,
+          "round_robin_makespan_sec": 64147.137,
+          "random_makespan_sec": 87096.641
+        },
+        {
+          "station_limit": 5,
+          "ai_makespan_sec": 45247.711,
+          "round_robin_makespan_sec": 52093.289,
+          "random_makespan_sec": 76104.625
+        },
+        {
+          "station_limit": 6,
+          "ai_makespan_sec": 38281.254,
+          "round_robin_makespan_sec": 44980.801,
+          "random_makespan_sec": 66579.727
+        },
+        {
+          "station_limit": 7,
+          "ai_makespan_sec": 33125.27,
+          "round_robin_makespan_sec": 39294.242,
+          "random_makespan_sec": 62291.039
+        },
+        {
+          "station_limit": 8,
+          "ai_makespan_sec": 29678.254,
+          "round_robin_makespan_sec": 36596.73,
+          "random_makespan_sec": 53978.793
+        },
+        {
+          "station_limit": 9,
+          "ai_makespan_sec": 26725.898,
+          "round_robin_makespan_sec": 32666.555,
+          "random_makespan_sec": 53261.516
+        },
+        {
+          "station_limit": 10,
+          "ai_makespan_sec": 24629.76,
+          "round_robin_makespan_sec": 29494.852,
+          "random_makespan_sec": 50707.496
+        },
+        {
+          "station_limit": 11,
+          "ai_makespan_sec": 21846.494,
+          "round_robin_makespan_sec": 27490.039,
+          "random_makespan_sec": 48970.891
+        },
+        {
+          "station_limit": 12,
+          "ai_makespan_sec": 20680.666,
+          "round_robin_makespan_sec": 25419.67,
+          "random_makespan_sec": 47338.945
+        },
+        {
+          "station_limit": 13,
+          "ai_makespan_sec": 19627.141,
+          "round_robin_makespan_sec": 25189.186,
+          "random_makespan_sec": 42902.887
+        },
+        {
+          "station_limit": 14,
+          "ai_makespan_sec": 17776.24,
+          "round_robin_makespan_sec": 22859.441,
+          "random_makespan_sec": 42022.184
+        },
+        {
+          "station_limit": 15,
+          "ai_makespan_sec": 16807.656,
+          "round_robin_makespan_sec": 21408.297,
+          "random_makespan_sec": 42893.895
+        },
+        {
+          "station_limit": 16,
+          "ai_makespan_sec": 15812.205,
+          "round_robin_makespan_sec": 20773.492,
+          "random_makespan_sec": 40377.805
+        }
+      ],
+      "ai_vs_round_robin_station_hour_efficiency_pct": 19.503,
+      "ai_vs_random_station_hour_efficiency_pct": 63.249,
+      "ai_vs_actual_net_station_hour_efficiency_pct": 61.52,
+      "ai_vs_history_replay_station_hour_efficiency_pct": 17.231
+    },
+    {
+      "date": "2026-04-22",
+      "algorithm_order_count": 1795,
+      "history_order_count": 1796,
+      "history_box_count": 5756,
+      "historical_station_count": 12,
+      "ai_best_stations": 9,
+      "ai_best_makespan_sec": 29144.033,
+      "round_robin_best_stations": 12,
+      "round_robin_best_makespan_sec": 29330.49,
+      "random_best_stations": 16,
+      "random_best_makespan_sec": 42993.848,
+      "ai_same_history_station_makespan_sec": 21706.814,
+      "round_robin_same_history_station_makespan_sec": 29330.49,
+      "random_same_history_station_makespan_sec": 51201.336,
+      "actual_span_sec": 82447.724,
+      "global_break_total_sec": 31238.343,
+      "actual_net_work_sec": 51209.381,
+      "history_replay_makespan_sec": 28698.951,
+      "history_replay_station_count": 12,
+      "ai_vs_round_robin_best_improvement_pct": 0.636,
+      "ai_vs_random_best_improvement_pct": 32.213,
+      "ai_vs_actual_net_improvement_pct": 57.612,
+      "ai_vs_history_replay_same_station_improvement_pct": 24.364,
+      "ai_vs_history_replay_best_improvement_pct": -1.551,
+      "strategy_scans": [
+        {
+          "station_limit": 1,
+          "ai_makespan_sec": 223753.938,
+          "round_robin_makespan_sec": 223753.938,
+          "random_makespan_sec": 223753.938
+        },
+        {
+          "station_limit": 2,
+          "ai_makespan_sec": 114574.555,
+          "round_robin_makespan_sec": 125019.867,
+          "random_makespan_sec": 142037.406
+        },
+        {
+          "station_limit": 3,
+          "ai_makespan_sec": 79914.992,
+          "round_robin_makespan_sec": 89898.117,
+          "random_makespan_sec": 113078.562
+        },
+        {
+          "station_limit": 4,
+          "ai_makespan_sec": 61917.777,
+          "round_robin_makespan_sec": 70968.18,
+          "random_makespan_sec": 92755.039
+        },
+        {
+          "station_limit": 5,
+          "ai_makespan_sec": 49212.422,
+          "round_robin_makespan_sec": 57737.164,
+          "random_makespan_sec": 82755.438
+        },
+        {
+          "station_limit": 6,
+          "ai_makespan_sec": 41401.801,
+          "round_robin_makespan_sec": 49956.656,
+          "random_makespan_sec": 74033.703
+        },
+        {
+          "station_limit": 7,
+          "ai_makespan_sec": 35618.914,
+          "round_robin_makespan_sec": 43812.762,
+          "random_makespan_sec": 69009.523
+        },
+        {
+          "station_limit": 8,
+          "ai_makespan_sec": 31654.137,
+          "round_robin_makespan_sec": 39982.438,
+          "random_makespan_sec": 62334.18
+        },
+        {
+          "station_limit": 9,
+          "ai_makespan_sec": 29144.033,
+          "round_robin_makespan_sec": 36268.676,
+          "random_makespan_sec": 57892.18
+        },
+        {
+          "station_limit": 10,
+          "ai_makespan_sec": 26214.895,
+          "round_robin_makespan_sec": 33483.219,
+          "random_makespan_sec": 56727.516
+        },
+        {
+          "station_limit": 11,
+          "ai_makespan_sec": 23809.814,
+          "round_robin_makespan_sec": 31052.703,
+          "random_makespan_sec": 52535.566
+        },
+        {
+          "station_limit": 12,
+          "ai_makespan_sec": 21706.814,
+          "round_robin_makespan_sec": 29330.49,
+          "random_makespan_sec": 51201.336
+        },
+        {
+          "station_limit": 13,
+          "ai_makespan_sec": 20808.928,
+          "round_robin_makespan_sec": 27437.312,
+          "random_makespan_sec": 46001.191
+        },
+        {
+          "station_limit": 14,
+          "ai_makespan_sec": 19923.609,
+          "round_robin_makespan_sec": 25944.312,
+          "random_makespan_sec": 45741.957
+        },
+        {
+          "station_limit": 15,
+          "ai_makespan_sec": 18219.098,
+          "round_robin_makespan_sec": 25416.191,
+          "random_makespan_sec": 44610.109
+        },
+        {
+          "station_limit": 16,
+          "ai_makespan_sec": 16782.498,
+          "round_robin_makespan_sec": 23935.975,
+          "random_makespan_sec": 42993.848
+        }
+      ],
+      "ai_vs_round_robin_station_hour_efficiency_pct": 25.477,
+      "ai_vs_random_station_hour_efficiency_pct": 61.87,
+      "ai_vs_actual_net_station_hour_efficiency_pct": 57.316,
+      "ai_vs_history_replay_station_hour_efficiency_pct": 23.837
+    },
+    {
+      "date": "2026-04-23",
+      "algorithm_order_count": 1752,
+      "history_order_count": 1752,
+      "history_box_count": 5548,
+      "historical_station_count": 12,
+      "ai_best_stations": 8,
+      "ai_best_makespan_sec": 29557.205,
+      "round_robin_best_stations": 11,
+      "round_robin_best_makespan_sec": 30371.455,
+      "random_best_stations": 16,
+      "random_best_makespan_sec": 41421.648,
+      "ai_same_history_station_makespan_sec": 20777.375,
+      "round_robin_same_history_station_makespan_sec": 29323.65,
+      "random_same_history_station_makespan_sec": 49287.711,
+      "actual_span_sec": 85580.753,
+      "global_break_total_sec": 34051.181,
+      "actual_net_work_sec": 51529.572,
+      "history_replay_makespan_sec": 25681.981,
+      "history_replay_station_count": 12,
+      "ai_vs_round_robin_best_improvement_pct": 2.681,
+      "ai_vs_random_best_improvement_pct": 28.643,
+      "ai_vs_actual_net_improvement_pct": 59.679,
+      "ai_vs_history_replay_same_station_improvement_pct": 19.097,
+      "ai_vs_history_replay_best_improvement_pct": -15.089,
+      "strategy_scans": [
+        {
+          "station_limit": 1,
+          "ai_makespan_sec": 206001.859,
+          "round_robin_makespan_sec": 206001.859,
+          "random_makespan_sec": 206001.859
+        },
+        {
+          "station_limit": 2,
+          "ai_makespan_sec": 106576.469,
+          "round_robin_makespan_sec": 116499.023,
+          "random_makespan_sec": 131676.938
+        },
+        {
+          "station_limit": 3,
+          "ai_makespan_sec": 74328.086,
+          "round_robin_makespan_sec": 84076.086,
+          "random_makespan_sec": 104834.828
+        },
+        {
+          "station_limit": 4,
+          "ai_makespan_sec": 58215.785,
+          "round_robin_makespan_sec": 66796.836,
+          "random_makespan_sec": 88498.898
+        },
+        {
+          "station_limit": 5,
+          "ai_makespan_sec": 45323.418,
+          "round_robin_makespan_sec": 55545.133,
+          "random_makespan_sec": 77833.555
+        },
+        {
+          "station_limit": 6,
+          "ai_makespan_sec": 38669.41,
+          "round_robin_makespan_sec": 48409.969,
+          "random_makespan_sec": 70857.383
+        },
+        {
+          "station_limit": 7,
+          "ai_makespan_sec": 33637.617,
+          "round_robin_makespan_sec": 41951.609,
+          "random_makespan_sec": 63233.426
+        },
+        {
+          "station_limit": 8,
+          "ai_makespan_sec": 29557.205,
+          "round_robin_makespan_sec": 38725.496,
+          "random_makespan_sec": 59358.488
+        },
+        {
+          "station_limit": 9,
+          "ai_makespan_sec": 27029.049,
+          "round_robin_makespan_sec": 34406.012,
+          "random_makespan_sec": 59000.039
+        },
+        {
+          "station_limit": 10,
+          "ai_makespan_sec": 24764.955,
+          "round_robin_makespan_sec": 32474.566,
+          "random_makespan_sec": 53925.152
+        },
+        {
+          "station_limit": 11,
+          "ai_makespan_sec": 22303.172,
+          "round_robin_makespan_sec": 30371.455,
+          "random_makespan_sec": 50350.547
+        },
+        {
+          "station_limit": 12,
+          "ai_makespan_sec": 20777.375,
+          "round_robin_makespan_sec": 29323.65,
+          "random_makespan_sec": 49287.711
+        },
+        {
+          "station_limit": 13,
+          "ai_makespan_sec": 19921.928,
+          "round_robin_makespan_sec": 27501.914,
+          "random_makespan_sec": 46812.855
+        },
+        {
+          "station_limit": 14,
+          "ai_makespan_sec": 18285.434,
+          "round_robin_makespan_sec": 25453.211,
+          "random_makespan_sec": 42319.645
+        },
+        {
+          "station_limit": 15,
+          "ai_makespan_sec": 17425.211,
+          "round_robin_makespan_sec": 24933.219,
+          "random_makespan_sec": 44409.141
+        },
+        {
+          "station_limit": 16,
+          "ai_makespan_sec": 15949.64,
+          "round_robin_makespan_sec": 23373.529,
+          "random_makespan_sec": 41421.648
+        }
+      ],
+      "ai_vs_round_robin_station_hour_efficiency_pct": 29.223,
+      "ai_vs_random_station_hour_efficiency_pct": 64.322,
+      "ai_vs_actual_net_station_hour_efficiency_pct": 61.76,
+      "ai_vs_history_replay_station_hour_efficiency_pct": 23.274
+    },
+    {
+      "date": "2026-04-24",
+      "algorithm_order_count": 1583,
+      "history_order_count": 1585,
+      "history_box_count": 4970,
+      "historical_station_count": 12,
+      "ai_best_stations": 8,
+      "ai_best_makespan_sec": 27641.914,
+      "round_robin_best_stations": 10,
+      "round_robin_best_makespan_sec": 30050.268,
+      "random_best_stations": 16,
+      "random_best_makespan_sec": 38147.656,
+      "ai_same_history_station_makespan_sec": 19079.105,
+      "round_robin_same_history_station_makespan_sec": 25642.588,
+      "random_same_history_station_makespan_sec": 45252.715,
+      "actual_span_sec": 89695.165,
+      "global_break_total_sec": 29386.582,
+      "actual_net_work_sec": 60308.583,
+      "history_replay_makespan_sec": 25019.62,
+      "history_replay_station_count": 12,
+      "ai_vs_round_robin_best_improvement_pct": 8.014,
+      "ai_vs_random_best_improvement_pct": 27.54,
+      "ai_vs_actual_net_improvement_pct": 68.364,
+      "ai_vs_history_replay_same_station_improvement_pct": 23.743,
+      "ai_vs_history_replay_best_improvement_pct": -10.481,
+      "strategy_scans": [
+        {
+          "station_limit": 1,
+          "ai_makespan_sec": 192212.609,
+          "round_robin_makespan_sec": 192212.609,
+          "random_makespan_sec": 192212.609
+        },
+        {
+          "station_limit": 2,
+          "ai_makespan_sec": 99325.094,
+          "round_robin_makespan_sec": 108223.297,
+          "random_makespan_sec": 124093.109
+        },
+        {
+          "station_limit": 3,
+          "ai_makespan_sec": 69358.109,
+          "round_robin_makespan_sec": 77127.828,
+          "random_makespan_sec": 99209.0
+        },
+        {
+          "station_limit": 4,
+          "ai_makespan_sec": 53064.363,
+          "round_robin_makespan_sec": 61183.836,
+          "random_makespan_sec": 81416.047
+        },
+        {
+          "station_limit": 5,
+          "ai_makespan_sec": 42209.926,
+          "round_robin_makespan_sec": 50066.105,
+          "random_makespan_sec": 71082.188
+        },
+        {
+          "station_limit": 6,
+          "ai_makespan_sec": 35703.105,
+          "round_robin_makespan_sec": 43700.922,
+          "random_makespan_sec": 65063.387
+        },
+        {
+          "station_limit": 7,
+          "ai_makespan_sec": 30976.361,
+          "round_robin_makespan_sec": 39174.836,
+          "random_makespan_sec": 57074.891
+        },
+        {
+          "station_limit": 8,
+          "ai_makespan_sec": 27641.914,
+          "round_robin_makespan_sec": 35003.66,
+          "random_makespan_sec": 54016.391
+        },
+        {
+          "station_limit": 9,
+          "ai_makespan_sec": 24781.744,
+          "round_robin_makespan_sec": 31946.57,
+          "random_makespan_sec": 51341.0
+        },
+        {
+          "station_limit": 10,
+          "ai_makespan_sec": 22759.229,
+          "round_robin_makespan_sec": 30050.268,
+          "random_makespan_sec": 49185.586
+        },
+        {
+          "station_limit": 11,
+          "ai_makespan_sec": 20819.104,
+          "round_robin_makespan_sec": 27981.367,
+          "random_makespan_sec": 46240.688
+        },
+        {
+          "station_limit": 12,
+          "ai_makespan_sec": 19079.105,
+          "round_robin_makespan_sec": 25642.588,
+          "random_makespan_sec": 45252.715
+        },
+        {
+          "station_limit": 13,
+          "ai_makespan_sec": 18549.484,
+          "round_robin_makespan_sec": 24764.805,
+          "random_makespan_sec": 42256.785
+        },
+        {
+          "station_limit": 14,
+          "ai_makespan_sec": 16849.096,
+          "round_robin_makespan_sec": 23745.979,
+          "random_makespan_sec": 42218.531
+        },
+        {
+          "station_limit": 15,
+          "ai_makespan_sec": 16019.543,
+          "round_robin_makespan_sec": 22053.842,
+          "random_makespan_sec": 40662.129
+        },
+        {
+          "station_limit": 16,
+          "ai_makespan_sec": 15156.772,
+          "round_robin_makespan_sec": 21339.121,
+          "random_makespan_sec": 38147.656
+        }
+      ],
+      "ai_vs_round_robin_station_hour_efficiency_pct": 26.412,
+      "ai_vs_random_station_hour_efficiency_pct": 63.77,
+      "ai_vs_actual_net_station_hour_efficiency_pct": 69.444,
+      "ai_vs_history_replay_station_hour_efficiency_pct": 26.346
+    },
+    {
+      "date": "2026-04-25",
+      "algorithm_order_count": 1724,
+      "history_order_count": 1724,
+      "history_box_count": 5575,
+      "historical_station_count": 12,
+      "ai_best_stations": 9,
+      "ai_best_makespan_sec": 29291.547,
+      "round_robin_best_stations": 13,
+      "round_robin_best_makespan_sec": 29227.566,
+      "random_best_stations": 15,
+      "random_best_makespan_sec": 44300.375,
+      "ai_same_history_station_makespan_sec": 22638.311,
+      "round_robin_same_history_station_makespan_sec": 31074.707,
+      "random_same_history_station_makespan_sec": 51425.426,
+      "actual_span_sec": 52928.068,
+      "global_break_total_sec": 0.0,
+      "actual_net_work_sec": 52928.068,
+      "history_replay_makespan_sec": 31440.285,
+      "history_replay_station_count": 12,
+      "ai_vs_round_robin_best_improvement_pct": -0.219,
+      "ai_vs_random_best_improvement_pct": 33.88,
+      "ai_vs_actual_net_improvement_pct": 57.228,
+      "ai_vs_history_replay_same_station_improvement_pct": 27.996,
+      "ai_vs_history_replay_best_improvement_pct": 6.834,
+      "strategy_scans": [
+        {
+          "station_limit": 1,
+          "ai_makespan_sec": 224055.125,
+          "round_robin_makespan_sec": 224055.125,
+          "random_makespan_sec": 224055.125
+        },
+        {
+          "station_limit": 2,
+          "ai_makespan_sec": 114881.688,
+          "round_robin_makespan_sec": 126988.32,
+          "random_makespan_sec": 147709.656
+        },
+        {
+          "station_limit": 3,
+          "ai_makespan_sec": 79971.477,
+          "round_robin_makespan_sec": 89154.555,
+          "random_makespan_sec": 113018.258
+        },
+        {
+          "station_limit": 4,
+          "ai_makespan_sec": 61765.219,
+          "round_robin_makespan_sec": 70439.906,
+          "random_makespan_sec": 92550.359
+        },
+        {
+          "station_limit": 5,
+          "ai_makespan_sec": 49404.113,
+          "round_robin_makespan_sec": 59236.551,
+          "random_makespan_sec": 85789.656
+        },
+        {
+          "station_limit": 6,
+          "ai_makespan_sec": 40998.281,
+          "round_robin_makespan_sec": 52072.375,
+          "random_makespan_sec": 77613.07
+        },
+        {
+          "station_limit": 7,
+          "ai_makespan_sec": 35555.375,
+          "round_robin_makespan_sec": 45662.695,
+          "random_makespan_sec": 69571.391
+        },
+        {
+          "station_limit": 8,
+          "ai_makespan_sec": 31644.92,
+          "round_robin_makespan_sec": 41511.953,
+          "random_makespan_sec": 61855.629
+        },
+        {
+          "station_limit": 9,
+          "ai_makespan_sec": 29291.547,
+          "round_robin_makespan_sec": 38245.102,
+          "random_makespan_sec": 62458.25
+        },
+        {
+          "station_limit": 10,
+          "ai_makespan_sec": 26294.908,
+          "round_robin_makespan_sec": 35435.0,
+          "random_makespan_sec": 55702.176
+        },
+        {
+          "station_limit": 11,
+          "ai_makespan_sec": 23888.229,
+          "round_robin_makespan_sec": 32925.059,
+          "random_makespan_sec": 57221.5
+        },
+        {
+          "station_limit": 12,
+          "ai_makespan_sec": 22638.311,
+          "round_robin_makespan_sec": 31074.707,
+          "random_makespan_sec": 51425.426
+        },
+        {
+          "station_limit": 13,
+          "ai_makespan_sec": 20832.42,
+          "round_robin_makespan_sec": 29227.566,
+          "random_makespan_sec": 52616.27
+        },
+        {
+          "station_limit": 14,
+          "ai_makespan_sec": 19606.514,
+          "round_robin_makespan_sec": 27550.285,
+          "random_makespan_sec": 47510.418
+        },
+        {
+          "station_limit": 15,
+          "ai_makespan_sec": 18202.266,
+          "round_robin_makespan_sec": 26285.432,
+          "random_makespan_sec": 44300.375
+        },
+        {
+          "station_limit": 16,
+          "ai_makespan_sec": 17159.588,
+          "round_robin_makespan_sec": 25783.928,
+          "random_makespan_sec": 46149.621
+        }
+      ],
+      "ai_vs_round_robin_station_hour_efficiency_pct": 30.618,
+      "ai_vs_random_station_hour_efficiency_pct": 60.328,
+      "ai_vs_actual_net_station_hour_efficiency_pct": 58.493,
+      "ai_vs_history_replay_station_hour_efficiency_pct": 30.126
+    },
+    {
+      "date": "2026-04-27",
+      "algorithm_order_count": 1676,
+      "history_order_count": 1676,
+      "history_box_count": 5523,
+      "historical_station_count": 13,
+      "ai_best_stations": 9,
+      "ai_best_makespan_sec": 29081.785,
+      "round_robin_best_stations": 11,
+      "round_robin_best_makespan_sec": 29739.875,
+      "random_best_stations": 16,
+      "random_best_makespan_sec": 41806.891,
+      "ai_same_history_station_makespan_sec": 21221.836,
+      "round_robin_same_history_station_makespan_sec": 25732.98,
+      "random_same_history_station_makespan_sec": 46389.703,
+      "actual_span_sec": 57446.296,
+      "global_break_total_sec": 8625.801,
+      "actual_net_work_sec": 48820.495,
+      "history_replay_makespan_sec": 30906.209,
+      "history_replay_station_count": 13,
+      "ai_vs_round_robin_best_improvement_pct": 2.213,
+      "ai_vs_random_best_improvement_pct": 30.438,
+      "ai_vs_actual_net_improvement_pct": 56.531,
+      "ai_vs_history_replay_same_station_improvement_pct": 31.335,
+      "ai_vs_history_replay_best_improvement_pct": 5.903,
+      "strategy_scans": [
+        {
+          "station_limit": 1,
+          "ai_makespan_sec": 224129.531,
+          "round_robin_makespan_sec": 224129.531,
+          "random_makespan_sec": 224129.531
+        },
+        {
+          "station_limit": 2,
+          "ai_makespan_sec": 114474.562,
+          "round_robin_makespan_sec": 124127.836,
+          "random_makespan_sec": 144772.312
+        },
+        {
+          "station_limit": 3,
+          "ai_makespan_sec": 80477.32,
+          "round_robin_makespan_sec": 86827.688,
+          "random_makespan_sec": 111026.742
+        },
+        {
+          "station_limit": 4,
+          "ai_makespan_sec": 62132.938,
+          "round_robin_makespan_sec": 68594.492,
+          "random_makespan_sec": 94303.32
+        },
+        {
+          "station_limit": 5,
+          "ai_makespan_sec": 48728.949,
+          "round_robin_makespan_sec": 56947.645,
+          "random_makespan_sec": 81551.922
+        },
+        {
+          "station_limit": 6,
+          "ai_makespan_sec": 41483.676,
+          "round_robin_makespan_sec": 48045.516,
+          "random_makespan_sec": 74971.703
+        },
+        {
+          "station_limit": 7,
+          "ai_makespan_sec": 36138.199,
+          "round_robin_makespan_sec": 42399.215,
+          "random_makespan_sec": 64736.273
+        },
+        {
+          "station_limit": 8,
+          "ai_makespan_sec": 31904.883,
+          "round_robin_makespan_sec": 38179.359,
+          "random_makespan_sec": 60950.105
+        },
+        {
+          "station_limit": 9,
+          "ai_makespan_sec": 29081.785,
+          "round_robin_makespan_sec": 34681.734,
+          "random_makespan_sec": 57124.523
+        },
+        {
+          "station_limit": 10,
+          "ai_makespan_sec": 26446.803,
+          "round_robin_makespan_sec": 31548.652,
+          "random_makespan_sec": 55454.266
+        },
+        {
+          "station_limit": 11,
+          "ai_makespan_sec": 24161.688,
+          "round_robin_makespan_sec": 29739.875,
+          "random_makespan_sec": 51673.836
+        },
+        {
+          "station_limit": 12,
+          "ai_makespan_sec": 22312.205,
+          "round_robin_makespan_sec": 27788.559,
+          "random_makespan_sec": 48002.66
+        },
+        {
+          "station_limit": 13,
+          "ai_makespan_sec": 21221.836,
+          "round_robin_makespan_sec": 25732.98,
+          "random_makespan_sec": 46389.703
+        },
+        {
+          "station_limit": 14,
+          "ai_makespan_sec": 19848.42,
+          "round_robin_makespan_sec": 24362.625,
+          "random_makespan_sec": 45416.164
+        },
+        {
+          "station_limit": 15,
+          "ai_makespan_sec": 18302.232,
+          "round_robin_makespan_sec": 22555.572,
+          "random_makespan_sec": 44728.094
+        },
+        {
+          "station_limit": 16,
+          "ai_makespan_sec": 17396.225,
+          "round_robin_makespan_sec": 22330.186,
+          "random_makespan_sec": 41806.891
+        }
+      ],
+      "ai_vs_round_robin_station_hour_efficiency_pct": 19.992,
+      "ai_vs_random_station_hour_efficiency_pct": 60.871,
+      "ai_vs_actual_net_station_hour_efficiency_pct": 58.76,
+      "ai_vs_history_replay_station_hour_efficiency_pct": 34.856
+    },
+    {
+      "date": "2026-04-28",
+      "algorithm_order_count": 1613,
+      "history_order_count": 1613,
+      "history_box_count": 5052,
+      "historical_station_count": 12,
+      "ai_best_stations": 8,
+      "ai_best_makespan_sec": 27165.684,
+      "round_robin_best_stations": 9,
+      "round_robin_best_makespan_sec": 29993.816,
+      "random_best_stations": 15,
+      "random_best_makespan_sec": 39212.262,
+      "ai_same_history_station_makespan_sec": 19885.227,
+      "round_robin_same_history_station_makespan_sec": 24363.027,
+      "random_same_history_station_makespan_sec": 44886.105,
+      "actual_span_sec": 56335.362,
+      "global_break_total_sec": 4898.257,
+      "actual_net_work_sec": 51437.105,
+      "history_replay_makespan_sec": 23702.816,
+      "history_replay_station_count": 12,
+      "ai_vs_round_robin_best_improvement_pct": 9.429,
+      "ai_vs_random_best_improvement_pct": 30.721,
+      "ai_vs_actual_net_improvement_pct": 61.341,
+      "ai_vs_history_replay_same_station_improvement_pct": 16.106,
+      "ai_vs_history_replay_best_improvement_pct": -14.61,
+      "strategy_scans": [
+        {
+          "station_limit": 1,
+          "ai_makespan_sec": 193020.266,
+          "round_robin_makespan_sec": 193020.266,
+          "random_makespan_sec": 193020.266
+        },
+        {
+          "station_limit": 2,
+          "ai_makespan_sec": 98441.758,
+          "round_robin_makespan_sec": 107766.18,
+          "random_makespan_sec": 120235.953
+        },
+        {
+          "station_limit": 3,
+          "ai_makespan_sec": 68579.492,
+          "round_robin_makespan_sec": 75410.602,
+          "random_makespan_sec": 96140.57
+        },
+        {
+          "station_limit": 4,
+          "ai_makespan_sec": 53631.168,
+          "round_robin_makespan_sec": 59778.719,
+          "random_makespan_sec": 78491.477
+        },
+        {
+          "station_limit": 5,
+          "ai_makespan_sec": 42654.527,
+          "round_robin_makespan_sec": 48646.0,
+          "random_makespan_sec": 72783.844
+        },
+        {
+          "station_limit": 6,
+          "ai_makespan_sec": 35960.168,
+          "round_robin_makespan_sec": 42923.93,
+          "random_makespan_sec": 61268.328
+        },
+        {
+          "station_limit": 7,
+          "ai_makespan_sec": 30861.996,
+          "round_robin_makespan_sec": 36871.711,
+          "random_makespan_sec": 56361.23
+        },
+        {
+          "station_limit": 8,
+          "ai_makespan_sec": 27165.684,
+          "round_robin_makespan_sec": 34029.137,
+          "random_makespan_sec": 53551.766
+        },
+        {
+          "station_limit": 9,
+          "ai_makespan_sec": 25211.01,
+          "round_robin_makespan_sec": 29993.816,
+          "random_makespan_sec": 53102.406
+        },
+        {
+          "station_limit": 10,
+          "ai_makespan_sec": 22881.285,
+          "round_robin_makespan_sec": 27564.875,
+          "random_makespan_sec": 48030.023
+        },
+        {
+          "station_limit": 11,
+          "ai_makespan_sec": 20994.287,
+          "round_robin_makespan_sec": 26553.139,
+          "random_makespan_sec": 44586.301
+        },
+        {
+          "station_limit": 12,
+          "ai_makespan_sec": 19885.227,
+          "round_robin_makespan_sec": 24363.027,
+          "random_makespan_sec": 44886.105
+        },
+        {
+          "station_limit": 13,
+          "ai_makespan_sec": 18316.646,
+          "round_robin_makespan_sec": 23096.15,
+          "random_makespan_sec": 39638.453
+        },
+        {
+          "station_limit": 14,
+          "ai_makespan_sec": 17005.574,
+          "round_robin_makespan_sec": 21822.904,
+          "random_makespan_sec": 39455.949
+        },
+        {
+          "station_limit": 15,
+          "ai_makespan_sec": 16370.822,
+          "round_robin_makespan_sec": 20731.545,
+          "random_makespan_sec": 39212.262
+        },
+        {
+          "station_limit": 16,
+          "ai_makespan_sec": 15141.729,
+          "round_robin_makespan_sec": 19989.129,
+          "random_makespan_sec": 39387.055
+        }
+      ],
+      "ai_vs_round_robin_station_hour_efficiency_pct": 19.492,
+      "ai_vs_random_station_hour_efficiency_pct": 63.051,
+      "ai_vs_actual_net_station_hour_efficiency_pct": 64.791,
+      "ai_vs_history_replay_station_hour_efficiency_pct": 23.594
+    }
+  ],
+  "summary": {
+    "date_count": 15,
+    "avg_ai_best_makespan_sec": 28679.246,
+    "avg_round_robin_best_makespan_sec": 29579.525,
+    "avg_random_best_makespan_sec": 41500.384,
+    "avg_actual_net_work_sec": 52640.359,
+    "avg_history_replay_makespan_sec": 28094.511,
+    "avg_ai_vs_round_robin_improvement_pct": 3.015,
+    "avg_ai_vs_random_improvement_pct": 30.663,
+    "avg_ai_vs_actual_net_improvement_pct": 58.78,
+    "avg_ai_vs_history_replay_same_station_improvement_pct": 22.61,
+    "avg_ai_vs_history_replay_best_improvement_pct": -3.242,
+    "avg_ai_vs_round_robin_station_hour_efficiency_pct": 24.013,
+    "avg_ai_vs_random_station_hour_efficiency_pct": 61.933,
+    "avg_ai_vs_actual_net_station_hour_efficiency_pct": 60.14,
+    "avg_ai_vs_history_replay_station_hour_efficiency_pct": 25.292,
+    "efficiency_formula": "efficiency_pct = (1 - (ai_stations * ai_hours) / (baseline_stations * baseline_hours)) * 100%"
+  },
+  "charts": {
+    "strategy": "D:\\weichai\\weichai_model_rules_malfunction\\output\\april_15day_validation\\strategy_comparison.png",
+    "actual": "D:\\weichai\\weichai_model_rules_malfunction\\output\\april_15day_validation\\actual_time_comparison.png",
+    "replay": "D:\\weichai\\weichai_model_rules_malfunction\\output\\april_15day_validation\\history_replay_comparison.png"
+  },
+  "docx": "D:\\weichai\\weichai_model_rules_malfunction\\output\\april_15day_validation\\april_15day_validation_report.docx"
+}

@@ -57,18 +57,25 @@ const tooltipParams = reactive({
   orderId: '', partType: '', stName: ''
 })
 
+function togglePlay() {
+  if (simData.length === 0) return;
+  isPlaying.value = !isPlaying.value;
+  if (isPlaying.value) clock.start();
+  else clock.stop();
+}
+
+function setSpeed(speed) {
+  playbackSpeed.value = Number(speed);
+}
+
 defineExpose({
   loadAndPlay(playbook) {
     parsePlaybook(playbook);
     isPlaying.value = true;
     clock.start();
   },
-  togglePlay() {
-    isPlaying.value = !isPlaying.value;
-    if (isPlaying.value) clock.start();
-    else clock.stop();
-  },
-  setSpeed(speed) { playbackSpeed.value = speed; }
+  togglePlay,
+  setSpeed
 })
 
 function createWarningTexture() {
@@ -241,9 +248,14 @@ const parsePlaybook = (playbook) => {
       };
     });
 
+    const activeStationIds = Array.isArray(playbook.active_station_ids)
+      ? new Set(playbook.active_station_ids.map(item => Number(item)))
+      : null;
     const activeCount = playbook.active_stations || 16;
     stations.forEach((st, idx) => {
-      st.isPoweredOff = (idx >= activeCount);
+      st.isPoweredOff = activeStationIds && activeStationIds.size > 0
+        ? !activeStationIds.has(idx + 1)
+        : (idx >= activeCount);
       if (st.isPoweredOff) {
         st.worker.visible = false; 
         st.desk.material.color.setHex(0x334155); st.desk.material.emissive.setHex(0x000000);

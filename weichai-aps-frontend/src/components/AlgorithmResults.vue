@@ -13,6 +13,25 @@ const curveChartRef = ref(null)
 let compareChartInstance = null
 let curveChartInstance = null
 
+const formatDuration = (seconds) => {
+  const totalSeconds = Math.max(0, Math.round(Number(seconds) || 0))
+  const h = Math.floor(totalSeconds / 3600)
+  const m = Math.floor((totalSeconds % 3600) / 60)
+  const s = totalSeconds % 60
+  if (h > 0) return `${h}时${String(m).padStart(2, '0')}分${String(s).padStart(2, '0')}秒`
+  if (m > 0) return `${m}分${String(s).padStart(2, '0')}秒`
+  return `${s}秒`
+}
+
+const formatSeconds = (seconds) => `${Number(seconds || 0).toLocaleString('zh-CN', { maximumFractionDigits: 2 })} 秒`
+
+const formatAxisDuration = (seconds) => {
+  const value = Number(seconds) || 0
+  if (value >= 3600) return `${(value / 3600).toFixed(1)}时`
+  if (value >= 60) return `${Math.round(value / 60)}分`
+  return `${Math.round(value)}秒`
+}
+
 const renderHolographicFallback = (msg, color) => {
   const mockData = Array.from({length: 50}, () => Math.random() * 10 + 20)
   curveChartInstance.setOption({
@@ -99,14 +118,28 @@ const renderCharts = () => {
     const data = props.simResult
     const option1 = {
       backgroundColor: 'transparent',
-      title: { text: '多算法极限压榨比对测试', textStyle: { color: '#00E5FF', fontSize: 16 }, left: 'center', top: 10 },
-      tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+      title: { text: '三策略同源仿真对比', textStyle: { color: '#00E5FF', fontSize: 16 }, left: 'center', top: 10 },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: { type: 'shadow' },
+        formatter: (params) => {
+          const lines = [params?.[0]?.axisValue || '']
+          params.forEach((item) => {
+            if (item.seriesName === '总耗时') {
+              lines.push(`${item.marker}${item.seriesName}: ${formatDuration(item.value)} (${formatSeconds(item.value)})`)
+            } else {
+              lines.push(`${item.marker}${item.seriesName}: ${item.value} 台`)
+            }
+          })
+          return lines.join('<br/>')
+        }
+      },
       legend: { textStyle: { color: '#fff' }, top: 40 },
       grid: { left: '12%', right: '12%', bottom: '15%', top: '25%' },
       xAxis: { data: ['AI 强化学习', '传统轮询', '随机乱派'], axisLabel: { color: '#fff', fontSize: 14 } },
       yAxis: [
-        { type: 'value', name: '总完工耗时(s)', axisLabel: { color: '#fff' }, nameTextStyle: { color: '#A0B2C6' }, splitLine: { lineStyle: { color: '#1E3A5F', type: 'dashed' } } },
-        { type: 'value', name: '必需开机数(台)', min: 0, max: 16, axisLabel: { color: '#fff' }, nameTextStyle: { color: '#A0B2C6' }, splitLine: { show: false } }
+        { type: 'value', name: '总完工耗时', axisLabel: { color: '#fff', formatter: formatAxisDuration }, nameTextStyle: { color: '#A0B2C6' }, splitLine: { lineStyle: { color: '#1E3A5F', type: 'dashed' } } },
+        { type: 'value', name: '最少站台数(台)', min: 0, max: 16, axisLabel: { color: '#fff' }, nameTextStyle: { color: '#A0B2C6' }, splitLine: { show: false } }
       ],
       series: [
         { 
@@ -148,11 +181,13 @@ onUnmounted(() => { window.removeEventListener('resize', handleResize); compareC
     </div>
     <div v-else class="charts-wrapper">
       <div class="summary-cards">
-        <div class="card"><div class="card-title">AI 极限完工耗时</div><div class="card-value ai-color">{{ simResult.ai_result?.total_makespan || 0 }} <span class="unit">秒</span></div></div>
-        <div class="card"><div class="card-title">为您节省实体机床</div><div class="card-value highlight">{{ Math.max(0, (simResult.trad_result?.active_stations || 16) - (simResult.ai_result?.active_stations || 16)) }} <span class="unit">台</span></div></div>
+        <div class="card"><div class="card-title">AI 最少站台完工耗时</div><div class="card-value ai-color duration-value">{{ formatDuration(simResult.ai_result?.total_makespan) }}</div></div>
+        <div class="card"><div class="card-title">较轮询节省站台</div><div class="card-value highlight">{{ Math.max(0, (simResult.trad_result?.active_stations || 16) - (simResult.ai_result?.active_stations || 16)) }} <span class="unit">台</span></div></div>
         <div class="card"><div class="card-title">综合效率提升</div><div class="card-value highlight">{{ simResult.efficiency_up || '0%' }}</div></div>
       </div>
       <div class="inventory-cards">
+        <div class="mini-card"><span>较轮询效率提升</span><strong>{{ simResult.efficiency_vs_round_robin || simResult.efficiency_up || '0%' }}</strong></div>
+        <div class="mini-card"><span>较随机效率提升</span><strong>{{ simResult.efficiency_vs_random || '0%' }}</strong></div>
         <div class="mini-card"><span>可执行订单</span><strong>{{ simResult.inventory_result?.preprocess_stats?.processable_order_count || 0 }}</strong></div>
         <div class="mini-card"><span>异常订单</span><strong>{{ simResult.inventory_result?.exception_order_count || 0 }}</strong></div>
         <div class="mini-card"><span>稀缺SKU</span><strong>{{ simResult.inventory_result?.preprocess_stats?.scarce_sku_count || 0 }}</strong></div>
@@ -182,6 +217,7 @@ onUnmounted(() => { window.removeEventListener('resize', handleResize); compareC
 .card:nth-child(3)::before { background: #67C23A; }
 .card-title { color: #A0B2C6; font-size: 14px; margin-bottom: 8px; font-weight: bold; letter-spacing: 1px;}
 .card-value { font-size: 36px; font-weight: 900; text-shadow: 0 0 20px rgba(255,255,255,0.1);}
+.duration-value { font-size: clamp(24px, 2.1vw, 36px); white-space: nowrap; }
 .unit { font-size: 14px; font-weight: normal; color: #A0B2C6; margin-left: 4px;}
 .ai-color { color: #00E5FF; text-shadow: 0 0 15px rgba(0,229,255,0.4);}
 .highlight { color: #67C23A; text-shadow: 0 0 15px rgba(103,194,58,0.4);}
